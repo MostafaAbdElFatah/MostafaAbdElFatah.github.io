@@ -1,514 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mostafa Abdel Fattah Mohammed — Mobile Engineering Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mostafa Abdel Fattah Mohammed — Senior Mobile Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/data.js"></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
 </head>
-<body style="margin:0;background:#080d0c">
-<!-- Mostafa Abdel Fattah — Mobile Engineering Portfolio -->
-<div id="root">
-<style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  #root{
-    --ink:#080d0c;--ink2:#0e1614;--ink3:#141e1b;
-    --line:rgba(212,165,86,.16);
-    --em:#3ddba4;--em2:#1c8767;
-    --gold:#d8ae62;--gold2:#f0d49b;
-    --tx:#e8efec;--tx2:#9db0aa;--tx3:#657a73;
-    --srf:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-    --sns:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-    --ar:"Geeza Pro","Noto Naskh Arabic","Traditional Arabic","Al Bayan",Tahoma,serif;
-    background:var(--ink);color:var(--tx);font-family:var(--sns);
-    line-height:1.6;-webkit-font-smoothing:antialiased;
-    padding:0;overflow-x:hidden;position:relative;
-  }
-  #root::before{
-    content:"";position:absolute;inset:0;height:900px;pointer-events:none;opacity:.5;
-    background:
-      radial-gradient(900px 480px at 78% -8%,rgba(28,135,103,.30),transparent 62%),
-      radial-gradient(700px 420px at 12% 4%,rgba(216,174,98,.13),transparent 64%);
-  }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:86px 0 62px}
-  .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
-    font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:26px}
-  .eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
-  h1{font-family:var(--srf);font-size:clamp(2.6rem,6.4vw,4.5rem);line-height:1.02;
-    font-weight:400;letter-spacing:-.025em;margin-bottom:8px}
-  h1 .ar{font-family:var(--ar);display:block;font-size:.52em;color:var(--tx2);margin-top:14px;direction:rtl}
-  .role{font-size:clamp(1.02rem,2.1vw,1.28rem);color:var(--em);font-weight:500;
-    margin:22px 0 20px;letter-spacing:-.01em}
-  .lede{max-width:660px;color:var(--tx2);font-size:1.03rem}
-  .lede strong{color:var(--tx);font-weight:600}
+<body x-data="portfolio">
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:1px;margin-top:52px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-  .stat{background:var(--ink2);padding:22px 20px}
-  .stat b{display:block;font-family:var(--srf);font-size:2rem;color:var(--gold2);
-    font-weight:400;letter-spacing:-.02em;line-height:1}
-  .stat span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--tx3);margin-top:10px;font-weight:600}
-
-  /* ---------- SECTION ---------- */
-  section{padding:70px 0}
-  .shead{display:flex;align-items:baseline;gap:18px;margin-bottom:12px;flex-wrap:wrap}
-  .shead h2{font-family:var(--srf);font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:400;letter-spacing:-.02em}
-  .shead .num{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700}
-  .sdesc{color:var(--tx3);max-width:620px;font-size:.94rem;margin-bottom:38px}
-
-  /* ---------- FILTERS ---------- */
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-  .fbtn{background:transparent;border:1px solid var(--line);color:var(--tx2);
-    padding:8px 15px;border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;
-    font-family:inherit;letter-spacing:.04em;transition:.18s}
-  .fbtn:hover{border-color:rgba(61,219,164,.4);color:var(--tx)}
-  .fbtn.on{background:var(--em);border-color:var(--em);color:#04120d}
-
-  /* ---------- FEATURED ---------- */
-  .feat{display:grid;gap:18px}
-  .card{background:var(--ink2);border:1px solid var(--line);border-radius:4px;
-    padding:30px 32px;position:relative;overflow:hidden;transition:.25s;
-    opacity:0;transform:translateY(16px)}
-  .card.in{opacity:1;transform:none}
-  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
-    background:linear-gradient(180deg,var(--em),transparent);opacity:0;transition:.25s}
-  .card:hover{border-color:rgba(61,219,164,.34);background:var(--ink3)}
-  .card:hover::before{opacity:1}
-  .ctop{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;flex-wrap:wrap}
-  .ctitle{font-family:var(--srf);font-size:1.42rem;font-weight:400;letter-spacing:-.015em;line-height:1.2}
-  .ctitle .ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
-  .cmeta{font-size:11.5px;color:var(--tx3);margin-top:7px;letter-spacing:.04em}
-  .cmeta em{font-style:normal;color:var(--gold)}
-  .badge{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;
-    padding:5px 9px;border-radius:2px;white-space:nowrap}
-  .b-gov{background:rgba(216,174,98,.13);color:var(--gold2);border:1px solid rgba(216,174,98,.3)}
-  .b-quran{background:rgba(61,219,164,.1);color:var(--em);border:1px solid rgba(61,219,164,.26)}
-  .b-edu{background:rgba(124,162,255,.11);color:#9db8ff;border:1px solid rgba(124,162,255,.28)}
-  .b-consumer{background:rgba(232,140,110,.1);color:#f0a189;border:1px solid rgba(232,140,110,.26)}
-  .b-health{background:rgba(198,132,232,.1);color:#d4a3ef;border:1px solid rgba(198,132,232,.26)}
-
-  .metrics{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 15px}
-  .metric{font-size:11.5px;font-weight:700;letter-spacing:.05em;color:var(--gold2);
-    background:rgba(216,174,98,.07);border:1px solid rgba(216,174,98,.22);
-    padding:5px 10px;border-radius:2px}
-  .cbody{color:var(--tx2);font-size:.945rem;margin-top:14px;max-width:760px}
-  ul.pts{list-style:none;margin:16px 0 0;display:grid;gap:9px;max-width:780px}
-  ul.pts li{position:relative;padding-left:19px;font-size:.905rem;color:var(--tx2)}
-  ul.pts li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
-    background:var(--em2);transform:rotate(45deg)}
-  ul.pts li b{color:var(--tx);font-weight:600}
-  .cfoot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-    margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-  .stack{font-size:11.5px;color:var(--tx3);letter-spacing:.06em;font-weight:600}
-  .lnk{font-size:12px;font-weight:700;color:var(--em);text-decoration:none;
-    letter-spacing:.05em;display:inline-flex;align-items:center;gap:6px;transition:.18s}
-  .lnk:hover{color:var(--gold2);gap:10px}
-  .lnk::after{content:"→";transition:.18s}
-
-  /* ---------- COMPACT GRID ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:14px}
-  .mini{background:var(--ink2);border:1px solid var(--line);border-radius:3px;
-    padding:19px 20px;transition:.2s;display:flex;flex-direction:column;gap:9px;
-    opacity:0;transform:translateY(12px)}
-  .mini.in{opacity:1;transform:none}
-  .mini:hover{border-color:rgba(61,219,164,.3);background:var(--ink3);transform:translateY(-2px)}
-  .mtitle{font-family:var(--srf);font-size:1.05rem;line-height:1.25;letter-spacing:-.01em}
-  .mtitle .ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
-  .mmeta{font-size:10.5px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
-  .mdesc{font-size:.855rem;color:var(--tx2);flex:1}
-  .mfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:3px}
-
-  /* ---------- SKILLS ---------- */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-  .sk{background:var(--ink2);padding:24px 22px}
-  .sk h3{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);
-    font-weight:700;margin-bottom:14px}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{font-size:12px;color:var(--tx2);background:rgba(255,255,255,.028);
-    border:1px solid var(--line);padding:5px 10px;border-radius:2px}
-  .chip.key{color:#04120d;background:var(--em);border-color:var(--em);font-weight:700}
-
-  /* ---------- FOOTER ---------- */
-  footer{border-top:1px solid var(--line);margin-top:40px;padding:48px 0 60px}
-  .fgrid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-end}
-  .fname{font-family:var(--srf);font-size:1.5rem;letter-spacing:-.02em}
-  .fnote{color:var(--tx3);font-size:.87rem;margin-top:7px;max-width:420px}
-  .flinks{display:flex;gap:10px;flex-wrap:wrap}
-  .fl{border:1px solid var(--line);padding:10px 17px;border-radius:2px;color:var(--tx2);
-    text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.05em;transition:.2s}
-  .fl:hover{border-color:var(--em);color:var(--em)}
-  .fl.pr{background:var(--gold);border-color:var(--gold);color:#120c02}
-  .fl.pr:hover{background:var(--gold2);border-color:var(--gold2);color:#120c02}
-
-  .empty{color:var(--tx3);font-size:.9rem;padding:34px 0;text-align:center;display:none}
-
-  @media(max-width:640px){
-    .wrap{padding:0 20px}.hero{padding:60px 0 44px}
-    .card{padding:24px 21px}.ctitle{font-size:1.2rem}
-    .stat b{font-size:1.65rem}
-  }
-</style>
-
-<div class="wrap">
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="eyebrow">Mobile Engineering Portfolio · 2019 – 2026</div>
-    <h1>Mostafa Abdel Fattah Mohammed</h1>
-    <p class="role">Senior Mobile Engineer — iOS · SwiftUI · Flutter · watchOS</p>
-    <p class="lede">Seven years building Quran, Hadith and Islamic-education applications at national scale — including
-      <strong>officially authorized platforms</strong> for the General Presidency of the Two Holy Mosques, the General
-      Authority of Awqaf in Libya, the Ministry of Hajj and Umrah, and the Quran curricula of four Ministries of Education.
-      Alongside that, full commercial ecosystems in healthcare, marketplace and on-demand services.</p>
-
-    <div class="stats" id="stats">
-      <div class="stat"><b>33</b><span>Applications shipped</span></div>
-      <div class="stat"><b>10M+</b><span>Downloads · flagship</span></div>
-      <div class="stat"><b>4</b><span>Ministries of Education</span></div>
-      <div class="stat"><b>7</b><span>Years in production</span></div>
-      <div class="stat"><b>3</b><span>State-authorized apps</span></div>
+    <div class="nav">
+        <div class="wrap">
+            <a class="me" href="#top">Mostafa Abdel Fattah <span>Senior Mobile Engineer</span></a>
+            <div class="right">
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#index">All projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="tog" aria-label="Switch colour theme" @click="toggleTheme()"
+                    x-text="theme === 'dark' ? 'Light' : 'Dark'">Light</button>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- FEATURED -->
-  <section>
-    <div class="shead"><span class="num">01</span><h2>Selected work</h2></div>
-    <p class="sdesc">The projects that carry the weight of the portfolio — official government platforms and national
-      education deployments, and the commercial ecosystems in healthcare, marketplace and on-demand services built alongside them.</p>
+    <header class="hero" id="top">
+        <div class="wrap">
+            <span class="tag"><i></i>Available for senior iOS roles</span>
+            <h1>Mostafa Abdel Fattah Mohammed</h1>
+            <p class="sub">Senior mobile engineer building iOS and cross-platform apps at national scale.</p>
+            <p class="lede">Seven years of Quran, hadith and Islamic-education software, including
+                <b>officially authorized platforms</b> for the General Presidency of the Two Holy Mosques, the
+                General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah, and the Quran curricula of
+                four ministries of education. Alongside that, full commercial systems in healthcare, marketplace
+                and on-demand services. Based in Cairo.
+            </p>
+            <div class="cta">
+                <a class="btn p" href="mailto:mostafa.abdelfatah.dev@gmail.com">Email me</a>
+                <a class="btn" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
+                    target="_blank" rel="noopener">LinkedIn</a>
+                <a class="btn" href="https://github.com/MostafaAbdElFatah" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn" href="https://mostafaabdelfatah.github.io/mostafa-abdelfattah.github.io/" target="_blank"
+                    rel="noopener">Site</a>
+            </div>
 
-    <div class="filters" id="filters"></div>
-    <div class="feat" id="feat"></div>
-    <p class="empty" id="emptyF">No featured projects in this category — see the full catalogue below.</p>
-  </section>
+            <div class="nums">
+                <div class="num"><b>33</b><span>Applications shipped since 2019</span></div>
+                <div class="num"><b>10M+</b><span>Downloads on the flagship app</span></div>
+                <div class="num"><b>4</b><span>National curricula implemented</span></div>
+                <div class="num"><b>3</b><span>State-authorized platforms</span></div>
+            </div>
+        </div>
+    </header>
 
-  <!-- FULL CATALOGUE -->
-  <section>
-    <div class="shead"><span class="num">02</span><h2>Full catalogue</h2></div>
-    <p class="sdesc">The rest of the shipped body of work, filtered by the same categories above.</p>
-    <div class="grid" id="grid"></div>
-    <p class="empty" id="emptyG">Nothing further in this category — everything is above.</p>
-  </section>
+    <main>
+        <section id="work">
+            <div class="wrap">
+                <div class="shead">
+                    <div class="lbl">Selected work</div>
+                    <h2>Sixteen projects, with the engineering behind them</h2>
+                    <p class="sdesc">Government platforms and national education deployments, and the commercial
+                        products built alongside them.</p>
+                </div>
+                <div class="seg">
+                    <template x-for="[k, txt] in cats" :key="k">
+                        <button :class="{ on: cur === k }" @click="cur = k" x-text="txt"></button>
+                    </template>
+                </div>
+                <div class="list">
+                    <template x-for="p in featured" :key="p.t">
+                        <article class="card" x-reveal>
+                            <div class="chead">
+                                <div>
+                                    <h3 x-html="name(p)"></h3>
+                                    <div class="cmeta" x-html="p.y + ' &middot; ' + p.o"></div>
+                                </div>
+                                <span class="pill" :class="'p-' + p.c" x-text="label(p.c)"></span>
+                            </div>
+                            <div class="cbody">
+                                <div class="main">
+                                    <p x-html="p.d"></p>
+                                    <ul class="pts" x-show="p.p && p.p.length">
+                                        <template x-for="x in p.p || []">
+                                            <li x-html="x"></li>
+                                        </template>
+                                    </ul>
+                                </div>
+                                <div class="side">
+                                    <div class="kv" x-show="p.m && p.m.length">
+                                        <h4>Highlights</h4>
+                                        <template x-for="(x, i) in p.m || []">
+                                            <p :class="{ n: i === 0 }" x-text="x"></p>
+                                        </template>
+                                    </div>
+                                    <div class="kv">
+                                        <h4>Stack</h4>
+                                        <p x-html="p.s"></p>
+                                    </div>
+                                    <a class="clink" x-show="p.l" :href="p.l" target="_blank" rel="noopener">App Store &rarr;</a>
+                                    <a class="clink gp" x-show="p.g" :href="p.g" target="_blank" rel="noopener">Google Play &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </template>
+                </div>
+                <p class="none" x-show="!featured.length" x-cloak>No featured projects in this category. The full list below has the rest.</p>
+            </div>
+        </section>
 
-  <!-- SKILLS -->
-  <section>
-    <div class="shead"><span class="num">03</span><h2>Technical range</h2></div>
-    <p class="sdesc">Core stack in bold. Arabic typography and RTL layout are listed deliberately — they are
-      a scarce engineering competency, not a localisation afterthought. The final column is study in progress,
-      kept deliberately separate from shipped work.</p>
-    <div class="skills">
-      <div class="sk"><h3>Platform</h3><div class="chips">
-        <span class="chip key">Swift</span><span class="chip key">SwiftUI</span><span class="chip key">iOS</span>
-        <span class="chip">UIKit</span><span class="chip">Objective-C</span><span class="chip">watchOS</span>
-        <span class="chip">WidgetKit</span><span class="chip">Flutter</span><span class="chip">Dart</span>
-        <span class="chip">Android</span></div></div>
-      <div class="sk"><h3>Architecture &amp; data</h3><div class="chips">
-        <span class="chip">MVVM</span><span class="chip">Combine</span><span class="chip">Swift Concurrency</span>
-        <span class="chip">Core Data</span><span class="chip">SQLite / FTS</span><span class="chip">Offline-first</span>
-        <span class="chip">REST APIs</span><span class="chip">Firebase</span></div></div>
-      <div class="sk"><h3>Specialisations</h3><div class="chips">
-        <span class="chip key">Arabic &amp; RTL layout</span><span class="chip">Quranic script rendering</span>
-        <span class="chip">Full-text Arabic search</span><span class="chip">AVFoundation audio</span>
-        <span class="chip">Speech recognition / AI</span><span class="chip">Accessibility</span></div></div>
-      <div class="sk"><h3>Delivery</h3><div class="chips">
-        <span class="chip">App Store Connect</span><span class="chip">Google Play Console</span>
-        <span class="chip">Fastlane / CI</span><span class="chip">Unit &amp; UI testing</span>
-        <span class="chip">Agile</span><span class="chip">Sharia-committee review cycles</span></div></div>
-      <div class="sk" style="opacity:.88">
-        <h3 style="color:#7f6f4e">Backend &amp; web · in progress</h3><div class="chips">
-        <span class="chip" style="border-style:dashed;color:#80958e">Laravel ecosystem</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">PHP</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">Livewire</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">Inertia</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">Vue</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">React</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">Alpine.js</span>
-        <span class="chip" style="border-style:dashed;color:#80958e">HTML &amp; CSS</span></div>
-        <p style="font-size:10.5px;color:#4f625c;margin-top:13px;letter-spacing:.05em;line-height:1.55">
-          Currently studying, toward multi-tenant SaaS work — listed apart from production experience.</p></div>
-    </div>
-  </section>
+        <section id="index">
+            <div class="wrap">
+                <div class="shead">
+                    <div class="lbl">All projects</div>
+                    <h2>The rest of the catalogue</h2>
+                    <p class="sdesc">Shipped work in brief. The filter above applies here too.</p>
+                </div>
+                <div class="ix">
+                    <template x-for="p in rest" :key="p.t">
+                        <a class="row" :href="p.l || null" :target="p.l ? '_blank' : null" :rel="p.l ? 'noopener' : null">
+                            <span class="y" x-text="p.y"></span>
+                            <span class="n" x-html="name(p)"></span>
+                            <span class="d" x-text="p.d"></span>
+                            <span class="o" x-text="p.o"></span>
+                        </a>
+                    </template>
+                </div>
+                <p class="none" x-show="!rest.length" x-cloak>Nothing further in this category.</p>
+            </div>
+        </section>
 
-  <footer>
-    <div class="fgrid">
-      <div>
-        <div class="fname">Let's talk.</div>
-        <p class="fnote">Open to senior iOS and mobile engineering roles, and to freelance work in
-          Arabic-language and Islamic application development.</p>
-      </div>
-      <div class="flinks">
-        <a class="fl pr" href="mailto:mostafa.abdelfatah.dev@gmail.com">Email</a>
-        <a class="fl" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="fl" href="https://github.com/MostafaAbdElFatah" target="_blank" rel="noopener">GitHub</a>
-        <a class="fl" href="https://mostafaabdelfatah.github.io/" target="_blank" rel="noopener">Portfolio site</a>
-        <a class="fl" href="tel:+201090979425">+20 109 097 9425</a>
-      </div>
-    </div>
-  </footer>
-</div>
+        <section id="skills">
+            <div class="wrap">
+                <div class="shead">
+                    <div class="lbl">Skills</div>
+                    <h2>Technical range</h2>
+                    <p class="sdesc">Arabic typography and RTL layout are listed on purpose — a scarce engineering
+                        competency, not a localisation afterthought.</p>
+                </div>
+                <div class="grid4">
+                    <div class="sk">
+                        <h4>Platform</h4>
+                        <div class="chips">
+                            <span class="chip">Swift</span><span class="chip">SwiftUI</span><span
+                                class="chip">UIKit</span>
+                            <span class="chip">Objective-C</span><span class="chip">watchOS</span><span
+                                class="chip">WidgetKit</span>
+                            <span class="chip">Flutter</span><span class="chip">Dart</span><span
+                                class="chip">Android</span>
+                        </div>
+                    </div>
+                    <div class="sk">
+                        <h4>Architecture &amp; data</h4>
+                        <div class="chips">
+                            <span class="chip">MVVM</span><span class="chip">Combine</span><span class="chip">Swift
+                                Concurrency</span>
+                            <span class="chip">Core Data</span><span class="chip">SQLite / FTS</span><span
+                                class="chip">Offline-first</span>
+                            <span class="chip">REST APIs</span><span class="chip">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="sk">
+                        <h4>Arabic &amp; Quranic systems</h4>
+                        <div class="chips">
+                            <span class="chip">RTL layout</span><span class="chip">Quranic script rendering</span>
+                            <span class="chip">Arabic full-text search</span><span class="chip">AVFoundation</span>
+                            <span class="chip">Speech recognition</span><span class="chip">Accessibility</span>
+                        </div>
+                    </div>
+                    <div class="sk">
+                        <h4>Delivery</h4>
+                        <div class="chips">
+                            <span class="chip">App Store Connect</span><span class="chip">Google Play</span>
+                            <span class="chip">Fastlane / CI</span><span class="chip">Unit &amp; UI testing</span>
+                            <span class="chip">Agile</span><span class="chip">Sharia review cycles</span>
+                        </div>
+                    </div>
+                    <div class="sk wip">
+                        <h4>Backend &amp; web</h4>
+                        <div class="chips">
+                            <span class="chip">PHP</span><span class="chip">Laravel</span><span
+                                class="chip">Livewire</span>
+                            <span class="chip">Inertia</span><span class="chip">Vue</span><span
+                                class="chip">React</span>
+                            <span class="chip">Alpine.js</span>
+                            <span class="chip">HTML &amp; CSS</span>
+                            <span class="chip">Tailwindcss</span>
+                        </div>
+                        <p class="note">Currently studying, toward multi-tenant SaaS work. Listed separately from
+                            production experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
-(function(){
-  var P=[
-    // ---------- FEATURED ----------
-    {f:1,c:"gov",t:"Nusuk",ar:"نسك",y:"May 2024 – Oct 2025",o:"Arabia IT Company",
-     m:["10M+ downloads","4.7★ · 185K ratings","35 languages"],
-     d:"The Ministry of Hajj and Umrah's official pilgrimage platform. Eighteen months of feature development across the app's Islamic-services expansion.",
-     p:["Engineered <b>global prayer-time calculation</b> with location-aware alerts and Qibla direction, accurate across major calculation methods and time zones.",
-        "Built the <b>Al-Haramain audio library</b> — recitations, lectures and lessons from the Imams of the Two Holy Mosques, streaming and offline-capable.",
-        "Developed the <b>watchOS companion and home-screen widgets</b> surfacing prayer times, adhkar and Quran content.",
-        "Expanded the Quran module with reading, tafsir and persistent bookmarking; implemented the digital tasbeeh counter and curated hadith collection."],
-     s:"Swift · SwiftUI · WidgetKit · watchOS",
-     l:"https://apps.apple.com/us/app/nusuk-%D9%86%D8%B3%D9%83/id6469515422"},
+        <section id="contact">
+            <div class="wrap">
+                <div class="contact">
+                    <div>
+                        <div class="lbl">Contact</div>
+                        <h2>Open to senior iOS roles and freelance work</h2>
+                        <p>Arabic-language and Islamic application development, or general iOS product work.
+                            Working with teams in Saudi Arabia and the Gulf since 2019. Email gets the fastest reply.
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a href="mailto:mostafa.abdelfatah.dev@gmail.com"><span class="k">Email</span><span
+                                class="v">mostafa.abdelfatah.dev@gmail.com</span></a>
+                        <a href="tel:+201090979425"><span class="k">Phone</span><span class="v">+20 109 097
+                                9425</span></a>
+                        <a href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/" target="_blank"
+                            rel="noopener"><span class="k">LinkedIn</span><span class="v">View profile</span></a>
+                        <a href="https://github.com/MostafaAbdElFatah" target="_blank" rel="noopener"><span
+                                class="k">GitHub</span><span class="v">MostafaAbdElFatah</span></a>
+                        <a href="https://mostafaabdelfatah.github.io/" target="_blank" rel="noopener"><span
+                                class="k">Portfolio</span><span class="v">mostafaabdelfatah.github.io</span></a>
+                    </div>
+                </div>
+                <footer>
+                    <span>Mostafa Abdel Fattah Mohammed — Senior Mobile Engineer, Cairo</span>
+                    <span>iOS · SwiftUI · UI · Objective-c · watchOS · WidgetKit · Flutter · macOS · Windows ·
+                        Linux</span>
+                </footer>
+            </div>
+        </section>
+    </main>
 
-    {f:1,c:"gov",t:"Mushaf Al-Haramain",ar:"مصحف الحرمين",y:"Jan – Mar 2021",o:"Arabia IT Company",
-     m:["Official state app","Hafs 'an 'Asim"],
-     d:"The official electronic application of the General Presidency for the Affairs of the Grand Mosque and the Prophet's Mosque, delivering the authorized Madinah Mushaf printed by the King Fahd Complex.",
-     p:["Built a <b>high-fidelity Mushaf viewer</b> preserving the exact page geometry and verse numbering of the printed original — a state-authorized religious text leaves no margin for rendering drift.",
-        "Implemented a <b>multi-mode search engine</b> across word, phrase, surah, page and juz' with sub-second response over the full text.",
-        "Integrated the Haramain recitation library including complete Taraweeh recordings from the Imams of both mosques (1441 AH), with offline playback.",
-        "Added Tafsir Al-Muyassar with verse-linked highlighting, bookmarking, night mode and cross-platform sharing."],
-     s:"Swift · UIKit · Core Data · AVFoundation",
-     l:"https://apps.apple.com/us/app/-/id1558424738"},
-
-    {f:1,c:"edu",t:"Al-Mushaf Al-Madrasy",ar:"المصحف المدرسي",y:"Mar – Jun 2025",o:"Arabia IT Company",
-     m:["4 national curricula","4.1★ · 1K+ ratings"],
-     d:"An interactive Quran curriculum app aligned to the official syllabi approved by the Ministries of Education of Saudi Arabia, Kuwait, Bahrain and Oman.",
-     p:["Modelled a <b>curriculum engine</b> mapping recitation and memorization assignments to each grade and class level across four distinct national syllabi.",
-        "Built <b>multi-profile account management</b> so several students at different educational stages share one device with independent progress tracking.",
-        "Integrated an offline-capable audio library of 10+ renowned reciters — Al-Minshawi, Al-Sudais, Al-Shuraim, Al-Afasy, Al-Muaiqly and others.",
-        "Developed a memorization assistant with configurable verse repetition, plus achievement badges, resume-bookmarking and four page themes for young learners."],
-     s:"Swift · SwiftUI",
-     l:"https://apps.apple.com/app/id1177013583"},
-
-    {f:1,c:"quran",t:"Jami' Al-Kutub Al-Tis'a",ar:"جامع الكتب التسعة",y:"Oct 2023 – Feb 2024",o:"Arabia IT Company",
-     m:["9 canonical collections","Tens of thousands of narrations"],
-     d:"The nine canonical hadith collections — Bukhari, Muslim, Abu Dawood, Al-Tirmidhi, Al-Nasa'i, Ibn Majah, Al-Darimi, Musnad Ahmad and Muwatta Malik — with full classical commentary, in one searchable application.",
-     p:["Designed an <b>indexed search system</b> supporting keyword, partial-text, hadith-number and chapter queries across tens of thousands of narrations, tuned for instant on-device results.",
-        "Built the <b>thematic classification tree</b> (الشجرة الموضوعية) enabling scholarly navigation by subject rather than book order.",
-        "Integrated narrator (rijal) records, authenticity grading — sahih, hasan, da'if — attribution type, gharib glossing and takhrij with corroborating chains.",
-        "Delivered reading customization, favourites, personal annotations and sharing for students and researchers."],
-     s:"Swift · SQLite · full-text indexing",
-     l:"https://apps.apple.com/us/app/%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%84%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%AA%D8%B3%D8%B9%D8%A9/id1149785262"},
-
-    {f:1,c:"gov",t:"Mushaf Al-Awqaf Al-Libya 2.0",ar:"مصحف الأوقاف الليبية",y:"Aug – Sep 2023",o:"Arabia IT Company",
-     m:["Official state app","Qalun 'an Nafi'"],
-     d:"The official digital Quran of the General Authority of Awqaf and Islamic Affairs, Libya — Qalun 'an Nafi' narration in the Imam Al-Dani script, certified by the Authority's standing Mushaf review committee.",
-     p:["Adapted the Mushaf rendering engine to the <b>Qalun layout and Al-Dani orthography</b> — a materially different typographic system from the Hafs/Madinah standard used by most Quran apps.",
-        "Integrated a Libyan reciters' audio library with verse-level selection, configurable repeat counts and progress tracking.",
-        "Built a <b>personalized Khatmah planner</b> computing daily portion and days-to-completion from a user-set goal.",
-        "Added multi-language translations, a tafsir library, verse-level reflections and questions, daily verse reminders, and linkage to the Imam Al-Dani distance-learning platform."],
-     s:"Swift · UIKit",
-     l:"https://apps.apple.com/us/app/id6741798282"},
-
-    {f:1,c:"edu",t:"Alfatihah.ind",ar:"",y:"Oct – Dec 2024",o:"Arabia IT Company",
-     m:["AI speech recognition","Indonesian market"],
-     d:"An AI-powered application teaching and correcting the recitation of Surah Al-Fatihah for Indonesian speakers, combining automated feedback with certified human instruction.",
-     p:["Integrated <b>speech-recognition-based pronunciation correction</b>, evaluating learner recitation against correct makhraj and returning targeted feedback.",
-        "Built the interactive learning flow pairing audio guides with visual recitation demonstrations, word-by-word translation and tafsir.",
-        "Delivered a <b>certification pathway</b> issuing official certificates of mastery from accredited institutions.",
-        "Localized the full experience for Indonesian-speaking learners — non-native Arabic phonology throughout."],
-     s:"Swift · Speech / ML integration",
-     l:"https://apps.apple.com/us/app/-/id6741386382"},
-
-    {f:1,c:"quran",t:"Bilal",ar:"بلال",y:"Nov 2019 – Apr 2020",o:"Arabia IT Company",
-     m:["60+ muezzin voices","Zero ads, permanently"],
-     d:"A free, permanently ad-free prayer and azan companion, named for the Prophet's ﷺ words \u201CRelieve us with it, O Bilal.\u201D",
-     p:["Implemented <b>worldwide prayer-time computation</b> with city-level accuracy and Qibla direction from any location.",
-        "Built the azan notification system supporting <b>60+ authentic muezzin recordings</b>, configurable pre-Fajr alerts at 10/20/30 minutes, and Ramadan iftar and suhoor reminders.",
-        "Developed the Apple Watch app and home-screen widgets for at-a-glance prayer times.",
-        "Shipped cross-platform from a single Flutter codebase with a native watchOS extension."],
-     s:"Flutter · Dart · watchOS · WidgetKit",
-     l:"https://apps.apple.com/us/app/-bilal/id1461237208"},
-
-    {f:1,c:"quran",t:"Great Quran",ar:"القرآن العظيم",y:"Nov 2022 – Feb 2023",o:"Arabia IT Company",
-     m:["40+ tafsir works","30+ recitations","Ten-qira'at review board"],
-     d:"A flagship Mushaf certified against the King Fahd Complex and Al-Azhar editions, reviewed verse by verse by a scientific committee licensed in the ten recitations.",
-     p:["Worked on a codebase with a decade of production history, first released in 2014 — feature development inside a mature, heavily-used application.",
-        "Extended the <b>Quranic search engine</b>: full-corpus search in seconds, tolerant of common spelling errors, with surah-name and verse-number lookup, result counts and highlighting.",
-        "Expanded the Quranic library to 40+ works of tafsir and Quranic sciences, and 30+ audio recitations across multiple qira'at.",
-        "Built recitation and memorization tracking with daily progress statistics."],
-     s:"Swift · UIKit · AVFoundation",
-     l:"https://apps.apple.com/us/app/-/id792049888"},
-
-    {f:1,c:"consumer",t:"URPASS",ar:"",y:"Apr – Jun 2026",o:"Freelance",
-     m:["iOS + Android","Most recent engagement"],
-     d:"A cross-platform product delivered end to end as a freelance engagement, shipping to both the App Store and Google Play from a single codebase.",
-     p:["Owned the engagement end to end as sole engineer — architecture, implementation, store configuration and release.",
-        "Shipped <b>iOS and Android in parallel</b> from one cross-platform codebase, holding feature parity while respecting platform-native navigation and interaction conventions."],
-     s:"Cross-platform · iOS &amp; Android",l:""},
-
-    {f:1,c:"edu",t:"Lights of Life",ar:"",y:"Nov – Dec 2022",o:"EkadSoft",
-     m:["Assessment + coursework"],
-     d:"A student assessment and academic task platform bringing formal testing, performance tracking and daily coursework into a single account.",
-     p:["Built the <b>assessment module</b> — timed tests, answer submission and scoring against the course question bank.",
-        "Developed <b>performance tracking</b> giving students a running view of results across subjects and terms rather than isolated scores.",
-        "Implemented daily coursework and task assignment, so routine academic work and formal examination share one interface and one progress record."],
-     s:"Swift · REST APIs",l:""},
-
-    {f:1,c:"consumer",t:"HomeMade",ar:"",y:"May – Sep 2021",o:"ArabApps Company",
-     m:["Two-sided marketplace","Customer client"],
-     d:"The customer application for a marketplace of home-made goods, handicrafts and micro-businesses — connecting small independent producers to buyers.",
-     p:["Built the <b>buyer experience</b>: category browsing, search, seller storefronts and product detail across a catalogue of independent makers.",
-        "Implemented cart, checkout and order tracking against the shared marketplace backend used by both clients.",
-        "Handled <b>full Arabic and RTL layout</b> across catalogue, product and checkout flows — including mixed-direction pricing and address entry."],
-     s:"Swift · UIKit · REST APIs",l:""},
-
-    {f:1,c:"consumer",t:"HomeMade Vendor",ar:"",y:"Jul – Sep 2021",o:"ArabApps Company",
-     m:["Seller client","Shared API layer"],
-     d:"The seller-side counterpart to HomeMade, giving micro-businesses the tools to run a storefront from a phone.",
-     p:["Built <b>listing and inventory management</b> — product creation, imagery, pricing and availability, with storefront presentation controls.",
-        "Developed the <b>order management pipeline</b>: incoming orders, status transitions and fulfilment updates that surface live in the customer app.",
-        "Shipped as a separate client sharing the marketplace's data model and API layer, keeping both sides of the transaction consistent as the schema evolved."],
-     s:"Swift · UIKit · REST APIs",l:""},
-
-    {f:1,c:"consumer",t:"Floria",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
-     m:["Scheduled delivery","Secure payments"],
-     d:"A florist e-commerce application built around gifting — where the delivery window matters as much as the product.",
-     p:["Built the storefront and product catalogue, including arrangement selection and gifting options at the point of purchase.",
-        "Implemented <b>scheduled delivery</b> — date and time-window selection carried through checkout into the fulfilment record.",
-        "Integrated secure payment processing with order confirmation and post-purchase tracking."],
-     s:"Swift · UIKit · payment SDK integration",l:""},
-
-    {f:1,c:"consumer",t:"Homy",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
-     m:["On-demand services","Provider ratings"],
-     d:"An on-demand home services marketplace spanning trades, cleaning, remote tutoring, childcare and nursing — a single booking surface over a wide range of provider types.",
-     p:["Built <b>provider discovery</b> with ratings, reviews and service-category filtering across professions with very different booking shapes.",
-        "Implemented booking against provider availability, including scheduled and same-day requests.",
-        "Developed the full <b>request lifecycle</b> from booking through completion, with push notification of every status change on both sides."],
-     s:"Swift · UIKit · Firebase",l:""},
-
-    {f:1,c:"consumer",t:"YallaDealz",ar:"",y:"Jul – Aug 2019",o:"Independent",
-     m:["Deals aggregator","Earliest shipped product"],
-     d:"A location-based deals aggregator pulling offers across hospitality, dining, retail and entertainment into one feed.",
-     p:["Built a <b>location-aware offers feed</b>, surfacing deals by proximity and category rather than as an undifferentiated list.",
-        "Implemented merchant detail pages and the redemption flow, with filtering across four distinct commercial verticals.",
-        "One of the earliest shipped products in the portfolio — established the location and REST patterns reused across later consumer work."],
-     s:"Swift · Core Location · REST APIs",l:""},
-
-    {f:1,c:"health",t:"Rubikcare",ar:"",y:"2022 – 2023",o:"EkadSoft",
-     m:["4 interoperating apps","Zoom API telehealth"],
-     d:"A four-application healthcare platform connecting patients, doctors, pharmacies and pharmaceutical sales representatives in one coordinated system.",
-     p:["Built the <b>patient application</b>: appointment booking, proximity-based pharmacy discovery, medicine comparison, and multi-pharmacy ordering with or without a prescription.",
-        "Integrated the <b>Zoom API</b> for remote consultations between patients and physicians.",
-        "Developed digital prescription creation and management in the physician app, flowing directly into the patient and pharmacy clients.",
-        "Delivered the pharmacy order-management app and the sales-representative client and activity tracking app."],
-     s:"Swift · UIKit · REST APIs · Zoom SDK",l:""},
-
-    // ---------- CATALOGUE ----------
-    {c:"quran",t:"Convey",ar:"بلغوا",y:"Dec 2019 – Apr 2020",o:"Arabia IT Company",
-     d:"Verse-design and sharing tool for preachers and da'wah offices. 300+ templates, four-language Noor International translations, full design customization before export.",
-     l:"https://apps.apple.com/app/id1463949765"},
-    {c:"quran",t:"Rusel",ar:"رسل",y:"Jan – Mar 2025",o:"Arabia IT Company",
-     d:"Da'wah sharing platform: 6,000+ ready-to-share designs and 4,000+ short videos, verified by the Sharia Committee of the Al-Rawdah Da'wah Association."},
-    {c:"quran",t:"Sheikh Ibn Uthaymeen",ar:"تطبيق الشيخ ابن عثيمين",y:"Jun – Aug 2023",o:"Arabia IT Company",
-     d:"Digital library of the scholar's works, lessons and fatwas."},
-    {c:"quran",t:"Mushaf Ibn Uthaymeen & Tafsir",ar:"مصحف ابن عثيمين وتفسيره",y:"Mar – Apr 2023",o:"Arabia IT Company",
-     d:"Quran reader with integrated Ibn Uthaymeen commentary."},
-    {c:"quran",t:"Awrady",ar:"أورادي",y:"Feb – Mar 2022",o:"Arabia IT Company",
-     d:"Personal daily adhkar and wird tracking."},
-    {c:"quran",t:"AlQuran AlMubeen",ar:"القرآن المبين",y:"Jan – Feb 2022",o:"Arabia IT Company",
-     d:"Quran reader with clarified script rendering."},
-    {c:"quran",t:"Mushaf Al-Tadabbur",ar:"مصحف التدبر",y:"Nov – Dec 2021",o:"Arabia IT Company",
-     d:"Reflection-oriented Mushaf with contemplation aids."},
-    {c:"quran",t:"Quran Hakeem",ar:"القرآن الحكيم",y:"Jul – Sep 2021",o:"Arabia IT Company",
-     d:"Quran reader with integrated recitation library."},
-    {c:"quran",t:"Lawami' Al-Adhkar",ar:"لوامع الأذكار",y:"Jun – Jul 2021",o:"Arabia IT Company",
-     d:"Comprehensive adhkar collection with scheduled reminders."},
-    {c:"quran",t:"Mushaf AlHilal",ar:"مصحف الهلال",y:"Jun 2021",o:"Arabia IT Company",
-     d:"Branded Mushaf edition."},
-    {c:"quran",t:"AlQuran AlHakeem",ar:"القرآن الحكيم",y:"May 2021",o:"Arabia IT Company",
-     d:"Quran reader build."},
-    {c:"quran",t:"Ayat Bayyinat",ar:"آيات بينات",y:"Jan – Apr 2021",o:"Arabia IT Company",
-     d:"Quran study app with verse-level research tools."},
-    {c:"quran",t:"Sakinah",ar:"سكينة",y:"Aug – Nov 2020",o:"Arabia IT Company",
-     d:"Spiritual wellbeing and remembrance app."},
-    {c:"consumer",t:"KeesApp",ar:"",y:"Dec 2019",o:"Independent",
-     d:"Grocery and supermarket delivery with live order tracking and multiple payment options."},
-    {c:"consumer",t:"Farra",ar:"فرة",y:"Sep 2022",o:"Independent",
-     d:"Location-based guide to nearby entertainment and leisure venues for families, women and groups."},
-    {c:"health",t:"PharmacyApp",ar:"",y:"Jan – Feb 2019",o:"Independent",
-     d:"Prescription upload and pharmacy ordering — the early prototype of what later became Rubikcare."},
-    {c:"consumer",t:"ArabicArduino News",ar:"",y:"Mar 2019",o:"Independent",
-     d:"Arabic-language Arduino, electronics and IoT news, tutorials and component guides."}
-  ];
-
-  var CATS=[["all","Everything"],["gov","Government &amp; official"],["quran","Quran &amp; Hadith"],
-            ["edu","Education &amp; AI"],["consumer","Consumer &amp; commerce"],["health","Healthcare"]];
-  var LBL={gov:"Government",quran:"Quran &amp; Hadith",edu:"Education",consumer:"Consumer",health:"Healthcare"};
-
-  var fb=document.getElementById("filters"),
-      fe=document.getElementById("feat"),
-      gr=document.getElementById("grid"),
-      eF=document.getElementById("emptyF"),
-      eG=document.getElementById("emptyG"),
-      cur="all";
-
-  CATS.forEach(function(c,i){
-    var b=document.createElement("button");
-    b.className="fbtn"+(i===0?" on":"");b.innerHTML=c[1];b.dataset.k=c[0];
-    b.onclick=function(){
-      cur=c[0];
-      [].forEach.call(fb.children,function(x){x.classList.toggle("on",x.dataset.k===cur)});
-      render();
-    };
-    fb.appendChild(b);
-  });
-
-  function esc(s){return s||""}
-
-  function bigCard(p){
-    var d=document.createElement("article");d.className="card";
-    var title=esc(p.t)+(p.ar?' <span class="ar">'+p.ar+'</span>':"");
-    var mets=(p.m||[]).map(function(m){return '<span class="metric">'+m+'</span>'}).join("");
-    var pts=(p.p||[]).map(function(x){return "<li>"+x+"</li>"}).join("");
-    d.innerHTML=
-      '<div class="ctop"><div><div class="ctitle">'+title+'</div>'+
-      '<div class="cmeta"><em>'+p.y+'</em> &nbsp;·&nbsp; '+p.o+'</div></div>'+
-      '<span class="badge b-'+p.c+'">'+LBL[p.c]+'</span></div>'+
-      (mets?'<div class="metrics">'+mets+'</div>':"")+
-      '<p class="cbody">'+p.d+'</p>'+
-      (pts?'<ul class="pts">'+pts+'</ul>':"")+
-      '<div class="cfoot"><span class="stack">'+p.s+'</span>'+
-      (p.l?'<a class="lnk" href="'+p.l+'" target="_blank" rel="noopener">View on the App Store</a>':"")+
-      '</div>';
-    return d;
-  }
-
-  function miniCard(p){
-    var d=document.createElement("article");d.className="mini";
-    var title=esc(p.t)+(p.ar?' <span class="ar">'+p.ar+'</span>':"");
-    d.innerHTML=
-      '<div class="mmeta">'+p.y+'</div>'+
-      '<div class="mtitle">'+title+'</div>'+
-      '<p class="mdesc">'+p.d+'</p>'+
-      '<div class="mfoot"><span class="mmeta">'+p.o+'</span>'+
-      (p.l?'<a class="lnk" href="'+p.l+'" target="_blank" rel="noopener">App Store</a>':"")+'</div>';
-    return d;
-  }
-
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}});
-  },{threshold:.06,rootMargin:"0px 0px -30px 0px"});
-
-  function render(){
-    fe.innerHTML="";gr.innerHTML="";
-    var nf=0,ng=0;
-    P.forEach(function(p){
-      if(cur!=="all"&&p.c!==cur)return;
-      if(p.f){fe.appendChild(bigCard(p));nf++}
-      else{gr.appendChild(miniCard(p));ng++}
-    });
-    eF.style.display=nf?"none":"block";
-    eG.style.display=ng?"none":"block";
-    [].forEach.call(document.querySelectorAll(".card,.mini"),function(el){io.observe(el)});
-  }
-  render();
-})();
-</script>
-</div>
 </body>
+
 </html>
