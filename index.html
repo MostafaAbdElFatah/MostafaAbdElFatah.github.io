@@ -45,8 +45,8 @@
                 <a class="btn" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
                     target="_blank" rel="noopener">LinkedIn</a>
                 <a class="btn" href="https://github.com/MostafaAbdElFatah" target="_blank" rel="noopener">GitHub</a>
-                <a class="btn" href="https://mostafaabdelfatah.github.io/mostafa-abdelfattah.github.io/" target="_blank"
-                    rel="noopener">Site</a>
+                <a class="btn" href="https://mostafaabdelfatah.github.io/" target="_blank" rel="noopener">Site</a>
+                <a class="btn" href="assets/Mostafa-Abdel-Fattah-CV.pdf" target="_blank" rel="noopener">Download CV</a>
             </div>
 
             <div class="nums">
@@ -102,14 +102,17 @@
                                         <h4>Stack</h4>
                                         <p x-html="p.s"></p>
                                     </div>
-                                    <a class="clink" x-show="p.l" :href="p.l" target="_blank" rel="noopener">App Store &rarr;</a>
-                                    <a class="clink gp" x-show="p.g" :href="p.g" target="_blank" rel="noopener">Google Play &rarr;</a>
+                                    <a class="clink" x-show="p.l" :href="p.l" target="_blank" rel="noopener">App Store
+                                        &rarr;</a>
+                                    <a class="clink gp" x-show="p.g" :href="p.g" target="_blank" rel="noopener">Google
+                                        Play &rarr;</a>
                                 </div>
                             </div>
                         </article>
                     </template>
                 </div>
-                <p class="none" x-show="!featured.length" x-cloak>No featured projects in this category. The full list below has the rest.</p>
+                <p class="none" x-show="!featured.length" x-cloak>No featured projects in this category. The full list
+                    below has the rest.</p>
             </div>
         </section>
 
@@ -122,7 +125,8 @@
                 </div>
                 <div class="ix">
                     <template x-for="p in rest" :key="p.t">
-                        <a class="row" :href="p.l || null" :target="p.l ? '_blank' : null" :rel="p.l ? 'noopener' : null">
+                        <a class="row" :href="p.l || null" :target="p.l ? '_blank' : null"
+                            :rel="p.l ? 'noopener' : null">
                             <span class="y" x-text="p.y"></span>
                             <span class="n" x-html="name(p)"></span>
                             <span class="d" x-text="p.d"></span>
@@ -219,6 +223,10 @@
                                 class="k">GitHub</span><span class="v">MostafaAbdElFatah</span></a>
                         <a href="https://mostafaabdelfatah.github.io/" target="_blank" rel="noopener"><span
                                 class="k">Portfolio</span><span class="v">mostafaabdelfatah.github.io</span></a>
+                        <a href="assets/Mostafa-Abdel-Fattah-CV.pdf" target="_blank" rel="noopener"><span
+                                class="k">CV</span><span class="v">Download PDF</span></a>
+                        <a href="assets/Mostafa-Abdel-Fattah-Cover-Letter.pdf" target="_blank" rel="noopener"><span
+                                class="k">Cover letter</span><span class="v">Download PDF</span></a>
                     </div>
                 </div>
                 <footer>
