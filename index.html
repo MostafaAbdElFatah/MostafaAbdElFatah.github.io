@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mostafa Abdel Fattah Mohammed — Mobile Engineering Portfolio</title>
+</head>
+<body style="margin:0;background:#080d0c">
 <!-- Mostafa Abdel Fattah — Mobile Engineering Portfolio -->
 <div id="root">
 <style>
@@ -169,8 +177,8 @@
   <!-- FEATURED -->
   <section>
     <div class="shead"><span class="num">01</span><h2>Selected work</h2></div>
-    <p class="sdesc">Nine projects that carry the weight of the portfolio — official government platforms,
-      national education deployments, and the systems engineering behind them.</p>
+    <p class="sdesc">The projects that carry the weight of the portfolio — official government platforms and national
+      education deployments, and the commercial ecosystems in healthcare, marketplace and on-demand services built alongside them.</p>
 
     <div class="filters" id="filters"></div>
     <div class="feat" id="feat"></div>
@@ -180,16 +188,17 @@
   <!-- FULL CATALOGUE -->
   <section>
     <div class="shead"><span class="num">02</span><h2>Full catalogue</h2></div>
-    <p class="sdesc">The complete body of shipped work, filtered by the same categories above.</p>
+    <p class="sdesc">The rest of the shipped body of work, filtered by the same categories above.</p>
     <div class="grid" id="grid"></div>
-    <p class="empty" id="emptyG">Nothing in this category.</p>
+    <p class="empty" id="emptyG">Nothing further in this category — everything is above.</p>
   </section>
 
   <!-- SKILLS -->
   <section>
     <div class="shead"><span class="num">03</span><h2>Technical range</h2></div>
     <p class="sdesc">Core stack in bold. Arabic typography and RTL layout are listed deliberately — they are
-      a scarce engineering competency, not a localisation afterthought.</p>
+      a scarce engineering competency, not a localisation afterthought. The final column is study in progress,
+      kept deliberately separate from shipped work.</p>
     <div class="skills">
       <div class="sk"><h3>Platform</h3><div class="chips">
         <span class="chip key">Swift</span><span class="chip key">SwiftUI</span><span class="chip key">iOS</span>
@@ -208,6 +217,18 @@
         <span class="chip">App Store Connect</span><span class="chip">Google Play Console</span>
         <span class="chip">Fastlane / CI</span><span class="chip">Unit &amp; UI testing</span>
         <span class="chip">Agile</span><span class="chip">Sharia-committee review cycles</span></div></div>
+      <div class="sk" style="opacity:.88">
+        <h3 style="color:#7f6f4e">Backend &amp; web · in progress</h3><div class="chips">
+        <span class="chip" style="border-style:dashed;color:#80958e">Laravel ecosystem</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">PHP</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">Livewire</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">Inertia</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">Vue</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">React</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">Alpine.js</span>
+        <span class="chip" style="border-style:dashed;color:#80958e">HTML &amp; CSS</span></div>
+        <p style="font-size:10.5px;color:#4f625c;margin-top:13px;letter-spacing:.05em;line-height:1.55">
+          Currently studying, toward multi-tenant SaaS work — listed apart from production experience.</p></div>
     </div>
   </section>
 
@@ -219,9 +240,11 @@
           Arabic-language and Islamic application development.</p>
       </div>
       <div class="flinks">
-        <a class="fl pr" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="fl" href="#" id="cv">Add your email</a>
-        <a class="fl" href="#" id="gh">Add your GitHub</a>
+        <a class="fl pr" href="mailto:mostafa.abdelfatah.dev@gmail.com">Email</a>
+        <a class="fl" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="fl" href="https://github.com/MostafaAbdElFatah" target="_blank" rel="noopener">GitHub</a>
+        <a class="fl" href="https://mostafaabdelfatah.github.io/" target="_blank" rel="noopener">Portfolio site</a>
+        <a class="fl" href="tel:+201090979425">+20 109 097 9425</a>
       </div>
     </div>
   </footer>
@@ -311,6 +334,61 @@
      s:"Swift · UIKit · AVFoundation",
      l:"https://apps.apple.com/us/app/-/id792049888"},
 
+    {f:1,c:"consumer",t:"URPASS",ar:"",y:"Apr – Jun 2026",o:"Freelance",
+     m:["iOS + Android","Most recent engagement"],
+     d:"A cross-platform product delivered end to end as a freelance engagement, shipping to both the App Store and Google Play from a single codebase.",
+     p:["Owned the engagement end to end as sole engineer — architecture, implementation, store configuration and release.",
+        "Shipped <b>iOS and Android in parallel</b> from one cross-platform codebase, holding feature parity while respecting platform-native navigation and interaction conventions."],
+     s:"Cross-platform · iOS &amp; Android",l:""},
+
+    {f:1,c:"edu",t:"Lights of Life",ar:"",y:"Nov – Dec 2022",o:"EkadSoft",
+     m:["Assessment + coursework"],
+     d:"A student assessment and academic task platform bringing formal testing, performance tracking and daily coursework into a single account.",
+     p:["Built the <b>assessment module</b> — timed tests, answer submission and scoring against the course question bank.",
+        "Developed <b>performance tracking</b> giving students a running view of results across subjects and terms rather than isolated scores.",
+        "Implemented daily coursework and task assignment, so routine academic work and formal examination share one interface and one progress record."],
+     s:"Swift · REST APIs",l:""},
+
+    {f:1,c:"consumer",t:"HomeMade",ar:"",y:"May – Sep 2021",o:"ArabApps Company",
+     m:["Two-sided marketplace","Customer client"],
+     d:"The customer application for a marketplace of home-made goods, handicrafts and micro-businesses — connecting small independent producers to buyers.",
+     p:["Built the <b>buyer experience</b>: category browsing, search, seller storefronts and product detail across a catalogue of independent makers.",
+        "Implemented cart, checkout and order tracking against the shared marketplace backend used by both clients.",
+        "Handled <b>full Arabic and RTL layout</b> across catalogue, product and checkout flows — including mixed-direction pricing and address entry."],
+     s:"Swift · UIKit · REST APIs",l:""},
+
+    {f:1,c:"consumer",t:"HomeMade Vendor",ar:"",y:"Jul – Sep 2021",o:"ArabApps Company",
+     m:["Seller client","Shared API layer"],
+     d:"The seller-side counterpart to HomeMade, giving micro-businesses the tools to run a storefront from a phone.",
+     p:["Built <b>listing and inventory management</b> — product creation, imagery, pricing and availability, with storefront presentation controls.",
+        "Developed the <b>order management pipeline</b>: incoming orders, status transitions and fulfilment updates that surface live in the customer app.",
+        "Shipped as a separate client sharing the marketplace's data model and API layer, keeping both sides of the transaction consistent as the schema evolved."],
+     s:"Swift · UIKit · REST APIs",l:""},
+
+    {f:1,c:"consumer",t:"Floria",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
+     m:["Scheduled delivery","Secure payments"],
+     d:"A florist e-commerce application built around gifting — where the delivery window matters as much as the product.",
+     p:["Built the storefront and product catalogue, including arrangement selection and gifting options at the point of purchase.",
+        "Implemented <b>scheduled delivery</b> — date and time-window selection carried through checkout into the fulfilment record.",
+        "Integrated secure payment processing with order confirmation and post-purchase tracking."],
+     s:"Swift · UIKit · payment SDK integration",l:""},
+
+    {f:1,c:"consumer",t:"Homy",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
+     m:["On-demand services","Provider ratings"],
+     d:"An on-demand home services marketplace spanning trades, cleaning, remote tutoring, childcare and nursing — a single booking surface over a wide range of provider types.",
+     p:["Built <b>provider discovery</b> with ratings, reviews and service-category filtering across professions with very different booking shapes.",
+        "Implemented booking against provider availability, including scheduled and same-day requests.",
+        "Developed the full <b>request lifecycle</b> from booking through completion, with push notification of every status change on both sides."],
+     s:"Swift · UIKit · Firebase",l:""},
+
+    {f:1,c:"consumer",t:"YallaDealz",ar:"",y:"Jul – Aug 2019",o:"Independent",
+     m:["Deals aggregator","Earliest shipped product"],
+     d:"A location-based deals aggregator pulling offers across hospitality, dining, retail and entertainment into one feed.",
+     p:["Built a <b>location-aware offers feed</b>, surfacing deals by proximity and category rather than as an undifferentiated list.",
+        "Implemented merchant detail pages and the redemption flow, with filtering across four distinct commercial verticals.",
+        "One of the earliest shipped products in the portfolio — established the location and REST patterns reused across later consumer work."],
+     s:"Swift · Core Location · REST APIs",l:""},
+
     {f:1,c:"health",t:"Rubikcare",ar:"",y:"2022 – 2023",o:"EkadSoft",
      m:["4 interoperating apps","Zoom API telehealth"],
      d:"A four-application healthcare platform connecting patients, doctors, pharmacies and pharmaceutical sales representatives in one coordinated system.",
@@ -348,30 +426,14 @@
      d:"Quran study app with verse-level research tools."},
     {c:"quran",t:"Sakinah",ar:"سكينة",y:"Aug – Nov 2020",o:"Arabia IT Company",
      d:"Spiritual wellbeing and remembrance app."},
-    {c:"consumer",t:"URPASS",ar:"",y:"Apr – Jun 2026",o:"Freelance",
-     d:"Cross-platform iOS and Android application. Most recent engagement."},
-    {c:"edu",t:"Lights of Life",ar:"",y:"Nov – Dec 2022",o:"EkadSoft",
-     d:"Student assessment and academic task platform — testing, performance tracking and daily coursework."},
-    {c:"consumer",t:"Farra",ar:"فرة",y:"Sep 2022",o:"Independent",
-     d:"Location-based guide to nearby entertainment and leisure venues for families, women and groups."},
-    {c:"consumer",t:"HomeMade",ar:"",y:"May – Sep 2021",o:"ArabApps Company",
-     d:"Two-sided marketplace for home-made goods, handicrafts and micro-businesses — customer app."},
-    {c:"consumer",t:"HomeMade Vendor",ar:"",y:"Jul – Sep 2021",o:"ArabApps Company",
-     d:"Seller-side client for the HomeMade marketplace: listings, orders and storefront management."},
-    {c:"consumer",t:"Matter",ar:"",y:"Jun – Jul 2021",o:"ArabApps Company",
-     d:"Saudi weather app with rainfall statistics, catchment and dam tracking, city conditions across the Peninsula, and downloadable bulletins."},
-    {c:"consumer",t:"Floria",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
-     d:"Florist e-commerce with scheduled delivery and secure payments."},
-    {c:"consumer",t:"Homy",ar:"",y:"Apr – May 2021",o:"ArabApps Company",
-     d:"On-demand home services marketplace — trades, cleaning, remote tutoring, childcare and nursing, with provider ratings and booking."},
     {c:"consumer",t:"KeesApp",ar:"",y:"Dec 2019",o:"Independent",
      d:"Grocery and supermarket delivery with live order tracking and multiple payment options."},
-    {c:"consumer",t:"YallaDealz",ar:"",y:"Jul – Aug 2019",o:"Independent",
-     d:"Location-based deals aggregator across hospitality, dining, retail and entertainment."},
-    {c:"consumer",t:"ArabicArduino News",ar:"",y:"Mar 2019",o:"Independent",
-     d:"Arabic-language Arduino, electronics and IoT news, tutorials and component guides."},
+    {c:"consumer",t:"Farra",ar:"فرة",y:"Sep 2022",o:"Independent",
+     d:"Location-based guide to nearby entertainment and leisure venues for families, women and groups."},
     {c:"health",t:"PharmacyApp",ar:"",y:"Jan – Feb 2019",o:"Independent",
-     d:"Prescription upload and pharmacy ordering — the early prototype of what later became Rubikcare."}
+     d:"Prescription upload and pharmacy ordering — the early prototype of what later became Rubikcare."},
+    {c:"consumer",t:"ArabicArduino News",ar:"",y:"Mar 2019",o:"Independent",
+     d:"Arabic-language Arduino, electronics and IoT news, tutorials and component guides."}
   ];
 
   var CATS=[["all","Everything"],["gov","Government &amp; official"],["quran","Quran &amp; Hadith"],
@@ -448,3 +510,5 @@
 })();
 </script>
 </div>
+</body>
+</html>
