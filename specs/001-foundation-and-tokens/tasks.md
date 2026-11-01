@@ -68,7 +68,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"` exits 0.
   - **Suggested commit**: `chore(build): add package manifest with vite scripts`
 
-- [ ] T002 Install all dependencies (⚠️ needs network — ask the user to approve)
+- [X] T002 Install all dependencies (⚠️ needs network — ask the user to approve)
   - **Run**:
     ```bash
     npm install
