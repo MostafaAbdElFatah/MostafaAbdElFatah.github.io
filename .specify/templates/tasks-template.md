@@ -157,6 +157,10 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
 - [ ] TXXX Security hardening
 - [ ] TXXX Run quickstart.md validation
+- [ ] TXXX Run `npm run lint` (ESLint + Stylelint) and `npm run format:check` with zero errors
+- [ ] TXXX Run `npm test` (Vitest) for domain/data layers
+- [ ] TXXX Accessibility check (WCAG 2.2 AA: keyboard, focus, contrast, alt text, RTL)
+- [ ] TXXX Lighthouse check against constitution budgets (Perf ≥ 90, A11y ≥ 95, LCP < 2.5s, CLS < 0.1)
 
 ---
 
