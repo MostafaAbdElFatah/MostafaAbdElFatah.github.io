@@ -1487,7 +1487,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint scripts/crop-board-fallback.mjs` exits 0. (Do not run it yet.)
   - **Suggested commit**: `chore(assets): add design board crop fallback script`
 
-- [ ] T039 [US3] Produce high-resolution hero portrait and project visuals
+- [X] T039 [US3] Produce high-resolution hero portrait and project visuals
   - **Option A (preferred)** — if you have an image-generation tool, generate these into `src/assets/source/`, using `src/assets/source/design-board.jpg` as the style reference:
     - `hero-portrait.png` (1600×2000): "Photorealistic editorial portrait, three-quarter side profile of a young man with short dark wavy hair and a trimmed beard, black crew-neck t-shirt, looking to the upper left, warm golden rim light, deep black background, thin glowing golden orbital arcs behind the head, luxury cinematic style."
     - `project-health.png` (1600×1200): "Two modern iPhones on a deep black background showing a dark health & wellness app UI with gold accents, charts and a progress ring, premium product shot."
