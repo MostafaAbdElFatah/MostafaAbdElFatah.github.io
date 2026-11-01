@@ -473,7 +473,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens/contrast.test.js` **fails** (files missing). Expected.
   - **Suggested commit**: `test(tokens): add wcag contrast test for semantic color pairs`
 
-- [ ] T017 [P] [US2] Create `src/styles/tokens/primitives.css`
+- [X] T017 [P] [US2] Create `src/styles/tokens/primitives.css`
   - **Write**:
     ```css
     /* Primitive tokens: raw, theme-agnostic values. Only token files may reference these. */

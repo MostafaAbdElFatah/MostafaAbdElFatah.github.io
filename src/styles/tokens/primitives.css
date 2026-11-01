@@ -1,0 +1,36 @@
+/* Primitive tokens: raw, theme-agnostic values. Only token files may reference these. */
+:root {
+  /* Obsidian (dark neutrals) */
+  --obsidian-950: #070605;
+  --obsidian-900: #0b0a09;
+  --obsidian-850: #11100e;
+  --obsidian-800: #161412;
+  --obsidian-700: #221f1b;
+  --obsidian-600: #332e27;
+
+  /* Ivory (light neutrals) */
+  --ivory-50: #fff;
+  --ivory-100: #fcfbf9;
+  --ivory-150: #f7f4ee;
+  --ivory-200: #efeae0;
+  --ivory-300: #dfd8ca;
+  --ivory-400: #b8b0a2;
+  --ivory-500: #8c8478;
+  --ivory-600: #5e584f;
+
+  /* Metallic gold */
+  --gold-200: #f5e2b8;
+  --gold-300: #ebd094;
+  --gold-400: #deb868;
+  --gold-500: #c89d46;
+  --gold-600: #9e782b;
+  --gold-700: #7a5a1c;
+
+  /* Gold transparencies (decorative only) */
+  --gold-alpha-08: rgb(200 157 70 / 8%);
+  --gold-alpha-16: rgb(200 157 70 / 16%);
+  --gold-alpha-32: rgb(200 157 70 / 32%);
+
+  /* Signature gradient used by primary buttons and accents */
+  --gradient-gold: linear-gradient(135deg, #f3dcab 0%, #d5ad58 52%, #b88933 100%);
+}
