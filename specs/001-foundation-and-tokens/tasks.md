@@ -1435,7 +1435,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `grep -o '<symbol id="[a-z-]*"' public/icons.svg | wc -l` prints `19` and `wc -c public/icons.svg` is ≤ 9000.
   - **Suggested commit**: `feat(icons): add svg icon sprite built from lucide and simple icons`
 
-- [ ] T037 [P] [US3] Author the theme-aware hero orbit background
+- [X] T037 [P] [US3] Author the theme-aware hero orbit background
   - **Write** `src/assets/images/hero/hero-orbit.svg`:
     ```svg
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" stroke="currentColor">
