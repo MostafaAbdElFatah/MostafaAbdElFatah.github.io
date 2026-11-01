@@ -381,7 +381,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 **Goal**: three-tier tokens; identical semantic names in both themes; WCAG AA.
 **Independent test**: `npx vitest run tests/tokens` passes; `npm run lint:css` passes.
 
-- [ ] T015 [P] [US2] Write the theme-parity test (must fail now)
+- [X] T015 [P] [US2] Write the theme-parity test (must fail now)
   - **Write** `tests/tokens/theme-parity.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
