@@ -1459,7 +1459,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `wc -c src/assets/images/hero/hero-orbit.svg` ≤ 5000.
   - **Suggested commit**: `feat(assets): add theme-aware hero orbit svg`
 
-- [ ] T038 [P] [US3] Write the design-board crop fallback script
+- [X] T038 [P] [US3] Write the design-board crop fallback script
   - **Write** `scripts/crop-board-fallback.mjs`:
     ```js
     // Fallback only: crops low-res visuals from the design board (1024×682) and upscales them.
