@@ -957,7 +957,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/base/globals.css` exits 0.
   - **Suggested commit**: `style(base): add token-driven global element styles`
 
-- [ ] T028 [P] [US1] Create `src/styles/utilities/visually-hidden.css`
+- [X] T028 [P] [US1] Create `src/styles/utilities/visually-hidden.css`
   - **Write**:
     ```css
     /* Hide visually but keep available to assistive technology. */
