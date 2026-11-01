@@ -634,7 +634,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/spacing.css` exits 0.
   - **Suggested commit**: `feat(tokens): add spacing, container and radius scale`
 
-- [ ] T022 [P] [US2] Create `src/styles/tokens/motion.css`
+- [X] T022 [P] [US2] Create `src/styles/tokens/motion.css`
   - **Write**:
     ```css
     /* Motion tokens. Reduced-motion users get effectively instant transitions. */
