@@ -1114,7 +1114,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npm run lint:js` exits 0.
   - **Suggested commit**: `feat(app): add composition root entry point`
 
-- [ ] T033 [US1] Create `scripts/render-static-projects.mjs` (no-JS fallback for all 33 projects)
+- [X] T033 [US1] Create `scripts/render-static-projects.mjs` (no-JS fallback for all 33 projects)
   - **Write**:
     ```js
     // Renders legacy/data.js into index.html between marker comments so every project is
