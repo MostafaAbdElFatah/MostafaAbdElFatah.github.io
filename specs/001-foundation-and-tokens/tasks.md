@@ -1060,7 +1060,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls public/fonts` shows 4 `.woff2` files (total < 160 KB: `du -ch public/fonts/*.woff2 | tail -1`) and `npx stylelint src/styles/vendor/fonts.css` exits 0.
   - **Suggested commit**: `feat(fonts): self-host playfair, inter and noto naskh arabic`
 
-- [ ] T031 [US1] Create `src/styles/main.css`
+- [X] T031 [US1] Create `src/styles/main.css`
   - **Write**:
     ```css
     /* Entry stylesheet. Layer order is fixed (Constitution III); later phases append inside their block. */
