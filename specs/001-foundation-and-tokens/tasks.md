@@ -346,7 +346,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls -l public/docs/Mostafa-Abdel-Fattah-CV.pdf` shows ~78 KB.
   - **Suggested commit**: `refactor(assets): move cv to public docs folder`
 
-- [ ] T012 [P] Move legacy project data
+- [X] T012 [P] Move legacy project data
   - **Run**: `git mv js/data.js legacy/data.js` (do not edit the file).
   - **Done when**: `grep -c "t: \"" legacy/data.js` prints `33`.
   - **Suggested commit**: `refactor(data): move legacy project data to legacy folder`
