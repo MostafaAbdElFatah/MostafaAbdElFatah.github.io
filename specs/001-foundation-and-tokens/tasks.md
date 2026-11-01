@@ -1095,7 +1095,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npm run lint:css` exits 0.
   - **Suggested commit**: `refactor(css): add main stylesheet with fixed layer cascade`
 
-- [ ] T032 [US1] Create `src/scripts/main.js`
+- [X] T032 [US1] Create `src/scripts/main.js`
   - **Write**:
     ```js
     /**
