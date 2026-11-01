@@ -567,7 +567,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens` — both test files **pass** now.
   - **Suggested commit**: `feat(tokens): add light theme semantic tokens with aa accent`
 
-- [ ] T020 [P] [US2] Create `src/styles/tokens/typography.css`
+- [X] T020 [P] [US2] Create `src/styles/tokens/typography.css`
   - **Write**:
     ```css
     /* Typography scale and font stacks (fonts are self-hosted in public/fonts, see vendor/fonts.css). */
