@@ -1,0 +1,26 @@
+/* Component tokens: built only from semantic and scale tokens. */
+:root {
+  --header-height: 4rem;
+  --tap-target-min: 2.75rem;
+  --btn-height: 3rem;
+  --btn-padding-inline: var(--space-6);
+  --btn-radius: var(--radius-md);
+  --btn-primary-bg: var(--gradient-gold);
+  --btn-primary-fg: var(--color-on-accent);
+  --btn-secondary-bg: transparent;
+  --btn-secondary-fg: var(--color-text);
+  --btn-secondary-border: var(--color-border-strong);
+  --chip-height: 2rem;
+  --chip-bg: var(--color-surface-raised);
+  --chip-fg: var(--color-text-muted);
+  --chip-border: var(--color-border);
+  --chip-bg-active: var(--color-accent-fill);
+  --chip-fg-active: var(--color-on-accent);
+  --icon-badge-size: 3rem;
+  --icon-badge-border: var(--color-border-accent);
+  --icon-badge-fg: var(--color-accent);
+  --card-bg: var(--color-surface-raised);
+  --card-border: var(--color-border);
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-card);
+}

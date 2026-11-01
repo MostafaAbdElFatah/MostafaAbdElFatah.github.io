@@ -657,7 +657,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/motion.css` exits 0.
   - **Suggested commit**: `feat(tokens): add motion tokens with reduced-motion support`
 
-- [ ] T023 [US2] Create `src/styles/tokens/components.css` (after T017–T022)
+- [X] T023 [US2] Create `src/styles/tokens/components.css` (after T017–T022)
   - **Write**:
     ```css
     /* Component tokens: built only from semantic and scale tokens. */
