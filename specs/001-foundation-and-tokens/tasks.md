@@ -79,7 +79,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Suggested commit**: `chore(deps): install build, lint, test and asset tooling`
   - Files: `package.json`, `package-lock.json`
 
-- [ ] T003 [P] Update `.gitignore`
+- [X] T003 [P] Update `.gitignore`
   - **Replace** contents of `.gitignore` with:
     ```gitignore
     node_modules/
