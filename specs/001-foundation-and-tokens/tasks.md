@@ -33,7 +33,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 
 ## Phase 1: Setup (shared tooling)
 
-- [ ] T001 Create `package.json`
+- [X] T001 Create `package.json`
   - **Write** `package.json`:
     ```json
     {
