@@ -813,7 +813,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/dom` runs and **fails** (old `index.html`). Expected.
   - **Suggested commit**: `test(shell): add semantic, seo and fallback content checks for index`
 
-- [ ] T026 [P] [US1] Create `src/styles/base/normalize.css`
+- [X] T026 [P] [US1] Create `src/styles/base/normalize.css`
   - **Write**:
     ```css
     /* Modern reset. Uses logical properties so RTL works without overrides. */
