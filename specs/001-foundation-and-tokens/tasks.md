@@ -341,7 +341,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: the three files exist.
   - **Suggested commit**: `docs(architecture): document clean architecture layer contracts`
 
-- [ ] T011 [P] Move the CV
+- [X] T011 [P] Move the CV
   - **Run**: `git mv assets/Mostafa-Abdel-Fattah-CV.pdf public/docs/Mostafa-Abdel-Fattah-CV.pdf`
   - **Done when**: `ls -l public/docs/Mostafa-Abdel-Fattah-CV.pdf` shows ~78 KB.
   - **Suggested commit**: `refactor(assets): move cv to public docs folder`
