@@ -1,29 +1,60 @@
-# Quickstart Validation Guide: Phase 1 — Foundation, Tokens & Assets
+# Quickstart Validation: Phase 1 — Foundation, Tokens & Assets
+
+**Constitution**: v1.1.0
 
 ## Prerequisites
 
-- Node.js (v18+ or v20+) and npm installed.
+- Node.js ≥ 20 (workspace has v24.13.1), npm ≥ 10
+- Network access for the first `npm install`
 
-## Setup & Verification Commands
+## 1. Install
 
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
+Expected: exits 0; `node_modules/` created; no peer-dependency errors.
 
-2. **Verify Directory Structure**:
-   ```bash
-   ls -la src/assets src/scripts src/styles/tokens src/styles/base src/styles/layout src/styles/components src/styles/pages/home src/styles/utilities src/styles/vendor/fontawesome
-   ```
+## 2. Quality gates (all must exit 0)
 
-3. **Run Production Build**:
-   ```bash
-   npm run build
-   ```
-   - **Expected Outcome**: Vite compiles `index.html`, `src/styles/main.css`, and `src/scripts/main.js` into `dist/` (`dist/index.html` and `dist/assets/*`) with exit code `0`.
+```bash
+npm run lint          # ESLint + Stylelint, incl. layer-boundary and no-raw-color rules
+npm run format:check  # Prettier
+npm test              # Vitest: boundary fixture test + token parity test
+npm run build         # Vite -> dist/
+```
 
-4. **Verify Extracted & Generated Visual Assets**:
-   ```bash
-   ls -la src/assets/images src/assets/images/projects src/assets/docs
-   ```
-   - **Expected Outcome**: All logos, Hero portraits/backgrounds, project card images, and CV PDF are present and non-empty.
+Expected `dist/`: `index.html` (minified), `assets/*.css`, `assets/*.js`, hashed fonts/images,
+`docs/Mostafa-Abdel-Fattah-CV.pdf`, `og-image.jpg`, favicons.
+
+## 3. Structure check
+
+```bash
+ls src/styles/{tokens,base,utilities,layout} src/scripts/{domain,data,presentation} \
+   src/assets/images/{brand,hero,projects,profile} src/assets/icons public/docs legacy
+```
+Expected: every directory exists; `css/` and `js/` at the repo root are gone; `legacy/data.js`
+still contains all 33 project entries.
+
+## 4. Theme & token scenarios (manual, `npm run dev`)
+
+| # | Action | Expected |
+|---|---|---|
+| 1 | Load page with OS in dark mode, empty storage | `<html data-theme="dark">`, obsidian surface, no flash |
+| 2 | `localStorage.theme='light'`; reload | Light alabaster surface on first paint, no flash |
+| 3 | DevTools contrast check on body text & accent text, both themes | ≥ 4.5:1 |
+| 4 | Enable "Emulate prefers-reduced-motion" | Transitions effectively instant |
+| 5 | Tab from page top | Skip link appears with visible gold focus ring |
+
+## 5. Asset checks
+
+- Network tab: zero requests to external origins.
+- `hero-portrait-800.webp` ≤ 120 KB; sprite ≤ 8 KB; all rasters have `width`/`height` documented
+  in `src/assets/README.md`.
+
+## 6. Budget spot-check
+
+```bash
+npm run build && npx vite preview
+```
+Lighthouse (mobile) on the preview URL: Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95.
+(Performance budget is enforced from Phase 3 onward, when real above-the-fold content exists.)

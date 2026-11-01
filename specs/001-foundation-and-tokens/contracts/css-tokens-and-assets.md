@@ -1,36 +1,37 @@
-# Interface Contract: CSS Design Tokens & Asset Paths
+# Contract: CSS Tokens, Cascade & Asset Paths
 
-## 1. Root Theme Attribute Contract
+**Constitution**: v1.1.0
 
-The HTML root element (`<html>`) MUST expose a `data-theme` attribute supporting two valid states:
-- `data-theme="dark"` (Default)
-- `data-theme="light"`
+## 1. Theme attribute
 
-All stylesheets under `src/styles/base/`, `src/styles/layout/`, `src/styles/components/`, and `src/styles/pages/home/` MUST consume only semantic and component tokens:
+`<html data-theme="dark|light">` — set before first paint by the inline bootstrap script
+(see `contracts/project-scripts-and-boundaries.md` §3). Default when nothing stored:
+`prefers-color-scheme`, else `dark`.
+
+## 2. Semantic token surface (consumed by all non-token CSS)
 
 ```css
-/* Required Semantic Surface & Ink Contract */
-var(--color-bg-primary)
-var(--color-bg-secondary)
-var(--color-bg-card)
-var(--color-text-primary)
-var(--color-text-secondary)
-var(--color-text-muted)
-var(--color-accent-gold)
-var(--color-border-subtle)
-var(--color-border-gold)
-var(--gradient-gold-primary)
+--color-surface  --color-surface-raised  --color-surface-sunken
+--color-text     --color-text-muted
+--color-accent   --color-accent-fill     --color-on-accent
+--color-border   --color-border-accent   --color-focus-ring
+--glow-hero      --shadow-card           --gradient-gold
 ```
 
-## 2. Stylesheet Entrypoint Contract (`src/styles/main.css`)
+Both `semantic-dark.css` (`:root, [data-theme="dark"]`) and `semantic-light.css`
+(`[data-theme="light"]`) MUST define every name above. Removing or renaming one is a breaking
+change requiring a constitution-compliant plan entry.
 
-`src/styles/main.css` MUST import every modular stylesheet in exact cascade order:
+## 3. `src/styles/main.css` cascade (Phase 1 state)
 
 ```css
-/* 1. Vendor */
-@import "./vendor/fontawesome/css/all.min.css";
+/* 1. Vendor (self-hosted fonts) */
+@import "@fontsource/playfair-display/latin-500.css";
+@import "@fontsource/playfair-display/latin-600.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource/noto-naskh-arabic/arabic-400.css";
 
-/* 2. Design Tokens */
+/* 2. Tokens */
 @import "./tokens/primitives.css";
 @import "./tokens/semantic-dark.css";
 @import "./tokens/semantic-light.css";
@@ -48,30 +49,20 @@ var(--gradient-gold-primary)
 
 /* 5. Layout */
 @import "./layout/container.css";
-@import "./layout/header.css";
-@import "./layout/footer.css";
 
-/* 6. Components */
-@import "./components/navigation.css";
-@import "./components/section-heading.css";
-@import "./components/section-title.css";
-@import "./components/article-card.css";
-@import "./components/dropdown.css";
-@import "./components/dots-decoration.css";
-@import "./components/scallop.css";
-@import "./components/wave.css";
-@import "./components/zigzag.css";
-
-/* 7. Pages - Home */
-@import "./pages/home/hero.css";
-@import "./pages/home/features.css";
-@import "./pages/home/gallery.css";
-@import "./pages/home/pricing.css";
-@import "./pages/home/services.css";
-@import "./pages/home/skills.css";
-@import "./pages/home/statistics.css";
-@import "./pages/home/team.css";
-@import "./pages/home/testimonials.css";
-@import "./pages/home/videos.css";
-@import "./pages/home/work-steps.css";
+/* 6. Components — appended by Phases 3–5 */
+/* 7. Pages/home — appended by Phases 3–5 */
 ```
+
+Later phases MUST append imports only inside their own layer block, never reorder layers.
+
+## 4. Asset path contract
+
+| Import style | Location | Example |
+|---|---|---|
+| Bundled/hashed (via `import` or CSS `url()`) | `src/assets/**` | `import portrait from '../assets/images/hero/hero-portrait-800.webp'` |
+| Stable URL (not hashed) | `public/**` | `/docs/Mostafa-Abdel-Fattah-CV.pdf`, `/og-image.jpg`, `/favicon-32.png` |
+| Icon usage | `src/assets/icons/sprite.svg` | `<svg class="icon" aria-hidden="true"><use href="/icons.svg#download"></use></svg>` (sprite copied to `public/icons.svg` at build or inlined) |
+
+Icon IDs (stable): `sun moon download arrow-right menu close check code layers globe user grid
+settings github linkedin mail phone app-store google-play`.

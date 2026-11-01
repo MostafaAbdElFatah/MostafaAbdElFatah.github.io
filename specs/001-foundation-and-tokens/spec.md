@@ -67,17 +67,17 @@ As a visitor exploring the portfolio, I need crisp brand logos (`MA` monogram in
 ### Functional Requirements
 
 - **FR-001**: System MUST provide a `package.json` and `vite.config.js` supporting `npm run dev`, `npm run build`, and `npm run preview` with ES module bundling and HTML minification into `dist/`.
-- **FR-002**: System MUST organize all stylesheets under `src/styles/` matching the target architecture:
+- **FR-002**: System MUST organize stylesheets under `src/styles/` using the reference folder layout (`tokens/`, `base/`, `layout/`, `components/`, `pages/home/`, `utilities/`, `vendor/`) orchestrated by `src/styles/main.css` in a fixed cascade order. Phase 1 delivers the files that carry foundation content:
   - `src/styles/tokens/` (`primitives.css`, `semantic-dark.css`, `semantic-light.css`, `typography.css`, `spacing.css`, `motion.css`, `components.css`)
   - `src/styles/base/` (`normalize.css`, `globals.css`)
-  - `src/styles/layout/` (`container.css`, `header.css`, `footer.css`)
-  - `src/styles/components/` (`navigation.css`, `section-heading.css`, `section-title.css`, `article-card.css`, `dropdown.css`, `dots-decoration.css`, `scallop.css`, `wave.css`, `zigzag.css`)
-  - `src/styles/pages/home/` (`hero.css`, `features.css`, `gallery.css`, `pricing.css`, `services.css`, `skills.css`, `statistics.css`, `team.css`, `testimonials.css`, `videos.css`, `work-steps.css`)
+  - `src/styles/layout/` (`container.css`)
   - `src/styles/utilities/` (`visually-hidden.css`)
-  - `src/styles/vendor/fontawesome/` (`css/all.min.css`, `webfonts/`)
-  - `src/styles/main.css` importing all layers in deterministic cascade order.
-- **FR-003**: System MUST scaffold the Clean Architecture script directories under `src/scripts/` (`domain/`, `data/`, `presentation/`, and `main.js`).
-- **FR-004**: System MUST provide complete local visual assets in `src/assets/` including the `MA` logo (gold & white), Hero side-profile portrait, Dark & Light Hero orbital backgrounds, 4 project showcase card visuals, and the downloadable CV PDF.
+  - Component and page-section stylesheets are created only for sections the portfolio actually has, in the phase that builds them (see research R4); no empty placeholder files.
+- **FR-003**: System MUST scaffold the Clean Architecture script directories under `src/scripts/` (`domain/`, `data/`, `presentation/`, and `main.js`) with import boundaries enforced automatically.
+- **FR-004**: System MUST provide complete local visual assets including the `MA` logo (gold & white, plus a compact mark), an orbital Hero background that works in both themes, a high-resolution Hero side-profile portrait, 4 project showcase visuals, an icon set, favicons, a social-sharing image, and the downloadable CV PDF — all optimized for web delivery.
+- **FR-005**: System MUST provide automated quality checks (code linting, style linting, formatting, unit tests) runnable by single commands, all passing at phase close.
+- **FR-006**: The page shell MUST render the visitor's chosen or OS-preferred theme on first paint with no flash, include search/social metadata, a skip link, semantic landmarks, and keep all existing portfolio content readable without JavaScript.
+- **FR-007**: All 33 existing projects and the CV MUST be preserved during migration.
 
 ### Key Entities
 
@@ -88,7 +88,7 @@ As a visitor exploring the portfolio, I need crisp brand logos (`MA` monogram in
 
 ### Measurable Outcomes
 
-- **SC-001**: 100% of required directories and CSS/JS files from the reference project structure exist and are imported in `src/styles/main.css` without broken `@import` paths.
+- **SC-001**: 100% of Phase 1 directories and files exist and are imported in `src/styles/main.css` without broken `@import` paths.
 - **SC-002**: Production build (`npm run build`) completes in under 10 seconds with 0 errors or unresolved asset references.
 - **SC-003**: Both Dark and Light theme token sets pass WCAG AA contrast ratios (minimum 4.5:1 for body text, 3:1 for large headings and UI accents).
 - **SC-004**: 100% of visual assets (MA logos, Hero portrait, Hero dark/light backgrounds, project card images, icons, and CV PDF) load locally with 0 external network dependencies required at runtime.
