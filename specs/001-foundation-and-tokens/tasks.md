@@ -542,7 +542,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/semantic-dark.css` exits 0.
   - **Suggested commit**: `feat(tokens): add dark theme semantic tokens`
 
-- [ ] T019 [P] [US2] Create `src/styles/tokens/semantic-light.css`
+- [X] T019 [P] [US2] Create `src/styles/tokens/semantic-light.css`
   - **Write**:
     ```css
     /* Semantic tokens — light theme. Accent text uses gold-700 so it meets WCAG AA on light surfaces. */

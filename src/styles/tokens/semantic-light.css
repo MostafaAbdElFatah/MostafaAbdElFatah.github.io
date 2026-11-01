@@ -1,0 +1,19 @@
+/* Semantic tokens — light theme. Accent text uses gold-700 so it meets WCAG AA on light surfaces. */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-surface: var(--ivory-100);
+  --color-surface-raised: var(--ivory-50);
+  --color-surface-sunken: var(--ivory-150);
+  --color-text: var(--obsidian-900);
+  --color-text-muted: var(--ivory-600);
+  --color-accent: var(--gold-700);
+  --color-accent-fill: var(--gold-500);
+  --color-on-accent: var(--obsidian-900);
+  --color-border: var(--ivory-200);
+  --color-border-strong: var(--ivory-500);
+  --color-border-accent: var(--gold-alpha-32);
+  --color-focus-ring: var(--gold-700);
+  --glow-hero: radial-gradient(60% 60% at 75% 30%, var(--gold-alpha-08), transparent 70%);
+  --shadow-card: 0 1px 2px rgb(11 10 9 / 4%), 0 12px 28px -14px rgb(11 10 9 / 18%);
+}
