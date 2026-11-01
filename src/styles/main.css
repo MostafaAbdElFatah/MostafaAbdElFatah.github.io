@@ -1,28 +1,28 @@
 /* Entry stylesheet. Layer order is fixed (Constitution III); later phases append inside their block. */
 
 /* 1. Vendor */
-@import "./vendor/fonts.css";
+@import './vendor/fonts.css';
 
 /* 2. Tokens */
-@import "./tokens/primitives.css";
-@import "./tokens/semantic-dark.css";
-@import "./tokens/semantic-light.css";
-@import "./tokens/typography.css";
-@import "./tokens/spacing.css";
-@import "./tokens/motion.css";
-@import "./tokens/components.css";
+@import './tokens/primitives.css';
+@import './tokens/semantic-dark.css';
+@import './tokens/semantic-light.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/motion.css';
+@import './tokens/components.css';
 
 /* 3. Base */
-@import "./base/normalize.css";
-@import "./base/globals.css";
+@import './base/normalize.css';
+@import './base/globals.css';
 
 /* 4. Utilities */
-@import "./utilities/visually-hidden.css";
+@import './utilities/visually-hidden.css';
 
 /* 5. Layout */
-@import "./layout/container.css";
+@import './layout/container.css';
 
 /* 6. Components */
-@import "./components/skip-link.css";
+@import './components/skip-link.css';
 
 /* 7. Pages — home (added from Phase 3) */

@@ -1,5 +1,5 @@
 /* Semantic tokens — light theme. Accent text uses gold-700 so it meets WCAG AA on light surfaces. */
-[data-theme="light"] {
+[data-theme='light'] {
   color-scheme: light;
 
   --color-surface: var(--ivory-100);

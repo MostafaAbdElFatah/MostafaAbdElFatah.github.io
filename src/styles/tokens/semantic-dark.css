@@ -1,6 +1,6 @@
 /* Semantic tokens — dark theme (default). Must define the same names as semantic-light.css. */
 :root,
-[data-theme="dark"] {
+[data-theme='dark'] {
   color-scheme: dark;
 
   --color-surface: var(--obsidian-900);

@@ -1359,7 +1359,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/dom` passes (33 projects found).
   - **Suggested commit**: `feat(shell)!: replace alpine page with semantic vite shell` with body `BREAKING CHANGE: Alpine.js and css/style.css are no longer used; content is static HTML until Phases 3–5.`
 
-- [ ] T035 [US1] Run all US1 gates
+- [X] T035 [US1] Run all US1 gates
   - **Run** in order, fixing any errors in the files they point to:
     ```bash
     npm run lint

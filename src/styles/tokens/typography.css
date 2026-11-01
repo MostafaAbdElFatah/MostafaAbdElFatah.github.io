@@ -1,8 +1,8 @@
 /* Typography scale and font stacks (fonts are self-hosted in public/fonts, see vendor/fonts.css). */
 :root {
-  --font-display: "Playfair Display", georgia, "Times New Roman", serif;
-  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
-  --font-arabic: "Noto Naskh Arabic", "Geeza Pro", tahoma, serif;
+  --font-display: 'Playfair Display', georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', roboto, sans-serif;
+  --font-arabic: 'Noto Naskh Arabic', 'Geeza Pro', tahoma, serif;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;

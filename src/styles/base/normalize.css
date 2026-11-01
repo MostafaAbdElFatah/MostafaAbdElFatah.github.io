@@ -45,8 +45,8 @@ button {
   cursor: pointer;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
   padding: 0;
 }
