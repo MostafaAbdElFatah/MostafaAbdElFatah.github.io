@@ -1184,7 +1184,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint scripts/render-static-projects.mjs` exits 0. (It runs in T034.)
   - **Suggested commit**: `feat(build): render static project fallback from legacy data`
 
-- [ ] T034 [US1] Rewrite `index.html` as the new shell
+- [X] T034 [US1] Rewrite `index.html` as the new shell
   - **Replace** the whole file with the content below. `SITE_URL` is `https://mostafaabdelfatah.github.io/` — if the user gave a different domain, use it everywhere it appears.
     ```html
     <!doctype html>
