@@ -1,0 +1,15 @@
+dist/
+node_modules/
+coverage/
+legacy/
+public/
+src/assets/
+specs/
+.specify/
+.agents/
+.claude/
+.kiro/
+.kilo/
+.github/
+.vscode/
+package-lock.json
