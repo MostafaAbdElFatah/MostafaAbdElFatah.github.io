@@ -1381,7 +1381,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 **Goal**: every asset in data-model §2 exists, optimized and documented.
 **Independent test**: files exist with sizes within targets; no external requests.
 
-- [ ] T036 [P] [US3] Build the SVG icon sprite
+- [X] T036 [P] [US3] Build the SVG icon sprite
   - **Write** `scripts/build-icons.mjs`:
     ```js
     // Builds public/icons.svg from Lucide (ISC) and Simple Icons (CC0) source SVGs.
