@@ -703,7 +703,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 **Goal**: semantic, SEO-ready shell with all 33 projects, built by Vite, all gates green.
 **Independent test**: `npm run lint && npm run format:check && npm test && npm run build` exit 0.
 
-- [ ] T024 [P] [US1] Write the architecture boundary test
+- [X] T024 [P] [US1] Write the architecture boundary test
   - **Write** `tests/architecture/boundaries.test.js`:
     ```js
     import { ESLint } from 'eslint';
