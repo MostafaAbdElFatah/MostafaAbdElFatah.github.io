@@ -1627,7 +1627,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: every file in `src/assets/images/**` and `public/{icons.svg,og-image.jpg,favicon-32.png,apple-touch-icon.png,icon-512.png}` appears in the table.
   - **Suggested commit**: `docs(assets): add asset manifest with sizes, alt text and licenses`
 
-- [ ] T043 [US3] Wire the brand mark into the header
+- [X] T043 [US3] Wire the brand mark into the header
   - In `index.html`, replace `<a class="site-header__brand" href="#top">Mostafa Abdel Fattah</a>` with (use the mark's real height from T042 scaled to width 48; example assumes 192×110 → 48×28):
     ```html
     <a class="site-header__brand" href="#top">
