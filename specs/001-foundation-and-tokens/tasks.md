@@ -415,7 +415,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens/theme-parity.test.js` **fails** (files missing). That is expected.
   - **Suggested commit**: `test(tokens): add dark/light semantic token parity test`
 
-- [ ] T016 [P] [US2] Write the contrast test (must fail now)
+- [X] T016 [P] [US2] Write the contrast test (must fail now)
   - **Write** `tests/tokens/contrast.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
