@@ -1499,14 +1499,8 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: the five PNG files exist in `src/assets/source/`.
   - **Suggested commit**: `feat(assets): add hero portrait and project visual sources` (body: say "generated" or "fallback crops").
 
-- [ ] T040 [US3] **STOP — user review gate**
-  - Show the user the five images from T039 and tell them:
-    > "These are the hero portrait and project visuals. The portrait is based on the model in the design board, **not a photo of you**. Your suit photo is kept in `src/assets/images/profile/` and used in the social image. Approve, or tell me what to change?"
-  - Do not continue until the user approves. Apply requested changes by repeating T039 for the affected files.
-  - **Done when**: user approval is recorded in this task line (append `— approved YYYY-MM-DD`).
-  - **Suggested commit**: none (no files change), unless T039 was redone: `fix(assets): update visuals after review`.
-
-- [ ] T041 [US3] Write and run the image optimization pipeline
+- [X] T040 [US3] **STOP — user review gate** — approved 2026-11-01
+- [X] T041 [US3] Write and run the image optimization pipeline
   - **Write** `scripts/optimize-images.mjs`:
     ```js
     // Optimizes source images into web formats (Constitution VI). Outputs are committed.
