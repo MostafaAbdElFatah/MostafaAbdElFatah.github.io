@@ -118,7 +118,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx prettier --check .prettierrc.json` exits 0.
   - **Suggested commit**: `chore(format): add prettier configuration`
 
-- [ ] T005 [P] Create ESLint flat config with Clean Architecture boundaries
+- [X] T005 [P] Create ESLint flat config with Clean Architecture boundaries
   - **Write** `eslint.config.js`:
     ```js
     import js from '@eslint/js';
