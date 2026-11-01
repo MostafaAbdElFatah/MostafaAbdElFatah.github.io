@@ -92,7 +92,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `git check-ignore node_modules dist` prints both names.
   - **Suggested commit**: `chore(git): ignore build output and local files`
 
-- [ ] T004 [P] Create Prettier config
+- [X] T004 [P] Create Prettier config
   - **Write** `.prettierrc.json`:
     ```json
     { "printWidth": 100, "singleQuote": true, "trailingComma": "all" }
