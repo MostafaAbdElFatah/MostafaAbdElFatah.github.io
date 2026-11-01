@@ -247,7 +247,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint stylelint.config.js` exits 0.
   - **Suggested commit**: `chore(lint): add stylelint config for tokens, bem and no-important`
 
-- [ ] T007 [P] Create Vite config
+- [X] T007 [P] Create Vite config
   - **Write** `vite.config.js`:
     ```js
     import { defineConfig } from 'vite';
