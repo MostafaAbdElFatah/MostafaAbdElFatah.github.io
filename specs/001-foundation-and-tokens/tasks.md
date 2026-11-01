@@ -876,7 +876,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/base/normalize.css` exits 0.
   - **Suggested commit**: `style(base): add modern css reset`
 
-- [ ] T027 [P] [US1] Create `src/styles/base/globals.css`
+- [X] T027 [P] [US1] Create `src/styles/base/globals.css`
   - **Write**:
     ```css
     /* Global element defaults. Colors, fonts and spacing come only from tokens. */
