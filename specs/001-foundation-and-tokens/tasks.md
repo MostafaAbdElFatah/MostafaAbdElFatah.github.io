@@ -214,7 +214,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint eslint.config.js` exits 0.
   - **Suggested commit**: `chore(lint): add eslint config enforcing clean architecture boundaries`
 
-- [ ] T006 [P] Create Stylelint config
+- [X] T006 [P] Create Stylelint config
   - **Write** `stylelint.config.js`:
     ```js
     const BEM = '^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$';
