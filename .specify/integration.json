@@ -1,0 +1,34 @@
+{
+  "version": "0.14.3.dev0",
+  "integration_state_schema": 1,
+  "installed_integrations": [
+    "agy",
+    "kiro-cli",
+    "codex",
+    "copilot"
+  ],
+  "integration_settings": {
+    "agy": {
+      "script": "sh",
+      "invoke_separator": "-"
+    },
+    "kiro-cli": {
+      "script": "sh",
+      "invoke_separator": "."
+    },
+    "codex": {
+      "script": "sh",
+      "invoke_separator": "-"
+    },
+    "copilot": {
+      "script": "sh",
+      "raw_options": "--skills",
+      "parsed_options": {
+        "skills": true
+      },
+      "invoke_separator": "-"
+    }
+  },
+  "integration": "agy",
+  "default_integration": "agy"
+}
