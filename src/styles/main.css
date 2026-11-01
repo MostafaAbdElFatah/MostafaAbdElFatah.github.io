@@ -1,28 +1,72 @@
-/* Entry stylesheet. Layer order is fixed (Constitution III); later phases append inside their block. */
+/* ==========================================================================
+   Main Entry (main.css)
+   Single stylesheet entry point: declares cascade layers and imports.
+   Depends on: every file below
+   ========================================================================== */
 
-/* 1. Vendor */
-@import './vendor/fonts.css';
+/* Declared once up front: layer priority comes from this list, not from import
+   order, so later layers always win regardless of selector specificity. */
+@layer reset, vendor, tokens, base, layout, components, pages, utilities;
 
-/* 2. Tokens */
-@import './tokens/primitives.css';
-@import './tokens/semantic-dark.css';
-@import './tokens/semantic-light.css';
-@import './tokens/typography.css';
-@import './tokens/spacing.css';
-@import './tokens/motion.css';
-@import './tokens/components.css';
+/* ---------- Reset ---------- */
+/* Lowest priority so every other layer can override browser normalization */
+@import url('base/normalize.css') layer(reset);
 
-/* 3. Base */
-@import './base/normalize.css';
-@import './base/globals.css';
+/* ---------- Vendor ---------- */
+/* Below our own layers so base/globals.css can customize vendor output without !important */
+@import url('vendor/fonts.css') layer(vendor);
 
-/* 4. Utilities */
-@import './utilities/visually-hidden.css';
+/* ---------- Tokens ---------- */
+/* Within one layer, source order decides ties: primitives must exist before
+   semantic files alias them, and dark must follow light because
+   [data-theme="dark"] and :root have equal specificity. */
+@import url('tokens/primitives.css') layer(tokens);
+@import url('tokens/semantic-light.css') layer(tokens);
+@import url('tokens/semantic-dark.css') layer(tokens);
+@import url('tokens/components.css') layer(tokens);
+@import url('tokens/spacing.css') layer(tokens);
+@import url('tokens/typography.css') layer(tokens);
+@import url('tokens/motion.css') layer(tokens);
 
-/* 5. Layout */
-@import './layout/container.css';
+/* ---------- Base ---------- */
+/* Element defaults sit above tokens/vendor and below any class-based styling */
+@import url('base/globals.css') layer(base);
 
-/* 6. Components */
-@import './components/skip-link.css';
+/* ---------- Layout ---------- */
+/* Structural wrappers load before components so components can adjust inside them */
+@import url('layout/container.css') layer(layout);
+/* @import url("layout/header.css") layer(layout); */
+/* @import url("layout/footer.css") layer(layout); */
 
-/* 7. Pages — home (added from Phase 3) */
+/* ---------- Components ---------- */
+@import url('components/skip-link.css') layer(components);
+/* @import url("components/navigation.css") layer(components); */
+/* @import url("components/dropdown.css") layer(components); */
+/* @import url("components/section-heading.css") layer(components); */
+/* @import url("components/section-title.css") layer(components); */
+/* @import url("components/article-card.css") layer(components); */
+/* @import url("components/zigzag.css") layer(components); */
+/* @import url("components/scallop.css") layer(components); */
+/* @import url("components/wave.css") layer(components); */
+/* @import url("components/dots-decoration.css") layer(components); */
+
+/* ---------- Pages ---------- */
+/* Page-specific sections can override shared components when a page needs it */
+/* @import url("pages/home/hero.css") layer(pages); */
+/* @import url("pages/home/articles.css") layer(pages); */
+/* @import url("pages/home/gallery.css") layer(pages); */
+/* @import url("pages/home/team.css") layer(pages); */
+/* @import url("pages/home/testimonials.css") layer(pages); */
+/* @import url("pages/home/features.css") layer(pages); */
+/* @import url("pages/home/services.css") layer(pages); */
+/* @import url("pages/home/skills.css") layer(pages); */
+/* @import url("pages/home/work-steps.css") layer(pages); */
+/* @import url("pages/home/events.css") layer(pages); */
+/* @import url("pages/home/pricing.css") layer(pages); */
+/* @import url("pages/home/videos.css") layer(pages); */
+/* @import url("pages/home/statistics.css") layer(pages); */
+/* @import url("pages/home/discount.css") layer(pages); */
+
+/* ---------- Utilities ---------- */
+/* Highest layer so a utility class always wins over component styles */
+@import url('utilities/visually-hidden.css') layer(utilities);
