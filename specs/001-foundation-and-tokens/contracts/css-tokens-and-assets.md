@@ -14,7 +14,7 @@
 --color-surface  --color-surface-raised  --color-surface-sunken
 --color-text     --color-text-muted
 --color-accent   --color-accent-fill     --color-on-accent
---color-border   --color-border-accent   --color-focus-ring
+--color-border   --color-border-strong   --color-border-accent   --color-focus-ring
 --glow-hero      --shadow-card           --gradient-gold
 ```
 
@@ -25,11 +25,8 @@ change requiring a constitution-compliant plan entry.
 ## 3. `src/styles/main.css` cascade (Phase 1 state)
 
 ```css
-/* 1. Vendor (self-hosted fonts) */
-@import "@fontsource/playfair-display/latin-500.css";
-@import "@fontsource/playfair-display/latin-600.css";
-@import "@fontsource-variable/inter";
-@import "@fontsource/noto-naskh-arabic/arabic-400.css";
+/* 1. Vendor (self-hosted fonts: @font-face pointing to /fonts/*.woff2 in public/) */
+@import "./vendor/fonts.css";
 
 /* 2. Tokens */
 @import "./tokens/primitives.css";
@@ -61,8 +58,8 @@ Later phases MUST append imports only inside their own layer block, never reorde
 | Import style | Location | Example |
 |---|---|---|
 | Bundled/hashed (via `import` or CSS `url()`) | `src/assets/**` | `import portrait from '../assets/images/hero/hero-portrait-800.webp'` |
-| Stable URL (not hashed) | `public/**` | `/docs/Mostafa-Abdel-Fattah-CV.pdf`, `/og-image.jpg`, `/favicon-32.png` |
-| Icon usage | `src/assets/icons/sprite.svg` | `<svg class="icon" aria-hidden="true"><use href="/icons.svg#download"></use></svg>` (sprite copied to `public/icons.svg` at build or inlined) |
+| Stable URL (not hashed) | `public/**` | `/docs/Mostafa-Abdel-Fattah-CV.pdf`, `/og-image.jpg`, `/favicon-32.png`, `/fonts/*.woff2` (preloaded in `<head>`) |
+| Icon usage | `public/icons.svg` (built by `scripts/build-icons.mjs`) | `<svg class="icon" aria-hidden="true"><use href="/icons.svg#download"></use></svg>` |
 
 Icon IDs (stable): `sun moon download arrow-right menu close check code layers globe user grid
 settings github linkedin mail phone app-store google-play`.

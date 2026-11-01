@@ -86,9 +86,13 @@ specs/001-foundation-and-tokens/
 │   ├── docs/Mostafa-Abdel-Fattah-CV.pdf
 │   ├── og-image.jpg
 │   ├── favicon-32.png  apple-touch-icon.png  icon-512.png
-│   └── icons.svg                   # SVG sprite (stable URL)
+│   ├── icons.svg                   # SVG sprite built by scripts/build-icons.mjs
+│   └── fonts/                      # 4 self-hosted woff2 files (preloadable stable URLs)
 ├── scripts/
-│   └── optimize-images.mjs         # sharp pipeline (npm run images)
+│   ├── optimize-images.mjs         # sharp pipeline (npm run images)
+│   ├── crop-board-fallback.mjs     # fallback crops from design board
+│   ├── build-icons.mjs             # Lucide/Simple Icons → public/icons.svg
+│   └── render-static-projects.mjs  # legacy/data.js → static HTML fallback in index.html
 ├── src/
 │   ├── assets/
 │   │   ├── README.md               # asset manifest: sizes, alt text, source
@@ -99,7 +103,7 @@ specs/001-foundation-and-tokens/
 │   │       ├── projects/ project-{health,travel,architecture,card}.{webp,png}
 │   │       └── profile/ profile-suit.{webp,png}
 │   ├── scripts/
-│   │   ├── main.js                 # composition root (Phase 1: imports CSS only)
+│   │   ├── main.js                 # composition root (Phase 1: wiring placeholder; CSS is linked from index.html)
 │   │   ├── domain/README.md
 │   │   ├── data/README.md
 │   │   └── presentation/README.md

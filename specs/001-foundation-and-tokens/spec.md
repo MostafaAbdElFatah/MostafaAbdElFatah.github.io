@@ -4,96 +4,126 @@
 
 **Created**: 2026-11-01
 
-**Status**: Approved
+**Revised**: 2026-11-01 (aligned with constitution v1.1.0, plan research R4–R10, and `/speckit-analyze` findings I1, C1, I2, I3, I4, B1)
 
-**Input**: User description: "Phase 1 of portfolio redesign: Refactor project structure to Vite + modular CSS token architecture (tokens, base, layout, components, pages/home, utilities, vendor/fontawesome) and Clean Architecture script directories (domain, data, presentation), plus extract/generate visual assets (MA gold/white logo, Hero dark/light orbital backgrounds and side-profile portrait, project card mockups, and CV asset)."
+**Status**: Draft — ready for `/speckit-plan` re-check
+
+**Input**: User description: "Phase 1 of portfolio redesign: Refactor project structure to Vite + modular CSS token architecture following the reference folder layout and Clean Architecture script directories (domain, data, presentation), plus extract/generate visual assets (MA gold/white logo, theme-aware Hero orbital background and side-profile portrait, project showcase visuals, icons, and CV asset)."
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Standardized Modular Project Structure & Build Pipeline (Priority: P1)
 
-As a developer maintaining the portfolio, I need the project organized into a clean, modular directory hierarchy powered by a fast build tool so that styles, scripts, and assets are decoupled, maintainable, and compile into a production-ready bundle (`dist/`).
+As the developer maintaining the portfolio, I need the project organized into a clean, modular
+directory hierarchy with a one-command build and automated quality checks, so that styles,
+scripts and assets are decoupled, architectural rules are enforced automatically, and every
+change produces a production-ready bundle.
 
-**Why this priority**: This foundational scaffolding is a prerequisite for all subsequent Clean Architecture layers and UI section implementations.
+**Why this priority**: All later phases (architecture core, hero, projects, skills) build on this
+scaffolding and its quality gates.
 
-**Independent Test**: Run the development server and production build command (`npm run build`) and verify that `dist/index.html` and bundled assets in `dist/assets/` are generated without errors while preserving existing portfolio access.
+**Independent Test**: Install dependencies, run the lint, format-check, test and build commands;
+all succeed, and the built page shows all existing portfolio content with a skip link and
+semantic landmarks.
 
 **Acceptance Scenarios**:
 
-1. **Given** a fresh clone or workspace state, **When** dependencies are installed and the build command is executed, **Then** a production bundle is emitted to `dist/` with minified HTML, CSS, and JS assets.
-2. **Given** the refactored `src/` directory, **When** inspecting the file tree, **Then** `src/assets/`, `src/scripts/{domain,data,presentation}/`, and `src/styles/{base,components,layout,pages/home,tokens,utilities,vendor/fontawesome}/` exist and are cleanly orchestrated via `src/styles/main.css` and `src/scripts/main.js`.
+1. **Given** a fresh clone, **When** dependencies are installed and the build command runs, **Then** a production bundle with minified HTML, CSS and JS is emitted to `dist/`.
+2. **Given** the refactored project, **When** inspecting the file tree, **Then** `src/assets/`, `src/scripts/{domain,data,presentation}/` and `src/styles/{tokens,base,utilities,layout,components,pages/home,vendor}/` exist, orchestrated by `src/styles/main.css` and `src/scripts/main.js`.
+3. **Given** a script in the domain layer that references the browser document or imports from the data/presentation layers, **When** the lint command runs, **Then** it fails with a boundary error.
+4. **Given** JavaScript is disabled, **When** the built page is opened, **Then** the hero text, all 33 projects, skills and contact details are still readable.
 
 ---
 
 ### User Story 2 - Dual-Theme Luxury Gold Design Token System (Priority: P1)
 
-As a visitor viewing the portfolio in either Dark or Light mode, I need a cohesive, luxury gold-accented visual foundation (colors, typography, spacing, motion, and component tokens) so that every UI element renders with consistent contrast, hierarchy, and smooth theme transitions.
+As a visitor viewing the portfolio in Dark or Light mode, I need a cohesive gold-accented visual
+foundation (colors, typography, spacing, motion) so every element renders with consistent
+hierarchy and accessible contrast, and switching themes never shifts the layout.
 
-**Why this priority**: Every visual component in Phases 3–5 depends on semantic CSS custom properties for Dark (obsidian & gold) and Light (alabaster & warm gold) themes.
+**Why this priority**: Every visual component in Phases 3–5 consumes these semantic tokens.
 
-**Independent Test**: Load the application shell in a browser and toggle `data-theme="dark"` and `data-theme="light"` on `<html>`, verifying that all semantic surface, text, border, and gold accent tokens resolve accurately with AA/AAA contrast.
+**Independent Test**: Toggle `data-theme="dark"` / `data-theme="light"` on `<html>`; every
+semantic surface, text, border and accent token resolves to the palette defined in
+[data-model.md](./data-model.md) §1.3, text pairs meet WCAG AA, and no element moves.
 
 **Acceptance Scenarios**:
 
-1. **Given** `data-theme="dark"` on the root element, **When** computed styles are inspected, **Then** background surfaces resolve to deep obsidian tones (`#0b0a09` / `#121110`), primary text to crisp warm ivory (`#f6f3ee`), and primary accents to metallic gold (`#d6b25e` / `#e8cb8b` gradients).
-2. **Given** `data-theme="light"` on the root element, **When** computed styles are inspected, **Then** background surfaces resolve to warm alabaster/white (`#ffffff` / `#faf8f5`), primary text to deep charcoal (`#121110`), and accents to rich bronze-gold (`#9a7428` / `#d6b25e`).
-3. **Given** editorial headings and Arabic text snippets, **When** rendered on screen, **Then** typography tokens apply display serif fonts for hero/section headlines, geometric sans-serif for body/UI controls, and dedicated Arabic script fonts with isolated RTL directionality.
+1. **Given** dark theme, **When** computed styles are inspected, **Then** the page surface is obsidian (`--color-surface` = `#0b0a09`), body text is warm ivory (`--color-text` = `#f7f4ee`), and accent text is gold (`--color-accent` = `#deb868`).
+2. **Given** light theme, **When** computed styles are inspected, **Then** the page surface is alabaster (`--color-surface` = `#fcfbf9`), body text is obsidian (`--color-text` = `#0b0a09`), and accent text is deep gold (`--color-accent` = `#7a5a1c`) so it meets AA on light surfaces.
+3. **Given** either theme, **When** a gold-filled call-to-action is shown, **Then** it uses the gold gradient fill with obsidian label text (`--color-on-accent`).
+4. **Given** headings, body copy and Arabic project names, **When** rendered, **Then** headings use the display serif, body/UI uses the sans-serif, and Arabic text uses the Arabic font with isolated right-to-left direction.
+5. **Given** a stored or OS-preferred theme, **When** the page first paints, **Then** it already shows that theme (no flash of the other theme).
+6. **Given** the OS requests reduced motion, **When** any transition runs, **Then** it completes effectively instantly.
 
 ---
 
 ### User Story 3 - Brand & Visual Asset Availability (Priority: P2)
 
-As a visitor exploring the portfolio, I need crisp brand logos (`MA` monogram in gold and white), Hero section visuals (side-profile developer portrait and dark/light golden orbital wave backgrounds), project category showcase artwork, and downloadable CV/icon assets so the site looks complete and high-craft even offline or on restricted networks.
+As a visitor, I need crisp brand marks, hero visuals, project artwork, icons and a downloadable CV
+served from the site itself, so the portfolio looks complete and high-craft even on restricted
+networks.
 
-**Why this priority**: Visual assets define the signature identity shown in the design board and must be locally hosted under `src/assets/` before building the Hero and Project cards.
+**Why this priority**: Assets define the signature look of the design board and must exist
+before the hero (Phase 3) and project cards (Phase 4) are built.
 
-**Independent Test**: Verify all image, SVG, font, and PDF assets exist in `src/assets/` and `src/styles/vendor/fontawesome/`, load with HTTP 200 in the dev server, and render without broken links.
+**Independent Test**: Every asset listed in [data-model.md](./data-model.md) §2 exists, meets its
+size target, has documented dimensions and alt text, and loads from the site's own origin with no
+external requests.
 
 **Acceptance Scenarios**:
 
-1. **Given** the `src/assets/` directory, **When** inspected, **Then** it contains the `MA` monogram logo (Gold & White SVG/PNG), Hero side-profile portrait, Dark & Light Hero orbital backgrounds, project card preview images (Health & Wellness, Travel & Lifestyle, Architecture, Mobile App UI/UX), and `Mostafa-Abdel-Fattah-CV.pdf`.
-2. **Given** the `src/styles/vendor/fontawesome/` directory, **When** loaded by `src/styles/main.css`, **Then** icon classes and custom SVG icon badges render cleanly without external CDN failures.
+1. **Given** `src/assets/images/`, **When** inspected, **Then** it contains the MA logo in gold and white plus a compact monogram mark (WebP + PNG), a theme-aware orbital hero background (SVG), a high-resolution side-profile hero portrait in multiple widths (AVIF/WebP/PNG), four project visuals (Health & Wellness, Travel & Lifestyle, Architecture, Project Card), and the profile photo.
+2. **Given** `public/`, **When** inspected, **Then** it contains the CV at `docs/Mostafa-Abdel-Fattah-CV.pdf`, the SVG icon sprite `icons.svg`, favicons and a 1200×630 social-sharing image.
+3. **Given** an icon is rendered from the sprite, **When** the theme changes, **Then** it recolors with the surrounding text and stays sharp at any size.
 
 ---
 
 ### Edge Cases
 
-- What happens when an external font or CDN is unreachable? Local system font fallbacks and locally bundled FontAwesome/SVG icons ensure zero broken glyphs.
-- How does the token system handle user OS-level `prefers-reduced-motion`? `motion.css` tokens reduce transition durations to near-instant (`0.01ms`) when reduced motion is requested.
-- What happens to the existing root `index.html`, `css/`, `js/`, and `assets/` during Phase 1? Legacy data (`js/data.js`) and CV (`assets/Mostafa-Abdel-Fattah-CV.pdf`) are migrated into `src/` before cleaning up obsolete root `css/` and `js/` directories so no portfolio content is lost.
+- **External font or CDN unreachable**: Fonts and icons are self-hosted (fonts bundled, icons in a local SVG sprite) with system font fallbacks, so no glyphs break and no external request is needed.
+- **Reduced motion**: Motion tokens reduce durations to near-instant when the OS requests it.
+- **Storage unavailable (private mode)**: Theme falls back to the OS preference, then dark, without errors.
+- **Legacy files during migration**: Project data (`js/data.js`) moves to `legacy/data.js` and the CV moves to `public/docs/`; the old root `css/`, `js/` and `assets/` folders are removed only after both moves are verified, so no content is lost.
+- **Low-resolution design-board sources**: Hero portrait and project visuals are generated at high resolution from the board as reference; if generation is unavailable, upscaled crops are used and flagged as temporary.
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
-- **FR-001**: System MUST provide a `package.json` and `vite.config.js` supporting `npm run dev`, `npm run build`, and `npm run preview` with ES module bundling and HTML minification into `dist/`.
+- **FR-001**: System MUST provide a `package.json` and `vite.config.js` supporting `npm run dev`, `npm run build` and `npm run preview`, with ES module bundling and HTML minification into `dist/`.
 - **FR-002**: System MUST organize stylesheets under `src/styles/` using the reference folder layout (`tokens/`, `base/`, `layout/`, `components/`, `pages/home/`, `utilities/`, `vendor/`) orchestrated by `src/styles/main.css` in a fixed cascade order. Phase 1 delivers the files that carry foundation content:
   - `src/styles/tokens/` (`primitives.css`, `semantic-dark.css`, `semantic-light.css`, `typography.css`, `spacing.css`, `motion.css`, `components.css`)
   - `src/styles/base/` (`normalize.css`, `globals.css`)
   - `src/styles/layout/` (`container.css`)
   - `src/styles/utilities/` (`visually-hidden.css`)
-  - Component and page-section stylesheets are created only for sections the portfolio actually has, in the phase that builds them (see research R4); no empty placeholder files.
-- **FR-003**: System MUST scaffold the Clean Architecture script directories under `src/scripts/` (`domain/`, `data/`, `presentation/`, and `main.js`) with import boundaries enforced automatically.
-- **FR-004**: System MUST provide complete local visual assets including the `MA` logo (gold & white, plus a compact mark), an orbital Hero background that works in both themes, a high-resolution Hero side-profile portrait, 4 project showcase visuals, an icon set, favicons, a social-sharing image, and the downloadable CV PDF — all optimized for web delivery.
+  - Component and page-section stylesheets are created only for sections the portfolio actually has, in the phase that builds them (research R4); no empty placeholder files.
+- **FR-003**: System MUST scaffold the Clean Architecture script directories under `src/scripts/` (`domain/`, `data/`, `presentation/`, `main.js`) with layer import boundaries enforced automatically.
+- **FR-004**: System MUST provide all assets in [data-model.md](./data-model.md) §2 — MA logo (gold, white, compact mark), theme-aware orbital hero background, high-resolution side-profile portrait, four project visuals, profile photo, SVG icon sprite, favicons, social-sharing image and CV PDF — optimized for web delivery and served from the site's own origin.
 - **FR-005**: System MUST provide automated quality checks (code linting, style linting, formatting, unit tests) runnable by single commands, all passing at phase close.
-- **FR-006**: The page shell MUST render the visitor's chosen or OS-preferred theme on first paint with no flash, include search/social metadata, a skip link, semantic landmarks, and keep all existing portfolio content readable without JavaScript.
+- **FR-006**: The page shell MUST render the visitor's stored or OS-preferred theme on first paint with no flash, include search and social-sharing metadata, a skip link and semantic landmarks, and keep all existing portfolio content readable without JavaScript.
 - **FR-007**: All 33 existing projects and the CV MUST be preserved during migration.
+- **FR-008**: Dark and light themes MUST define the identical set of semantic tokens, and switching themes MUST cause zero layout shift.
 
 ### Key Entities
 
-- **DesignTokenSet**: Hierarchical CSS custom properties categorized into primitives (raw palette, scales), semantics (theme-aware surfaces, ink, borders, gold gradients), typography, spacing, motion, and component-scoped variables.
-- **AssetManifest**: Structured collection of local visual assets (logos, hero portraits/backgrounds, project card illustrations, icons, CV document) stored in `src/assets/`.
+- **DesignTokenSet**: Three tiers of CSS custom properties — primitives (raw palette and scales), semantic (theme-aware surfaces, text, accents, borders, focus, glow, shadow) and component-scoped tokens — plus typography, spacing and motion scales.
+- **AssetManifest**: The documented list of local assets (path, formats, intrinsic size, size target, alt text, source) across `src/assets/` (bundled) and `public/` (stable URLs).
 
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
 
-- **SC-001**: 100% of Phase 1 directories and files exist and are imported in `src/styles/main.css` without broken `@import` paths.
-- **SC-002**: Production build (`npm run build`) completes in under 10 seconds with 0 errors or unresolved asset references.
-- **SC-003**: Both Dark and Light theme token sets pass WCAG AA contrast ratios (minimum 4.5:1 for body text, 3:1 for large headings and UI accents).
-- **SC-004**: 100% of visual assets (MA logos, Hero portrait, Hero dark/light backgrounds, project card images, icons, and CV PDF) load locally with 0 external network dependencies required at runtime.
+- **SC-001**: 100% of Phase 1 directories and files exist and every `@import` in `src/styles/main.css` resolves.
+- **SC-002**: The production build completes in under 10 seconds with 0 errors or unresolved asset references.
+- **SC-003**: Both themes meet WCAG AA contrast — at least 4.5:1 for body and accent text, 3:1 for large headings, UI borders and focus indicators.
+- **SC-004**: 100% of assets (logos, theme-aware hero background, hero portrait, project visuals, icons, favicons, social image, CV) load from the site's own origin; 0 external requests at runtime.
+- **SC-005**: Lint, format check and unit tests report 0 errors at phase close.
+- **SC-006**: On a mobile Lighthouse audit of the built shell: Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95; largest content paint under 2.5 s and layout shift under 0.1.
 
 ## Assumptions
 
-- Local Node.js and npm are available in the workspace environment to install and run Vite.
-- Visual assets shown in the design board that are not separately uploaded as individual files will be extracted/cropped at high resolution or generated as crisp SVG/PNG equivalents in `src/assets/`.
+- Node.js (≥ 20) and npm are available; the first dependency install has network access.
+- The side-profile portrait from the design board is the chosen hero image (user decision); the uploaded suit photo is kept for contact/about use and the social image.
+- Design-board-only visuals are produced at high resolution using the board as reference; logos are processed from the uploaded high-resolution logo file.
+- Font Awesome is not loaded in Phase 1; the `vendor/` folder is reserved for future third-party styles if a later phase needs them.

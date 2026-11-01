@@ -43,7 +43,8 @@ everywhere except `src/styles/tokens/**`.
 | `--color-accent` (text/links) | gold-400 | gold-700 | ≥ 4.5:1 |
 | `--color-accent-fill` | gold-500 | gold-500 | non-text, ≥ 3:1 vs surface |
 | `--color-on-accent` | obsidian-900 | obsidian-900 | ≥ 7:1 on gold fill |
-| `--color-border` | obsidian-700 | ivory-200 | ≥ 3:1 for UI borders (focus ring separate) |
+| `--color-border` | obsidian-700 | ivory-200 | decorative dividers/card outlines (no contrast requirement) |
+| `--color-border-strong` | ivory-500 | ivory-500 | ≥ 3:1 — borders of interactive controls |
 | `--color-border-accent` | gold-alpha-32 | gold-alpha-32 | — |
 | `--color-focus-ring` | gold-300 | gold-700 | ≥ 3:1 |
 | `--glow-hero` | radial gold-alpha-16 | radial gold-alpha-08 | decorative |
@@ -81,14 +82,15 @@ everywhere except `src/styles/tokens/**`.
 | logo-mark | `src/assets/images/brand/logo-ma-mark` | webp, png, svg-free | ≤ 10 KB | Nav |
 | favicons | `public/favicon-32.png`, `apple-touch-icon.png` (180), `icon-512.png` | png | — | `<head>` |
 | hero-orbit | `src/assets/images/hero/hero-orbit.svg` | svg | ≤ 5 KB | Hero bg (both themes) |
-| hero-portrait | `src/assets/images/hero/hero-portrait-{480,800,1200}` | avif, webp, png | ≤ 120 KB @800 | Hero (LCP) |
-| project-health | `src/assets/images/projects/project-health` | webp, png | ≤ 60 KB | Phase 4 cards |
-| project-travel | `src/assets/images/projects/project-travel` | webp, png | ≤ 60 KB | Phase 4 cards |
-| project-architecture | `src/assets/images/projects/project-architecture` | webp, png | ≤ 60 KB | Phase 4 cards |
-| project-card | `src/assets/images/projects/project-card` | webp, png | ≤ 60 KB | Phase 4 cards |
+| hero-portrait | `src/assets/images/hero/hero-portrait-{480,800,1200}` | avif, webp, jpg | ≤ 120 KB @800 webp | Hero (LCP) |
+| project-health | `src/assets/images/projects/project-health` | webp, jpg | ≤ 60 KB | Phase 4 cards |
+| project-travel | `src/assets/images/projects/project-travel` | webp, jpg | ≤ 60 KB | Phase 4 cards |
+| project-architecture | `src/assets/images/projects/project-architecture` | webp, jpg | ≤ 60 KB | Phase 4 cards |
+| project-card | `src/assets/images/projects/project-card` | webp, jpg | ≤ 60 KB | Phase 4 cards |
 | profile-suit | `src/assets/images/profile/profile-suit` | webp, png | ≤ 80 KB | Contact/about |
 | og-image | `public/og-image.jpg` (1200×630) | jpg | ≤ 150 KB | Social cards |
-| icons | `src/assets/icons/sprite.svg` | svg | ≤ 8 KB | All phases |
+| icons | `public/icons.svg` | svg | ≤ 8 KB | All phases |
+| fonts | `public/fonts/*.woff2` (4 files) | woff2 | ≤ 160 KB total | All phases |
 | cv | `public/docs/Mostafa-Abdel-Fattah-CV.pdf` | pdf | as-is | Download CTA |
 | legacy data | `legacy/data.js` | js | as-is | Phase 2 migration input |
 

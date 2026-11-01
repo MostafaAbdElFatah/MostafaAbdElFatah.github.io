@@ -56,5 +56,5 @@ still contains all 33 project entries.
 ```bash
 npm run build && npx vite preview
 ```
-Lighthouse (mobile) on the preview URL: Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95.
-(Performance budget is enforced from Phase 3 onward, when real above-the-fold content exists.)
+Lighthouse (mobile) on the preview URL: Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95,
+SEO ≥ 95; LCP < 2.5 s; CLS < 0.1 (SC-006). Also record `time npm run build` (< 10 s, SC-002).
