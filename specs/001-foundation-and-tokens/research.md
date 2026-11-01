@@ -90,8 +90,8 @@ All Technical Context unknowns are resolved below. Format: Decision / Rationale 
 
 ## R7. Visual assets — source quality & generation strategy
 
-Uploaded sources: logo PNG 1024×682 (white background), design board JPG 1024×682, suit photo
-585×1024 (transparent PNG).
+Available sources: logo PNG 1536×1024 (white background) and suit photo 768×1344 (transparent PNG).
+No design board was supplied.
 
 | Asset | Strategy | Reason |
 |---|---|---|

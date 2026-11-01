@@ -351,17 +351,15 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `grep -c "t: \"" legacy/data.js` prints `33`.
   - **Suggested commit**: `refactor(data): move legacy project data to legacy folder`
 
-- [ ] T013 [P] Copy the original uploads into `src/assets/source/`
-  - **Run** (the upload folder is `/Users/m.abdelfatah/.gemini/antigravity/brain/d328f064-8310-4a7f-a971-e83b0b58a50d/.user_uploaded/`):
+- [X] T013 [P] Copy the available original images into `src/assets/source/`
+  - The design-board image was not supplied and is omitted from this task.
+  - **Run**:
     ```bash
-    U=/Users/m.abdelfatah/.gemini/antigravity/brain/d328f064-8310-4a7f-a971-e83b0b58a50d/.user_uploaded
-    cp "$U/media_1793518098575_fa1fe7fa.png" src/assets/source/logo-ma-original.png
-    cp "$U/media_1793518098581_0845a983.jpg" src/assets/source/design-board.jpg
-    cp "$U/media_1793518122126_87850bfc.png" src/assets/source/profile-suit-original.png
+    cp src/assets/images/brand/logo-ma-original.png.PNG src/assets/source/logo-ma-original.png
+    cp src/assets/images/profile/profile-suit-original.PNG src/assets/source/profile-suit-original.png
     ```
-  - If the folder is not readable, **STOP** and ask the user to place these three files in `src/assets/source/` with those names.
-  - **Done when**: `sips -g pixelWidth src/assets/source/*` reports widths 1024, 1024, 585.
-  - **Suggested commit**: `chore(assets): add original logo, design board and profile sources`
+  - **Done when**: `sips -g pixelWidth src/assets/source/logo-ma-original.png src/assets/source/profile-suit-original.png` reports widths 1536 and 768.
+  - **Suggested commit**: `chore(assets): add original logo and profile sources`
 
 - [ ] T014 Reserve the vendor folder
   - **Write** `src/styles/vendor/fontawesome/README.md`:
