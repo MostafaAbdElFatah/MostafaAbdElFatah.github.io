@@ -275,7 +275,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint vite.config.js` exits 0.
   - **Suggested commit**: `build(vite): configure html minification and dist output`
 
-- [ ] T008 [P] Create Vitest config
+- [X] T008 [P] Create Vitest config
   - **Write** `vitest.config.js`:
     ```js
     import { defineConfig } from 'vitest/config';
