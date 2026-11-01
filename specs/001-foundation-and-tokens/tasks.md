@@ -291,7 +291,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 
 ## Phase 2: Foundational (blocks everything after it)
 
-- [ ] T009 Create the directory skeleton
+- [X] T009 Create the directory skeleton
   - **Run**:
     ```bash
     mkdir -p src/scripts/domain src/scripts/data src/scripts/presentation \
@@ -305,7 +305,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls -d src/scripts/domain src/styles/pages/home public/fonts tests/dom` lists all four.
   - **Suggested commit**: none (folders are committed with T010).
 
-- [ ] T010 [P] Write the layer contracts
+- [X] T010 [P] Write the layer contracts
   - **Write** `src/scripts/domain/README.md`:
     ```markdown
     # Domain layer
