@@ -516,7 +516,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/primitives.css` exits 0 (run with `--fix` once if only formatting rules fail).
   - **Suggested commit**: `feat(tokens): add obsidian, ivory and gold primitive palette`
 
-- [ ] T018 [P] [US2] Create `src/styles/tokens/semantic-dark.css`
+- [X] T018 [P] [US2] Create `src/styles/tokens/semantic-dark.css`
   - **Write**:
     ```css
     /* Semantic tokens — dark theme (default). Must define the same names as semantic-light.css. */

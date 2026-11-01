@@ -1,0 +1,20 @@
+/* Semantic tokens — dark theme (default). Must define the same names as semantic-light.css. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-surface: var(--obsidian-900);
+  --color-surface-raised: var(--obsidian-850);
+  --color-surface-sunken: var(--obsidian-950);
+  --color-text: var(--ivory-150);
+  --color-text-muted: var(--ivory-400);
+  --color-accent: var(--gold-400);
+  --color-accent-fill: var(--gold-500);
+  --color-on-accent: var(--obsidian-900);
+  --color-border: var(--obsidian-700);
+  --color-border-strong: var(--ivory-500);
+  --color-border-accent: var(--gold-alpha-32);
+  --color-focus-ring: var(--gold-300);
+  --glow-hero: radial-gradient(60% 60% at 75% 30%, var(--gold-alpha-16), transparent 70%);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 40%), 0 12px 32px -16px rgb(0 0 0 / 70%);
+}
