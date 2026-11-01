@@ -1,0 +1,12 @@
+/* Skip link: visible only when focused. */
+.skip-link:focus {
+  position: fixed;
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--space-4);
+  z-index: 100;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-fill);
+  color: var(--color-on-accent);
+  font-weight: var(--weight-semibold);
+}

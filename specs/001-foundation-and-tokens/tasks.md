@@ -977,7 +977,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/utilities/visually-hidden.css` exits 0.
   - **Suggested commit**: `style(utilities): add visually-hidden helpers`
 
-- [ ] T029 [P] [US1] Create `src/styles/layout/container.css` and `src/styles/components/skip-link.css`
+- [X] T029 [P] [US1] Create `src/styles/layout/container.css` and `src/styles/components/skip-link.css`
   - **Write** `src/styles/layout/container.css`:
     ```css
     /* Centered content column. */
