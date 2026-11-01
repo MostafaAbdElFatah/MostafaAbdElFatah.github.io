@@ -40,7 +40,13 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **I. Clean Architecture Separation**: Are `domain/`, `data/`, and `presentation/` boundaries strictly respected with zero DOM/browser leakage into `domain/`?
+- [ ] **II. SOLID Principles Enforcement**: Do all modules satisfy SRP, OCP, LSP, ISP, and DIP (injected via composition root)?
+- [ ] **III. Modular Token-Driven CSS Architecture**: Do all styles reside in the designated `src/styles/{tokens,base,layout,components,pages,utilities,vendor}` layers without hardcoded colors/spacing outside `tokens/`?
+- [ ] **IV. Spec-Driven Phased Delivery**: Does this plan stay scoped to the active Spec Kit phase and pass all requirement checklists?
+- [ ] **V. Luxury Visual Fidelity, Bilingual RTL & Accessibility**: Are Dark/Light themes (no flash, no layout shift), RTL Arabic typography, and WCAG 2.2 AA requirements preserved?
+- [ ] **VI. Frontend Engineering Best Practices**: Semantic HTML, progressive enhancement, safe DOM rendering (no interpolated `innerHTML`), mobile-first responsive layout, optimized images/fonts, and SEO metadata?
+- [ ] **VII. Performance, Quality Gates & Tooling**: Lighthouse budgets, bundle-size limits, ESLint/Stylelint/Prettier, Vitest coverage for domain/data, and clean `npm run build`?
 
 ## Project Structure
 
