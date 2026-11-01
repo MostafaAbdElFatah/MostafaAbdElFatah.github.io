@@ -361,7 +361,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `sips -g pixelWidth src/assets/source/logo-ma-original.png src/assets/source/profile-suit-original.png` reports widths 1536 and 768.
   - **Suggested commit**: `chore(assets): add original logo and profile sources`
 
-- [ ] T014 Reserve the vendor folder
+- [X] T014 Reserve the vendor folder
   - **Write** `src/styles/vendor/fontawesome/README.md`:
     ```markdown
     # Reserved
