@@ -601,7 +601,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint --fix src/styles/tokens/typography.css && npx stylelint src/styles/tokens/typography.css` exits 0.
   - **Suggested commit**: `feat(tokens): add fluid typography scale and font stacks`
 
-- [ ] T021 [P] [US2] Create `src/styles/tokens/spacing.css`
+- [X] T021 [P] [US2] Create `src/styles/tokens/spacing.css`
   - **Write**:
     ```css
     /* Spacing (4px grid), container and radius tokens.
