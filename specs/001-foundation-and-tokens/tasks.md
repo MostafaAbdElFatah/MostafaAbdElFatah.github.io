@@ -1614,7 +1614,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: every file listed in data-model §2 under `src/assets/images/` and `public/` exists, and `hero-portrait-800.webp` ≤ 120 KB, each `project-*.webp` ≤ 60 KB, `og-image.jpg` ≤ 150 KB (lower `quality` values if not).
   - **Suggested commit**: `perf(assets): add image pipeline with webp, avif and favicons`
 
-- [ ] T042 [US3] Write `src/assets/README.md` (asset manifest)
+- [X] T042 [US3] Write `src/assets/README.md` (asset manifest)
   - Get dimensions with `sips -g pixelWidth -g pixelHeight <file>` and sizes with `ls -l`.
   - **Write** a table with columns: `Path | Formats | Width×Height | Size | Alt text | Source | License`. One row per asset group from data-model §2. Use these alt texts:
     - logo-ma-gold / white: `MA — Mostafa Abdel Fattah, software developer`
