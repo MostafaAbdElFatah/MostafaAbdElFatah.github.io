@@ -1006,7 +1006,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/layout/container.css src/styles/components/skip-link.css` exits 0.
   - **Suggested commit**: `style(layout): add container and skip link styles`
 
-- [ ] T030 [US1] Self-host fonts (fixes analysis E2: preloadable stable URLs)
+- [X] T030 [US1] Self-host fonts (fixes analysis E2: preloadable stable URLs)
   - **Run** and confirm the four files exist (names may differ slightly — use `ls` to find the right ones):
     ```bash
     ls node_modules/@fontsource/playfair-display/files | grep -E "latin-(500|600)-normal.woff2$"
