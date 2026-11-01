@@ -756,7 +756,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/architecture` passes (the ESLint config already exists). If a boundary case fails, apply the T005 `group` fallback and re-run.
   - **Suggested commit**: `test(architecture): verify layer import boundaries and innerhtml ban`
 
-- [ ] T025 [P] [US1] Write the shell test (must fail until T034)
+- [X] T025 [P] [US1] Write the shell test (must fail until T034)
   - **Write** `tests/dom/shell.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
