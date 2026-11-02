@@ -50,6 +50,15 @@
   --skill-glow-flutter: var(--brand-flutter);
   --skill-glow-dart: var(--brand-dart);
   --skill-glow-ios: var(--brand-ios);
+
+  /* Header logo orbiter: full moon with faint craters (dark theme default) */
+  --brand-orbiter-fill:
+    radial-gradient(circle at 32% 36%, var(--obsidian-alpha-12) 0 12%, transparent 14%),
+    radial-gradient(circle at 64% 60%, var(--obsidian-alpha-12) 0 9%, transparent 11%),
+    radial-gradient(circle at 58% 28%, var(--obsidian-alpha-12) 0 6%, transparent 8%),
+    radial-gradient(circle at 40% 40%, var(--ivory-50), var(--ivory-150) 55%, var(--ivory-300));
+  --brand-orbiter-spin: 1turn;
+  --brand-orbiter-shadow: 0 0 0.45rem 0.06rem var(--ivory-alpha-55);
 }
 
 /* Light theme: the solar system sits on ivory, not deep space. Soften the
@@ -61,4 +70,14 @@
   --star-far: var(--gold-alpha-25);
   --star-near: var(--gold-alpha-40);
   --shadow-skill-planet: 0 3px 10px var(--obsidian-alpha-12);
+
+  /* Header logo orbiter: a small glowing sun */
+  --brand-orbiter-fill: radial-gradient(
+    circle at 40% 38%,
+    var(--sunlight-200),
+    var(--gold-400) 60%,
+    var(--gold-600)
+  );
+  --brand-orbiter-shadow: 0 0 0.45rem 0.08rem var(--gold-alpha-32);
+  --brand-orbiter-spin: 0turn;
 }

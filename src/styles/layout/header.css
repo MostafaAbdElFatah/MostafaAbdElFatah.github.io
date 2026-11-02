@@ -38,6 +38,106 @@
   block-size: auto;
 }
 
+/* ---------- Brand Orbit ---------- */
+
+/* A small body circles the logo: the sun in light mode, the moon in dark mode.
+   The ellipse is two eased axes a quarter-cycle apart (x = cos, y = sin), and
+   z-index flips each half so the body passes behind the logo, then in front.
+   Depends on: tokens/components.css (--brand-orbiter-*) */
+.brand-mark {
+  --orbit-half: 4s;
+  --orbit-rx: 2rem;
+  --orbit-ry: 0.55rem;
+
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.brand-mark picture {
+  position: relative;
+  z-index: 1;
+}
+
+/* Horizontal axis + front/back layering */
+.brand-mark__orbit {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  animation:
+    brand-orbit-x var(--orbit-half) ease-in-out infinite alternate,
+    brand-orbit-depth calc(var(--orbit-half) * 2) step-end infinite;
+}
+
+/* Vertical axis, offset a quarter-cycle so the path is an ellipse */
+.brand-mark__body {
+  display: block;
+  inline-size: 0.5rem;
+  aspect-ratio: 1;
+  margin: -0.25rem;
+  border-radius: 50%;
+  background: var(--brand-orbiter-fill);
+  box-shadow: var(--brand-orbiter-shadow);
+  animation:
+    brand-orbit-y var(--orbit-half) ease-in-out calc(var(--orbit-half) / -2) infinite alternate,
+    brand-orbiter-spin calc(var(--orbit-half) * 1.5) linear infinite;
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+@keyframes brand-orbit-x {
+  from {
+    translate: calc(var(--orbit-rx) * -1) 0;
+  }
+
+  to {
+    translate: var(--orbit-rx) 0;
+  }
+}
+
+@keyframes brand-orbit-y {
+  from {
+    translate: 0 calc(var(--orbit-ry) * -1);
+  }
+
+  to {
+    translate: 0 var(--orbit-ry);
+  }
+}
+
+/* Spin on its own axis; the token makes the moon turn and keeps the sun still */
+@keyframes brand-orbiter-spin {
+  to {
+    rotate: var(--brand-orbiter-spin);
+  }
+}
+
+/* Lower half of the path (first half-cycle) is in front; upper half behind */
+@keyframes brand-orbit-depth {
+  0% {
+    z-index: 2;
+  }
+
+  50% {
+    z-index: 0;
+  }
+}
+
+/* Still body resting at the upper right, like a sun or moon in the sky */
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark__orbit,
+  .brand-mark__body {
+    animation: none;
+  }
+
+  .brand-mark__orbit {
+    translate: calc(var(--orbit-rx) * 0.8) calc(var(--orbit-ry) * -1.6);
+  }
+}
+
 /* ---------- Navigation ---------- */
 
 .site-nav {
@@ -118,6 +218,11 @@
 
   .site-header__brand img {
     inline-size: 2.8rem;
+  }
+
+  .brand-mark {
+    --orbit-rx: 1.75rem;
+    --orbit-ry: 0.45rem;
   }
 
   /* Nav scrolls horizontally instead of wrapping onto a second row */
