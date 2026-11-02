@@ -25,11 +25,25 @@
   --gold-500: #c89d46;
   --gold-600: #9e782b;
   --gold-700: #7a5a1c;
+  --sunlight-200: #fff1c8;
 
   /* Gold transparencies (decorative only) */
   --gold-alpha-08: rgb(200 157 70 / 8%);
   --gold-alpha-16: rgb(200 157 70 / 16%);
   --gold-alpha-32: rgb(200 157 70 / 32%);
+  --gold-alpha-40: rgb(122 90 28 / 40%);
+  --gold-alpha-25: rgb(122 90 28 / 25%);
+  --ivory-alpha-55: rgb(255 255 255 / 55%);
+  --obsidian-alpha-12: rgb(11 10 9 / 12%);
+  --obsidian-alpha-45: rgb(11 10 9 / 45%);
+  --sunlight-alpha-60: rgb(255 241 200 / 60%);
+
+  /* Brand marks (skill planets — glow tints only) */
+  --brand-swift: #f05138;
+  --brand-swiftui: #2f80ed;
+  --brand-flutter: #47c5fb;
+  --brand-dart: #0175c2;
+  --brand-ios: #c89d46;
 
   /* Signature gradient used by primary buttons and accents */
   --gradient-gold: linear-gradient(135deg, #f3dcab 0%, #d5ad58 52%, #b88933 100%);

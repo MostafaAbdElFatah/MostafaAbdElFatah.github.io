@@ -19,6 +19,8 @@ const ICONS = [
   ['layers', 'lucide', 'layers'],
   ['globe', 'lucide', 'globe'],
   ['user', 'lucide', 'user'],
+  ['eye', 'lucide', 'eye'],
+  ['external', 'lucide', 'external-link'],
   ['grid', 'lucide', 'layout-grid'],
   ['settings', 'lucide', 'settings'],
   ['mail', 'lucide', 'mail'],

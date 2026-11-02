@@ -23,4 +23,29 @@
   --card-border: var(--color-border);
   --card-radius: var(--radius-lg);
   --card-shadow: var(--shadow-card);
+  --scrim: color-mix(in srgb, var(--obsidian-950) 62%, transparent);
+  --shadow-skill-planet: 0 4px 12px var(--obsidian-alpha-12);
+  --shadow-skill-sun: 0 10px 26px var(--gold-alpha-25), inset 0 1px 0 var(--ivory-alpha-55);
+
+  /* Skill solar system (hero) */
+  --planet-surface-light: var(--ivory-50);
+  --planet-surface-dark: var(--ivory-300);
+  --planet-night: var(--obsidian-alpha-45);
+  --planet-rim: var(--sunlight-alpha-60);
+  --orbit-trail: var(--gold-400);
+  --orbit-ring: color-mix(in srgb, var(--color-accent) 9%, transparent);
+  --star-far: var(--color-text-muted);
+  --star-near: var(--color-text);
+  --star-glint: var(--color-accent);
+  --sun-core-white: var(--ivory-50);
+  --sun-glow-inner: var(--sunlight-alpha-60);
+  --sun-shimmer: var(--ivory-alpha-55);
+  --sun-core-light: var(--sunlight-200);
+  --sun-core-mid: var(--gold-400);
+  --sun-core-dark: var(--gold-600);
+  --skill-glow-swift: var(--brand-swift);
+  --skill-glow-swiftui: var(--brand-swiftui);
+  --skill-glow-flutter: var(--brand-flutter);
+  --skill-glow-dart: var(--brand-dart);
+  --skill-glow-ios: var(--brand-ios);
 }

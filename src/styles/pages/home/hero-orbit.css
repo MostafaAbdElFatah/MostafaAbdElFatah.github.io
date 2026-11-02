@@ -1,0 +1,411 @@
+/* ==========================================================================
+   Hero Skill Solar System (hero-orbit.css)
+   Swift, SwiftUI, Flutter, Dart and iOS orbit a glowing sun in deep space.
+
+   How it works
+   - Each .skill-orbit is a ring centered on the sun that rotates around it.
+   - The .skill-planet inside counter-rotates so icons and labels stay upright.
+   - Rings are near-invisible; ::before paints a faint comet trail that
+     follows each planet.
+   - ::after on the ring is a day/night shade: it rotates WITH the ring, so the
+     lit side of every planet always faces the sun.
+   - Motion is paused by default; main.js adds .is-visible only while the
+     system is on screen and the tab is visible. Hover pauses the planets.
+
+   Depends on: tokens/components.css (planet, sun, glow tokens),
+               tokens/motion.css, scripts/main.js (.is-visible)
+   ========================================================================== */
+
+/* ---------- System ---------- */
+
+/* Square stage; every layer below is centered in the same grid cell */
+.skill-system {
+  --planet-size: 3.25rem;
+  --sun-size: 4.4rem;
+
+  position: relative;
+  display: grid;
+  inline-size: min(100%, 31rem);
+  aspect-ratio: 1;
+  place-items: center;
+  isolation: isolate;
+}
+
+/* ---------- Starfield ---------- */
+
+/* Distant stars: tiny pin-points tiled at co-prime sizes so the pattern never
+   reads as a grid. The layer bleeds past the stage and fades into the hero. */
+.skill-stars {
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle, var(--star-near) 0 0.7px, transparent 1.2px) 11px 23px / 97px 89px,
+    radial-gradient(circle, var(--star-far) 0 0.5px, transparent 1px) 0 0 / 41px 37px,
+    radial-gradient(circle, var(--star-far) 0 0.5px, transparent 1px) 19px 7px / 59px 53px,
+    radial-gradient(circle, var(--star-near) 0 0.6px, transparent 1.1px) 47px 61px / 131px 113px,
+    radial-gradient(circle, var(--star-far) 0 0.4px, transparent 0.9px) 29px 31px / 73px 79px;
+  mask: radial-gradient(ellipse closest-side, var(--color-text) 35%, transparent);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* A sparse layer of slightly brighter stars that slowly twinkles */
+.skill-stars::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, var(--star-glint) 0 0.9px, transparent 1.6px) 23px 41px / 167px 151px,
+    radial-gradient(circle, var(--star-glint) 0 0.8px, transparent 1.4px) 83px 17px / 211px 193px;
+  animation: skill-twinkle 4.8s ease-in-out infinite alternate paused;
+  content: '';
+}
+
+/* ---------- Orbits ---------- */
+
+/* Ring that carries one planet; rotation starts at --orbit-angle */
+.skill-orbit {
+  --orbit-angle: 0deg;
+  --orbit-duration: 30s;
+  --planet-glow: var(--skill-glow-ios);
+
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: var(--orbit-size);
+  aspect-ratio: 1;
+  border: 1px solid var(--orbit-ring);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(var(--orbit-angle));
+  animation: skill-orbit var(--orbit-duration) linear infinite paused;
+  pointer-events: none;
+}
+
+/* Comet trail: a 110deg arc that fades in and ends exactly at the planet */
+.skill-orbit::before {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 250deg,
+    transparent,
+    color-mix(in srgb, var(--planet-glow) 35%, transparent) 110deg,
+    transparent 0
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 1.5px),
+    var(--color-text) calc(100% - 1px)
+  );
+  content: '';
+}
+
+/* Day/night terminator + sunlit rim, locked to the sun-facing side */
+.skill-orbit::after {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  inline-size: var(--planet-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 125%, transparent 48%, var(--planet-night) 100%);
+  box-shadow: inset 0 -3px 4px -1px var(--planet-rim);
+  transform: translate(-50%, -50%);
+  content: '';
+  pointer-events: none;
+}
+
+/* Inner → outer. Durations grow with distance, like Kepler intended */
+.skill-orbit--ios {
+  --orbit-size: 40%;
+  --orbit-angle: 210deg;
+  --orbit-duration: 16s;
+  --planet-glow: var(--skill-glow-ios);
+}
+
+.skill-orbit--swift {
+  --orbit-size: 54%;
+  --orbit-angle: 30deg;
+  --orbit-duration: 22s;
+  --planet-glow: var(--skill-glow-swift);
+}
+
+.skill-orbit--swiftui {
+  --orbit-size: 68%;
+  --orbit-angle: 300deg;
+  --orbit-duration: 30s;
+  --planet-glow: var(--skill-glow-swiftui);
+}
+
+.skill-orbit--dart {
+  --orbit-size: 82%;
+  --orbit-angle: 140deg;
+  --orbit-duration: 39s;
+  --planet-glow: var(--skill-glow-dart);
+}
+
+.skill-orbit--flutter {
+  --orbit-size: 96%;
+  --orbit-angle: 80deg;
+  --orbit-duration: 50s;
+  --planet-glow: var(--skill-glow-flutter);
+}
+
+/* ---------- Planets ---------- */
+
+/* Sits on the top of its ring and counter-rotates to stay upright */
+.skill-planet {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  inline-size: var(--planet-size);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) * -1));
+  animation: skill-counter-orbit var(--orbit-duration) linear infinite paused;
+  pointer-events: auto;
+}
+
+/* Pearl sphere with a brand-colored atmosphere; keeps every logo legible
+   in both themes */
+.skill-planet__surface {
+  display: grid;
+  inline-size: 100%;
+  block-size: 100%;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--planet-surface-light) 38%,
+    var(--planet-surface-dark) 100%
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--planet-glow) 45%, transparent),
+    0 0 18px 2px color-mix(in srgb, var(--planet-glow) 40%, transparent),
+    var(--shadow-skill-planet);
+  transition: box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.skill-planet__surface img {
+  display: block;
+  inline-size: 46%;
+  block-size: 46%;
+  object-fit: contain;
+}
+
+/* Floating name tag under the planet */
+.skill-planet__label {
+  position: absolute;
+  inset-block-start: calc(100% + 0.4rem);
+  inset-inline-start: 50%;
+  padding: 0.16rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  backdrop-filter: blur(6px);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+/* Hover: atmosphere flares and the tag picks up the brand color */
+.skill-planet:hover .skill-planet__surface {
+  box-shadow:
+    0 0 0 1px var(--planet-glow),
+    0 0 30px 8px color-mix(in srgb, var(--planet-glow) 55%, transparent),
+    var(--shadow-skill-planet);
+}
+
+.skill-planet:hover .skill-planet__label {
+  border-color: var(--planet-glow);
+  color: var(--color-accent);
+}
+
+/* ---------- Planet Details ---------- */
+
+/* Flutter wears a tilted Saturn ring, drawn behind the sphere */
+.skill-orbit--flutter .skill-planet::before {
+  position: absolute;
+  z-index: -1;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 175%;
+  block-size: 42%;
+  border: 1.5px solid color-mix(in srgb, var(--planet-glow) 70%, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-22deg);
+  content: '';
+}
+
+/* Swift has a small moon of its own */
+.skill-orbit--swift .skill-planet::after {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 0.45rem;
+  aspect-ratio: 1;
+  margin: -0.225rem;
+  border-radius: 50%;
+  background: var(--planet-surface-dark);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--planet-glow) 60%, transparent);
+  transform: rotate(0deg) translateX(calc(var(--planet-size) * 0.85));
+  animation: skill-moon 5s linear infinite paused;
+  content: '';
+}
+
+/* ---------- Sun ---------- */
+
+/* A white-hot star: no text, just light. The core fades through sunlight and
+   gold into a soft bloom that warms the planets around it. */
+.skill-sun {
+  position: relative;
+  z-index: 2;
+  grid-area: 1 / 1;
+  inline-size: var(--sun-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--sun-core-white) 0%,
+    var(--sun-core-light) 28%,
+    var(--sun-core-mid) 62%,
+    var(--sun-core-dark) 100%
+  );
+  box-shadow:
+    0 0 14px 2px var(--sun-glow-inner),
+    0 0 48px 12px var(--gold-alpha-32),
+    0 0 110px 34px var(--gold-alpha-16);
+}
+
+/* Breathing outer halo */
+.skill-sun::before {
+  position: absolute;
+  z-index: -1;
+  inset: -70%;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, var(--gold-alpha-32), transparent);
+  animation: skill-sun-breathe 6s ease-in-out infinite paused;
+  content: '';
+}
+
+/* Slow-turning surface shimmer, clipped to the disc */
+.skill-sun::after {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--sun-shimmer) 20%,
+    transparent 40%,
+    var(--sun-shimmer) 65%,
+    transparent 85%
+  );
+  mix-blend-mode: soft-light;
+  animation: skill-sun-spin 24s linear infinite paused;
+  content: '';
+}
+
+/* ---------- Playback ---------- */
+
+/* Run only while on screen (see scripts/main.js) */
+.skill-system.is-visible :is(.skill-orbit, .skill-planet),
+.skill-system.is-visible :is(.skill-sun, .skill-stars)::before,
+.skill-system.is-visible :is(.skill-sun, .skill-planet)::after {
+  animation-play-state: running;
+}
+
+/* Hovering the system freezes the planets so they can be inspected */
+.skill-system.is-visible:hover :is(.skill-orbit, .skill-planet),
+.skill-system.is-visible:hover .skill-planet::after {
+  animation-play-state: paused;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes skill-orbit {
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) + 1turn));
+  }
+}
+
+@keyframes skill-counter-orbit {
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) * -1 - 1turn));
+  }
+}
+
+@keyframes skill-moon {
+  to {
+    transform: rotate(1turn) translateX(calc(var(--planet-size) * 0.85));
+  }
+}
+
+@keyframes skill-sun-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes skill-sun-breathe {
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes skill-twinkle {
+  from {
+    opacity: 0.15;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 48rem) {
+  .skill-system {
+    --planet-size: 2.9rem;
+    --sun-size: 4rem;
+
+    inline-size: min(100%, 28rem);
+  }
+}
+
+@media (width <= 26rem) {
+  .skill-system {
+    --planet-size: 2.55rem;
+    --sun-size: 3.5rem;
+  }
+
+  .skill-planet__label {
+    padding-inline: 0.35rem;
+    font-size: 0.62rem;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+/* A still, composed system: planets rest at their starting angles */
+@media (prefers-reduced-motion: reduce) {
+  .skill-orbit,
+  .skill-planet,
+  .skill-sun::before,
+  .skill-sun::after,
+  .skill-stars::before,
+  .skill-orbit--swift .skill-planet::after {
+    animation: none;
+  }
+
+  .skill-planet__surface,
+  .skill-planet__label {
+    transition-duration: 0.01ms;
+  }
+}
