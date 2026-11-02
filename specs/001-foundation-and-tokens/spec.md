@@ -6,7 +6,7 @@
 
 **Revised**: 2026-11-01 (aligned with constitution v1.1.0, plan research R4–R10, and `/speckit-analyze` findings I1, C1, I2, I3, I4, B1)
 
-**Status**: Draft — ready for `/speckit-plan` re-check
+**Status**: Implemented
 
 **Input**: User description: "Phase 1 of portfolio redesign: Refactor project structure to Vite + modular CSS token architecture following the reference folder layout and Clean Architecture script directories (domain, data, presentation), plus extract/generate visual assets (MA gold/white logo, theme-aware Hero orbital background and side-profile portrait, project showcase visuals, icons, and CV asset)."
 

@@ -33,7 +33,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 
 ## Phase 1: Setup (shared tooling)
 
-- [ ] T001 Create `package.json`
+- [X] T001 Create `package.json`
   - **Write** `package.json`:
     ```json
     {
@@ -68,7 +68,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"` exits 0.
   - **Suggested commit**: `chore(build): add package manifest with vite scripts`
 
-- [ ] T002 Install all dependencies (⚠️ needs network — ask the user to approve)
+- [X] T002 Install all dependencies (⚠️ needs network — ask the user to approve)
   - **Run**:
     ```bash
     npm install
@@ -79,7 +79,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Suggested commit**: `chore(deps): install build, lint, test and asset tooling`
   - Files: `package.json`, `package-lock.json`
 
-- [ ] T003 [P] Update `.gitignore`
+- [X] T003 [P] Update `.gitignore`
   - **Replace** contents of `.gitignore` with:
     ```gitignore
     node_modules/
@@ -92,7 +92,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `git check-ignore node_modules dist` prints both names.
   - **Suggested commit**: `chore(git): ignore build output and local files`
 
-- [ ] T004 [P] Create Prettier config
+- [X] T004 [P] Create Prettier config
   - **Write** `.prettierrc.json`:
     ```json
     { "printWidth": 100, "singleQuote": true, "trailingComma": "all" }
@@ -118,7 +118,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx prettier --check .prettierrc.json` exits 0.
   - **Suggested commit**: `chore(format): add prettier configuration`
 
-- [ ] T005 [P] Create ESLint flat config with Clean Architecture boundaries
+- [X] T005 [P] Create ESLint flat config with Clean Architecture boundaries
   - **Write** `eslint.config.js`:
     ```js
     import js from '@eslint/js';
@@ -214,7 +214,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint eslint.config.js` exits 0.
   - **Suggested commit**: `chore(lint): add eslint config enforcing clean architecture boundaries`
 
-- [ ] T006 [P] Create Stylelint config
+- [X] T006 [P] Create Stylelint config
   - **Write** `stylelint.config.js`:
     ```js
     const BEM = '^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$';
@@ -247,7 +247,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint stylelint.config.js` exits 0.
   - **Suggested commit**: `chore(lint): add stylelint config for tokens, bem and no-important`
 
-- [ ] T007 [P] Create Vite config
+- [X] T007 [P] Create Vite config
   - **Write** `vite.config.js`:
     ```js
     import { defineConfig } from 'vite';
@@ -275,7 +275,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint vite.config.js` exits 0.
   - **Suggested commit**: `build(vite): configure html minification and dist output`
 
-- [ ] T008 [P] Create Vitest config
+- [X] T008 [P] Create Vitest config
   - **Write** `vitest.config.js`:
     ```js
     import { defineConfig } from 'vitest/config';
@@ -291,7 +291,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 
 ## Phase 2: Foundational (blocks everything after it)
 
-- [ ] T009 Create the directory skeleton
+- [X] T009 Create the directory skeleton
   - **Run**:
     ```bash
     mkdir -p src/scripts/domain src/scripts/data src/scripts/presentation \
@@ -305,7 +305,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls -d src/scripts/domain src/styles/pages/home public/fonts tests/dom` lists all four.
   - **Suggested commit**: none (folders are committed with T010).
 
-- [ ] T010 [P] Write the layer contracts
+- [X] T010 [P] Write the layer contracts
   - **Write** `src/scripts/domain/README.md`:
     ```markdown
     # Domain layer
@@ -341,17 +341,17 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: the three files exist.
   - **Suggested commit**: `docs(architecture): document clean architecture layer contracts`
 
-- [ ] T011 [P] Move the CV
+- [X] T011 [P] Move the CV
   - **Run**: `git mv assets/Mostafa-Abdel-Fattah-CV.pdf public/docs/Mostafa-Abdel-Fattah-CV.pdf`
   - **Done when**: `ls -l public/docs/Mostafa-Abdel-Fattah-CV.pdf` shows ~78 KB.
   - **Suggested commit**: `refactor(assets): move cv to public docs folder`
 
-- [ ] T012 [P] Move legacy project data
+- [X] T012 [P] Move legacy project data
   - **Run**: `git mv js/data.js legacy/data.js` (do not edit the file).
   - **Done when**: `grep -c "t: \"" legacy/data.js` prints `33`.
   - **Suggested commit**: `refactor(data): move legacy project data to legacy folder`
 
-- [ ] T013 [P] Copy the original uploads into `src/assets/source/`
+- [X] T013 [P] Copy the original uploads into `src/assets/source/`
   - **Run** (the upload folder is `/Users/m.abdelfatah/.gemini/antigravity/brain/d328f064-8310-4a7f-a971-e83b0b58a50d/.user_uploaded/`):
     ```bash
     U=/Users/m.abdelfatah/.gemini/antigravity/brain/d328f064-8310-4a7f-a971-e83b0b58a50d/.user_uploaded
@@ -363,7 +363,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `sips -g pixelWidth src/assets/source/*` reports widths 1024, 1024, 585.
   - **Suggested commit**: `chore(assets): add original logo, design board and profile sources`
 
-- [ ] T014 Reserve the vendor folder
+- [X] T014 Reserve the vendor folder
   - **Write** `src/styles/vendor/fontawesome/README.md`:
     ```markdown
     # Reserved
@@ -383,7 +383,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 **Goal**: three-tier tokens; identical semantic names in both themes; WCAG AA.
 **Independent test**: `npx vitest run tests/tokens` passes; `npm run lint:css` passes.
 
-- [ ] T015 [P] [US2] Write the theme-parity test (must fail now)
+- [X] T015 [P] [US2] Write the theme-parity test (must fail now)
   - **Write** `tests/tokens/theme-parity.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
@@ -417,7 +417,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens/theme-parity.test.js` **fails** (files missing). That is expected.
   - **Suggested commit**: `test(tokens): add dark/light semantic token parity test`
 
-- [ ] T016 [P] [US2] Write the contrast test (must fail now)
+- [X] T016 [P] [US2] Write the contrast test (must fail now)
   - **Write** `tests/tokens/contrast.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
@@ -475,7 +475,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens/contrast.test.js` **fails** (files missing). Expected.
   - **Suggested commit**: `test(tokens): add wcag contrast test for semantic color pairs`
 
-- [ ] T017 [P] [US2] Create `src/styles/tokens/primitives.css`
+- [X] T017 [P] [US2] Create `src/styles/tokens/primitives.css`
   - **Write**:
     ```css
     /* Primitive tokens: raw, theme-agnostic values. Only token files may reference these. */
@@ -518,7 +518,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/primitives.css` exits 0 (run with `--fix` once if only formatting rules fail).
   - **Suggested commit**: `feat(tokens): add obsidian, ivory and gold primitive palette`
 
-- [ ] T018 [P] [US2] Create `src/styles/tokens/semantic-dark.css`
+- [X] T018 [P] [US2] Create `src/styles/tokens/semantic-dark.css`
   - **Write**:
     ```css
     /* Semantic tokens — dark theme (default). Must define the same names as semantic-light.css. */
@@ -544,7 +544,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/semantic-dark.css` exits 0.
   - **Suggested commit**: `feat(tokens): add dark theme semantic tokens`
 
-- [ ] T019 [P] [US2] Create `src/styles/tokens/semantic-light.css`
+- [X] T019 [P] [US2] Create `src/styles/tokens/semantic-light.css`
   - **Write**:
     ```css
     /* Semantic tokens — light theme. Accent text uses gold-700 so it meets WCAG AA on light surfaces. */
@@ -569,7 +569,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/tokens` — both test files **pass** now.
   - **Suggested commit**: `feat(tokens): add light theme semantic tokens with aa accent`
 
-- [ ] T020 [P] [US2] Create `src/styles/tokens/typography.css`
+- [X] T020 [P] [US2] Create `src/styles/tokens/typography.css`
   - **Write**:
     ```css
     /* Typography scale and font stacks (fonts are self-hosted in public/fonts, see vendor/fonts.css). */
@@ -603,7 +603,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint --fix src/styles/tokens/typography.css && npx stylelint src/styles/tokens/typography.css` exits 0.
   - **Suggested commit**: `feat(tokens): add fluid typography scale and font stacks`
 
-- [ ] T021 [P] [US2] Create `src/styles/tokens/spacing.css`
+- [X] T021 [P] [US2] Create `src/styles/tokens/spacing.css`
   - **Write**:
     ```css
     /* Spacing (4px grid), container and radius tokens.
@@ -636,7 +636,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/spacing.css` exits 0.
   - **Suggested commit**: `feat(tokens): add spacing, container and radius scale`
 
-- [ ] T022 [P] [US2] Create `src/styles/tokens/motion.css`
+- [X] T022 [P] [US2] Create `src/styles/tokens/motion.css`
   - **Write**:
     ```css
     /* Motion tokens. Reduced-motion users get effectively instant transitions. */
@@ -659,7 +659,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/tokens/motion.css` exits 0.
   - **Suggested commit**: `feat(tokens): add motion tokens with reduced-motion support`
 
-- [ ] T023 [US2] Create `src/styles/tokens/components.css` (after T017–T022)
+- [X] T023 [US2] Create `src/styles/tokens/components.css` (after T017–T022)
   - **Write**:
     ```css
     /* Component tokens: built only from semantic and scale tokens. */
@@ -705,7 +705,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 **Goal**: semantic, SEO-ready shell with all 33 projects, built by Vite, all gates green.
 **Independent test**: `npm run lint && npm run format:check && npm test && npm run build` exit 0.
 
-- [ ] T024 [P] [US1] Write the architecture boundary test
+- [X] T024 [P] [US1] Write the architecture boundary test
   - **Write** `tests/architecture/boundaries.test.js`:
     ```js
     import { ESLint } from 'eslint';
@@ -758,7 +758,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/architecture` passes (the ESLint config already exists). If a boundary case fails, apply the T005 `group` fallback and re-run.
   - **Suggested commit**: `test(architecture): verify layer import boundaries and innerhtml ban`
 
-- [ ] T025 [P] [US1] Write the shell test (must fail until T034)
+- [X] T025 [P] [US1] Write the shell test (must fail until T034)
   - **Write** `tests/dom/shell.test.js`:
     ```js
     import { readFileSync } from 'node:fs';
@@ -815,7 +815,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/dom` runs and **fails** (old `index.html`). Expected.
   - **Suggested commit**: `test(shell): add semantic, seo and fallback content checks for index`
 
-- [ ] T026 [P] [US1] Create `src/styles/base/normalize.css`
+- [X] T026 [P] [US1] Create `src/styles/base/normalize.css`
   - **Write**:
     ```css
     /* Modern reset. Uses logical properties so RTL works without overrides. */
@@ -878,7 +878,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/base/normalize.css` exits 0.
   - **Suggested commit**: `style(base): add modern css reset`
 
-- [ ] T027 [P] [US1] Create `src/styles/base/globals.css`
+- [X] T027 [P] [US1] Create `src/styles/base/globals.css`
   - **Write**:
     ```css
     /* Global element defaults. Colors, fonts and spacing come only from tokens. */
@@ -959,7 +959,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/base/globals.css` exits 0.
   - **Suggested commit**: `style(base): add token-driven global element styles`
 
-- [ ] T028 [P] [US1] Create `src/styles/utilities/visually-hidden.css`
+- [X] T028 [P] [US1] Create `src/styles/utilities/visually-hidden.css`
   - **Write**:
     ```css
     /* Hide visually but keep available to assistive technology. */
@@ -979,7 +979,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/utilities/visually-hidden.css` exits 0.
   - **Suggested commit**: `style(utilities): add visually-hidden helpers`
 
-- [ ] T029 [P] [US1] Create `src/styles/layout/container.css` and `src/styles/components/skip-link.css`
+- [X] T029 [P] [US1] Create `src/styles/layout/container.css` and `src/styles/components/skip-link.css`
   - **Write** `src/styles/layout/container.css`:
     ```css
     /* Centered content column. */
@@ -1008,7 +1008,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx stylelint src/styles/layout/container.css src/styles/components/skip-link.css` exits 0.
   - **Suggested commit**: `style(layout): add container and skip link styles`
 
-- [ ] T030 [US1] Self-host fonts (fixes analysis E2: preloadable stable URLs)
+- [X] T030 [US1] Self-host fonts (fixes analysis E2: preloadable stable URLs)
   - **Run** and confirm the four files exist (names may differ slightly — use `ls` to find the right ones):
     ```bash
     ls node_modules/@fontsource/playfair-display/files | grep -E "latin-(500|600)-normal.woff2$"
@@ -1062,7 +1062,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls public/fonts` shows 4 `.woff2` files (total < 160 KB: `du -ch public/fonts/*.woff2 | tail -1`) and `npx stylelint src/styles/vendor/fonts.css` exits 0.
   - **Suggested commit**: `feat(fonts): self-host playfair, inter and noto naskh arabic`
 
-- [ ] T031 [US1] Create `src/styles/main.css`
+- [X] T031 [US1] Create `src/styles/main.css`
   - **Write**:
     ```css
     /* Entry stylesheet. Layer order is fixed (Constitution III); later phases append inside their block. */
@@ -1097,7 +1097,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npm run lint:css` exits 0.
   - **Suggested commit**: `refactor(css): add main stylesheet with fixed layer cascade`
 
-- [ ] T032 [US1] Create `src/scripts/main.js`
+- [X] T032 [US1] Create `src/scripts/main.js`
   - **Write**:
     ```js
     /**
@@ -1116,7 +1116,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npm run lint:js` exits 0.
   - **Suggested commit**: `feat(app): add composition root entry point`
 
-- [ ] T033 [US1] Create `scripts/render-static-projects.mjs` (no-JS fallback for all 33 projects)
+- [X] T033 [US1] Create `scripts/render-static-projects.mjs` (no-JS fallback for all 33 projects)
   - **Write**:
     ```js
     // Renders legacy/data.js into index.html between marker comments so every project is
@@ -1186,7 +1186,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx eslint scripts/render-static-projects.mjs` exits 0. (It runs in T034.)
   - **Suggested commit**: `feat(build): render static project fallback from legacy data`
 
-- [ ] T034 [US1] Rewrite `index.html` as the new shell
+- [X] T034 [US1] Rewrite `index.html` as the new shell
   - **Replace** the whole file with the content below. `SITE_URL` is `https://mostafaabdelfatah.github.io/` — if the user gave a different domain, use it everywhere it appears.
     ```html
     <!doctype html>
@@ -1361,7 +1361,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx vitest run tests/dom` passes (33 projects found).
   - **Suggested commit**: `feat(shell)!: replace alpine page with semantic vite shell` with body `BREAKING CHANGE: Alpine.js and css/style.css are no longer used; content is static HTML until Phases 3–5.`
 
-- [ ] T035 [US1] Run all US1 gates
+- [X] T035 [US1] Run all US1 gates
   - **Run** in order, fixing any errors in the files they point to:
     ```bash
     npm run lint
@@ -1701,7 +1701,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: all steps pass, including "zero requests to external origins" in the Network tab.
   - **Suggested commit**: `docs(spec): record phase 1 quickstart validation`
 
-- [ ] T051 Close the phase
+- [X] T051 Close the phase
   - In `spec.md` set `**Status**: Implemented`. Confirm every task above is `[X]`.
   - **Done when**: `grep -c "^- \[ \]" specs/001-foundation-and-tokens/tasks.md` prints `0`.
   - **Suggested commit**: `docs(spec): mark phase 1 foundation as implemented`
