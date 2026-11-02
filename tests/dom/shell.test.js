@@ -8,6 +8,23 @@ const darkThemeCss = readFileSync(
   new URL('../../src/styles/tokens/semantic-dark.css', import.meta.url),
   'utf8',
 );
+const homeCss = readFileSync(
+  new URL('../../src/styles/pages/home/hero-orbit.css', import.meta.url),
+  'utf8',
+);
+const skillIconPaths = {
+  Swift: '/src/assets/icons/skills/swift.svg',
+  SwiftUI: '/src/assets/icons/skills/swiftui.svg',
+  Flutter: '/src/assets/icons/skills/flutter.svg',
+  Dart: '/src/assets/icons/skills/dart.svg',
+  iOS: '/src/assets/icons/skills/ios.svg',
+};
+const skillIconSources = Object.fromEntries(
+  Object.entries(skillIconPaths).map(([skill, path]) => [
+    skill,
+    readFileSync(new URL(`../..${path}`, import.meta.url), 'utf8'),
+  ]),
+);
 const moonIcon = readFileSync(
   new URL('../../src/assets/icons/theme-moon.svg', import.meta.url),
   'utf8',
@@ -28,24 +45,72 @@ describe('index.html shell', () => {
     expect($('body > footer')).not.toBeNull();
   });
   it('has a skip link to #main', () => expect($('a.skip-link[href="#main"]')).not.toBeNull());
-  it('uses the selected workspace photo and excludes misleading project mockups', () => {
+  it('renders the orbiting mobile skill system with branded marks', () => {
     expect(document.documentElement.dataset.theme).toBe('light');
     expect($('[data-theme-toggle][aria-pressed="true"]')).not.toBeNull();
+    expect($('[data-skill-system][role="img"]')?.getAttribute('aria-label')).toContain(
+      'Swift, SwiftUI, Flutter, Dart, and mobile development',
+    );
+    expect(
+      $$('[data-skill-system] .skill-orbit').map((orbit) =>
+        orbit.querySelector('.skill-planet__label')?.textContent.trim(),
+      ),
+    ).toEqual(['Swift', 'SwiftUI', 'Flutter', 'Dart', 'Mobile']);
+    for (const [skill, path] of Object.entries(skillIconPaths)) {
+      expect($(`[data-skill-system] img[src="${path}"]`)).not.toBeNull();
+      expect(skillIconSources[skill]).toContain('<svg');
+    }
+    expect(homeCss).toContain('@keyframes skill-orbit');
+    expect(homeCss).toContain('@media (prefers-reduced-motion: reduce)');
+    expect($('.hero__photo')).toBeNull();
+    expect($$('.project-gallery__item')).toHaveLength(0);
+  });
+  it('uses an iPhone outline for the iOS skill mark', () => {
+    expect(skillIconSources.iOS).toContain('<rect');
+    expect(skillIconSources.iOS).toContain('stroke="#11100E"');
+    // Planets are pearl spheres in both themes, so the dark iPhone outline stays legible
+    // without inverting it in dark mode.
+    expect(homeCss).toContain('var(--planet-surface-light)');
+    expect(homeCss).not.toContain('invert(');
+  });
+  it('pauses orbital motion outside the viewport', () => {
+    const page = new JSDOM(html, { url: 'https://portfolio.test/' });
+    const { document } = page.window;
+    let intersectionCallback;
+
+    page.window.IntersectionObserver = class {
+      constructor(callback) {
+        intersectionCallback = callback;
+      }
+
+      observe() {}
+    };
+    bootstrap(document, page.window.localStorage);
+
+    const system = document.querySelector('[data-skill-system]');
+    intersectionCallback([{ isIntersecting: true }]);
+    expect(system.classList.contains('is-visible')).toBe(true);
+
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'hidden' });
+    document.dispatchEvent(new page.window.Event('visibilitychange'));
+    expect(system.classList.contains('is-visible')).toBe(false);
+
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' });
+    document.dispatchEvent(new page.window.Event('visibilitychange'));
+    expect(system.classList.contains('is-visible')).toBe(true);
+
+    intersectionCallback([{ isIntersecting: false }]);
+    expect(system.classList.contains('is-visible')).toBe(false);
+  });
+  it('keeps existing theme icons in separate files', () => {
     expect($('[data-theme-icon="moon"]')?.getAttribute('src')).toBe(
       '/src/assets/icons/theme-moon.svg',
     );
     expect($('[data-theme-icon="sun"]')?.getAttribute('src')).toBe(
       '/src/assets/icons/theme-sun.svg',
     );
-    expect(moonIcon).toContain('<svg');
-    expect(moonIcon).toContain('stroke="#7a5a1c"');
-    expect(moonIcon).toContain('M15.5 14.5');
-    expect(sunIcon).toContain('<svg');
-    expect(sunIcon).toContain('stroke="#deb868"');
-    expect($('.hero__photo')?.getAttribute('src')).toBe(
-      '/src/assets/images/hero/developer-workspace.webp',
-    );
-    expect($$('.project-gallery__item')).toHaveLength(0);
+    expect(moonIcon.trimStart()).toMatch(/^<svg\b/);
+    expect(sunIcon.trimStart()).toMatch(/^<svg\b/);
   });
   it('toggles and persists the selected theme', () => {
     const page = new JSDOM(html, {
