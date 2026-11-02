@@ -1654,7 +1654,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `ls css js assets` all report "No such file or directory"; `npm run build` still passes.
   - **Suggested commit**: `refactor(structure): remove legacy css and js folders`
 
-- [ ] T045 [P] Write `README.md`
+- [X] T045 [P] Write `README.md`
   - Sections: **Overview** · **Tech stack** · **Getting started** (`npm install`, `npm run dev`) · **Scripts** (table from `contracts/project-scripts-and-boundaries.md` §1 plus `icons`, `images`, `images:fallback`, `render:fallback`) · **Architecture** (domain/data/presentation + import rules table) · **Styles** (layer order from `src/styles/main.css`) · **Assets** (link `src/assets/README.md`) · **Spec Kit workflow** (phases 001–005 with status: 001 done, others planned) · **Commit convention** (Conventional Commits with the examples from §0 rule 6).
   - **Done when**: `npx prettier --check README.md` exits 0.
   - **Suggested commit**: `docs(readme): document architecture, scripts and spec kit phases`
