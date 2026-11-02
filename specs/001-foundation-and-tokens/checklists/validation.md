@@ -23,3 +23,18 @@ Status: **PASS (6/6)**
   - SEO: 100
 
 Status: **PASS**
+
+## Quickstart Validation
+- [x] **1. Install**: Dependencies installed cleanly, no peer errors. — PASS
+- [x] **2. Quality Gates**: `npm run lint`, `npm run format:check`, `npm test`, `npm run build` all pass with exit code 0. — PASS
+- [x] **3. Structure Check**: Architecture directories exist; legacy directories migrated safely; `legacy/data.js` has all 33 entries. — PASS
+- [x] **4. Theme & Token Scenarios**:
+  - Dark mode default (`<html data-theme="dark">`, obsidian surface, no flash). — PASS
+  - Light mode toggle works via inline script without flash. — PASS
+  - Contrast ratios meet or exceed WCAG AA requirements. — PASS
+  - Prefers-reduced-motion token sets durations to 0.01ms. — PASS
+  - Skip-link appears on tab with focus ring. — PASS
+- [x] **5. Asset Checks**: Zero external origin requests; asset sizes within limits (sprite 7.9 KB, hero-portrait 31.6 KB, og-image 26 KB); manifest documented. — PASS
+- [x] **6. Budget Spot-Check**: Build time < 1s, CSS gzip < 3 KB, JS gzip < 1 KB, zero external network requests. — PASS
+
+Status: **PASS (6/6)**

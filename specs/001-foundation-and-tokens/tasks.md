@@ -1696,7 +1696,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: every target is met.
   - **Suggested commit**: `perf(build): record phase 1 lighthouse and bundle budgets`
 
-- [ ] T050 Quickstart validation
+- [X] T050 Quickstart validation
   - Execute every step of [quickstart.md](./quickstart.md) and record each result (pass/fail + note) in `checklists/validation.md` under `## Quickstart`.
   - **Done when**: all steps pass, including "zero requests to external origins" in the Network tab.
   - **Suggested commit**: `docs(spec): record phase 1 quickstart validation`
