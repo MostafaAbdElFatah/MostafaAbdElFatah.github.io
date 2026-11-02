@@ -1659,17 +1659,17 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: `npx prettier --check README.md` exits 0.
   - **Suggested commit**: `docs(readme): document architecture, scripts and spec kit phases`
 
-- [ ] T046 Lint and format gate
+- [X] T046 Lint and format gate
   - **Run**: `npm run lint && npm run format:check`
   - **Done when**: both exit 0.
   - **Suggested commit**: `style(format): apply prettier and lint fixes` (only if files changed).
 
-- [ ] T047 Test gate
+- [X] T047 Test gate
   - **Run**: `npm test`
   - **Done when**: all suites pass (architecture, shell, theme-parity, contrast).
   - **Suggested commit**: none unless fixes were needed: `fix(<scope>): <what was fixed>`.
 
-- [ ] T048 Accessibility check (WCAG 2.2 AA)
+- [X] T048 Accessibility check (WCAG 2.2 AA)
   - With `npm run dev` open, verify and record pass/fail for each:
     1. Tab from the top: skip link appears, focus ring visible on every link.
     2. All content reachable by keyboard; no focus traps.
