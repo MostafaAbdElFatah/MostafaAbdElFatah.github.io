@@ -46,12 +46,6 @@
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="preload"
-      href="/src/assets/images/hero/developer-workspace.webp"
-      as="image"
-      type="image/webp"
-    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="module" src="/src/scripts/main.js"></script>
     <script type="application/ld+json">
@@ -128,16 +122,16 @@
         <div class="container">
           <div class="hero__inner">
             <div class="hero__copy">
-              <h1 class="hero__title" id="hero-title">
+              <h2 class="hero__title" id="hero-title">
                 Building mobile experiences <em>that scale.</em>
-              </h1>
+              </h2>
               <p class="hero__subtitle">
-                Mostafa Abdel Fattah Mohammed <span aria-hidden="true">·</span> Senior iOS Developer
-                <span aria-hidden="true">·</span> Mobile Tech Lead
+                Mostafa Abdel Fattah Mohammed <br />
+                Senior iOS Developer <span aria-hidden="true">·</span> Mobile Tech Lead
               </p>
               <p class="hero__availability">
                 <span aria-hidden="true"></span>
-                Available for senior iOS roles
+                Available for Senior iOS & Mobile Tech Lead opportunities
               </p>
               <p class="hero__lede">
                 Seven years of Quran, hadith and Islamic-education software, including
@@ -150,30 +144,137 @@
               <div class="hero__actions">
                 <a class="hero__action hero__action--primary" href="#work">
                   Explore my work
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-                    <use href="/icons.svg#arrow-right"></use>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
-                <a class="hero__action" href="/docs/Mostafa-Abdel-Fattah-CV.pdf" download>
-                  Download CV
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-                    <use href="/icons.svg#download"></use>
-                  </svg>
-                </a>
+                <span class="hero__cv">
+                  <a
+                    class="hero__action hero__action--cv"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    aria-haspopup="dialog"
+                    data-cv-open
+                  >
+                    View CV
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </a>
+                  <a
+                    class="hero__action hero__action--icon"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    download
+                    aria-label="Download CV (PDF)"
+                    title="Download CV (PDF)"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 15V3" />
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <path d="m7 10 5 5 5-5" />
+                    </svg>
+                  </a>
+                </span>
               </div>
             </div>
             <div class="hero__visual">
-              <span class="hero__orbit hero__orbit--outer" aria-hidden="true"></span>
-              <span class="hero__orbit hero__orbit--inner" aria-hidden="true"></span>
-              <img
-                class="hero__photo"
-                src="/src/assets/images/hero/developer-workspace.webp"
-                width="1200"
-                height="800"
-                alt="A laptop displaying code on a bright developer workspace"
-                fetchpriority="high"
-              />
-              <p class="hero__specialties">Swift <span>SwiftUI</span> Flutter <span>Dart</span></p>
+              <div
+                class="skill-system"
+                data-skill-system
+                role="img"
+                aria-label="Swift, SwiftUI, Flutter, Dart, and mobile development in an orbital diagram."
+              >
+                <span class="skill-stars" aria-hidden="true"></span>
+                <span class="skill-orbit skill-orbit--swift" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img src="/src/assets/icons/skills/swift.svg" alt="" width="24" height="24" />
+                    </span>
+                    <span class="skill-planet__label">Swift</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--swiftui" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        src="/src/assets/icons/skills/swiftui.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">SwiftUI</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--flutter" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        src="/src/assets/icons/skills/flutter.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">Flutter</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--dart" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img src="/src/assets/icons/skills/dart.svg" alt="" width="24" height="24" />
+                    </span>
+                    <span class="skill-planet__label">Dart</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--ios" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        class="skill-icon--ios"
+                        src="/src/assets/icons/skills/ios.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">Mobile</span>
+                  </span>
+                </span>
+                <span class="skill-sun" aria-hidden="true"></span>
+              </div>
             </div>
           </div>
           <dl class="stats">
@@ -1061,7 +1162,19 @@
                 >GitHub — MostafaAbdElFatah</a
               >
             </li>
-            <li><a href="/docs/Mostafa-Abdel-Fattah-CV.pdf" download>CV — Download PDF</a></li>
+            <li>
+              <a
+                href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                target="_blank"
+                rel="noopener"
+                aria-haspopup="dialog"
+                data-cv-open
+                >CV — Preview</a
+              >
+            </li>
+            <li>
+              <a href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" download>CV — Download PDF</a>
+            </li>
           </ul>
         </div>
       </section>
@@ -1076,5 +1189,88 @@
         </p>
       </div>
     </footer>
+    <dialog class="cv-dialog" aria-labelledby="cv-dialog-title" data-cv-dialog>
+      <div class="cv-dialog__panel">
+        <header class="cv-dialog__header">
+          <div class="cv-dialog__heading">
+            <h2 class="cv-dialog__title" id="cv-dialog-title">Curriculum vitae</h2>
+            <p class="cv-dialog__meta">Mostafa Abdel Fattah · PDF · 78 KB</p>
+          </div>
+          <div class="cv-dialog__actions">
+            <a
+              class="cv-dialog__action"
+              href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              </svg>
+              <span class="cv-dialog__action-label">Open in new tab</span>
+            </a>
+            <a
+              class="cv-dialog__action cv-dialog__action--primary"
+              href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+              download
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 15V3" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <path d="m7 10 5 5 5-5" />
+              </svg>
+              <span class="cv-dialog__action-label">Download</span>
+            </a>
+            <button
+              class="cv-dialog__close"
+              type="button"
+              aria-label="Close CV preview"
+              data-cv-close
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="cv-dialog__viewer">
+          <iframe
+            class="cv-dialog__frame"
+            title="Mostafa Abdel Fattah — CV (PDF preview)"
+            data-cv-frame
+            data-src="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf#view=FitH"
+          ></iframe>
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>

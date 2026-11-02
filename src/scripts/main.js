@@ -5,7 +5,37 @@
  *
  * Phase 2 wires repositories → use cases → controllers here.
  */
+import { initCvPreview } from './presentation/cv-preview.js';
+
 export function bootstrap(root = document, storage = localStorage) {
+  const skillSystem = root.querySelector('[data-skill-system]');
+  const IntersectionObserver = root.defaultView?.IntersectionObserver;
+  if (skillSystem && IntersectionObserver) {
+    let isInViewport = false;
+    const syncOrbitPlayback = () => {
+      skillSystem.classList.toggle('is-visible', isInViewport && root.visibilityState !== 'hidden');
+    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewport = entry.isIntersecting;
+        syncOrbitPlayback();
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(skillSystem);
+    root.addEventListener('visibilitychange', syncOrbitPlayback);
+  }
+
+  // CV: preview inline where the browser can embed PDFs; otherwise the links
+  // fall back to opening the native PDF viewer in a new tab.
+  const view = root.defaultView;
+  const isSmallTouchScreen = Boolean(
+    view?.matchMedia?.('(pointer: coarse) and (max-width: 48rem)').matches,
+  );
+  initCvPreview(root, {
+    canEmbedPdf: view?.navigator?.pdfViewerEnabled !== false && !isSmallTouchScreen,
+  });
+
   const toggle = root.querySelector('[data-theme-toggle]');
 
   if (!toggle) return;
