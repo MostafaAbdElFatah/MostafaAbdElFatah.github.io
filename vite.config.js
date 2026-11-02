@@ -1,8 +1,36 @@
+import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 const pagePath = fileURLToPath(new URL('./src/pages/index.html', import.meta.url));
+const docsDir = fileURLToPath(new URL('./src/assets/docs/', import.meta.url));
+
+/**
+ * Documents (the CV) live in src/assets/docs so the source path works on any
+ * static server and in `vite dev`. Vite does not rewrite <a href>, so for the
+ * build we copy each file to a stable, unhashed /docs/<name> and point the
+ * HTML links there.
+ */
+function staticDocs() {
+  return {
+    name: 'static-docs',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'pre',
+      handler: (html) => html.replaceAll('/src/assets/docs/', '/docs/'),
+    },
+    generateBundle() {
+      for (const name of readdirSync(docsDir)) {
+        this.emitFile({
+          type: 'asset',
+          fileName: `docs/${name}`,
+          source: readFileSync(`${docsDir}${name}`),
+        });
+      }
+    },
+  };
+}
 
 function pagesEntry() {
   return {
@@ -38,7 +66,7 @@ function pagesEntry() {
 }
 
 export default defineConfig({
-  plugins: [createHtmlPlugin({ minify: true }), pagesEntry()],
+  plugins: [createHtmlPlugin({ minify: true }), pagesEntry(), staticDocs()],
   build: {
     outDir: 'dist',
     emptyOutDir: true,
