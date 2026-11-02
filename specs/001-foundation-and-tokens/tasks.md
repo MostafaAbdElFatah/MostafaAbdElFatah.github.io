@@ -1648,7 +1648,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
 
 ## Phase 6: Polish & phase-close gates
 
-- [ ] T044 Remove legacy folders (FR-007 safety check first)
+- [X] T044 Remove legacy folders (FR-007 safety check first)
   - **Check**: `grep -c 't: "' legacy/data.js` = `33` and `ls public/docs/Mostafa-Abdel-Fattah-CV.pdf` exists. If either fails, **STOP**.
   - **Run**: `git rm -r css js` then `rmdir assets 2>/dev/null || true`.
   - **Done when**: `ls css js assets` all report "No such file or directory"; `npm run build` still passes.
