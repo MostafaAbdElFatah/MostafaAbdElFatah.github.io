@@ -1681,7 +1681,7 @@ description: "Executable task list for Phase 1 — written so a smaller model ca
   - **Done when**: all six pass (fix and re-check any failure).
   - **Suggested commit**: `docs(a11y): record phase 1 accessibility validation`
 
-- [ ] T049 Performance, budgets and build time (fixes analysis D1 + E1; SC-002, SC-006)
+- [X] T049 Performance, budgets and build time (fixes analysis D1 + E1; SC-002, SC-006)
   - **Run**:
     ```bash
     time npm run build
