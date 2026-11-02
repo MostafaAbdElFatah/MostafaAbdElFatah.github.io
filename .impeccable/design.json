@@ -223,10 +223,11 @@
   ],
   "narrative": {
     "northStar": "Obsidian & Ivory Portfolio",
-    "overview": "The page is editorial, warm, restrained, and quietly confident. Real engineering evidence leads: the engineer's role, grounded career metrics, and the project catalogue are easy to find, while the interface stays out of their way. Playfair Display gives the headlines character; Inter keeps navigation, detail, and long-form project content direct.\n\nObsidian and ivory provide the two surfaces, with brushed gold as the accent. Light is the default presentation; the theme control switches to dark and remembers an explicit choice. The workspace photo is editorial context only. It is not a portrait of Mostafa or evidence of any client project. The user's reference images guide the layout and imagery; project mockups that could be mistaken for shipped work are excluded.",
+    "overview": "The page is editorial, warm, restrained, and quietly confident. Real engineering evidence leads: the engineer's role, grounded career metrics, and the project catalogue are easy to find, while the interface stays out of their way. Playfair Display gives the headlines character; Inter keeps navigation, detail, and long-form project content direct.\n\nObsidian and ivory provide the two surfaces, with brushed gold as the accent. Light is the default presentation; the theme control switches to dark and remembers an explicit choice. The hero's MA sun anchors five labeled skill planets: Swift, SwiftUI, Flutter, Dart, and Mobile. The user's reference images guide the layout and imagery; project mockups that could be mistaken for shipped work are excluded.",
     "keyCharacteristics": [
       "Obsidian and soft ivory surfaces with warm gold accents.",
       "Editorial serif headlines paired with clear sans-serif detail.",
+      "Mobile technology marks orbit a warm MA sun in the hero.",
       "Real project descriptions, links, metrics, and Arabic content remain the proof.",
       "The light theme is the default; dark mode is a persistent user choice."
     ],
@@ -248,7 +249,7 @@
       }
     ],
     "dos": [
-      "Do keep the verified workspace photo as editorial context, not project evidence.",
+      "Do keep the orbital diagram's skill names visible and its movement reduced-motion safe.",
       "Do preserve project facts, destinations, career metrics, and Arabic right-to-left content.",
       "Do start in light mode and persist an explicit theme selection.",
       "Do use the theme-specific gold token for readable accents."

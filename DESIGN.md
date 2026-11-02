@@ -51,12 +51,13 @@ spacing:
 
 The page is editorial, warm, restrained, and quietly confident. Real engineering evidence leads: the engineer's role, grounded career metrics, and the project catalogue are easy to find, while the interface stays out of their way. Playfair Display gives the headlines character; Inter keeps navigation, detail, and long-form project content direct.
 
-Obsidian and ivory provide the two surfaces, with brushed gold as the accent. Light is the default presentation; the theme control switches to dark and remembers an explicit choice. The workspace photo is editorial context only. It is not a portrait of Mostafa or evidence of any client project. The user's reference images guide the layout and imagery; project mockups that could be mistaken for shipped work are excluded.
+Obsidian and ivory provide the two surfaces, with brushed gold as the accent. Light is the default presentation; the theme control switches to dark and remembers an explicit choice. The hero's MA sun anchors five named skill planets—Swift, SwiftUI, Flutter, Dart, and Mobile—in a quiet orbital diagram. The user's reference images guide the layout and imagery; project mockups that could be mistaken for shipped work are excluded.
 
 **Key Characteristics:**
 
 - Obsidian and soft ivory surfaces with warm gold accents.
 - Editorial serif headlines paired with clear sans-serif detail.
+- Mobile technology marks orbit a warm MA sun in the hero.
 - Real project descriptions, links, metrics, and Arabic content remain the proof.
 - The light theme is the default; dark mode is a persistent user choice.
 
@@ -107,7 +108,7 @@ Warm brushed gold sits against near-black obsidian and soft ivory. The light the
 
 ## Layout
 
-The page sits in a centered, max-78rem frame. A compact sticky header precedes a two-column hero; four career facts close that section, and the project catalogue follows without a decorative image gallery. Featured work uses a two-column grid on desktop, with later catalogue and skill groups arranged in two and three columns respectively. At 48rem, the hero and project cards become single-column, the navigation scrolls horizontally, and the four facts become a two-column grid. At 26rem, calls to action and compact details tighten without hiding content.
+The page sits in a centered, max-78rem frame. A compact sticky header precedes a two-column hero pairing career evidence with an animated five-planet technology diagram around the MA sun; four career facts close that section, and the project catalogue follows without a decorative image gallery. Orbital motion pauses offscreen and is removed for reduced-motion preferences. Featured work uses a two-column grid on desktop, with later catalogue and skill groups arranged in two and three columns respectively. At 48rem, the hero and project cards become single-column, the navigation scrolls horizontally, and the four facts become a two-column grid. At 26rem, calls to action and compact details tighten without hiding content.
 
 Spacing follows a 4px base grid. Section spacing expands with viewport size; related metadata stays close to its heading, while the next section receives a larger separation.
 
@@ -122,7 +123,7 @@ Depth is layered and restrained. Most grouping comes from tonal surface changes 
 
 ## Shapes
 
-The system uses 6px, 10px, 16px, and 24px radii, with pill shapes reserved for compact skill tags. Project surfaces use a 16px radius and a one-pixel theme-aware border. The hero's orbital ellipses are crisp geometry, not a mask around the photograph.
+The system uses 6px, 10px, 16px, and 24px radii, with pill shapes reserved for compact skill tags and planet labels. Project surfaces use a 16px radius and a one-pixel theme-aware border. The hero's crisp orbit rings, luminous central sun, and contained skill-mark planets are authored geometry.
 
 ## Components
 
@@ -155,7 +156,7 @@ The circular 2.75rem button names its next action for assistive technology, upda
 
 ### Imagery
 
-Use authentic project screenshots only when they are available and approved. The local Unsplash workspace photo is a general editorial image; never associate it with a named project or present it as Mostafa's portrait.
+Use authentic project screenshots only when they are available and approved. The former Unsplash workspace photo remains in the asset folder but is no longer used on the homepage. Skill marks orbiting the MA sun are technical identifiers, not project screenshots.
 
 ### Named Rules
 
@@ -165,7 +166,7 @@ Use authentic project screenshots only when they are available and approved. The
 
 ### Do:
 
-- **Do** keep the verified workspace photo as editorial context, not project evidence.
+- **Do** keep the orbital diagram's skill names visible and its movement reduced-motion safe.
 - **Do** preserve project facts, destinations, career metrics, and Arabic right-to-left content.
 - **Do** start in light mode and persist an explicit theme selection.
 - **Do** use the theme-specific gold token for readable accents.

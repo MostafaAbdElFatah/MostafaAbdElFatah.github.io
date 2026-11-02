@@ -2,7 +2,7 @@
 
 | Path | Formats | Width×Height | Size | Alt text | Source | License |
 |---|---|---|---|---|---|---|
-| `src/assets/images/hero/developer-workspace` | webp | 1200×800 | ~99 KB | A laptop displaying code on a bright developer workspace | [Unsplash photo](https://images.unsplash.com/photo-1498050108023-c5249f4df085) | [Unsplash License](https://unsplash.com/license) |
+| `src/assets/images/hero/developer-workspace` | webp | 1200×800 | ~99 KB | A laptop displaying code; no longer used on the homepage | [Unsplash photo](https://images.unsplash.com/photo-1498050108023-c5249f4df085) | [Unsplash License](https://unsplash.com/license) |
 | `src/assets/images/brand/logo-ma-gold` | webp, png | 600×381 | ~48 KB / ~35 KB | MA — Mostafa Abdel Fattah, software developer | uploaded / derived | Proprietary |
 | `src/assets/images/brand/logo-ma-white` | webp, png | 600×381 | ~41 KB / ~30 KB | MA — Mostafa Abdel Fattah, software developer | derived | Proprietary |
 | `src/assets/images/brand/logo-ma-mark` | webp, png | 192×107 | ~6.3 KB / ~6.0 KB | MA monogram — home | derived | Proprietary |
@@ -15,6 +15,11 @@
 | `src/assets/images/profile/profile-suit` | webp, png | 600×1050 | ~34 KB / ~476 KB | Mostafa Abdel Fattah in a grey suit | uploaded / derived | Proprietary |
 | `src/assets/icons/theme-moon.svg` | svg | 24×24 | — | Decorative theme toggle icon | authored | CC0 |
 | `src/assets/icons/theme-sun.svg` | svg | 24×24 | — | Decorative theme toggle icon | authored | CC0 |
+| `src/assets/icons/skills/swift.svg` | svg | 24×24 | — | Swift skill mark | Simple Icons | CC0 |
+| `src/assets/icons/skills/swiftui.svg` | svg | 24×24 | — | SwiftUI layers mark | authored | CC0 |
+| `src/assets/icons/skills/flutter.svg` | svg | 24×24 | — | Flutter skill mark | Simple Icons | CC0 |
+| `src/assets/icons/skills/dart.svg` | svg | 24×24 | — | Dart skill mark | Simple Icons | CC0 |
+| `src/assets/icons/skills/ios.svg` | svg | 24×24 | — | iPhone device outline for the iOS skill | authored | CC0 |
 | `public/icons.svg` | svg | 19 symbols | ~7.9 KB | UI icon sprite | Lucide / Simple Icons | Lucide ISC / Simple Icons CC0 |
 | `public/favicon-32.png` | png | 32×32 | < 1 KB | Site favicon | derived | Proprietary |
 | `public/apple-touch-icon.png` | png | 180×180 | ~11 KB | Apple touch icon | derived | Proprietary |
