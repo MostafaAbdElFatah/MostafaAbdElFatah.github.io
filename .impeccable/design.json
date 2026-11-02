@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T08:02:55Z",
+  "title": "Design System: Mostafa Abdel Fattah Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "obsidian": {
+        "role": "neutral",
+        "displayName": "Obsidian",
+        "canonical": "#0b0a09",
+        "tonalRamp": [
+          "#070605",
+          "#0b0a09",
+          "#11100e",
+          "#161412",
+          "#221f1b",
+          "#332e27",
+          "#5e584f",
+          "#8c8478"
+        ]
+      },
+      "raised-charcoal": {
+        "role": "neutral",
+        "displayName": "Raised Charcoal",
+        "canonical": "#11100e",
+        "tonalRamp": [
+          "#070605",
+          "#0b0a09",
+          "#11100e",
+          "#161412",
+          "#221f1b",
+          "#332e27",
+          "#5e584f",
+          "#8c8478"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Soft Ivory",
+        "canonical": "#fcfbf9",
+        "tonalRamp": [
+          "#070605",
+          "#221f1b",
+          "#5e584f",
+          "#8c8478",
+          "#b8b0a2",
+          "#dfd8ca",
+          "#f7f4ee",
+          "#fcfbf9"
+        ]
+      },
+      "soft-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f7f4ee",
+        "tonalRamp": [
+          "#070605",
+          "#221f1b",
+          "#5e584f",
+          "#8c8478",
+          "#b8b0a2",
+          "#dfd8ca",
+          "#f7f4ee",
+          "#ffffff"
+        ]
+      },
+      "ivory-border": {
+        "role": "neutral",
+        "displayName": "Ivory Border",
+        "canonical": "#efeae0",
+        "tonalRamp": [
+          "#070605",
+          "#221f1b",
+          "#5e584f",
+          "#8c8478",
+          "#b8b0a2",
+          "#dfd8ca",
+          "#efeae0",
+          "#ffffff"
+        ]
+      },
+      "warm-gold": {
+        "role": "primary",
+        "displayName": "Warm Brushed Gold",
+        "canonical": "#deb868",
+        "tonalRamp": [
+          "#7a5a1c",
+          "#9e782b",
+          "#b88933",
+          "#c89d46",
+          "#d5ad58",
+          "#deb868",
+          "#ebd094",
+          "#f5e2b8"
+        ]
+      },
+      "deep-gold": {
+        "role": "primary",
+        "displayName": "Deep Gold for Light Theme",
+        "canonical": "#7a5a1c",
+        "tonalRamp": [
+          "#7a5a1c",
+          "#9e782b",
+          "#b88933",
+          "#c89d46",
+          "#d5ad58",
+          "#deb868",
+          "#ebd094",
+          "#f5e2b8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Editorial Display",
+        "purpose": "Hero and section headlines."
+      },
+      "body": {
+        "displayName": "Interface Sans",
+        "purpose": "Project descriptions, navigation, and supporting detail."
+      },
+      "label": {
+        "displayName": "Compact Label",
+        "purpose": "Availability status and small metadata."
+      },
+      "arabic": {
+        "displayName": "Arabic Text",
+        "purpose": "Arabic project names and content with right-to-left direction."
+      }
+    },
+    "shadows": [
+      {
+        "name": "page-frame-dark",
+        "value": "0 1px 2px rgb(0 0 0 / 40%), 0 12px 32px -16px rgb(0 0 0 / 70%)",
+        "purpose": "Soft separation around the dark page frame."
+      },
+      {
+        "name": "page-frame-light",
+        "value": "0 1px 2px rgb(11 10 9 / 4%), 0 12px 28px -14px rgb(11 10 9 / 18%)",
+        "purpose": "Soft separation around the light page frame."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.2, 0, 0, 1)",
+        "purpose": "Standard hover and theme transitions."
+      },
+      {
+        "name": "duration-base",
+        "value": "200ms",
+        "purpose": "Default theme and component transition duration."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "416px"
+      },
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "wide",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action for viewing the portfolio work.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#work\">Explore my work</a>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 2.9rem; align-items: center; justify-content: center; gap: 0.65rem; padding: 0.7rem 1.2rem; border: 1px solid transparent; border-radius: var(--radius-md); background: var(--btn-primary-bg); color: var(--btn-primary-fg); font-family: var(--font-sans); font-size: var(--text-sm); font-weight: var(--weight-medium); text-decoration: none; transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease; } .ds-btn-primary:hover { transform: translateY(-2px); background: var(--gradient-gold); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quieter companion action such as downloading the CV.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#cv\">Download CV</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; min-height: 2.9rem; align-items: center; justify-content: center; gap: 0.65rem; padding: 0.7rem 1.2rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); background: transparent; color: var(--color-text); font-family: var(--font-sans); font-size: var(--text-sm); font-weight: var(--weight-medium); text-decoration: none; transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease; } .ds-btn-secondary:hover { transform: translateY(-2px); border-color: var(--color-accent); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "A factual project summary with room for engineering details.",
+      "html": "<article class=\"ds-project\"><h3 class=\"ds-project-title\">Project title</h3><p class=\"ds-project-meta\">Role · Organization · Year</p><p class=\"ds-project-summary\">A concise description of the product and Mostafa's contribution.</p></article>",
+      "css": ".ds-project { display: flex; flex-direction: column; padding: clamp(1.25rem, 2.2vw, 2rem); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface-raised); transition: border-color 180ms ease, background-color 180ms ease; } .ds-project:hover { border-color: var(--color-border-accent); } .ds-project-title { margin: 0 0 0.4rem; color: var(--color-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-semibold); } .ds-project-meta { margin: 0; color: var(--color-text-muted); font-family: var(--font-sans); font-size: var(--text-xs); } .ds-project-summary { margin: 1rem 0 0; color: var(--color-text); font-family: var(--font-sans); line-height: var(--leading-normal); }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "site-navigation",
+      "description": "Compact section navigation inside the sticky site header.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a class=\"ds-nav-link\" href=\"#work\">Work</a><a class=\"ds-nav-link\" href=\"#skills\">Skills</a><a class=\"ds-nav-link\" href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1rem, 2.5vw, 2.5rem); } .ds-nav-link { color: var(--color-text-muted); font-family: var(--font-sans); font-size: var(--text-sm); text-decoration: none; transition: color 180ms ease; } .ds-nav-link:hover { color: var(--color-accent); } .ds-nav-link:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 3px; }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "skill-chip",
+      "description": "A compact, non-interactive label for a technical skill.",
+      "html": "<span class=\"ds-skill-chip\">SwiftUI</span>",
+      "css": ".ds-skill-chip { display: inline-flex; align-items: center; padding: 0.4rem 0.7rem; border: 1px solid var(--color-border); border-radius: var(--radius-pill); background: var(--color-surface-raised); color: var(--color-text-muted); font-family: var(--font-sans); font-size: var(--text-xs); }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "An icon-only control that switches from the default light theme to dark.",
+      "html": "<button class=\"ds-theme-toggle\" type=\"button\" aria-label=\"Switch to dark theme\" aria-pressed=\"true\"><svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 24 24\"><path d=\"M20.5 15.1A8.5 8.5 0 0 1 8.9 3.5 8.5 8.5 0 1 0 20.5 15.1Z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.7\"/></svg></button>",
+      "css": ".ds-theme-toggle { display: inline-grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; background: transparent; color: var(--color-accent); cursor: pointer; transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease; } .ds-theme-toggle svg { width: 1.2rem; height: 1.2rem; } .ds-theme-toggle:hover { transform: rotate(12deg); border-color: var(--color-accent); background: var(--color-surface-raised); } .ds-theme-toggle:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Obsidian & Ivory Portfolio",
+    "overview": "The page is editorial, warm, restrained, and quietly confident. Real engineering evidence leads: the engineer's role, grounded career metrics, and the project catalogue are easy to find, while the interface stays out of their way. Playfair Display gives the headlines character; Inter keeps navigation, detail, and long-form project content direct.\n\nObsidian and ivory provide the two surfaces, with brushed gold as the accent. Light is the default presentation; the theme control switches to dark and remembers an explicit choice. The workspace photo is editorial context only. It is not a portrait of Mostafa or evidence of any client project. The user's reference images guide the layout and imagery; project mockups that could be mistaken for shipped work are excluded.",
+    "keyCharacteristics": [
+      "Obsidian and soft ivory surfaces with warm gold accents.",
+      "Editorial serif headlines paired with clear sans-serif detail.",
+      "Real project descriptions, links, metrics, and Arabic content remain the proof.",
+      "The light theme is the default; dark mode is a persistent user choice."
+    ],
+    "rules": [
+      {
+        "name": "The Theme-Contrast Rule",
+        "body": "Use bright gold on obsidian and deep gold on ivory; do not carry the dark-theme accent unchanged into light-theme text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evidence-First Rule",
+        "body": "Use display typography to establish hierarchy; keep the supporting project facts in the readable sans-serif voice.",
+        "section": "typography"
+      },
+      {
+        "name": "The Real-Work Rule",
+        "body": "Project imagery must be genuine product evidence; generic or generated imagery must never imply that it is a shipped client interface.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep the verified workspace photo as editorial context, not project evidence.",
+      "Do preserve project facts, destinations, career metrics, and Arabic right-to-left content.",
+      "Do start in light mode and persist an explicit theme selection.",
+      "Do use the theme-specific gold token for readable accents."
+    ],
+    "donts": [
+      "Don't present generated concept mockups as shipped applications.",
+      "Don't use stock photography as proof of Mostafa's identity or client work.",
+      "Don't replace the user's approved reference hierarchy with unrelated visual motifs."
+    ]
+  }
+}

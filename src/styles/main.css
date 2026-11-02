@@ -21,8 +21,7 @@
 /* ---------- Tokens ---------- */
 
 /* Within one layer, source order decides ties: primitives must exist before
-   semantic files alias them, and dark must follow light because
-   [data-theme="dark"] and :root have equal specificity. */
+   semantic files alias them. Dark tokens only match dark mode or an unset theme. */
 @import 'tokens/primitives.css' layer(tokens);
 @import 'tokens/semantic-light.css' layer(tokens);
 @import 'tokens/semantic-dark.css' layer(tokens);

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,14 +7,9 @@
       (() => {
         try {
           const s = localStorage.getItem('theme');
-          document.documentElement.dataset.theme =
-            s === 'light' || s === 'dark'
-              ? s
-              : matchMedia('(prefers-color-scheme: light)').matches
-                ? 'light'
-                : 'dark';
+          document.documentElement.dataset.theme = s === 'light' || s === 'dark' ? s : 'light';
         } catch {
-          document.documentElement.dataset.theme = 'dark';
+          document.documentElement.dataset.theme = 'light';
         }
       })();
     </script>
@@ -24,8 +19,7 @@
       content="Senior iOS developer building Swift, SwiftUI and Flutter apps since 2019 — including officially authorized Quran, hadith and government platforms with 10M+ downloads."
     />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#fcfbf9" />
     <link rel="canonical" href="https://mostafaabdelfatah.github.io/" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Mostafa Abdel Fattah — Senior iOS Developer" />
@@ -51,6 +45,12 @@
       as="font"
       type="font/woff2"
       crossorigin
+    />
+    <link
+      rel="preload"
+      href="/src/assets/images/hero/developer-workspace.webp"
+      as="image"
+      type="image/webp"
     />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="module" src="/src/scripts/main.js"></script>
@@ -95,44 +95,94 @@
             <li><a class="site-nav__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark theme"
+          aria-pressed="true"
+          data-theme-toggle
+        >
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--moon"
+            data-theme-icon="moon"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--sun"
+            data-theme-icon="sun"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m12.32 12.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m14.14-14.14-1.41 1.41"
+            />
+          </svg>
+          <span class="visually-hidden">Toggle color theme</span>
+        </button>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container">
-          <p class="hero__eyebrow">Available for senior iOS roles</p>
-          <h1 class="hero__title" id="hero-title">Mostafa Abdel Fattah Mohammed</h1>
-          <p class="hero__subtitle">
-            Senior mobile engineer building iOS and cross-platform apps at national scale.
-          </p>
-          <p class="hero__lede">
-            Seven years of Quran, hadith and Islamic-education software, including
-            <b>officially authorized platforms</b> for the General Presidency of the Two Holy
-            Mosques, the General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah, and
-            the Quran curricula of four ministries of education. Alongside that, full commercial
-            systems in healthcare, marketplace and on-demand services. Based in Cairo.
-          </p>
-          <p class="hero__actions">
-            <a class="hero__action" href="mailto:mostafa.abdelfatah.dev@gmail.com">Email me</a>
-            <a
-              class="hero__action"
-              href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn</a
-            >
-            <a
-              class="hero__action"
-              href="https://github.com/MostafaAbdElFatah"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            <a class="hero__action" href="/docs/Mostafa-Abdel-Fattah-CV.pdf" download
-              >Download CV</a
-            >
-          </p>
+          <div class="hero__inner">
+            <div class="hero__copy">
+              <h1 class="hero__title" id="hero-title">
+                Building mobile experiences <em>that scale.</em>
+              </h1>
+              <p class="hero__subtitle">
+                Mostafa Abdel Fattah Mohammed <span aria-hidden="true">·</span> Senior iOS Developer
+                <span aria-hidden="true">·</span> Mobile Tech Lead
+              </p>
+              <p class="hero__availability">
+                <span aria-hidden="true"></span>
+                Available for senior iOS roles
+              </p>
+              <p class="hero__lede">
+                Seven years of Quran, hadith and Islamic-education software, including
+                <b>officially authorized platforms</b> for the General Presidency of the Two Holy
+                Mosques, the General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah,
+                and the Quran curricula of four ministries of education. Alongside that, full
+                commercial systems in healthcare, marketplace and on-demand services. Based in
+                Cairo.
+              </p>
+              <div class="hero__actions">
+                <a class="hero__action hero__action--primary" href="#work">
+                  Explore my work
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                    <use href="/icons.svg#arrow-right"></use>
+                  </svg>
+                </a>
+                <a class="hero__action" href="/docs/Mostafa-Abdel-Fattah-CV.pdf" download>
+                  Download CV
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                    <use href="/icons.svg#download"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="hero__visual">
+              <span class="hero__orbit hero__orbit--outer" aria-hidden="true"></span>
+              <span class="hero__orbit hero__orbit--inner" aria-hidden="true"></span>
+              <img
+                class="hero__photo"
+                src="/src/assets/images/hero/developer-workspace.webp"
+                width="1200"
+                height="800"
+                alt="A laptop displaying code on a bright developer workspace"
+                fetchpriority="high"
+              />
+              <p class="hero__specialties">Swift <span>SwiftUI</span> Flutter <span>Dart</span></p>
+            </div>
+          </div>
           <dl class="stats">
             <div class="stats__item">
               <dt class="stats__label">Applications shipped since 2019</dt>
@@ -156,9 +206,8 @@
 
       <section class="projects" id="work" aria-labelledby="work-title">
         <div class="container">
-          <p class="section-heading__label">Selected work</p>
           <h2 id="work-title">Sixteen projects, with the engineering behind them</h2>
-          <p>
+          <p class="projects__intro">
             Government platforms and national education deployments, and the commercial products
             built alongside them.
           </p>
@@ -761,7 +810,6 @@
 
       <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
         <div class="container">
-          <p class="section-heading__label">All projects</p>
           <h2 id="catalogue-title">The rest of the catalogue</h2>
           <ul class="catalogue__list" role="list">
             <!-- projects:catalogue:start -->
@@ -916,9 +964,8 @@
 
       <section class="skills" id="skills" aria-labelledby="skills-title">
         <div class="container">
-          <p class="section-heading__label">Skills</p>
           <h2 id="skills-title">Technical range</h2>
-          <p>
+          <p class="skills__intro">
             Arabic typography and RTL layout are listed on purpose — a scarce engineering
             competency, not a localisation afterthought.
           </p>
@@ -992,7 +1039,6 @@
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="container">
-          <p class="section-heading__label">Contact</p>
           <h2 id="contact-title">Open to senior iOS roles and freelance work</h2>
           <p>
             Arabic-language and Islamic application development, or general iOS product work.

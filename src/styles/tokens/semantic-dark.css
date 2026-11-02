@@ -1,5 +1,5 @@
-/* Semantic tokens — dark theme (default). Must define the same names as semantic-light.css. */
-:root,
+/* Semantic tokens — dark theme and fallback when no explicit theme is set. */
+:root:not([data-theme]),
 [data-theme='dark'] {
   color-scheme: dark;
 

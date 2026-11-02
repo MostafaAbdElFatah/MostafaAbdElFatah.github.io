@@ -1,8 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
 import { describe, expect, it } from 'vitest';
+import { bootstrap } from '../../src/scripts/main.js';
 
 const html = readFileSync(new URL('../../src/pages/index.html', import.meta.url), 'utf8');
+const darkThemeCss = readFileSync(
+  new URL('../../src/styles/tokens/semantic-dark.css', import.meta.url),
+  'utf8',
+);
 const { document } = new JSDOM(html).window;
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -15,10 +20,67 @@ describe('index.html shell', () => {
     expect($('body > footer')).not.toBeNull();
   });
   it('has a skip link to #main', () => expect($('a.skip-link[href="#main"]')).not.toBeNull());
+  it('uses the selected workspace photo and excludes misleading project mockups', () => {
+    expect(document.documentElement.dataset.theme).toBe('light');
+    expect($('[data-theme-toggle][aria-pressed="true"]')).not.toBeNull();
+    expect($('[data-theme-icon="moon"]')).not.toBeNull();
+    expect($('[data-theme-icon="sun"]')).not.toBeNull();
+    expect($('.hero__photo')?.getAttribute('src')).toBe(
+      '/src/assets/images/hero/developer-workspace.webp',
+    );
+    expect($$('.project-gallery__item')).toHaveLength(0);
+  });
+  it('toggles and persists the selected theme', () => {
+    const page = new JSDOM(html, {
+      url: 'https://portfolio.test/',
+      runScripts: 'dangerously',
+    });
+    const button = page.window.document.querySelector('[data-theme-toggle]');
+
+    expect(page.window.document.documentElement.dataset.theme).toBe('light');
+    bootstrap(page.window.document, page.window.localStorage);
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    button.click();
+
+    expect(page.window.document.documentElement.dataset.theme).toBe('dark');
+    expect(page.window.localStorage.getItem('theme')).toBe('dark');
+    expect(button.getAttribute('aria-pressed')).toBe('false');
+    expect(button.getAttribute('aria-label')).toBe('Switch to light theme');
+    expect(button.querySelector('[data-theme-icon="moon"]')).not.toBeNull();
+    expect(button.querySelector('[data-theme-icon="sun"]')).not.toBeNull();
+  });
+  it('updates browser theme color from the current page surface', () => {
+    const page = new JSDOM(html, { url: 'https://portfolio.test/' });
+    const { document } = page.window;
+    const meta = document.querySelector('meta[name="theme-color"]');
+
+    document.body.style.backgroundColor = 'rgb(252, 251, 249)';
+    bootstrap(document, page.window.localStorage);
+    expect(meta.content).toBe('rgb(252, 251, 249)');
+
+    document.body.style.backgroundColor = 'rgb(11, 10, 9)';
+    document.querySelector('[data-theme-toggle]').click();
+    expect(meta.content).toBe('rgb(11, 10, 9)');
+  });
+  it('restores a saved theme on reload', () => {
+    const page = new JSDOM(html, {
+      url: 'https://portfolio.test/',
+      runScripts: 'dangerously',
+      beforeParse(window) {
+        window.localStorage.setItem('theme', 'dark');
+      },
+    });
+
+    expect(page.window.document.documentElement.dataset.theme).toBe('dark');
+  });
   it('has a meta description', () =>
     expect($('meta[name="description"]')?.content.length).toBeGreaterThan(50));
   it('declares color-scheme', () =>
     expect($('meta[name="color-scheme"]')?.content).toBe('dark light'));
+  it('keeps the light theme from being overridden by dark fallback tokens', () => {
+    expect(darkThemeCss).toContain(':root:not([data-theme])');
+    expect(darkThemeCss).toContain("[data-theme='dark']");
+  });
   it('has open graph and twitter cards', () => {
     expect($('meta[property="og:image"]')).not.toBeNull();
     expect($('meta[name="twitter:card"]')?.content).toBe('summary_large_image');
