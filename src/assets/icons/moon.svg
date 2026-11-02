@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Moon</title>
+  <defs>
+    <mask id="crescent">
+      <rect width="200" height="200" fill="white"/>
+      <circle cx="128" cy="78" r="60" fill="black"/>
+    </mask>
+  </defs>
+  <circle cx="100" cy="100" r="70" fill="#E5E7EB" mask="url(#crescent)"/>
+  <g fill="#E5E7EB">
+    <circle cx="150" cy="40" r="3"/>
+    <circle cx="170" cy="95" r="2"/>
+    <circle cx="140" cy="150" r="2.5"/>
+  </g>
+</svg>

@@ -113,13 +113,9 @@ body {
 }
 
 .theme-toggle__icon {
+  display: block;
   inline-size: 1.2rem;
   block-size: 1.2rem;
-  fill: none;
-  stroke: currentcolor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.75;
 }
 
 .theme-toggle__icon--sun {

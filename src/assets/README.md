@@ -13,6 +13,8 @@
 | `src/assets/images/projects/project-architecture` | webp, jpg | 800×600 | ~15 KB / ~22 KB | Generated concept mockup; not a real project screenshot and not used on the homepage | generated | Proprietary |
 | `src/assets/images/projects/project-card` | webp, jpg | 800×600 | ~9.5 KB / ~18 KB | Generated concept mockup; not a real project screenshot and not used on the homepage | generated | Proprietary |
 | `src/assets/images/profile/profile-suit` | webp, png | 600×1050 | ~34 KB / ~476 KB | Mostafa Abdel Fattah in a grey suit | uploaded / derived | Proprietary |
+| `src/assets/icons/theme-moon.svg` | svg | 24×24 | — | Decorative theme toggle icon | authored | CC0 |
+| `src/assets/icons/theme-sun.svg` | svg | 24×24 | — | Decorative theme toggle icon | authored | CC0 |
 | `public/icons.svg` | svg | 19 symbols | ~7.9 KB | UI icon sprite | Lucide / Simple Icons | Lucide ISC / Simple Icons CC0 |
 | `public/favicon-32.png` | png | 32×32 | < 1 KB | Site favicon | derived | Proprietary |
 | `public/apple-touch-icon.png` | png | 180×180 | ~11 KB | Apple touch icon | derived | Proprietary |

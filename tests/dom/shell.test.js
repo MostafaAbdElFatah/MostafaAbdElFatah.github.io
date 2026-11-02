@@ -8,6 +8,14 @@ const darkThemeCss = readFileSync(
   new URL('../../src/styles/tokens/semantic-dark.css', import.meta.url),
   'utf8',
 );
+const moonIcon = readFileSync(
+  new URL('../../src/assets/icons/theme-moon.svg', import.meta.url),
+  'utf8',
+);
+const sunIcon = readFileSync(
+  new URL('../../src/assets/icons/theme-sun.svg', import.meta.url),
+  'utf8',
+);
 const { document } = new JSDOM(html).window;
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -23,8 +31,17 @@ describe('index.html shell', () => {
   it('uses the selected workspace photo and excludes misleading project mockups', () => {
     expect(document.documentElement.dataset.theme).toBe('light');
     expect($('[data-theme-toggle][aria-pressed="true"]')).not.toBeNull();
-    expect($('[data-theme-icon="moon"]')).not.toBeNull();
-    expect($('[data-theme-icon="sun"]')).not.toBeNull();
+    expect($('[data-theme-icon="moon"]')?.getAttribute('src')).toBe(
+      '/src/assets/icons/theme-moon.svg',
+    );
+    expect($('[data-theme-icon="sun"]')?.getAttribute('src')).toBe(
+      '/src/assets/icons/theme-sun.svg',
+    );
+    expect(moonIcon).toContain('<svg');
+    expect(moonIcon).toContain('stroke="#7a5a1c"');
+    expect(moonIcon).toContain('M15.5 14.5');
+    expect(sunIcon).toContain('<svg');
+    expect(sunIcon).toContain('stroke="#deb868"');
     expect($('.hero__photo')?.getAttribute('src')).toBe(
       '/src/assets/images/hero/developer-workspace.webp',
     );
@@ -46,8 +63,12 @@ describe('index.html shell', () => {
     expect(page.window.localStorage.getItem('theme')).toBe('dark');
     expect(button.getAttribute('aria-pressed')).toBe('false');
     expect(button.getAttribute('aria-label')).toBe('Switch to light theme');
-    expect(button.querySelector('[data-theme-icon="moon"]')).not.toBeNull();
-    expect(button.querySelector('[data-theme-icon="sun"]')).not.toBeNull();
+    expect(button.querySelector('[data-theme-icon="moon"]')?.getAttribute('src')).toBe(
+      '/src/assets/icons/theme-moon.svg',
+    );
+    expect(button.querySelector('[data-theme-icon="sun"]')?.getAttribute('src')).toBe(
+      '/src/assets/icons/theme-sun.svg',
+    );
   });
   it('updates browser theme color from the current page surface', () => {
     const page = new JSDOM(html, { url: 'https://portfolio.test/' });
