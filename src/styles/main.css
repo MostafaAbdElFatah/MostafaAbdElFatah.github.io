@@ -70,7 +70,7 @@
 
 /* Page-specific sections can override shared components when a page needs it */
 
-/* @import "pages/home/hero.css" layer(pages); */
+@import 'pages/home.css' layer(pages);
 
 /* @import "pages/home/articles.css" layer(pages); */
 
