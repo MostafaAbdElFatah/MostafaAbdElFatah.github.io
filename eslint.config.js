@@ -17,7 +17,6 @@ export default [
       'dist/**',
       'node_modules/**',
       'coverage/**',
-      'legacy/**',
       'public/**',
       'src/assets/**',
       '.specify/**',
@@ -57,7 +56,7 @@ export default [
     },
   },
   {
-    files: ['*.config.js', 'scripts/**/*.mjs', 'tests/**/*.js'],
+    files: ['*.config.js', 'src/tools/**/*.mjs', 'tests/**/*.js'],
     languageOptions: { globals: { ...globals.node } },
   },
   {

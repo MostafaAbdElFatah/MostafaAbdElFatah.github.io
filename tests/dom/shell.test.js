@@ -65,6 +65,31 @@ describe('index.html shell', () => {
     expect($('.hero__photo')).toBeNull();
     expect($$('.project-gallery__item')).toHaveLength(0);
   });
+  it('places junior web skills on a separate outer belt, not on planet orbits', () => {
+    const labels = $$('[data-skill-system] .skill-belt .skill-moon__label').map((label) =>
+      label.textContent.trim(),
+    );
+    expect(labels).toEqual([
+      'PHP',
+      'Laravel',
+      'Livewire',
+      'Inertia',
+      'Vue',
+      'React',
+      'Alpine.js',
+      'HTML & CSS',
+    ]);
+    for (const img of $$('.skill-moon img')) {
+      const path = img.getAttribute('src');
+      expect(path).toMatch(/^\/src\/assets\/icons\/skills\/web\/[a-z]+\.svg$/);
+      expect(readFileSync(new URL(`../..${path}`, import.meta.url), 'utf8')).toContain('<svg');
+    }
+    expect($('[data-skill-system]')?.getAttribute('aria-label')).toContain(
+      'web skills at junior level',
+    );
+    expect($('.skill-orbit .skill-moon')).toBeNull();
+    expect(homeCss).toContain('@keyframes skill-belt');
+  });
   it('uses an iPhone outline for the iOS skill mark', () => {
     expect(skillIconSources.iOS).toContain('<rect');
     expect(skillIconSources.iOS).toContain('stroke="#11100E"');

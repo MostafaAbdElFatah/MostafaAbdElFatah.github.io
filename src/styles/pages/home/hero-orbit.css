@@ -20,7 +20,7 @@
 
 /* Square stage; every layer below is centered in the same grid cell */
 .skill-system {
-  --planet-size: 3.25rem;
+  --planet-size: 3rem;
   --sun-size: 4.4rem;
 
   position: relative;
@@ -116,35 +116,35 @@
 
 /* Inner → outer. Durations grow with distance, like Kepler intended */
 .skill-orbit--ios {
-  --orbit-size: 40%;
+  --orbit-size: 32%;
   --orbit-angle: 210deg;
   --orbit-duration: 16s;
   --planet-glow: var(--skill-glow-ios);
 }
 
 .skill-orbit--swift {
-  --orbit-size: 54%;
+  --orbit-size: 44%;
   --orbit-angle: 30deg;
   --orbit-duration: 22s;
   --planet-glow: var(--skill-glow-swift);
 }
 
 .skill-orbit--swiftui {
-  --orbit-size: 68%;
+  --orbit-size: 56%;
   --orbit-angle: 300deg;
   --orbit-duration: 30s;
   --planet-glow: var(--skill-glow-swiftui);
 }
 
 .skill-orbit--dart {
-  --orbit-size: 82%;
+  --orbit-size: 68%;
   --orbit-angle: 140deg;
   --orbit-duration: 39s;
   --planet-glow: var(--skill-glow-dart);
 }
 
 .skill-orbit--flutter {
-  --orbit-size: 96%;
+  --orbit-size: 80%;
   --orbit-angle: 80deg;
   --orbit-duration: 50s;
   --planet-glow: var(--skill-glow-flutter);
@@ -257,6 +257,127 @@
   content: '';
 }
 
+/* ---------- Learning Belt (web, junior level) ---------- */
+
+/* An outer, dashed ring of small moons for the web stack. Everything about it
+   says "further from the core": smaller bodies, no sunlit glow, muted marks,
+   and one slow shared drift instead of individual orbits. */
+.skill-belt {
+  --belt-duration: 140s;
+  --moon-size: 1.9rem;
+
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 97%;
+  aspect-ratio: 1;
+  border: 1px dashed var(--belt-ring);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: skill-belt var(--belt-duration) linear infinite paused;
+  container-type: size;
+  pointer-events: none;
+}
+
+/* Eight moons spaced evenly; each is pushed out to the ring edge */
+.skill-moon {
+  --moon-angle: 0deg;
+
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: var(--moon-size);
+  aspect-ratio: 1;
+  margin: calc(var(--moon-size) / -2);
+  transform: rotate(var(--moon-angle)) translateY(-50cqi) rotate(calc(var(--moon-angle) * -1));
+  pointer-events: auto;
+}
+
+.skill-moon:nth-child(2) {
+  --moon-angle: 45deg;
+}
+
+.skill-moon:nth-child(3) {
+  --moon-angle: 90deg;
+}
+
+.skill-moon:nth-child(4) {
+  --moon-angle: 135deg;
+}
+
+.skill-moon:nth-child(5) {
+  --moon-angle: 180deg;
+}
+
+.skill-moon:nth-child(6) {
+  --moon-angle: 225deg;
+}
+
+.skill-moon:nth-child(7) {
+  --moon-angle: 270deg;
+}
+
+.skill-moon:nth-child(8) {
+  --moon-angle: 315deg;
+}
+
+/* Counter-spins against the belt so marks and labels stay upright */
+.skill-moon__body {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  animation: skill-belt-counter var(--belt-duration) linear infinite paused;
+}
+
+/* Flat, unlit disc: no atmosphere glow, desaturated mark */
+.skill-moon__surface {
+  display: grid;
+  inline-size: 100%;
+  block-size: 100%;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--moon-surface);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.skill-moon__surface img {
+  display: block;
+  inline-size: 55%;
+  block-size: 55%;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: grayscale(0.7);
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    filter var(--duration-base) var(--ease-standard);
+}
+
+.skill-moon__label {
+  position: absolute;
+  inset-block-start: calc(100% + 0.25rem);
+  inset-inline-start: 50%;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* Hover reveals the true brand color, but no glow: still a moon, not a planet */
+.skill-moon:hover .skill-moon__surface {
+  border-color: var(--color-border-strong);
+}
+
+.skill-moon:hover .skill-moon__surface img {
+  opacity: 1;
+  filter: none;
+}
+
 /* ---------- Sun ---------- */
 
 /* A white-hot star: no text, just light. The core fades through sunlight and
@@ -313,14 +434,14 @@
 /* ---------- Playback ---------- */
 
 /* Run only while on screen (see scripts/main.js) */
-.skill-system.is-visible :is(.skill-orbit, .skill-planet),
+.skill-system.is-visible :is(.skill-orbit, .skill-planet, .skill-belt, .skill-moon__body),
 .skill-system.is-visible :is(.skill-sun, .skill-stars)::before,
 .skill-system.is-visible :is(.skill-sun, .skill-planet)::after {
   animation-play-state: running;
 }
 
 /* Hovering the system freezes the planets so they can be inspected */
-.skill-system.is-visible:hover :is(.skill-orbit, .skill-planet),
+.skill-system.is-visible:hover :is(.skill-orbit, .skill-planet, .skill-belt, .skill-moon__body),
 .skill-system.is-visible:hover .skill-planet::after {
   animation-play-state: paused;
 }
@@ -336,6 +457,18 @@
 @keyframes skill-counter-orbit {
   to {
     transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) * -1 - 1turn));
+  }
+}
+
+@keyframes skill-belt {
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+@keyframes skill-belt-counter {
+  to {
+    transform: rotate(-1turn);
   }
 }
 
@@ -397,6 +530,8 @@
 @media (prefers-reduced-motion: reduce) {
   .skill-orbit,
   .skill-planet,
+  .skill-belt,
+  .skill-moon__body,
   .skill-sun::before,
   .skill-sun::after,
   .skill-stars::before,

@@ -32,22 +32,22 @@ npm run preview
 
 ## Scripts
 
-| Script            | Command                                                                  | Purpose                                                   |
-| ----------------- | ------------------------------------------------------------------------ | --------------------------------------------------------- |
-| `dev`             | `vite`                                                                   | Start local Vite development server                       |
-| `build`           | `vite build`                                                             | Build minified static site to `dist/`                     |
-| `preview`         | `vite preview`                                                           | Locally preview `dist/` build                             |
-| `lint`            | `npm run lint:js && npm run lint:css`                                    | Run JavaScript and CSS linters                            |
-| `lint:js`         | `eslint .`                                                               | Lint codebase with Clean Architecture boundary rules      |
-| `lint:css`        | `stylelint "src/styles/**/*.css"`                                        | Lint CSS tokens, BEM naming, and properties               |
-| `format`          | `prettier --write .`                                                     | Format all source files                                   |
-| `format:check`    | `prettier --check .`                                                     | Verify formatting across files                            |
-| `test`            | `vitest run`                                                             | Execute test suite                                        |
-| `test:watch`      | `vitest`                                                                 | Run test suite in watch mode                              |
-| `icons`           | `node scripts/build-icons.mjs`                                           | Build `public/icons.svg` sprite                           |
-| `images`          | `node scripts/optimize-images.mjs`                                       | Generate AVIF, WebP, PNG, JPG image variants and favicons |
-| `images:fallback` | `node scripts/crop-board-fallback.mjs`                                   | Crop and upscale fallback board visuals                   |
-| `render:fallback` | `node scripts/render-static-projects.mjs && prettier --write index.html` | Statically pre-render projects for no-JS environments     |
+| Script            | Command                                                                              | Purpose                                                   |
+| ----------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| `dev`             | `vite`                                                                               | Start local Vite development server                       |
+| `build`           | `vite build`                                                                         | Build minified static site to `dist/`                     |
+| `preview`         | `vite preview`                                                                       | Locally preview `dist/` build                             |
+| `lint`            | `npm run lint:js && npm run lint:css`                                                | Run JavaScript and CSS linters                            |
+| `lint:js`         | `eslint .`                                                                           | Lint codebase with Clean Architecture boundary rules      |
+| `lint:css`        | `stylelint "src/styles/**/*.css"`                                                    | Lint CSS tokens, BEM naming, and properties               |
+| `format`          | `prettier --write .`                                                                 | Format all source files                                   |
+| `format:check`    | `prettier --check .`                                                                 | Verify formatting across files                            |
+| `test`            | `vitest run`                                                                         | Execute test suite                                        |
+| `test:watch`      | `vitest`                                                                             | Run test suite in watch mode                              |
+| `icons`           | `node src/tools/build-icons.mjs`                                                     | Build `public/icons.svg` sprite                           |
+| `images`          | `node src/tools/optimize-images.mjs`                                                 | Generate AVIF, WebP, PNG, JPG image variants and favicons |
+| `images:fallback` | `node src/tools/crop-board-fallback.mjs`                                             | Crop and upscale fallback board visuals                   |
+| `render:fallback` | `node src/tools/render-static-projects.mjs && prettier --write src/pages/index.html` | Statically pre-render projects for no-JS environments     |
 
 ## Architecture
 
@@ -57,6 +57,7 @@ Strict adherence to Clean Architecture layers:
 - **Data (`src/scripts/data/`)**: Data sources and repository implementations. No presentation imports.
 - **Presentation (`src/scripts/presentation/`)**: Controllers, view models, and DOM renderers. No data imports; dependencies are injected.
 - **Composition Root (`src/scripts/main.js`)**: Entry point allowed to wire domain, data, and presentation.
+- **Build tools (`src/tools/`)**: Node-only scripts (icon sprite, image optimization, static project render). Never shipped to the browser.
 
 | Layer          | Can Import                       | Must Not Import                         |
 | -------------- | -------------------------------- | --------------------------------------- |

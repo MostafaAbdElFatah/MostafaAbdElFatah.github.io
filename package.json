@@ -14,10 +14,10 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "icons": "node scripts/build-icons.mjs",
-    "images": "node scripts/optimize-images.mjs",
-    "images:fallback": "node scripts/crop-board-fallback.mjs",
-    "render:fallback": "node scripts/render-static-projects.mjs && prettier --write index.html"
+    "icons": "node src/tools/build-icons.mjs",
+    "images": "node src/tools/optimize-images.mjs",
+    "images:fallback": "node src/tools/crop-board-fallback.mjs",
+    "render:fallback": "node src/tools/render-static-projects.mjs && prettier --write src/pages/index.html"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

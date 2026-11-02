@@ -65,6 +65,21 @@
   font-weight: var(--weight-semibold);
 }
 
+/* ---------- Learning Group ---------- */
+
+/* One honest line that sets the level before the chips are read */
+.skills__note {
+  margin-block: -0.4rem 1rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+/* Outlined, unfilled chips: visibly lighter than production skills */
+.skills__group--wip .skills__chips li {
+  border-style: dashed;
+  background: transparent;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (width <= 64rem) {

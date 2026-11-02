@@ -1,7 +1,10 @@
-// Renders legacy/data.js into index.html between marker comments so every project is
-// readable without JavaScript (FR-006, FR-007). Build-time only; data is trusted, authored content.
+// Renders src/scripts/data/projects.data.js into src/pages/index.html between marker comments so
+// every project is readable without JavaScript (FR-006, FR-007). Build-time only; data is trusted,
+// authored content.
 import { readFileSync, writeFileSync } from 'node:fs';
-import vm from 'node:vm';
+import { PROJECTS as projects } from '../scripts/data/projects.data.js';
+
+const PAGE = 'src/pages/index.html';
 
 const CATEGORIES = {
   gov: 'Government',
@@ -10,11 +13,6 @@ const CATEGORIES = {
   consumer: 'Consumer',
   health: 'Healthcare',
 };
-
-const context = { window: {} };
-vm.createContext(context);
-vm.runInContext(readFileSync('legacy/data.js', 'utf8'), context);
-const projects = context.window.PROJECTS;
 
 // Keep only <b> tags from the authored strings; existing HTML entities are preserved.
 const clean = (s = '') => String(s).replace(/<(?!\/?b>)[^>]*>/g, '');
@@ -55,12 +53,12 @@ function replaceBetween(html, name, content) {
   const start = `<!-- ${name}:start -->`;
   const end = `<!-- ${name}:end -->`;
   const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
-  if (!pattern.test(html)) throw new Error(`Markers for "${name}" not found in index.html`);
+  if (!pattern.test(html)) throw new Error(`Markers for "${name}" not found in ${PAGE}`);
   return html.replace(pattern, `${start}${content}\n${end}`);
 }
 
-let html = readFileSync('index.html', 'utf8');
+let html = readFileSync(PAGE, 'utf8');
 html = replaceBetween(html, 'projects:featured', top.map(featured).join(''));
 html = replaceBetween(html, 'projects:catalogue', rest.map(catalogue).join(''));
-writeFileSync('index.html', html);
+writeFileSync(PAGE, html);
 console.log(`Rendered ${top.length} featured + ${rest.length} catalogue projects.`);

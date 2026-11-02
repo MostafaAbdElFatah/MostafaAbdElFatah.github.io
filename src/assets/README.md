@@ -20,6 +20,14 @@
 | `src/assets/icons/skills/flutter.svg` | svg | 24×24 | — | Flutter skill mark | Simple Icons | CC0 |
 | `src/assets/icons/skills/dart.svg` | svg | 24×24 | — | Dart skill mark | Simple Icons | CC0 |
 | `src/assets/icons/skills/ios.svg` | svg | 24×24 | — | iPhone device outline for the iOS skill | authored | CC0 |
+| `src/assets/icons/skills/web/php.svg` | svg | 24×24 | — | PHP mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/laravel.svg` | svg | 24×24 | — | Laravel mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/livewire.svg` | svg | 24×24 | — | Livewire mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/inertia.svg` | svg | 24×24 | — | Inertia mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/vue.svg` | svg | 24×24 | — | Vue.js mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/react.svg` | svg | 24×24 | — | React mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/alpine.svg` | svg | 24×24 | — | Alpine.js mark, web learning belt | Simple Icons | CC0 |
+| `src/assets/icons/skills/web/html.svg` | svg | 24×24 | — | HTML5 (HTML & CSS moon) mark, web learning belt | Simple Icons | CC0 |
 | `public/icons.svg` | svg | 19 symbols | ~7.9 KB | UI icon sprite | Lucide / Simple Icons | Lucide ISC / Simple Icons CC0 |
 | `public/favicon-32.png` | png | 32×32 | < 1 KB | Site favicon | derived | Proprietary |
 | `public/apple-touch-icon.png` | png | 180×180 | ~11 KB | Apple touch icon | derived | Proprietary |
