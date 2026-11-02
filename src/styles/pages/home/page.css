@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Home Page Frame (page.css)
+   Page-level chrome: framed body, selection, scrollbar, focus ring, the
+   home container width and the vertical rhythm shared by content sections.
+   Depends on: tokens/semantic-*.css, tokens/motion.css, tokens/spacing.css
+   ========================================================================== */
+
+/* ---------- Framed Body ---------- */
+
+/* The page reads as a single raised sheet centered on wide screens */
+body {
+  max-inline-size: 90rem;
+  min-block-size: 100dvh;
+  margin-inline: auto;
+  border: 1px solid var(--color-border);
+  border-block-start: 0;
+  border-radius: 0 0 1.25rem 1.25rem;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition:
+    background-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+/* ---------- Selection & Scrollbar ---------- */
+
+::selection {
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent);
+}
+
+::-webkit-scrollbar {
+  inline-size: 0.65rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--color-surface);
+  border-radius: var(--radius-pill);
+  background: var(--color-border-strong);
+}
+
+/* ---------- Focus ---------- */
+
+/* Slightly wider offset than the base layer so rings clear rounded buttons */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+/* ---------- Container ---------- */
+
+/* Home uses a wider reading column than layout/container.css */
+.container {
+  inline-size: min(100% - 3rem, 78rem);
+  margin-inline: auto;
+}
+
+/* ---------- Section Rhythm ---------- */
+
+/* Shared spacing and heading scale for every content section below the hero */
+.projects,
+.catalogue,
+.skills,
+.contact {
+  padding-block: clamp(4rem, 8vw, 7.5rem);
+}
+
+.projects h2,
+.catalogue h2,
+.skills h2,
+.contact h2 {
+  max-inline-size: 22ch;
+  margin-block-end: 0.8rem;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 48rem) {
+  /* Edge-to-edge on phones: the framed sheet only makes sense with margins */
+  body {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .container {
+    inline-size: min(100% - 2rem, 38rem);
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    transition-duration: 0.01ms;
+  }
+}

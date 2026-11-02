@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Site Footer (footer.css)
+   Closing strip with name, role and platform list.
+   Depends on: tokens/semantic-*.css, tokens/typography.css
+   ========================================================================== */
+
+/* ---------- Footer Bar ---------- */
+
+.site-footer {
+  padding-block: 1.5rem;
+  border-block-start: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 26rem) {
+  .site-footer .container {
+    flex-direction: column;
+  }
+}

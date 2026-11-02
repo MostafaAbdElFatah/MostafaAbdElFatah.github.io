@@ -39,13 +39,12 @@
 
 /* Structural wrappers load before components so components can adjust inside them */
 @import 'layout/container.css' layer(layout);
-
-/* @import "layout/header.css" layer(layout); */
-
-/* @import "layout/footer.css" layer(layout); */
+@import 'layout/header.css' layer(layout);
+@import 'layout/footer.css' layer(layout);
 
 /* ---------- Components ---------- */
 @import 'components/skip-link.css' layer(components);
+@import 'components/cv-dialog.css' layer(components);
 
 /* @import "components/navigation.css" layer(components); */
 
@@ -69,33 +68,15 @@
 
 /* Page-specific sections can override shared components when a page needs it */
 
-@import 'pages/home.css' layer(pages);
-
-/* @import "pages/home/articles.css" layer(pages); */
-
-/* @import "pages/home/gallery.css" layer(pages); */
-
-/* @import "pages/home/team.css" layer(pages); */
-
-/* @import "pages/home/testimonials.css" layer(pages); */
-
-/* @import "pages/home/features.css" layer(pages); */
-
-/* @import "pages/home/services.css" layer(pages); */
-
-/* @import "pages/home/skills.css" layer(pages); */
-
-/* @import "pages/home/work-steps.css" layer(pages); */
-
-/* @import "pages/home/events.css" layer(pages); */
-
-/* @import "pages/home/pricing.css" layer(pages); */
-
-/* @import "pages/home/videos.css" layer(pages); */
-
-/* @import "pages/home/statistics.css" layer(pages); */
-
-/* @import "pages/home/discount.css" layer(pages); */
+/* Home page, in document order: frame → hero → content sections */
+@import 'pages/home/page.css' layer(pages);
+@import 'pages/home/hero.css' layer(pages);
+@import 'pages/home/hero-orbit.css' layer(pages);
+@import 'pages/home/stats.css' layer(pages);
+@import 'pages/home/projects.css' layer(pages);
+@import 'pages/home/catalogue.css' layer(pages);
+@import 'pages/home/skills.css' layer(pages);
+@import 'pages/home/contact.css' layer(pages);
 
 /* ---------- Utilities ---------- */
 

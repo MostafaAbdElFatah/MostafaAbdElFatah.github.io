@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Skills (skills.css)
+   Grouped skill chips; the work-in-progress group gets a dashed divider.
+   Depends on: tokens/semantic-*.css, pages/home/page.css (section rhythm)
+   ========================================================================== */
+
+/* ---------- Intro & Grid ---------- */
+
+.skills__intro {
+  max-inline-size: 62ch;
+  color: var(--color-text-muted);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin-block-start: 2.5rem;
+}
+
+/* ---------- Group ---------- */
+
+.skills__group {
+  padding-block: 1.4rem 1.6rem;
+  border-block-start: 1px solid var(--color-border);
+}
+
+.skills__group h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-block-end: 1rem;
+  font-size: var(--text-lg);
+}
+
+.skills__group--wip {
+  border-block-start-style: dashed;
+}
+
+/* ---------- Chips ---------- */
+
+.skills__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skills__chips li {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-raised);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+/* "In progress" badge next to a group title */
+.skills__tag {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 64rem) {
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 48rem) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+    margin-block-start: 1.5rem;
+  }
+}

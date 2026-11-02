@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Statistics (stats.css)
+   Four headline numbers under the hero, divided by hairlines.
+   Depends on: tokens/semantic-*.css, tokens/typography.css
+   ========================================================================== */
+
+/* ---------- Grid ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-block-start: 1.25rem;
+  padding-block: 1.35rem 1.6rem;
+  border-block-start: 1px solid var(--color-border);
+}
+
+/* ---------- Item ---------- */
+
+.stats__item {
+  display: grid;
+  gap: 0.25rem;
+  padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+  border-inline-end: 1px solid var(--color-border);
+}
+
+.stats__item:first-child {
+  padding-inline-start: 0;
+}
+
+.stats__item:last-child {
+  border-inline-end: 0;
+}
+
+.stats__label {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+/* Tabular numerals keep the four values visually aligned */
+.stats__value {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 48rem) {
+  /* 2 × 2 grid: drop the divider after column two and the indent on row two */
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.25rem;
+    padding-block: 1.25rem 1.5rem;
+  }
+
+  .stats__item:nth-child(2) {
+    border-inline-end: 0;
+  }
+
+  .stats__item:nth-child(3) {
+    padding-inline-start: 0;
+  }
+}
