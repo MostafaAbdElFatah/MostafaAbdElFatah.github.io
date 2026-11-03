@@ -227,8 +227,25 @@ describe('index.html shell', () => {
   it('opens external links safely', () => {
     for (const a of $$('a[target="_blank"]')) expect(a.rel).toContain('noopener');
   });
+  it('renders the work experience timeline section', () => {
+    const exp = $('section.experience#experience');
+    expect(exp).not.toBeNull();
+    expect(exp.querySelector('#experience-title')?.textContent.trim()).toBe('Experience');
+    expect(exp.querySelector('.experience__subtitle')?.textContent.trim()).toBe(
+      'My professional journey',
+    );
+    const items = [...exp.querySelectorAll('.experience__item')];
+    expect(items).toHaveLength(4);
+    expect(items.map((el) => el.querySelector('.experience__role')?.textContent.trim())).toEqual([
+      'Senior iOS & Flutter Developer',
+      'iOS Developer (Contract)',
+      'iOS Developer (Contract)',
+      'Freelance Mobile Developer',
+    ]);
+    expect(exp.querySelectorAll('.experience__point')).toHaveLength(9);
+  });
   it('renders the collaborative call-to-action (CTA) section', () => {
-    const cta = $('section.cta#cta');
+    const cta = $('.cta__card');
     expect(cta).not.toBeNull();
     expect(cta.querySelector('.cta__title')?.textContent.trim()).toBe(
       "Let's Build Something Great Together",
@@ -241,12 +258,46 @@ describe('index.html shell', () => {
     expect(btn.textContent).toContain('Get In Touch');
     expect(cta.querySelector('.cta__mountain')).not.toBeNull();
   });
+  it('renders the About Me section with milestones and an architectural showcase card (no person image)', () => {
+    const about = $('section.about#about');
+    expect(about).not.toBeNull();
+    expect(about.querySelector('#about-title')?.textContent.trim()).toBe('About Me');
+    expect([...about.querySelectorAll('.about__role')].map((el) => el.textContent.trim())).toEqual([
+      'Mobile Developer',
+      'Tech Lead',
+      'Problem Solver',
+    ]);
+    expect(
+      [...about.querySelectorAll('.about__metric')].map((el) => ({
+        value: el.querySelector('.about__metric-value')?.textContent.trim(),
+        label: el.querySelector('.about__metric-label')?.textContent.trim(),
+      })),
+    ).toEqual([
+      { value: '8+', label: 'Years of experience' },
+      { value: '20+', label: 'Production apps' },
+      { value: '10M+', label: 'Total downloads' },
+      { value: '4.6★', label: 'App Store rating' },
+      { value: '99.9%', label: 'Crash-free stability' },
+    ]);
+    expect(about.querySelector('.about-card')).not.toBeNull();
+    expect(about.querySelectorAll('img')).toHaveLength(0);
+  });
+  it('renders the 4-column My Skills matrix alongside specialized domain groups', () => {
+    const skills = $('section.skills#skills');
+    expect(skills).not.toBeNull();
+    expect(skills.querySelector('#skills-title')?.textContent.trim()).toBe('My Skills');
+    expect(
+      [...skills.querySelectorAll('.skills__col-title')].map((el) => el.textContent.trim()),
+    ).toEqual(['iOS & Swift', 'Cross-Platform', 'Architecture', 'DevOps & Tools']);
+  });
   it('includes section comment headers before every section in index.html', () => {
     expect(html).toContain('Hero Section');
     expect(html).toContain('Technical Expertise Section');
     expect(html).toContain('Featured Projects Section');
     expect(html).toContain('Project Catalogue Section');
+    expect(html).toContain('About Me Section');
     expect(html).toContain('Skills Section');
+    expect(html).toContain('Work Experience Section');
     expect(html).toContain('Call to Action (CTA) Section');
     expect(html).toContain('Contact Section');
   });

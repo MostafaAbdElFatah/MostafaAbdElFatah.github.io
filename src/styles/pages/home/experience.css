@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Work Experience (experience.css)
+   Vertical timeline of professional roles with gold icon badges and sub-nodes.
+   Depends on: tokens/primitives.css, tokens/semantic-*.css, tokens/typography.css,
+               tokens/spacing.css, pages/home/page.css
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+
+.experience__header {
+  margin-block-end: 2.5rem;
+}
+
+.experience__subtitle {
+  margin-block: 0.35rem 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+}
+
+/* ---------- Timeline Track ---------- */
+
+.experience__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Continuous vertical line connecting all badges and bullet markers */
+.experience__timeline::before {
+  content: '';
+  position: absolute;
+  inset-block: 1.375rem 0.5rem;
+  inset-inline-start: 1.375rem;
+  inline-size: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-border-accent) 0%,
+    var(--color-border) 88%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+/* ---------- Role Entry ---------- */
+
+.experience__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  column-gap: 1.35rem;
+  align-items: start;
+}
+
+/* ---------- Gold Icon Badge ---------- */
+
+.experience__badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-pill);
+  background:
+    radial-gradient(circle at 35% 30%, var(--gold-alpha-16), var(--gold-alpha-08)),
+    var(--color-surface);
+  box-shadow: 0 0 0 4px var(--color-surface);
+  color: var(--color-accent);
+}
+
+.experience__badge svg {
+  inline-size: 1.2rem;
+  block-size: 1.2rem;
+}
+
+/* ---------- Role Content ---------- */
+
+.experience__body {
+  padding-block-start: 0.15rem;
+}
+
+.experience__role {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: var(--leading-snug);
+}
+
+.experience__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-block: 0.3rem 0.95rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.experience__company {
+  color: var(--color-text);
+  font-weight: var(--weight-medium);
+}
+
+.experience__sep {
+  color: var(--color-accent);
+}
+
+/* ---------- Bullet Points & Sub-nodes ---------- */
+
+.experience__points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience__point {
+  position: relative;
+  max-inline-size: 68ch;
+  padding-inline-start: 1.15rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+/* Inner bullet dot next to the text */
+.experience__point::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0.62em;
+  inset-inline-start: 0.15rem;
+  inline-size: 0.32rem;
+  block-size: 0.32rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+}
+
+/* Small circular node sitting on the vertical timeline axis */
+.experience__point::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 0.56em;
+  inset-inline-start: -2.725rem;
+  inline-size: 0.45rem;
+  block-size: 0.45rem;
+  border: 1.5px solid var(--color-border-accent);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 3px var(--color-surface);
+  transform: translateX(-50%);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 48rem) {
+  .experience__timeline {
+    gap: 2.25rem;
+  }
+
+  .experience__timeline::before {
+    inset-block-start: 1.25rem;
+    inset-inline-start: 1.25rem;
+  }
+
+  .experience__item {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    column-gap: 1rem;
+  }
+
+  .experience__badge {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+  }
+
+  .experience__badge svg {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+  }
+
+  .experience__point {
+    font-size: var(--text-sm);
+  }
+
+  .experience__point::after {
+    inset-inline-start: -2.25rem;
+  }
+}

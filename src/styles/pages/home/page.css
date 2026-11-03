@@ -60,14 +60,18 @@ body {
 /* Shared spacing and heading scale for every content section below the hero */
 .projects,
 .catalogue,
+.about,
 .skills,
+.experience,
 .contact {
   padding-block: clamp(4rem, 8vw, 7.5rem);
 }
 
 .projects h2,
 .catalogue h2,
+.about h2,
 .skills h2,
+.experience h2,
 .contact h2 {
   max-inline-size: 22ch;
   margin-block-end: 0.8rem;

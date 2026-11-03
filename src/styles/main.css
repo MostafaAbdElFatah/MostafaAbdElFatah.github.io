@@ -76,7 +76,9 @@
 @import 'pages/home/expertise.css' layer(pages);
 @import 'pages/home/projects.css' layer(pages);
 @import 'pages/home/catalogue.css' layer(pages);
+@import 'pages/home/about.css' layer(pages);
 @import 'pages/home/skills.css' layer(pages);
+@import 'pages/home/experience.css' layer(pages);
 @import 'pages/home/cta.css' layer(pages);
 @import 'pages/home/contact.css' layer(pages);
 

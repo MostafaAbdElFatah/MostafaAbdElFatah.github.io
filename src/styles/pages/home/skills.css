@@ -1,24 +1,86 @@
 /* ==========================================================================
    Skills (skills.css)
-   Grouped skill chips; the work-in-progress group gets a dashed divider.
-   Depends on: tokens/semantic-*.css, pages/home/page.css (section rhythm)
+   4-column architectural skill matrix with vertical dividers, followed by
+   domain-specific and work-in-progress skill groups.
+   Depends on: tokens/semantic-*.css, tokens/typography.css, pages/home/page.css
    ========================================================================== */
 
-/* ---------- Intro & Grid ---------- */
+/* ---------- Header & Intro ---------- */
+
+.skills__header {
+  margin-block-end: 2.25rem;
+}
 
 .skills__intro {
   max-inline-size: 62ch;
+  margin-block: 0;
   color: var(--color-text-muted);
 }
+
+/* ---------- 4-Column Reference Matrix ---------- */
+
+.skills__columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-block: 0.5rem 2.5rem;
+}
+
+.skills__col {
+  padding-inline: 1.75rem;
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.skills__col:first-child {
+  padding-inline-start: 0;
+  border-inline-start: 0;
+}
+
+.skills__col:last-child {
+  padding-inline-end: 0;
+}
+
+.skills__col-title {
+  margin-block: 0 1.15rem;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.01em;
+}
+
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills__item {
+  position: relative;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.skills__item:hover {
+  transform: translateX(4px);
+  color: var(--color-accent);
+}
+
+/* ---------- Domain & Learning Chip Grid ---------- */
 
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 2rem;
-  margin-block-start: 2.5rem;
+  margin-block-start: 0.5rem;
 }
-
-/* ---------- Group ---------- */
 
 .skills__group {
   padding-block: 1.4rem 1.6rem;
@@ -67,14 +129,12 @@
 
 /* ---------- Learning Group ---------- */
 
-/* One honest line that sets the level before the chips are read */
 .skills__note {
   margin-block: -0.4rem 1rem;
   color: var(--color-text-muted);
   font-size: var(--text-xs);
 }
 
-/* Outlined, unfilled chips: visibly lighter than production skills */
 .skills__group--wip .skills__chips li {
   border-style: dashed;
   background: transparent;
@@ -83,14 +143,42 @@
 /* ---------- Responsive ---------- */
 
 @media (width <= 64rem) {
+  .skills__columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+
+  .skills__col:nth-child(odd) {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+
   .skills__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (width <= 48rem) {
+  .skills__columns {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+    padding-block-end: 1.75rem;
+  }
+
+  .skills__col {
+    padding-inline: 0;
+    padding-block-start: 1.25rem;
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  .skills__col:first-child {
+    padding-block-start: 0;
+    border-block-start: 0;
+  }
+
   .skills__grid {
     grid-template-columns: 1fr;
-    margin-block-start: 1.5rem;
+    margin-block-start: 0.5rem;
   }
 }

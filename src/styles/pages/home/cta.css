@@ -1,7 +1,7 @@
 /* ==========================================================================
    Call to Action (cta.css)
    Collaborative banner card with golden-hour mountain ridge artwork.
-   Depends on: tokens/primitives.css, tokens/components.css, tokens/spacing.css
+   Depends on: tokens/primitives.css, tokens/semantic-*.css, tokens/components.css, tokens/spacing.css
    ========================================================================== */
 
 /* ---------- Section ---------- */
@@ -15,21 +15,26 @@
 .cta__card {
   position: relative;
   display: flex;
+  margin-top: 6rem;
   min-block-size: 13.5rem;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
   isolation: isolate;
   padding: clamp(2rem, 3.5vw, 2.75rem) clamp(2rem, 4.5vw, 3.75rem);
-  border: 1px solid var(--gold-alpha-32);
+  border: 1px solid var(--color-border-accent);
   border-radius: var(--radius-xl);
   background:
     radial-gradient(ellipse 65% 85% at 8% 25%, var(--gold-alpha-16), transparent 60%),
-    var(--obsidian-850);
+    var(--color-surface-raised);
   box-shadow:
     0 16px 40px -12px var(--obsidian-alpha-45),
     0 1px 0 0 var(--gold-alpha-08) inset;
-  color: var(--ivory-100);
+  color: var(--color-text);
+  transition:
+    background-color var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
 }
 
 /* ---------- Content ---------- */
@@ -54,6 +59,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: -0.025em;
   line-height: var(--leading-tight);
+  transition: color var(--duration-normal) var(--ease-standard);
 }
 
 .cta__subtitle {
@@ -62,6 +68,34 @@
   color: var(--ivory-300);
   font-size: clamp(0.925rem, 1.1vw, 1.05rem);
   line-height: var(--leading-normal);
+  transition: color var(--duration-normal) var(--ease-standard);
+}
+
+/* ---------- Light Theme ---------- */
+
+[data-theme='light'] .cta__card {
+  background:
+    radial-gradient(ellipse 65% 85% at 8% 25%, var(--gold-alpha-08), transparent 60%),
+    var(--color-surface-raised);
+  border-color: var(--color-border-accent);
+  box-shadow:
+    0 16px 40px -12px var(--obsidian-alpha-12),
+    0 1px 0 0 rgb(255 255 255 / 80%) inset;
+  color: var(--color-text);
+}
+
+[data-theme='light'] .cta__title {
+  color: var(--color-accent);
+}
+
+[data-theme='light'] .cta__subtitle {
+  color: var(--color-text-muted);
+}
+
+[data-theme='light'] .cta__visual {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%);
+  mask-image: linear-gradient(to right, transparent 0%, black 50%);
+  opacity: 0.92;
 }
 
 /* ---------- Action Button ---------- */
@@ -117,6 +151,7 @@
   inline-size: clamp(18rem, 46vw, 36rem);
   pointer-events: none;
   user-select: none;
+  transition: opacity var(--duration-normal) var(--ease-standard);
 }
 
 .cta__visual picture,
@@ -143,7 +178,14 @@
   .cta__visual {
     inline-size: 100%;
     opacity: 0.28;
-    mask-image: linear-gradient(to top, var(--obsidian-900), transparent);
+    -webkit-mask-image: linear-gradient(to top, black, transparent);
+    mask-image: linear-gradient(to top, black, transparent);
+  }
+
+  [data-theme='light'] .cta__visual {
+    -webkit-mask-image: linear-gradient(to top, black, transparent);
+    mask-image: linear-gradient(to top, black, transparent);
+    opacity: 0.18;
   }
 
   .cta__title {
@@ -154,6 +196,10 @@
 /* ---------- Reduced Motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
+  .cta__card,
+  .cta__title,
+  .cta__subtitle,
+  .cta__visual,
   .cta__button,
   .cta__button svg {
     transform: none;
