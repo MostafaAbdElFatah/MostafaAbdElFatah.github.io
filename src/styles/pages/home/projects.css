@@ -43,8 +43,13 @@
   transition: color 180ms ease;
 }
 
-.projects__view-all svg,
 .featured-card__arrow svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.projects__view-all svg {
   inline-size: 1rem;
   block-size: 1rem;
   transition: transform 180ms ease;
@@ -210,16 +215,25 @@
   border-radius: 50%;
   background: var(--color-surface);
   color: var(--color-accent);
+  pointer-events: none;
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.featured-card:hover .featured-card__arrow {
-  transform: translateX(2px);
+.featured-card:hover .featured-card__arrow,
+.featured-card:focus-within .featured-card__arrow {
   border-color: var(--color-accent);
   background: var(--gold-alpha-16);
+  box-shadow: 0 0 12px var(--gold-alpha-25);
+  transform: scale(1.05);
+}
+
+.featured-card:hover .featured-card__arrow svg,
+.featured-card:focus-within .featured-card__arrow svg {
+  transform: translateX(4px);
 }
 
 /* ---------- Filter Bar ---------- */
@@ -529,6 +543,7 @@
   .featured-card,
   .featured-card__img,
   .featured-card__arrow,
+  .featured-card__arrow svg,
   .projects__view-all,
   .projects__view-all svg,
   .projects__filter-chip {
