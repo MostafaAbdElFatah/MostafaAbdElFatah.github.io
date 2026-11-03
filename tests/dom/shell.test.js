@@ -227,4 +227,27 @@ describe('index.html shell', () => {
   it('opens external links safely', () => {
     for (const a of $$('a[target="_blank"]')) expect(a.rel).toContain('noopener');
   });
+  it('renders the collaborative call-to-action (CTA) section', () => {
+    const cta = $('section.cta#cta');
+    expect(cta).not.toBeNull();
+    expect(cta.querySelector('.cta__title')?.textContent.trim()).toBe(
+      "Let's Build Something Great Together",
+    );
+    expect(cta.querySelector('.cta__subtitle')?.textContent.trim()).toContain(
+      "I'm open to exciting opportunities, collaborations and new challenges.",
+    );
+    const btn = cta.querySelector('.cta__button[href="#contact"]');
+    expect(btn).not.toBeNull();
+    expect(btn.textContent).toContain('Get In Touch');
+    expect(cta.querySelector('.cta__mountain')).not.toBeNull();
+  });
+  it('includes section comment headers before every section in index.html', () => {
+    expect(html).toContain('Hero Section');
+    expect(html).toContain('Technical Expertise Section');
+    expect(html).toContain('Featured Projects Section');
+    expect(html).toContain('Project Catalogue Section');
+    expect(html).toContain('Skills Section');
+    expect(html).toContain('Call to Action (CTA) Section');
+    expect(html).toContain('Contact Section');
+  });
 });

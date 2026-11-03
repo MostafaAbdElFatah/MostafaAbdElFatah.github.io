@@ -73,9 +73,11 @@
 @import 'pages/home/hero.css' layer(pages);
 @import 'pages/home/hero-orbit.css' layer(pages);
 @import 'pages/home/stats.css' layer(pages);
+@import 'pages/home/expertise.css' layer(pages);
 @import 'pages/home/projects.css' layer(pages);
 @import 'pages/home/catalogue.css' layer(pages);
 @import 'pages/home/skills.css' layer(pages);
+@import 'pages/home/cta.css' layer(pages);
 @import 'pages/home/contact.css' layer(pages);
 
 /* ---------- Utilities ---------- */

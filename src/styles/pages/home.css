@@ -178,6 +178,7 @@ body {
   max-inline-size: 13.5ch;
   margin-block-end: 1.25rem;
   font-size: clamp(3rem, 5.2vw, 5.25rem);
+  text-align: justify;
   line-height: 0.99;
   letter-spacing: -0.035em;
 }

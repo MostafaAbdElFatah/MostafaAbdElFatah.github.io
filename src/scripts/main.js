@@ -6,8 +6,12 @@
  * Phase 2 wires repositories → use cases → controllers here.
  */
 import { initCvPreview } from './presentation/cv-preview.js';
+import { initMobileMenu } from './presentation/mobile-menu.js';
+import { initProjectFilter } from './presentation/project-filter.js';
 
 export function bootstrap(root = document, storage = localStorage) {
+  initProjectFilter(root);
+  initMobileMenu(root);
   const skillSystem = root.querySelector('[data-skill-system]');
   const IntersectionObserver = root.defaultView?.IntersectionObserver;
   if (skillSystem && IntersectionObserver) {

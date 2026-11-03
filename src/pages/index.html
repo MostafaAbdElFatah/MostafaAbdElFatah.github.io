@@ -64,9 +64,13 @@
       }
     </script>
   </head>
+
   <body>
     <a class="skip-link visually-hidden-focusable" href="#main">Skip to content</a>
 
+    <!-- ==========================================================================
+       Header
+       ========================================================================== -->
     <header class="site-header">
       <div class="container site-header__inner">
         <a class="site-header__brand" href="#top">
@@ -89,62 +93,269 @@
         <nav class="site-nav" aria-label="Primary">
           <ul class="site-nav__list" role="list">
             <li><a class="site-nav__link" href="#work">Work</a></li>
-            <li><a class="site-nav__link" href="#catalogue">All projects</a></li>
-            <li><a class="site-nav__link" href="#skills">Skills</a></li>
+            <li><a class="site-nav__link" href="#skills">Expertise</a></li>
+            <li><a class="site-nav__link" href="#about">About</a></li>
             <li><a class="site-nav__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <button
-          class="theme-toggle"
-          type="button"
-          aria-label="Switch to dark theme"
-          aria-pressed="true"
-          data-theme-toggle
-        >
-          <img
-            class="theme-toggle__icon theme-toggle__icon--moon"
-            data-theme-icon="moon"
-            src="/src/assets/icons/theme-moon.svg"
-            width="24"
-            height="24"
-            alt=""
-          />
-          <img
-            class="theme-toggle__icon theme-toggle__icon--sun"
-            data-theme-icon="sun"
-            src="/src/assets/icons/theme-sun.svg"
-            width="24"
-            height="24"
-            alt=""
-          />
-          <span class="visually-hidden">Toggle color theme</span>
-        </button>
+        <div class="site-header__actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark theme"
+            aria-pressed="true"
+            data-theme-toggle
+          >
+            <img
+              class="theme-toggle__icon theme-toggle__icon--moon"
+              data-theme-icon="moon"
+              src="/src/assets/icons/theme-moon.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+            <img
+              class="theme-toggle__icon theme-toggle__icon--sun"
+              data-theme-icon="sun"
+              src="/src/assets/icons/theme-sun.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+            <span class="visually-hidden">Toggle color theme</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav-dialog"
+            aria-label="Open navigation menu"
+            data-menu-toggle
+          >
+            <span class="menu-toggle__box" aria-hidden="true">
+              <span class="menu-toggle__line menu-toggle__line--top"></span>
+              <span class="menu-toggle__line menu-toggle__line--mid"></span>
+              <span class="menu-toggle__line menu-toggle__line--bot"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="mobile-nav"
+        id="mobile-nav-dialog"
+        data-mobile-nav
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site navigation"
+        hidden
+      >
+        <div class="mobile-nav__backdrop" data-menu-backdrop></div>
+        <div class="mobile-nav__panel">
+          <div class="mobile-nav__header">
+            <span class="mobile-nav__eyebrow">Navigation</span>
+            <span class="mobile-nav__status">
+              <span class="mobile-nav__pulse" aria-hidden="true"></span>
+              Available for roles
+            </span>
+          </div>
+
+          <nav class="mobile-nav__menu" aria-label="Mobile primary navigation">
+            <ul class="mobile-nav__list" role="list">
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#work" data-menu-link>
+                  <span class="mobile-nav__index">01</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Work</span>
+                    <span class="mobile-nav__desc">Featured projects &amp; architecture</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#skills" data-menu-link>
+                  <span class="mobile-nav__index">02</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Expertise</span>
+                    <span class="mobile-nav__desc">Swift, SwiftUI, Flutter, Tech Lead</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#about" data-menu-link>
+                  <span class="mobile-nav__index">03</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">About</span>
+                    <span class="mobile-nav__desc">8+ years, 10M+ downloads</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#contact" data-menu-link>
+                  <span class="mobile-nav__index">04</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Contact</span>
+                    <span class="mobile-nav__desc">Let's build something great</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="mobile-nav__footer">
+            <div class="mobile-nav__actions">
+              <a
+                class="mobile-nav__action mobile-nav__action--cv"
+                href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                target="_blank"
+                rel="noopener"
+                aria-haspopup="dialog"
+                data-cv-open
+                data-menu-link
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                  />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                View CV
+              </a>
+              <a
+                class="mobile-nav__action mobile-nav__action--download"
+                href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                download
+                aria-label="Download CV (PDF)"
+                title="Download CV (PDF)"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 15V3" />
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="m7 10 5 5 5-5" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="mobile-nav__socials">
+              <a
+                class="mobile-nav__social-link"
+                href="https://github.com/MostafaAbdElFatah"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+              <a
+                class="mobile-nav__social-link"
+                href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn ↗</a
+              >
+              <a class="mobile-nav__social-link" href="mailto:mostafa.abdelfatah.dev@gmail.com"
+                >Email ↗</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="main">
+      <!-- ==========================================================================
+         Hero Section
+         ========================================================================== -->
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero__inner">
-            <div class="hero__copy">
-              <h2 class="hero__title" id="hero-title">
-                Building mobile experiences <em>that scale.</em>
-              </h2>
+            <div class="hero__copy" id="about">
               <p class="hero__subtitle">
                 Mostafa Abdel Fattah Mohammed <br />
                 Senior iOS Developer <span aria-hidden="true">·</span> Mobile Tech Lead
               </p>
-              <p class="hero__availability">
-                <span aria-hidden="true"></span>
-                Available for Senior iOS & Mobile Tech Lead opportunities
-              </p>
+              <h1 class="hero__title" id="hero-title">
+                Building mobile experiences <em>that scale.</em>
+              </h1>
+
               <p class="hero__lede">
-                Seven years of Quran, hadith and Islamic-education software, including
+                Eight years of Quran, hadith and Islamic-education software, including
                 <b>officially authorized platforms</b> for the General Presidency of the Two Holy
                 Mosques, the General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah,
                 and the Quran curricula of four ministries of education. Alongside that, full
                 commercial systems in healthcare, marketplace and on-demand services. Based in
                 Cairo.
+              </p>
+              <p class="hero__availability">
+                <span aria-hidden="true"></span>
+                Available for Senior iOS & Mobile Tech Lead opportunities
               </p>
               <div class="hero__actions">
                 <a class="hero__action hero__action--primary" href="#work">
@@ -390,32 +601,358 @@
           </div>
           <dl class="stats">
             <div class="stats__item">
-              <dt class="stats__label">Applications shipped since 2019</dt>
-              <dd class="stats__value">33</dd>
+              <dt class="stats__label">Years Experience</dt>
+              <dd class="stats__value">8+</dd>
             </div>
             <div class="stats__item">
-              <dt class="stats__label">Downloads on the flagship app</dt>
+              <dt class="stats__label">Applications Shipped</dt>
+              <dd class="stats__value">33+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Total Downloads</dt>
               <dd class="stats__value">10M+</dd>
-            </div>
-            <div class="stats__item">
-              <dt class="stats__label">National curricula implemented</dt>
-              <dd class="stats__value">4</dd>
-            </div>
-            <div class="stats__item">
-              <dt class="stats__label">State-authorized platforms</dt>
-              <dd class="stats__value">3</dd>
             </div>
           </dl>
         </div>
       </section>
 
+      <!-- ==========================================================================
+         Technical Expertise Section
+         ========================================================================== -->
+      <section class="expertise" aria-labelledby="expertise-title">
+        <div class="container">
+          <header class="expertise__header">
+            <h2 id="expertise-title">Technical Expertise</h2>
+            <p>My core technologies and tools</p>
+          </header>
+          <ul class="expertise__list">
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/swift.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Swift</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/swiftui.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>SwiftUI</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/ios.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>UIKit</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/dart.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Dart</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/flutter.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Flutter</span>
+            </li>
+            <li class="expertise__item">
+              <svg
+                class="expertise__icon expertise__icon--line"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m12 2.75 8 4.5v9.5l-8 4.5-8-4.5v-9.5l8-4.5Z" />
+                <path d="m4.5 7.5 7.5 4.25 7.5-4.25M12 12v9" />
+              </svg>
+              <span>Clean Architecture</span>
+            </li>
+            <li class="expertise__item">
+              <svg
+                class="expertise__icon expertise__icon--line"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="6" cy="5" r="2" />
+                <circle cx="18" cy="19" r="2" />
+                <circle cx="6" cy="19" r="2" />
+                <path d="M6 7v10M18 5v8a4 4 0 0 1-4 4H8" />
+              </svg>
+              <span>CI/CD</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         Featured Projects Section
+         ========================================================================== -->
       <section class="projects" id="work" aria-labelledby="work-title">
         <div class="container">
-          <h2 id="work-title">Sixteen projects, with the engineering behind them</h2>
-          <p class="projects__intro">
-            Government platforms and national education deployments, and the commercial products
-            built alongside them.
-          </p>
+          <header class="projects__header">
+            <div class="projects__heading">
+              <h2 id="work-title">Featured Projects</h2>
+              <p class="projects__intro">
+                Selected projects showcasing my work in iOS, Flutter and cross-platform mobile
+                development, including architecture, performance optimization and real-world impact.
+              </p>
+            </div>
+            <a class="projects__view-all" href="#projects-detail" data-category-filter="all">
+              <span class="projects__view-all-full">View all projects</span>
+              <span class="projects__view-all-short">View all</span>
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </header>
+
+          <div class="featured-cards" role="list">
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-health.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-health.jpg"
+                    width="720"
+                    height="540"
+                    loading="lazy"
+                    alt="Two iPhones displaying a dark and gold health and wellness dashboard with daily score and progress charts"
+                  />
+                </picture>
+              </div>
+              <div class="featured-card__body">
+                <span class="featured-card__badge">iOS · SwiftUI</span>
+                <h3 class="featured-card__title">
+                  <a
+                    class="featured-card__link"
+                    href="#projects-detail"
+                    data-category-filter="health"
+                  >
+                    Health &amp; Wellness
+                  </a>
+                </h3>
+                <p class="featured-card__desc">
+                  A modern health app with personalized plans, tracking and analytics.
+                </p>
+                <div class="featured-card__footer">
+                  <ul class="featured-card__tags" role="list" aria-label="Highlights">
+                    <li>Architecture</li>
+                    <li>Performance</li>
+                    <li>
+                      <span class="featured-card__tag-full">User Experience</span>
+                      <span class="featured-card__tag-short" aria-hidden="true">UX</span>
+                    </li>
+                  </ul>
+                  <span class="featured-card__arrow" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-travel.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-travel.jpg"
+                    width="720"
+                    height="540"
+                    loading="lazy"
+                    alt="Two iPhones showing a travel discovery screen and a dark interactive route map"
+                  />
+                </picture>
+              </div>
+              <div class="featured-card__body">
+                <span class="featured-card__badge">Flutter · Dart</span>
+                <h3 class="featured-card__title">
+                  <a
+                    class="featured-card__link"
+                    href="#projects-detail"
+                    data-category-filter="consumer"
+                  >
+                    Travel &amp; Lifestyle
+                  </a>
+                </h3>
+                <p class="featured-card__desc">
+                  Cross-platform app for discovering and planning unique experiences.
+                </p>
+                <div class="featured-card__footer">
+                  <ul class="featured-card__tags" role="list" aria-label="Highlights">
+                    <li>Maps</li>
+                    <li>Offline</li>
+                    <li>Multi-platform</li>
+                  </ul>
+                  <span class="featured-card__arrow" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-architecture.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-architecture.jpg"
+                    width="720"
+                    height="540"
+                    loading="lazy"
+                    alt="Layered 3D clean architecture diagram showing Presentation, Domain, Data, and Infrastructure layers"
+                  />
+                </picture>
+              </div>
+              <div class="featured-card__body">
+                <span class="featured-card__badge">Architecture Case Study</span>
+                <h3 class="featured-card__title">
+                  <a
+                    class="featured-card__link"
+                    href="#projects-detail"
+                    data-category-filter="gov,edu,quran"
+                  >
+                    Scalable Mobile Architecture
+                  </a>
+                </h3>
+                <p class="featured-card__desc">
+                  Clean architecture, modular design and CI/CD for enterprise mobile apps.
+                </p>
+                <div class="featured-card__footer">
+                  <ul class="featured-card__tags" role="list" aria-label="Highlights">
+                    <li>Clean Architecture</li>
+                    <li>Testing</li>
+                    <li>CI/CD</li>
+                  </ul>
+                  <span class="featured-card__arrow" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="projects__explorer" id="projects-detail">
+            <div
+              class="projects__filter-bar"
+              role="toolbar"
+              aria-label="Filter projects by category"
+            >
+              <button
+                class="projects__filter-chip is-active"
+                type="button"
+                aria-pressed="true"
+                data-category-chip="all"
+              >
+                All (33)
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="health"
+              >
+                Health &amp; Wellness
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="consumer"
+              >
+                Travel &amp; Lifestyle
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="gov,edu,quran"
+              >
+                Scalable Architecture &amp; Gov
+              </button>
+            </div>
+          </div>
+
           <div class="projects__list">
             <!-- projects:featured:start -->
             <article class="project" data-project data-category="gov">
@@ -1013,6 +1550,9 @@
         </div>
       </section>
 
+      <!-- ==========================================================================
+         Project Catalogue Section
+         ========================================================================== -->
       <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
         <div class="container">
           <h2 id="catalogue-title">The rest of the catalogue</h2>
@@ -1167,6 +1707,9 @@
         </div>
       </section>
 
+      <!-- ==========================================================================
+         Skills Section
+         ========================================================================== -->
       <section class="skills" id="skills" aria-labelledby="skills-title">
         <div class="container">
           <h2 id="skills-title">Technical range</h2>
@@ -1245,6 +1788,55 @@
         </div>
       </section>
 
+      <!-- ==========================================================================
+         Call to Action (CTA) Section
+         ========================================================================== -->
+      <section class="cta" id="cta" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta__card">
+            <div class="cta__content">
+              <h2 class="cta__title" id="cta-title">Let's Build Something Great Together</h2>
+              <p class="cta__subtitle">
+                I'm open to exciting opportunities, collaborations and new challenges.
+              </p>
+              <a class="cta__button" href="#contact">
+                <span>Get In Touch</span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div class="cta__visual" aria-hidden="true">
+              <picture>
+                <source srcset="/src/assets/images/cta/mountain.webp" type="image/webp" />
+                <img
+                  src="/src/assets/images/cta/mountain.png"
+                  width="678"
+                  height="279"
+                  alt=""
+                  class="cta__mountain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         Contact Section
+         ========================================================================== -->
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="container">
           <h2 id="contact-title">Open to senior iOS roles and freelance work</h2>
@@ -1294,6 +1886,9 @@
       </section>
     </main>
 
+    <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
     <footer class="site-footer">
       <div class="container">
         <p>Mostafa Abdel Fattah Mohammed — Senior Mobile Engineer, Cairo</p>
@@ -1303,6 +1898,9 @@
         </p>
       </div>
     </footer>
+    <!-- ==========================================================================
+       Curriculum Vitae Modal Preview
+       ========================================================================== -->
     <dialog class="cv-dialog" aria-labelledby="cv-dialog-title" data-cv-dialog>
       <div class="cv-dialog__panel">
         <header class="cv-dialog__header">

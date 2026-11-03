@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Call to Action (cta.css)
+   Collaborative banner card with golden-hour mountain ridge artwork.
+   Depends on: tokens/primitives.css, tokens/components.css, tokens/spacing.css
+   ========================================================================== */
+
+/* ---------- Section ---------- */
+
+.cta {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* ---------- Card ---------- */
+
+.cta__card {
+  position: relative;
+  display: flex;
+  min-block-size: 13.5rem;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(2rem, 3.5vw, 2.75rem) clamp(2rem, 4.5vw, 3.75rem);
+  border: 1px solid var(--gold-alpha-32);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(ellipse 65% 85% at 8% 25%, var(--gold-alpha-16), transparent 60%),
+    var(--obsidian-850);
+  box-shadow:
+    0 16px 40px -12px var(--obsidian-alpha-45),
+    0 1px 0 0 var(--gold-alpha-08) inset;
+  color: var(--ivory-100);
+}
+
+/* ---------- Content ---------- */
+
+.cta__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  max-inline-size: 34rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* ---------- Title & Subtitle ---------- */
+
+.cta__title {
+  margin: 0;
+  color: var(--gold-200);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.025em;
+  line-height: var(--leading-tight);
+}
+
+.cta__subtitle {
+  margin: 0;
+  max-inline-size: 42ch;
+  color: var(--ivory-300);
+  font-size: clamp(0.925rem, 1.1vw, 1.05rem);
+  line-height: var(--leading-normal);
+}
+
+/* ---------- Action Button ---------- */
+
+.cta__button {
+  display: inline-flex;
+  min-block-size: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-block-start: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  box-shadow: 0 4px 16px var(--gold-alpha-25);
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.cta__button svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.cta__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--gold-alpha-40);
+}
+
+.cta__button:hover svg {
+  transform: translateX(3px);
+}
+
+.cta__button:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+/* ---------- Mountain Visual ---------- */
+
+.cta__visual {
+  position: absolute;
+  z-index: 1;
+  inset-block: 0;
+  inset-inline-end: 0;
+  inline-size: clamp(18rem, 46vw, 36rem);
+  pointer-events: none;
+  user-select: none;
+}
+
+.cta__visual picture,
+.cta__mountain {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (width <= 48rem) {
+  .cta {
+    padding-block: 2rem;
+  }
+
+  .cta__card {
+    min-block-size: auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .cta__visual {
+    inline-size: 100%;
+    opacity: 0.28;
+    mask-image: linear-gradient(to top, var(--obsidian-900), transparent);
+  }
+
+  .cta__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta__button,
+  .cta__button svg {
+    transform: none;
+    transition: none;
+  }
+}
