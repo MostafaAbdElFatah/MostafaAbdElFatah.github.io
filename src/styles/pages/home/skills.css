@@ -1,6 +1,6 @@
 /* ==========================================================================
    Skills (skills.css)
-   4-column architectural skill matrix with vertical dividers, followed by
+   5-column skill matrix with vertical dividers, followed by
    domain-specific and work-in-progress skill groups.
    Depends on: tokens/semantic-*.css, tokens/typography.css, pages/home/page.css
    ========================================================================== */
@@ -17,11 +17,11 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- 4-Column Reference Matrix ---------- */
+/* ---------- 5-Column Reference Matrix ---------- */
 
 .skills__columns {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   padding-block: 0.5rem 2.5rem;
 }
 

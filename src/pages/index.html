@@ -1,38 +1,54 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>
-    (() => {
-      try {
-        const s = localStorage.getItem('theme');
-        document.documentElement.dataset.theme = s === 'light' || s === 'dark' ? s : 'light';
-      } catch {
-        document.documentElement.dataset.theme = 'light';
-      }
-    })();
-  </script>
-  <title>Mostafa Abdel Fattah — Senior iOS Developer</title>
-  <meta name="description"
-    content="Senior iOS developer building Swift, SwiftUI and Flutter apps since 2019 — including officially authorized Quran, hadith and government platforms with 10M+ downloads." />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#fcfbf9" />
-  <link rel="canonical" href="https://mostafaabdelfatah.github.io/" />
-  <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Mostafa Abdel Fattah — Senior iOS Developer" />
-  <meta property="og:description" content="Building mobile experiences that make an impact: Swift, SwiftUI, Flutter." />
-  <meta property="og:url" content="https://mostafaabdelfatah.github.io/" />
-  <meta property="og:image" content="https://mostafaabdelfatah.github.io/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/styles/main.css" />
-  <script type="module" src="/src/scripts/main.js"></script>
-  <script type="application/ld+json">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (() => {
+        try {
+          const s = localStorage.getItem('theme');
+          document.documentElement.dataset.theme = s === 'light' || s === 'dark' ? s : 'light';
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <title>Mostafa Abdel Fattah — Senior iOS Developer</title>
+    <meta
+      name="description"
+      content="Senior iOS developer building Swift, SwiftUI and Flutter apps since 2019 — including officially authorized Quran, hadith and government platforms with 10M+ downloads."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#fcfbf9" />
+    <link rel="canonical" href="https://mostafaabdelfatah.github.io/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Mostafa Abdel Fattah — Senior iOS Developer" />
+    <meta
+      property="og:description"
+      content="Building mobile experiences that make an impact: Swift, SwiftUI, Flutter."
+    />
+    <meta property="og:url" content="https://mostafaabdelfatah.github.io/" />
+    <meta property="og:image" content="https://mostafaabdelfatah.github.io/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="preload"
+      href="/fonts/playfair-display-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -47,1711 +63,2318 @@
         ]
       }
     </script>
-</head>
+  </head>
 
-<body>
-  <a class="skip-link visually-hidden-focusable" href="#main">Skip to content</a>
+  <body>
+    <a class="skip-link visually-hidden-focusable" href="#main">Skip to content</a>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        Header
        ========================================================================== -->
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="site-header__brand" href="#top">
-        <span class="brand-mark">
-          <picture>
-            <source srcset="/src/assets/images/brand/logo-ma-gold.webp" type="image/webp" />
-            <img src="/src/assets/images/brand/logo-ma-gold.png" width="48" height="27" alt="MA monogram — home" />
-          </picture>
-          <span class="brand-mark__orbit" aria-hidden="true">
-            <span class="brand-mark__body"></span>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__brand" href="#top">
+          <span class="brand-mark">
+            <picture>
+              <source srcset="/src/assets/images/brand/logo-ma-gold.webp" type="image/webp" />
+              <img
+                src="/src/assets/images/brand/logo-ma-gold.png"
+                width="48"
+                height="27"
+                alt="MA monogram — home"
+              />
+            </picture>
+            <span class="brand-mark__orbit" aria-hidden="true">
+              <span class="brand-mark__body"></span>
+            </span>
           </span>
-        </span>
-        <span class="visually-hidden">Mostafa Abdel Fattah</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <ul class="site-nav__list" role="list">
-          <li><a class="site-nav__link" href="#work">Work</a></li>
-          <li><a class="site-nav__link" href="#skills">Expertise</a></li>
-          <li><a class="site-nav__link" href="#about">About</a></li>
-          <li><a class="site-nav__link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="site-header__actions">
-        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="true"
-          data-theme-toggle>
-          <img class="theme-toggle__icon theme-toggle__icon--moon" data-theme-icon="moon"
-            src="/src/assets/icons/theme-moon.svg" width="24" height="24" alt="" />
-          <img class="theme-toggle__icon theme-toggle__icon--sun" data-theme-icon="sun"
-            src="/src/assets/icons/theme-sun.svg" width="24" height="24" alt="" />
-          <span class="visually-hidden">Toggle color theme</span>
-        </button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-dialog"
-          aria-label="Open navigation menu" data-menu-toggle>
-          <span class="menu-toggle__box" aria-hidden="true">
-            <span class="menu-toggle__line menu-toggle__line--top"></span>
-            <span class="menu-toggle__line menu-toggle__line--mid"></span>
-            <span class="menu-toggle__line menu-toggle__line--bot"></span>
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <div class="mobile-nav" id="mobile-nav-dialog" data-mobile-nav role="dialog" aria-modal="true"
-      aria-label="Site navigation" hidden>
-      <div class="mobile-nav__backdrop" data-menu-backdrop></div>
-      <div class="mobile-nav__panel">
-        <div class="mobile-nav__header">
-          <span class="mobile-nav__eyebrow">Navigation</span>
-          <span class="mobile-nav__status">
-            <span class="mobile-nav__pulse" aria-hidden="true"></span>
-            Available for roles
-          </span>
-        </div>
-
-        <nav class="mobile-nav__menu" aria-label="Mobile primary navigation">
-          <ul class="mobile-nav__list" role="list">
-            <li class="mobile-nav__item">
-              <a class="mobile-nav__link" href="#work" data-menu-link>
-                <span class="mobile-nav__index">01</span>
-                <span class="mobile-nav__meta">
-                  <span class="mobile-nav__label">Work</span>
-                  <span class="mobile-nav__desc">Featured projects &amp; architecture</span>
-                </span>
-                <svg class="mobile-nav__arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </li>
-            <li class="mobile-nav__item">
-              <a class="mobile-nav__link" href="#skills" data-menu-link>
-                <span class="mobile-nav__index">02</span>
-                <span class="mobile-nav__meta">
-                  <span class="mobile-nav__label">Expertise</span>
-                  <span class="mobile-nav__desc">Swift, SwiftUI, Flutter, Tech Lead</span>
-                </span>
-                <svg class="mobile-nav__arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </li>
-            <li class="mobile-nav__item">
-              <a class="mobile-nav__link" href="#about" data-menu-link>
-                <span class="mobile-nav__index">03</span>
-                <span class="mobile-nav__meta">
-                  <span class="mobile-nav__label">About</span>
-                  <span class="mobile-nav__desc">8+ years, 10M+ downloads</span>
-                </span>
-                <svg class="mobile-nav__arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </li>
-            <li class="mobile-nav__item">
-              <a class="mobile-nav__link" href="#contact" data-menu-link>
-                <span class="mobile-nav__index">04</span>
-                <span class="mobile-nav__meta">
-                  <span class="mobile-nav__label">Contact</span>
-                  <span class="mobile-nav__desc">Let's build something great</span>
-                </span>
-                <svg class="mobile-nav__arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </li>
+          <span class="visually-hidden">Mostafa Abdel Fattah</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list" role="list">
+            <li><a class="site-nav__link" href="#work">Work</a></li>
+            <li><a class="site-nav__link" href="#skills">Expertise</a></li>
+            <li><a class="site-nav__link" href="#about">About</a></li>
+            <li><a class="site-nav__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
-
-        <div class="mobile-nav__footer">
-          <div class="mobile-nav__actions">
-            <a class="mobile-nav__action mobile-nav__action--cv" href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
-              target="_blank" rel="noopener" aria-haspopup="dialog" data-cv-open data-menu-link>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-              View CV
-            </a>
-            <a class="mobile-nav__action mobile-nav__action--download"
-              href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" download aria-label="Download CV (PDF)"
-              title="Download CV (PDF)">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 15V3" />
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <path d="m7 10 5 5 5-5" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="mobile-nav__socials">
-            <a class="mobile-nav__social-link" href="https://github.com/MostafaAbdElFatah" target="_blank"
-              rel="noopener">GitHub ↗</a>
-            <a class="mobile-nav__social-link"
-              href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/" target="_blank"
-              rel="noopener">LinkedIn ↗</a>
-            <a class="mobile-nav__social-link" href="mailto:mostafa.abdelfatah.dev@gmail.com">Email ↗</a>
-          </div>
+        <div class="site-header__actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark theme"
+            aria-pressed="true"
+            data-theme-toggle
+          >
+            <img
+              class="theme-toggle__icon theme-toggle__icon--moon"
+              data-theme-icon="moon"
+              src="/src/assets/icons/theme-moon.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+            <img
+              class="theme-toggle__icon theme-toggle__icon--sun"
+              data-theme-icon="sun"
+              src="/src/assets/icons/theme-sun.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+            <span class="visually-hidden">Toggle color theme</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav-dialog"
+            aria-label="Open navigation menu"
+            data-menu-toggle
+          >
+            <span class="menu-toggle__box" aria-hidden="true">
+              <span class="menu-toggle__line menu-toggle__line--top"></span>
+              <span class="menu-toggle__line menu-toggle__line--mid"></span>
+              <span class="menu-toggle__line menu-toggle__line--bot"></span>
+            </span>
+          </button>
         </div>
       </div>
-    </div>
-  </header>
 
-  <main id="main">
-    <!-- ==========================================================================
-         Hero Section
-         ========================================================================== -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero__inner">
-          <div class="hero__copy">
-            <p class="hero__subtitle">
-              Mostafa Abdel Fattah Mohammed
-            </p>
-            <h1 class="hero__title" id="hero-title">
-              Building mobile experiences <em>that scale.</em>
-            </h1>
-            <p class="hero__subtitle">
-              Senior iOS Developer <span aria-hidden="true">·</span> Mobile Tech Lead Flutter & Dart
-            </p>
-            <p class="hero__lede">
-              Eight years of Quran, hadith and Islamic-education software, including
-              <b>officially authorized platforms</b> for the General Presidency of the Two Holy
-              Mosques, the General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah,
-              and the Quran curricula of four ministries of education. Alongside that, full
-              commercial systems in healthcare, marketplace and on-demand services. Based in
-              Cairo.
-            </p>
-            <p class="hero__availability">
-              <span aria-hidden="true"></span>
-              Available for Senior iOS & Mobile Tech Lead opportunities
-            </p>
-            <div class="hero__actions">
-              <a class="hero__action hero__action--primary" href="#work">
-                Explore my work
-                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
+      <div
+        class="mobile-nav"
+        id="mobile-nav-dialog"
+        data-mobile-nav
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site navigation"
+        hidden
+      >
+        <div class="mobile-nav__backdrop" data-menu-backdrop></div>
+        <div class="mobile-nav__panel">
+          <div class="mobile-nav__header">
+            <span class="mobile-nav__eyebrow">Navigation</span>
+            <span class="mobile-nav__status">
+              <span class="mobile-nav__pulse" aria-hidden="true"></span>
+              Available for roles
+            </span>
+          </div>
+
+          <nav class="mobile-nav__menu" aria-label="Mobile primary navigation">
+            <ul class="mobile-nav__list" role="list">
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#work" data-menu-link>
+                  <span class="mobile-nav__index">01</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Work</span>
+                    <span class="mobile-nav__desc">Featured projects &amp; architecture</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#skills" data-menu-link>
+                  <span class="mobile-nav__index">02</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Expertise</span>
+                    <span class="mobile-nav__desc">Swift, SwiftUI, Flutter, Tech Lead</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#about" data-menu-link>
+                  <span class="mobile-nav__index">03</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">About</span>
+                    <span class="mobile-nav__desc">8+ years, 10M+ downloads</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="#contact" data-menu-link>
+                  <span class="mobile-nav__index">04</span>
+                  <span class="mobile-nav__meta">
+                    <span class="mobile-nav__label">Contact</span>
+                    <span class="mobile-nav__desc">Let's build something great</span>
+                  </span>
+                  <svg
+                    class="mobile-nav__arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="mobile-nav__footer">
+            <div class="mobile-nav__actions">
+              <a
+                class="mobile-nav__action mobile-nav__action--cv"
+                href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                target="_blank"
+                rel="noopener"
+                aria-haspopup="dialog"
+                data-cv-open
+                data-menu-link
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                  />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                View CV
+              </a>
+              <a
+                class="mobile-nav__action mobile-nav__action--download"
+                href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                download
+                aria-label="Download CV (PDF)"
+                title="Download CV (PDF)"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 15V3" />
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="m7 10 5 5 5-5" />
                 </svg>
               </a>
-              <span class="hero__cv">
-                <a class="hero__action hero__action--cv" href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
-                  target="_blank" rel="noopener" aria-haspopup="dialog" data-cv-open>
-                  View CV
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                </a>
-                <a class="hero__action hero__action--icon" href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" download
-                  aria-label="Download CV (PDF)" title="Download CV (PDF)">
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 15V3" />
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <path d="m7 10 5 5 5-5" />
-                  </svg>
-                </a>
-              </span>
             </div>
-          </div>
-          <div class="hero__visual">
-            <div class="skill-system" data-skill-system role="img"
-              aria-label="Orbital diagram. Core mobile skills orbit close to the sun: Swift, SwiftUI, Flutter, Dart, and mobile development. An outer belt holds web skills at junior level: PHP, Laravel, Livewire, Inertia, Vue, React, Alpine.js, HTML and CSS.">
-              <span class="skill-stars" aria-hidden="true"></span>
-              <span class="skill-orbit skill-orbit--swift" aria-hidden="true">
-                <span class="skill-planet">
-                  <span class="skill-planet__surface">
-                    <img src="/src/assets/icons/skills/swift.svg" alt="" width="24" height="24" />
-                  </span>
-                  <span class="skill-planet__label">Swift</span>
-                </span>
-              </span>
-              <span class="skill-orbit skill-orbit--swiftui" aria-hidden="true">
-                <span class="skill-planet">
-                  <span class="skill-planet__surface">
-                    <img src="/src/assets/icons/skills/swiftui.svg" alt="" width="24" height="24" />
-                  </span>
-                  <span class="skill-planet__label">SwiftUI</span>
-                </span>
-              </span>
-              <span class="skill-orbit skill-orbit--flutter" aria-hidden="true">
-                <span class="skill-planet">
-                  <span class="skill-planet__surface">
-                    <img src="/src/assets/icons/skills/flutter.svg" alt="" width="24" height="24" />
-                  </span>
-                  <span class="skill-planet__label">Flutter</span>
-                </span>
-              </span>
-              <span class="skill-orbit skill-orbit--dart" aria-hidden="true">
-                <span class="skill-planet">
-                  <span class="skill-planet__surface">
-                    <img src="/src/assets/icons/skills/dart.svg" alt="" width="24" height="24" />
-                  </span>
-                  <span class="skill-planet__label">Dart</span>
-                </span>
-              </span>
-              <span class="skill-orbit skill-orbit--ios" aria-hidden="true">
-                <span class="skill-planet">
-                  <span class="skill-planet__surface">
-                    <img class="skill-icon--ios" src="/src/assets/icons/skills/ios.svg" alt="" width="24" height="24" />
-                  </span>
-                  <span class="skill-planet__label">Mobile</span>
-                </span>
-              </span>
-              <span class="skill-belt" aria-hidden="true">
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/php.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">PHP</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/laravel.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">Laravel</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/livewire.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">Livewire</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/inertia.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">Inertia</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/vue.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">Vue</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/react.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">React</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/alpine.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">Alpine.js</span>
-                  </span>
-                </span>
-                <span class="skill-moon">
-                  <span class="skill-moon__body">
-                    <span class="skill-moon__surface">
-                      <img src="/src/assets/icons/skills/web/html.svg" alt="" width="16" height="16" />
-                    </span>
-                    <span class="skill-moon__label">HTML &amp; CSS</span>
-                  </span>
-                </span>
-              </span>
-              <span class="skill-sun" aria-hidden="true"></span>
+
+            <div class="mobile-nav__socials">
+              <a
+                class="mobile-nav__social-link"
+                href="https://github.com/MostafaAbdElFatah"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+              <a
+                class="mobile-nav__social-link"
+                href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn ↗</a
+              >
+              <a class="mobile-nav__social-link" href="mailto:mostafa.abdelfatah.dev@gmail.com"
+                >Email ↗</a
+              >
             </div>
           </div>
         </div>
-        <dl class="stats">
-          <div class="stats__item">
-            <dt class="stats__label">Years Experience</dt>
-            <dd class="stats__value">8+</dd>
-          </div>
-          <div class="stats__item">
-            <dt class="stats__label">Applications Shipped</dt>
-            <dd class="stats__value">33+</dd>
-          </div>
-          <div class="stats__item">
-            <dt class="stats__label">Total Downloads</dt>
-            <dd class="stats__value">10M+</dd>
-          </div>
-        </dl>
       </div>
-    </section>
+    </header>
 
-    <!-- ==========================================================================
+    <main id="main">
+      <!-- ==========================================================================
+         Hero Section
+         ========================================================================== -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__copy">
+              <p class="hero__subtitle">Mostafa Abdel Fattah Mohammed</p>
+              <h1 class="hero__title" id="hero-title">
+                Building mobile experiences <em>that scale.</em>
+              </h1>
+              <p class="hero__subtitle">
+                Senior iOS Developer <span aria-hidden="true">·</span> Mobile Tech Lead Flutter &
+                Dart
+              </p>
+              <p class="hero__lede">
+                Eight years of Quran, hadith and Islamic-education software, including
+                <b>officially authorized platforms</b> for the General Presidency of the Two Holy
+                Mosques, the General Authority of Awqaf in Libya, the Ministry of Hajj and Umrah,
+                and the Quran curricula of four ministries of education. Alongside that, full
+                commercial systems in healthcare, marketplace and on-demand services. Based in
+                Cairo.
+              </p>
+              <p class="hero__availability">
+                <span aria-hidden="true"></span>
+                Available for Senior iOS & Mobile Tech Lead opportunities
+              </p>
+              <div class="hero__actions">
+                <a class="hero__action hero__action--primary" href="#work">
+                  Explore my work
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <span class="hero__cv">
+                  <a
+                    class="hero__action hero__action--cv"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    aria-haspopup="dialog"
+                    data-cv-open
+                  >
+                    View CV
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </a>
+                  <a
+                    class="hero__action hero__action--icon"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    download
+                    aria-label="Download CV (PDF)"
+                    title="Download CV (PDF)"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 15V3" />
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <path d="m7 10 5 5 5-5" />
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div class="hero__visual">
+              <div
+                class="skill-system"
+                data-skill-system
+                role="img"
+                aria-label="Orbital diagram. Core mobile skills orbit close to the sun: Swift, SwiftUI, Flutter, Dart, and mobile development. An outer belt holds web skills at junior level: PHP, Laravel, Livewire, Inertia, Vue, React, Alpine.js, HTML and CSS."
+              >
+                <span class="skill-stars" aria-hidden="true"></span>
+                <span class="skill-orbit skill-orbit--swift" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img src="/src/assets/icons/skills/swift.svg" alt="" width="24" height="24" />
+                    </span>
+                    <span class="skill-planet__label">Swift</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--swiftui" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        src="/src/assets/icons/skills/swiftui.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">SwiftUI</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--flutter" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        src="/src/assets/icons/skills/flutter.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">Flutter</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--dart" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img src="/src/assets/icons/skills/dart.svg" alt="" width="24" height="24" />
+                    </span>
+                    <span class="skill-planet__label">Dart</span>
+                  </span>
+                </span>
+                <span class="skill-orbit skill-orbit--ios" aria-hidden="true">
+                  <span class="skill-planet">
+                    <span class="skill-planet__surface">
+                      <img
+                        class="skill-icon--ios"
+                        src="/src/assets/icons/skills/ios.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </span>
+                    <span class="skill-planet__label">Mobile</span>
+                  </span>
+                </span>
+                <span class="skill-belt" aria-hidden="true">
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/php.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">PHP</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/laravel.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">Laravel</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/livewire.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">Livewire</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/inertia.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">Inertia</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/vue.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">Vue</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/react.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">React</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/alpine.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">Alpine.js</span>
+                    </span>
+                  </span>
+                  <span class="skill-moon">
+                    <span class="skill-moon__body">
+                      <span class="skill-moon__surface">
+                        <img
+                          src="/src/assets/icons/skills/web/html.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                      </span>
+                      <span class="skill-moon__label">HTML &amp; CSS</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="skill-sun" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+          <dl class="stats">
+            <div class="stats__item">
+              <dt class="stats__label">Years Experience</dt>
+              <dd class="stats__value">8+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Applications Shipped</dt>
+              <dd class="stats__value">33+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Total Downloads</dt>
+              <dd class="stats__value">10M+</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
          Technical Expertise Section
          ========================================================================== -->
-    <section class="expertise" aria-labelledby="expertise-title">
-      <div class="container">
-        <header class="expertise__header">
-          <h2 id="expertise-title">Technical Expertise</h2>
-          <p>My core technologies and tools</p>
-        </header>
-        <ul class="expertise__list">
-          <li class="expertise__item">
-            <img class="expertise__icon" src="/src/assets/icons/skills/swift.svg" width="20" height="20" alt="" />
-            <span>Swift</span>
-          </li>
-          <li class="expertise__item">
-            <img class="expertise__icon" src="/src/assets/icons/skills/swiftui.svg" width="20" height="20" alt="" />
-            <span>SwiftUI</span>
-          </li>
-          <li class="expertise__item">
-            <img class="expertise__icon" src="/src/assets/icons/skills/ios.svg" width="20" height="20" alt="" />
-            <span>UIKit</span>
-          </li>
-          <li class="expertise__item">
-            <img class="expertise__icon" src="/src/assets/icons/skills/dart.svg" width="20" height="20" alt="" />
-            <span>Dart</span>
-          </li>
-          <li class="expertise__item">
-            <img class="expertise__icon" src="/src/assets/icons/skills/flutter.svg" width="20" height="20" alt="" />
-            <span>Flutter</span>
-          </li>
-          <li class="expertise__item">
-            <svg class="expertise__icon expertise__icon--line" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m12 2.75 8 4.5v9.5l-8 4.5-8-4.5v-9.5l8-4.5Z" />
-              <path d="m4.5 7.5 7.5 4.25 7.5-4.25M12 12v9" />
-            </svg>
-            <span>Clean Architecture</span>
-          </li>
-          <li class="expertise__item">
-            <svg class="expertise__icon expertise__icon--line" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="6" cy="5" r="2" />
-              <circle cx="18" cy="19" r="2" />
-              <circle cx="6" cy="19" r="2" />
-              <path d="M6 7v10M18 5v8a4 4 0 0 1-4 4H8" />
-            </svg>
-            <span>CI/CD</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+      <section class="expertise" aria-labelledby="expertise-title">
+        <div class="container">
+          <header class="expertise__header">
+            <h2 id="expertise-title">Technical Expertise</h2>
+            <p>My core technologies and tools</p>
+          </header>
+          <ul class="expertise__list">
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/swift.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Swift</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/swiftui.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>SwiftUI</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/ios.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>UIKit</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/dart.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Dart</span>
+            </li>
+            <li class="expertise__item">
+              <img
+                class="expertise__icon"
+                src="/src/assets/icons/skills/flutter.svg"
+                width="20"
+                height="20"
+                alt=""
+              />
+              <span>Flutter</span>
+            </li>
+            <li class="expertise__item">
+              <svg
+                class="expertise__icon expertise__icon--line"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m12 2.75 8 4.5v9.5l-8 4.5-8-4.5v-9.5l8-4.5Z" />
+                <path d="m4.5 7.5 7.5 4.25 7.5-4.25M12 12v9" />
+              </svg>
+              <span>Clean Architecture</span>
+            </li>
+            <li class="expertise__item">
+              <svg
+                class="expertise__icon expertise__icon--line"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="6" cy="5" r="2" />
+                <circle cx="18" cy="19" r="2" />
+                <circle cx="6" cy="19" r="2" />
+                <path d="M6 7v10M18 5v8a4 4 0 0 1-4 4H8" />
+              </svg>
+              <span>CI/CD</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- ==========================================================================
+      <!-- ==========================================================================
          Featured Projects Section
          ========================================================================== -->
-    <section class="projects" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <header class="projects__header">
-          <div class="projects__heading">
-            <h2 id="work-title">Featured Projects</h2>
-            <p class="projects__intro">
-              Selected projects showcasing my work in iOS, Flutter and cross-platform mobile
-              development, including architecture, performance optimization and real-world impact.
-            </p>
-          </div>
-          <a class="projects__view-all" href="#projects-detail" data-category-filter="all">
-            <span class="projects__view-all-full">View all projects</span>
-            <span class="projects__view-all-short">View all</span>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-        </header>
-
-        <div class="featured-cards" role="list">
-          <article class="featured-card" role="listitem">
-            <div class="featured-card__visual">
-              <picture>
-                <source srcset="/src/assets/images/projects/featured-health.webp" type="image/webp" />
-                <img class="featured-card__img" src="/src/assets/images/projects/featured-health.jpg" width="600"
-                  height="625" loading="lazy" alt="Nusuk mobile application screens displayed on two iPhones" />
-              </picture>
-            </div>
-            <div class="featured-card__body">
-              <h3 class="featured-card__title">
-                <a class="featured-card__link" href="#projects-detail" data-category-filter="gov">
-                  Nusuk
-                </a>
-              </h3>
-              <div class="featured-card__badges" role="list" aria-label="Technologies">
-                <span class="featured-card__badge" role="listitem">iOS</span>
-                <span class="featured-card__badge" role="listitem">SwiftUI</span>
-              </div>
-              <p class="featured-card__desc">
-                The official Hajj &amp; Umrah app with personalized plans, tracking and analytics.
+      <section class="projects" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <header class="projects__header">
+            <div class="projects__heading">
+              <h2 id="work-title">Featured Projects</h2>
+              <p class="projects__intro">
+                Selected projects showcasing my work in iOS, Flutter and cross-platform mobile
+                development, including architecture, performance optimization and real-world impact.
               </p>
-              <div class="featured-card__action">
-                <span>View Case Study</span>
-                <svg class="featured-card__action-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </div>
             </div>
-          </article>
-
-          <article class="featured-card" role="listitem">
-            <div class="featured-card__visual">
-              <picture>
-                <source srcset="/src/assets/images/projects/featured-travel.webp" type="image/webp" />
-                <img class="featured-card__img" src="/src/assets/images/projects/featured-travel.jpg" width="600"
-                  height="565" loading="lazy" alt="Agary real estate platform screens displayed on mobile devices" />
-              </picture>
-            </div>
-            <div class="featured-card__body">
-              <h3 class="featured-card__title">
-                <a class="featured-card__link" href="#projects-detail" data-category-filter="consumer">
-                  Agary
-                </a>
-              </h3>
-              <div class="featured-card__badges" role="list" aria-label="Technologies">
-                <span class="featured-card__badge" role="listitem">Flutter</span>
-                <span class="featured-card__badge" role="listitem">Dart</span>
-              </div>
-              <p class="featured-card__desc">
-                Real estate platform with multi-app architecture (User, Agent, Admin).
-              </p>
-              <div class="featured-card__action">
-                <span>View Case Study</span>
-                <svg class="featured-card__action-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </div>
-            </div>
-          </article>
-
-          <article class="featured-card" role="listitem">
-            <div class="featured-card__visual">
-              <picture>
-                <source srcset="/src/assets/images/projects/featured-architecture.webp" type="image/webp" />
-                <img class="featured-card__img" src="/src/assets/images/projects/featured-architecture.jpg" width="600"
-                  height="390" loading="lazy" alt="EduTrack education platform interface" />
-              </picture>
-            </div>
-            <div class="featured-card__body">
-              <h3 class="featured-card__title">
-                <a class="featured-card__link" href="#projects-detail" data-category-filter="edu">
-                  EduTrack
-                </a>
-              </h3>
-              <div class="featured-card__badges" role="list" aria-label="Technologies">
-                <span class="featured-card__badge" role="listitem">iOS</span>
-                <span class="featured-card__badge" role="listitem">SwiftUI</span>
-              </div>
-              <p class="featured-card__desc">
-                Education platform with live classes, progress tracking and more.
-              </p>
-              <div class="featured-card__action">
-                <span>View Case Study</span>
-                <svg class="featured-card__action-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="projects__explorer" id="projects-detail">
-          <div class="projects__filter-bar" role="toolbar" aria-label="Filter projects by category">
-            <button class="projects__filter-chip is-active" type="button" aria-pressed="true" data-category-chip="all">
-              All (33)
-            </button>
-            <button class="projects__filter-chip" type="button" aria-pressed="false" data-category-chip="health">
-              Health &amp; Wellness
-            </button>
-            <button class="projects__filter-chip" type="button" aria-pressed="false" data-category-chip="consumer">
-              Travel &amp; Lifestyle
-            </button>
-            <button class="projects__filter-chip" type="button" aria-pressed="false" data-category-chip="gov,edu,quran">
-              Scalable Architecture &amp; Gov
-            </button>
-          </div>
-        </div>
-
-        <div class="projects__list">
-          <!-- projects:featured:start -->
-          <article class="project" data-project data-category="gov">
-            <h3 class="project__title">
-              Nusuk <span class="project__title-ar" lang="ar" dir="rtl">نسك</span>
-            </h3>
-            <p class="project__meta">May 2024 – Oct 2025 · Arabia IT Company · Government</p>
-            <p class="project__summary">
-              The Ministry of Hajj and Umrah's official pilgrimage platform. Eighteen months of
-              feature development across the app's Islamic-services expansion.
-            </p>
-            <ul class="project__points">
-              <li>
-                Engineered <b>global prayer-time calculation</b> with location-aware alerts and
-                Qibla direction, accurate across major calculation methods and time zones.
-              </li>
-              <li>
-                Built the <b>Al-Haramain audio library</b> — recitations, lectures and lessons
-                from the Imams of the Two Holy Mosques, streaming and offline-capable.
-              </li>
-              <li>
-                Developed the <b>watchOS companion and home-screen widgets</b> surfacing prayer
-                times, adhkar and Quran content.
-              </li>
-              <li>
-                Expanded the Quran module with reading, tafsir and persistent bookmarking; built
-                the digital tasbeeh counter and curated hadith collection.
-              </li>
-            </ul>
-            <p class="project__highlights">
-              10M+ downloads · 4.7 ★ · 185K ratings · 35 languages
-            </p>
-            <p class="project__stack">Swift · SwiftUI · WidgetKit · watchOS</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/nusuk-%D9%86%D8%B3%D9%83/id6469515422"
-                target="_blank" rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="gov">
-            <h3 class="project__title">
-              Mushaf Al-Haramain
-              <span class="project__title-ar" lang="ar" dir="rtl">مصحف الحرمين</span>
-            </h3>
-            <p class="project__meta">Jan – Mar 2021 · Arabia IT Company · Government</p>
-            <p class="project__summary">
-              The official electronic application of the General Presidency for the Affairs of the
-              Grand Mosque and the Prophet's Mosque, delivering the authorized Madinah Mushaf
-              printed by the King Fahd Complex.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built a <b>high-fidelity Mushaf viewer</b> preserving the exact page geometry and
-                verse numbering of the printed original — a state-authorized religious text leaves
-                no margin for rendering drift.
-              </li>
-              <li>
-                Implemented a <b>multi-mode search engine</b> across word, phrase, surah, page and
-                juz' with sub-second response over the full text.
-              </li>
-              <li>
-                Integrated the Haramain recitation library including complete Taraweeh recordings
-                from the Imams of both mosques (1441 AH), with offline playback.
-              </li>
-              <li>
-                Added Tafsir Al-Muyassar with verse-linked highlighting, bookmarking, night mode
-                and sharing.
-              </li>
-            </ul>
-            <p class="project__highlights">Official state app · Hafs 'an 'Asim</p>
-            <p class="project__stack">Swift · UIKit · Core Data · AVFoundation</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/-/id1558424738" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="edu">
-            <h3 class="project__title">
-              Al-Mushaf Al-Madrasy
-              <span class="project__title-ar" lang="ar" dir="rtl">المصحف المدرسي</span>
-            </h3>
-            <p class="project__meta">Mar – Jun 2025 · Arabia IT Company · Education</p>
-            <p class="project__summary">
-              An interactive Quran curriculum app aligned to the official syllabi approved by the
-              ministries of education of Saudi Arabia, Kuwait, Bahrain and Oman.
-            </p>
-            <ul class="project__points">
-              <li>
-                Modelled a <b>curriculum engine</b> mapping recitation and memorization
-                assignments to each grade and class level across four distinct national syllabi.
-              </li>
-              <li>
-                Built <b>multi-profile account management</b> so several students at different
-                educational stages share one device with independent progress tracking.
-              </li>
-              <li>
-                Integrated an offline-capable audio library of ten renowned reciters, among them
-                Al-Minshawi, Al-Sudais, Al-Shuraim, Al-Afasy and Al-Muaiqly.
-              </li>
-              <li>
-                Developed a memorization assistant with configurable verse repetition, plus
-                achievement badges, resume-bookmarking and four page themes for young learners.
-              </li>
-            </ul>
-            <p class="project__highlights">4 national curricula · 4.1 ★ · 1K+ ratings</p>
-            <p class="project__stack">Swift · SwiftUI · macOS · Windows · Linux</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/app/id1177013583" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-              <a class="project__link" href="https://play.google.com/store/apps/details?id=com.devlabs.quran"
-                target="_blank" rel="noopener noreferrer">Google Play</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="quran">
-            <h3 class="project__title">
-              Jami' Al-Kutub Al-Tis'a
-              <span class="project__title-ar" lang="ar" dir="rtl">جامع الكتب التسعة</span>
-            </h3>
-            <p class="project__meta">Oct 2023 – Feb 2024 · Arabia IT Company · Quran & hadith</p>
-            <p class="project__summary">
-              The nine canonical hadith collections — Bukhari, Muslim, Abu Dawood, Al-Tirmidhi,
-              Al-Nasa'i, Ibn Majah, Al-Darimi, Musnad Ahmad and Muwatta Malik — with full
-              classical commentary, in one searchable application.
-            </p>
-            <ul class="project__points">
-              <li>
-                Designed an <b>indexed search system</b> supporting keyword, partial-text,
-                hadith-number and chapter queries across tens of thousands of narrations, tuned
-                for instant on-device results.
-              </li>
-              <li>
-                Built the <b>thematic classification tree</b> (الشجرة الموضوعية) enabling
-                scholarly navigation by subject rather than book order.
-              </li>
-              <li>
-                Integrated narrator records, authenticity grading — sahih, hasan, da'if —
-                attribution type, gharib glossing and takhrij with corroborating chains.
-              </li>
-              <li>
-                Delivered reading customization, favourites, personal annotations and sharing for
-                students and researchers.
-              </li>
-            </ul>
-            <p class="project__highlights">
-              9 canonical collections · Tens of thousands of narrations
-            </p>
-            <p class="project__stack">
-              Swift · SQLite · full-text indexing · macOS · Windows · Linux
-            </p>
-            <p class="project__links">
-              <a class="project__link"
-                href="https://apps.apple.com/us/app/%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%84%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%AA%D8%B3%D8%B9%D8%A9/id1149785262"
-                target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="project__link" href="https://play.google.com/store/apps/details?id=com.arabiait.sunna"
-                target="_blank" rel="noopener noreferrer">Google Play</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="gov">
-            <h3 class="project__title">
-              Mushaf Al-Awqaf Al-Libya 2.0
-              <span class="project__title-ar" lang="ar" dir="rtl">مصحف الأوقاف الليبية</span>
-            </h3>
-            <p class="project__meta">Aug – Sep 2023 · Arabia IT Company · Government</p>
-            <p class="project__summary">
-              The official digital Quran of the General Authority of Awqaf and Islamic Affairs,
-              Libya — Qalun 'an Nafi' narration in the Imam Al-Dani script, certified by the
-              Authority's standing Mushaf review committee.
-            </p>
-            <ul class="project__points">
-              <li>
-                Adapted the Mushaf rendering engine to the
-                <b>Qalun layout and Al-Dani orthography</b>, a materially different typographic
-                system from the Hafs / Madinah standard most Quran apps are built on.
-              </li>
-              <li>
-                Integrated a Libyan reciters' audio library with verse-level selection,
-                configurable repeat counts and progress tracking.
-              </li>
-              <li>
-                Built a <b>personalized Khatmah planner</b> computing daily portion and
-                days-to-completion from a user-set goal.
-              </li>
-              <li>
-                Added multi-language translations, a tafsir library, verse-level reflections,
-                daily reminders, and linkage to the Imam Al-Dani distance-learning platform.
-              </li>
-            </ul>
-            <p class="project__highlights">Official state app · Qalun 'an Nafi'</p>
-            <p class="project__stack">Swift · UIKit</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/id6741798282" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="edu">
-            <h3 class="project__title">Alfatihah.ind</h3>
-            <p class="project__meta">Oct – Dec 2024 · Arabia IT Company · Education</p>
-            <p class="project__summary">
-              An AI-assisted application teaching and correcting the recitation of Surah
-              Al-Fatihah for Indonesian speakers, combining automated feedback with certified
-              human instruction.
-            </p>
-            <ul class="project__points">
-              <li>
-                Integrated <b>speech-recognition pronunciation correction</b>, evaluating learner
-                recitation against correct makhraj and returning targeted feedback.
-              </li>
-              <li>
-                Built the interactive learning flow pairing audio guides with visual recitation
-                demonstrations, word-by-word translation and tafsir.
-              </li>
-              <li>
-                Delivered a <b>certification pathway</b> issuing official certificates of mastery
-                from accredited institutions.
-              </li>
-              <li>
-                Localized the full experience for Indonesian learners, tuned to non-native Arabic
-                phonology throughout.
-              </li>
-            </ul>
-            <p class="project__highlights">Speech recognition · Indonesian market</p>
-            <p class="project__stack">Swift · Speech / ML integration</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/-/id6741386382" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="quran">
-            <h3 class="project__title">
-              Bilal <span class="project__title-ar" lang="ar" dir="rtl">بلال</span>
-            </h3>
-            <p class="project__meta">Nov 2019 – Apr 2020 · Arabia IT Company · Quran & hadith</p>
-            <p class="project__summary">
-              A free, permanently ad-free prayer and azan companion, named for the Prophet's
-              words, “Relieve us with it, O Bilal.”
-            </p>
-            <ul class="project__points">
-              <li>
-                Implemented <b>worldwide prayer-time computation</b> with city-level accuracy and
-                Qibla direction from any location.
-              </li>
-              <li>
-                Built the azan notification system supporting
-                <b>60+ authentic muezzin recordings</b>, configurable pre-Fajr alerts, and Ramadan
-                iftar and suhoor reminders.
-              </li>
-              <li>
-                Developed the Apple Watch app and home-screen widgets for prayer times at a
-                glance.
-              </li>
-              <li>
-                Shipped cross-platform from a single Flutter codebase with a native watchOS
-                extension.
-              </li>
-            </ul>
-            <p class="project__highlights">60+ muezzin voices · No ads, permanently</p>
-            <p class="project__stack">Flutter · Dart · watchOS · WidgetKit</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/-bilal/id1461237208" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-              <a class="project__link" href="https://play.google.com/store/apps/details?id=com.arabiait.belal"
-                target="_blank" rel="noopener noreferrer">Google Play</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="quran">
-            <h3 class="project__title">
-              Great Quran <span class="project__title-ar" lang="ar" dir="rtl">القرآن العظيم</span>
-            </h3>
-            <p class="project__meta">Nov 2022 – Feb 2023 · Arabia IT Company · Quran & hadith</p>
-            <p class="project__summary">
-              A flagship Mushaf certified against the King Fahd Complex and Al-Azhar editions,
-              reviewed verse by verse by a scientific committee licensed in the ten recitations.
-            </p>
-            <ul class="project__points">
-              <li>
-                Worked inside a codebase with a decade of production history, first released in
-                2014 — feature development in a mature, heavily used application.
-              </li>
-              <li>
-                Extended the <b>Quranic search engine</b>: full-corpus search in seconds, tolerant
-                of common spelling errors, with surah-name and verse-number lookup, result counts
-                and highlighting.
-              </li>
-              <li>
-                Expanded the library to more than forty works of tafsir and Quranic sciences, and
-                thirty audio recitations across multiple qira'at.
-              </li>
-              <li>Built recitation and memorization tracking with daily progress statistics.</li>
-            </ul>
-            <p class="project__highlights">
-              40+ tafsir works · 30+ recitations · Ten-qira'at review board
-            </p>
-            <p class="project__stack">Swift · UIKit · AVFoundation</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/us/app/-/id792049888" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-              <a class="project__link" href="https://play.google.com/store/apps/details?id=com.arabiait.quran.v2"
-                target="_blank" rel="noopener noreferrer">Google Play</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">
-              URPASS <span class="project__title-ar" lang="ar" dir="rtl">يورباس</span>
-            </h3>
-            <p class="project__meta">Apr – Jun 2026 · Freelance · Consumer</p>
-            <p class="project__summary">
-              A cross-platform product delivered end to end as a freelance engagement, shipping to
-              both the App Store and Google Play from a single codebase.
-            </p>
-            <ul class="project__points">
-              <li>
-                Owned the engagement end to end as sole engineer: architecture, implementation,
-                store configuration and release.
-              </li>
-              <li>
-                Shipped <b>iOS and Android in parallel</b> from one codebase, holding feature
-                parity while respecting each platform's navigation and interaction conventions.
-              </li>
-            </ul>
-            <p class="project__highlights">iOS and Android · Most recent engagement</p>
-            <p class="project__stack">Cross-platform · iOS &amp; Android</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/sa/app/id6720758472" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-              <a class="project__link" href="https://play.google.com/store/apps/details?id=com.urpass.plus"
-                target="_blank" rel="noopener noreferrer">Google Play</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="edu">
-            <h3 class="project__title">Lights of Life</h3>
-            <p class="project__meta">Nov – Dec 2022 · EkadSoft · Education</p>
-            <p class="project__summary">
-              A student assessment and academic task platform bringing formal testing, performance
-              tracking and daily coursework into a single account.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built the <b>assessment module</b>: timed tests, answer submission and scoring
-                against the course question bank.
-              </li>
-              <li>
-                Developed <b>performance tracking</b> giving students a running view of results
-                across subjects and terms rather than isolated scores.
-              </li>
-              <li>
-                Implemented daily coursework and task assignment, so routine work and formal
-                examination share one interface and one progress record.
-              </li>
-            </ul>
-            <p class="project__highlights">Assessment and coursework</p>
-            <p class="project__stack">Swift · REST APIs</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/sa/app/lights-of-life/id6444769251" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">HomeMade</h3>
-            <p class="project__meta">May – Sep 2021 · ArabApps Company · Consumer</p>
-            <p class="project__summary">
-              The customer application for a marketplace of home-made goods, handicrafts and
-              micro-businesses, connecting small independent producers to buyers.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built the <b>buyer experience</b>: category browsing, search, seller storefronts
-                and product detail across a catalogue of independent makers.
-              </li>
-              <li>
-                Implemented cart, checkout and order tracking against the shared marketplace
-                backend used by both clients.
-              </li>
-              <li>
-                Handled <b>full Arabic and RTL layout</b> across catalogue, product and checkout
-                flows, including mixed-direction pricing and address entry.
-              </li>
-            </ul>
-            <p class="project__highlights">Two-sided marketplace · Customer client</p>
-            <p class="project__stack">Swift · UIKit · REST APIs</p>
-            <p class="project__links">
-              <a class="project__link" href="https://apps.apple.com/sa/app/homemade/id6758558656" target="_blank"
-                rel="noopener noreferrer">App Store</a>
-            </p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">HomeMade Vendor</h3>
-            <p class="project__meta">Jul – Sep 2021 · ArabApps Company · Consumer</p>
-            <p class="project__summary">
-              The seller-side counterpart to HomeMade, giving micro-businesses the tools to run a
-              storefront from a phone.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built <b>listing and inventory management</b>: product creation, imagery, pricing
-                and availability, with storefront presentation controls.
-              </li>
-              <li>
-                Developed the <b>order pipeline</b> — incoming orders, status transitions and
-                fulfilment updates that surface live in the customer app.
-              </li>
-              <li>
-                Shipped as a separate client sharing the marketplace data model and API layer,
-                keeping both sides consistent as the schema evolved.
-              </li>
-            </ul>
-            <p class="project__highlights">Seller client · Shared API layer</p>
-            <p class="project__stack">Swift · UIKit · REST APIs</p>
-            <p class="project__links"></p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">Floria</h3>
-            <p class="project__meta">Apr – May 2021 · ArabApps Company · Consumer</p>
-            <p class="project__summary">
-              A florist e-commerce application built around gifting, where the delivery window
-              matters as much as the product.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built the storefront and product catalogue, including arrangement selection and
-                gifting options at the point of purchase.
-              </li>
-              <li>
-                Implemented <b>scheduled delivery</b>, carrying date and time-window selection
-                through checkout into the fulfilment record.
-              </li>
-              <li>
-                Integrated secure payment processing with order confirmation and post-purchase
-                tracking.
-              </li>
-            </ul>
-            <p class="project__highlights">Scheduled delivery · Secure payments</p>
-            <p class="project__stack">Swift · UIKit · payment SDK</p>
-            <p class="project__links"></p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">Homy</h3>
-            <p class="project__meta">Apr – May 2021 · ArabApps Company · Consumer</p>
-            <p class="project__summary">
-              An on-demand home services marketplace spanning trades, cleaning, remote tutoring,
-              childcare and nursing — one booking surface over a wide range of provider types.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built <b>provider discovery</b> with ratings, reviews and service-category
-                filtering across professions with very different booking shapes.
-              </li>
-              <li>
-                Implemented booking against provider availability, covering both scheduled and
-                same-day requests.
-              </li>
-              <li>
-                Developed the full <b>request lifecycle</b> from booking to completion, with push
-                notification of every status change on both sides.
-              </li>
-            </ul>
-            <p class="project__highlights">On-demand services · Provider ratings</p>
-            <p class="project__stack">Swift · UIKit · Firebase</p>
-            <p class="project__links"></p>
-          </article>
-          <article class="project" data-project data-category="consumer">
-            <h3 class="project__title">YallaDealz</h3>
-            <p class="project__meta">Jul – Aug 2019 · Independent · Consumer</p>
-            <p class="project__summary">
-              A location-based deals aggregator pulling offers across hospitality, dining, retail
-              and entertainment into one feed.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built a <b>location-aware offers feed</b>, surfacing deals by proximity and
-                category rather than as an undifferentiated list.
-              </li>
-              <li>
-                Implemented merchant detail pages and the redemption flow, with filtering across
-                four commercial verticals.
-              </li>
-              <li>
-                The earliest shipped product in the portfolio, and where the location and REST
-                patterns reused across later consumer work were established.
-              </li>
-            </ul>
-            <p class="project__highlights">Deals aggregator · Earliest shipped product</p>
-            <p class="project__stack">Swift · Core Location · REST APIs</p>
-            <p class="project__links"></p>
-          </article>
-          <article class="project" data-project data-category="health">
-            <h3 class="project__title">Rubikcare</h3>
-            <p class="project__meta">2022 – 2023 · EkadSoft · Healthcare</p>
-            <p class="project__summary">
-              A four-application healthcare platform connecting patients, doctors, pharmacies and
-              pharmaceutical sales representatives in one coordinated system.
-            </p>
-            <ul class="project__points">
-              <li>
-                Built the <b>patient application</b>: appointment booking, proximity-based
-                pharmacy discovery, medicine comparison, and multi-pharmacy ordering with or
-                without a prescription.
-              </li>
-              <li>
-                Integrated the <b>Zoom API</b> for remote consultations between patients and
-                physicians.
-              </li>
-              <li>
-                Developed digital prescription creation and management in the physician app,
-                flowing directly into the patient and pharmacy clients.
-              </li>
-              <li>
-                Delivered the pharmacy order-management app and the sales-representative client
-                with activity tracking.
-              </li>
-            </ul>
-            <p class="project__highlights">4 interoperating apps · Zoom API telehealth</p>
-            <p class="project__stack">Swift · UIKit · REST APIs · Zoom SDK</p>
-            <p class="project__links"></p>
-          </article>
-          <!-- projects:featured:end -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         Project Catalogue Section
-         ========================================================================== -->
-    <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
-      <div class="container">
-        <h2 id="catalogue-title">The rest of the catalogue</h2>
-        <ul class="catalogue__list" role="list">
-          <!-- projects:catalogue:start -->
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Dec 2019 – Apr 2020</span>
-            <a class="catalogue__name" href="https://apps.apple.com/app/id1463949765" target="_blank"
-              rel="noopener noreferrer">Convey</a>
-            <span lang="ar" dir="rtl">بلغوا</span>
-            <span class="catalogue__desc">Verse-design and sharing tool for preachers and da'wah offices. 300 templates,
-              four-language translations, full customization before export.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jan – Mar 2025</span>
-            <span class="catalogue__name">Rusel</span> <span lang="ar" dir="rtl">رسل</span>
-            <span class="catalogue__desc">Da'wah sharing platform with 6,000 designs and 4,000 short videos, verified by
-              the
-              Sharia Committee of the Al-Rawdah Da'wah Association.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jun – Aug 2023</span>
-            <span class="catalogue__name">Sheikh Ibn Uthaymeen</span>
-            <span lang="ar" dir="rtl">تطبيق الشيخ ابن عثيمين</span>
-            <span class="catalogue__desc">Digital library of the scholar's works, lessons and fatwas.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Mar – Apr 2023</span>
-            <span class="catalogue__name">Mushaf Ibn Uthaymeen &amp; Tafsir</span>
-            <span lang="ar" dir="rtl">مصحف ابن عثيمين وتفسيره</span>
-            <span class="catalogue__desc">Quran reader with integrated Ibn Uthaymeen commentary.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="consumer">
-            <span class="catalogue__year">Sep 2022</span>
-            <span class="catalogue__name">Farra</span> <span lang="ar" dir="rtl">فرة</span>
-            <span class="catalogue__desc">Location-based guide to nearby entertainment and leisure venues, filtered for
-              families, women and groups.</span>
-            <span class="catalogue__org">Independent</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Feb – Mar 2022</span>
-            <span class="catalogue__name">Awrady</span> <span lang="ar" dir="rtl">أورادي</span>
-            <span class="catalogue__desc">Personal daily adhkar and wird tracking.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jan – Feb 2022</span>
-            <span class="catalogue__name">AlQuran AlMubeen</span>
-            <span lang="ar" dir="rtl">القرآن المبين</span>
-            <span class="catalogue__desc">Quran reader with clarified script rendering.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Nov – Dec 2021</span>
-            <span class="catalogue__name">Mushaf Al-Tadabbur</span>
-            <span lang="ar" dir="rtl">مصحف التدبر</span>
-            <span class="catalogue__desc">Reflection-oriented Mushaf with contemplation aids.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jul – Sep 2021</span>
-            <span class="catalogue__name">Quran Hakeem</span>
-            <span lang="ar" dir="rtl">القرآن الحكيم</span>
-            <span class="catalogue__desc">Quran reader with integrated recitation library.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jun – Jul 2021</span>
-            <span class="catalogue__name">Lawami' Al-Adhkar</span>
-            <span lang="ar" dir="rtl">لوامع الأذكار</span>
-            <span class="catalogue__desc">Comprehensive adhkar collection with scheduled reminders.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jun 2021</span>
-            <span class="catalogue__name">Mushaf AlHilal</span>
-            <span lang="ar" dir="rtl">مصحف الهلال</span>
-            <span class="catalogue__desc">Branded Mushaf edition.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">May 2021</span>
-            <span class="catalogue__name">AlQuran AlHakeem</span>
-            <span lang="ar" dir="rtl">القرآن الحكيم</span>
-            <span class="catalogue__desc">Quran reader build.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Jan – Apr 2021</span>
-            <span class="catalogue__name">Ayat Bayyinat</span>
-            <span lang="ar" dir="rtl">آيات بينات</span>
-            <span class="catalogue__desc">Quran study app with verse-level research tools.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="quran">
-            <span class="catalogue__year">Aug – Nov 2020</span>
-            <span class="catalogue__name">Sakinah</span> <span lang="ar" dir="rtl">سكينة</span>
-            <span class="catalogue__desc">Spiritual wellbeing and remembrance app.</span>
-            <span class="catalogue__org">Arabia IT Company</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="consumer">
-            <span class="catalogue__year">Dec 2019</span>
-            <span class="catalogue__name">KeesApp</span>
-            <span class="catalogue__desc">Grocery and supermarket delivery with live order tracking and multiple payment
-              options.</span>
-            <span class="catalogue__org">Independent</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="consumer">
-            <span class="catalogue__year">Mar 2019</span>
-            <span class="catalogue__name">ArabicArduino News</span>
-            <span class="catalogue__desc">Arabic-language Arduino, electronics and IoT news, tutorials and component
-              guides.</span>
-            <span class="catalogue__org">Independent</span>
-          </li>
-          <li class="catalogue__item" data-project data-category="health">
-            <span class="catalogue__year">Jan – Feb 2019</span>
-            <span class="catalogue__name">PharmacyApp</span>
-            <span class="catalogue__desc">Prescription upload and pharmacy ordering, the early prototype of what later
-              became
-              Rubikcare.</span>
-            <span class="catalogue__org">Independent</span>
-          </li>
-          <!-- projects:catalogue:end -->
-        </ul>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         Work Experience Section
-         ========================================================================== -->
-    <section class="experience" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="experience__header">
-          <h2 id="experience-title">Experience</h2>
-          <p class="experience__subtitle">My professional journey</p>
-        </header>
-
-        <ol class="experience__timeline" role="list">
-          <li class="experience__item">
-            <span class="experience__badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                <rect width="20" height="14" x="2" y="6" rx="2" />
-              </svg>
-            </span>
-            <div class="experience__body">
-              <h3 class="experience__role">Senior iOS &amp; Flutter Developer</h3>
-              <p class="experience__meta">
-                <span class="experience__company">Arabia IT Company</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Cairo, Egypt</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Nov 2019 – Present</span>
-              </p>
-              <ul class="experience__points" role="list">
-                <li class="experience__point">
-                  Architected secure finance and e-commerce apps (Swift, SwiftUI, Flutter) serving
-                  100k+ users, using encryption and Keychain storage.
-                </li>
-                <li class="experience__point">
-                  Cut crash rate 35% with Firebase Crashlytics and stability fixes, raising the
-                  App Store rating from 3.9 to 4.6.
-                </li>
-                <li class="experience__point">
-                  Led the native iOS-to-Flutter migration to one iOS/Android codebase, reducing
-                  development costs 30%.
-                </li>
-                <li class="experience__point">
-                  Aligned releases with business KPIs, contributing to a 12% rise in customer
-                  retention.
-                </li>
-                <li class="experience__point">
-                  Mentored 4 junior developers through code reviews, reducing reported bugs 20%.
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="experience__item">
-            <span class="experience__badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                <path d="M12 18h.01" />
-              </svg>
-            </span>
-            <div class="experience__body">
-              <h3 class="experience__role">iOS Developer (Contract)</h3>
-              <p class="experience__meta">
-                <span class="experience__company">EkadSoft</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Cairo, Egypt</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Jun 2022 – Apr 2023</span>
-              </p>
-              <ul class="experience__points" role="list">
-                <li class="experience__point">
-                  Built SwiftUI apps on AWS-hosted RESTful APIs, shipped via automated CI/CD
-                  pipelines.
-                </li>
-                <li class="experience__point">
-                  Reached 85% code coverage with XCTest, reducing production defects 20%; raised
-                  sprint velocity 15%.
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="experience__item">
-            <span class="experience__badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
-                <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
-                <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
-              </svg>
-            </span>
-            <div class="experience__body">
-              <h3 class="experience__role">iOS Developer (Contract)</h3>
-              <p class="experience__meta">
-                <span class="experience__company">ArabApps Company</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Cairo, Egypt</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Apr 2021 – Oct 2021</span>
-              </p>
-              <ul class="experience__points" role="list">
-                <li class="experience__point">
-                  Restructured apps into modular MVVM/Clean Architecture layers, reducing build
-                  times 25%; standardized UI components, lifting engagement 18%.
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="experience__item">
-            <span class="experience__badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </span>
-            <div class="experience__body">
-              <h3 class="experience__role">Freelance Mobile Developer</h3>
-              <p class="experience__meta">
-                <span class="experience__company">Self-employed</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Remote</span>
-                <span class="experience__sep" aria-hidden="true">·</span>
-                <span>Jan 2019 – Nov 2019</span>
-              </p>
-              <ul class="experience__points" role="list">
-                <li class="experience__point">
-                  Delivered Flutter and native iOS/Android (Swift, Kotlin, Java) apps for SMEs;
-                  CI/CD cut release cycles from 2 weeks to 5 days.
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ol>
-
-        <!-- ==========================================================================
-             Call to Action (CTA) Section
-             ========================================================================== -->
-        <div class="cta__card">
-          <div class="cta__content">
-            <h2 class="cta__title" id="cta-title">Let's Build Something Great Together</h2>
-            <p class="cta__subtitle">
-              I'm open to exciting opportunities, collaborations and new challenges.
-            </p>
-            <a class="cta__button" href="#contact">
-              <span>Get In Touch</span>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <a class="projects__view-all" href="#projects-detail" data-category-filter="all">
+              <span class="projects__view-all-full">View all projects</span>
+              <span class="projects__view-all-short">View all</span>
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </a>
-          </div>
-          <div class="cta__visual" aria-hidden="true">
-            <picture>
-              <source srcset="/src/assets/images/cta/mountain.webp" type="image/webp" />
-              <img src="/src/assets/images/cta/mountain.png" width="1376" height="768" alt="" class="cta__mountain"
-                loading="lazy" decoding="async" />
-            </picture>
-          </div>
-        </div>
-      </div>
-    </section>
+          </header>
 
-    <!-- ==========================================================================
-         About Me Section & Contact Section
-         ========================================================================== -->
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="about__grid">
-          <div class="about__content">
-            <h2 class="about__title" id="about-title">About Me</h2>
-            <p class="about__roles">
-              <span class="about__role">Mobile Developer</span>
-              <span class="about__dot" aria-hidden="true">•</span>
-              <span class="about__role">Tech Lead</span>
-              <span class="about__dot" aria-hidden="true">•</span>
-              <span class="about__role">Problem Solver</span>
-            </p>
-            <p class="about__bio">
-              I'm a passionate Senior iOS Developer with 8+ years of experience building scalable
-              mobile applications. I specialize in Swift, SwiftUI, Flutter, and React Native, with
-              a strong focus on clean architecture, performance, and delivering impactful
-              products.
-            </p>
-
-            <ul class="about__metrics" role="list">
-              <li class="about__metric">
-                <span class="about__metric-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <polyline points="12 7 12 12 15.5 14" />
-                  </svg>
-                </span>
-                <span class="about__metric-value">8+</span>
-                <span class="about__metric-label">Years of experience</span>
-              </li>
-              <li class="about__metric">
-                <span class="about__metric-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect width="14" height="20" x="5" y="2" rx="2.5" />
-                    <path d="M9 6h6" />
-                    <path d="M12 18h.01" />
-                  </svg>
-                </span>
-                <span class="about__metric-value">20+</span>
-                <span class="about__metric-label">Production apps</span>
-              </li>
-              <li class="about__metric">
-                <span class="about__metric-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 8v8" />
-                    <path d="m8.5 12.5 3.5 3.5 3.5-3.5" />
-                  </svg>
-                </span>
-                <span class="about__metric-value">10M+</span>
-                <span class="about__metric-label">Total downloads</span>
-              </li>
-              <li class="about__metric">
-                <span class="about__metric-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </span>
-                <span class="about__metric-value">4.6★</span>
-                <span class="about__metric-label">App Store rating</span>
-              </li>
-              <li class="about__metric">
-                <span class="about__metric-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg>
-                </span>
-                <span class="about__metric-value">99.9%</span>
-                <span class="about__metric-label">Crash-free stability</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="about__showcase" id="contact" aria-labelledby="contact-title">
-            <div class="about-card">
-              <div class="about-card__glow" aria-hidden="true"></div>
-              <header class="about-card__header">
-                <span class="about-card__badge">
-                  <span class="about-card__pulse" aria-hidden="true"></span>
-                  Available for Roles &amp; Freelance
-                </span>
-                <span class="about-card__location">Cairo · KSA &amp; Gulf</span>
-              </header>
-
-              <div class="about-card__intro">
-                <h3 class="about-card__title" id="contact-title">
-                  Open to senior iOS roles and freelance work
-                </h3>
-                <p class="about-card__desc">
-                  Arabic-language and Islamic application development, or general iOS product
-                  work. Working with teams in Saudi Arabia and the Gulf since 2019. Email gets the
-                  fastest reply.
-                </p>
+          <div class="featured-cards" role="list">
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-health.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-health.jpg"
+                    width="600"
+                    height="625"
+                    loading="lazy"
+                    alt="Nusuk mobile application screens displayed on two iPhones"
+                  />
+                </picture>
               </div>
-
-              <ul class="about-card__channels" role="list">
-                <li>
-                  <a class="about-card__channel" href="mailto:mostafa.abdelfatah.dev@gmail.com">
-                    <span class="about-card__channel-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                    </span>
-                    <span class="about-card__channel-body">
-                      <span class="about-card__channel-label">Email — Fastest reply</span>
-                      <span class="about-card__channel-value">mostafa.abdelfatah.dev@gmail.com</span>
-                    </span>
-                    <span class="about-card__channel-arrow" aria-hidden="true">↗</span>
+              <div class="featured-card__body">
+                <h3 class="featured-card__title">
+                  <a class="featured-card__link" href="#projects-detail" data-category-filter="gov">
+                    Nusuk
                   </a>
+                </h3>
+                <div class="featured-card__badges" role="list" aria-label="Technologies">
+                  <span class="featured-card__badge" role="listitem">iOS</span>
+                  <span class="featured-card__badge" role="listitem">SwiftUI</span>
+                </div>
+                <p class="featured-card__desc">
+                  The official Hajj &amp; Umrah app with personalized plans, tracking and analytics.
+                </p>
+                <div class="featured-card__action">
+                  <span>View Case Study</span>
+                  <svg
+                    class="featured-card__action-arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-travel.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-travel.jpg"
+                    width="600"
+                    height="565"
+                    loading="lazy"
+                    alt="Agary real estate platform screens displayed on mobile devices"
+                  />
+                </picture>
+              </div>
+              <div class="featured-card__body">
+                <h3 class="featured-card__title">
+                  <a
+                    class="featured-card__link"
+                    href="#projects-detail"
+                    data-category-filter="consumer"
+                  >
+                    Agary
+                  </a>
+                </h3>
+                <div class="featured-card__badges" role="list" aria-label="Technologies">
+                  <span class="featured-card__badge" role="listitem">Flutter</span>
+                  <span class="featured-card__badge" role="listitem">Dart</span>
+                </div>
+                <p class="featured-card__desc">
+                  Real estate platform with multi-app architecture (User, Agent, Admin).
+                </p>
+                <div class="featured-card__action">
+                  <span>View Case Study</span>
+                  <svg
+                    class="featured-card__action-arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card" role="listitem">
+              <div class="featured-card__visual">
+                <picture>
+                  <source
+                    srcset="/src/assets/images/projects/featured-architecture.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-architecture.jpg"
+                    width="600"
+                    height="390"
+                    loading="lazy"
+                    alt="EduTrack education platform interface"
+                  />
+                </picture>
+              </div>
+              <div class="featured-card__body">
+                <h3 class="featured-card__title">
+                  <a class="featured-card__link" href="#projects-detail" data-category-filter="edu">
+                    EduTrack
+                  </a>
+                </h3>
+                <div class="featured-card__badges" role="list" aria-label="Technologies">
+                  <span class="featured-card__badge" role="listitem">iOS</span>
+                  <span class="featured-card__badge" role="listitem">SwiftUI</span>
+                </div>
+                <p class="featured-card__desc">
+                  Education platform with live classes, progress tracking and more.
+                </p>
+                <div class="featured-card__action">
+                  <span>View Case Study</span>
+                  <svg
+                    class="featured-card__action-arrow"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="projects__explorer" id="projects-detail">
+            <div
+              class="projects__filter-bar"
+              role="toolbar"
+              aria-label="Filter projects by category"
+            >
+              <button
+                class="projects__filter-chip is-active"
+                type="button"
+                aria-pressed="true"
+                data-category-chip="all"
+              >
+                All (33)
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="health"
+              >
+                Health &amp; Wellness
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="consumer"
+              >
+                Travel &amp; Lifestyle
+              </button>
+              <button
+                class="projects__filter-chip"
+                type="button"
+                aria-pressed="false"
+                data-category-chip="gov,edu,quran"
+              >
+                Scalable Architecture &amp; Gov
+              </button>
+            </div>
+          </div>
+
+          <div class="projects__list">
+            <!-- projects:featured:start -->
+            <article class="project" data-project data-category="gov">
+              <h3 class="project__title">
+                Nusuk <span class="project__title-ar" lang="ar" dir="rtl">نسك</span>
+              </h3>
+              <p class="project__meta">May 2024 – Oct 2025 · Arabia IT Company · Government</p>
+              <p class="project__summary">
+                The Ministry of Hajj and Umrah's official pilgrimage platform. Eighteen months of
+                feature development across the app's Islamic-services expansion.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Engineered <b>global prayer-time calculation</b> with location-aware alerts and
+                  Qibla direction, accurate across major calculation methods and time zones.
                 </li>
                 <li>
-                  <a class="about-card__channel" href="tel:+201090979425">
-                    <span class="about-card__channel-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                    </span>
-                    <span class="about-card__channel-body">
-                      <span class="about-card__channel-label">Phone</span>
-                      <span class="about-card__channel-value">+20 109 097 9425</span>
-                    </span>
-                    <span class="about-card__channel-arrow" aria-hidden="true">↗</span>
-                  </a>
+                  Built the <b>Al-Haramain audio library</b> — recitations, lectures and lessons
+                  from the Imams of the Two Holy Mosques, streaming and offline-capable.
+                </li>
+                <li>
+                  Developed the <b>watchOS companion and home-screen widgets</b> surfacing prayer
+                  times, adhkar and Quran content.
+                </li>
+                <li>
+                  Expanded the Quran module with reading, tafsir and persistent bookmarking; built
+                  the digital tasbeeh counter and curated hadith collection.
                 </li>
               </ul>
+              <p class="project__highlights">
+                10M+ downloads · 4.7 ★ · 185K ratings · 35 languages
+              </p>
+              <p class="project__stack">Swift · SwiftUI · WidgetKit · watchOS</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/nusuk-%D9%86%D8%B3%D9%83/id6469515422"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="gov">
+              <h3 class="project__title">
+                Mushaf Al-Haramain
+                <span class="project__title-ar" lang="ar" dir="rtl">مصحف الحرمين</span>
+              </h3>
+              <p class="project__meta">Jan – Mar 2021 · Arabia IT Company · Government</p>
+              <p class="project__summary">
+                The official electronic application of the General Presidency for the Affairs of the
+                Grand Mosque and the Prophet's Mosque, delivering the authorized Madinah Mushaf
+                printed by the King Fahd Complex.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built a <b>high-fidelity Mushaf viewer</b> preserving the exact page geometry and
+                  verse numbering of the printed original — a state-authorized religious text leaves
+                  no margin for rendering drift.
+                </li>
+                <li>
+                  Implemented a <b>multi-mode search engine</b> across word, phrase, surah, page and
+                  juz' with sub-second response over the full text.
+                </li>
+                <li>
+                  Integrated the Haramain recitation library including complete Taraweeh recordings
+                  from the Imams of both mosques (1441 AH), with offline playback.
+                </li>
+                <li>
+                  Added Tafsir Al-Muyassar with verse-linked highlighting, bookmarking, night mode
+                  and sharing.
+                </li>
+              </ul>
+              <p class="project__highlights">Official state app · Hafs 'an 'Asim</p>
+              <p class="project__stack">Swift · UIKit · Core Data · AVFoundation</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/-/id1558424738"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="edu">
+              <h3 class="project__title">
+                Al-Mushaf Al-Madrasy
+                <span class="project__title-ar" lang="ar" dir="rtl">المصحف المدرسي</span>
+              </h3>
+              <p class="project__meta">Mar – Jun 2025 · Arabia IT Company · Education</p>
+              <p class="project__summary">
+                An interactive Quran curriculum app aligned to the official syllabi approved by the
+                ministries of education of Saudi Arabia, Kuwait, Bahrain and Oman.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Modelled a <b>curriculum engine</b> mapping recitation and memorization
+                  assignments to each grade and class level across four distinct national syllabi.
+                </li>
+                <li>
+                  Built <b>multi-profile account management</b> so several students at different
+                  educational stages share one device with independent progress tracking.
+                </li>
+                <li>
+                  Integrated an offline-capable audio library of ten renowned reciters, among them
+                  Al-Minshawi, Al-Sudais, Al-Shuraim, Al-Afasy and Al-Muaiqly.
+                </li>
+                <li>
+                  Developed a memorization assistant with configurable verse repetition, plus
+                  achievement badges, resume-bookmarking and four page themes for young learners.
+                </li>
+              </ul>
+              <p class="project__highlights">4 national curricula · 4.1 ★ · 1K+ ratings</p>
+              <p class="project__stack">Swift · SwiftUI · macOS · Windows · Linux</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/app/id1177013583"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+                <a
+                  class="project__link"
+                  href="https://play.google.com/store/apps/details?id=com.devlabs.quran"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Play</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="quran">
+              <h3 class="project__title">
+                Jami' Al-Kutub Al-Tis'a
+                <span class="project__title-ar" lang="ar" dir="rtl">جامع الكتب التسعة</span>
+              </h3>
+              <p class="project__meta">Oct 2023 – Feb 2024 · Arabia IT Company · Quran & hadith</p>
+              <p class="project__summary">
+                The nine canonical hadith collections — Bukhari, Muslim, Abu Dawood, Al-Tirmidhi,
+                Al-Nasa'i, Ibn Majah, Al-Darimi, Musnad Ahmad and Muwatta Malik — with full
+                classical commentary, in one searchable application.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Designed an <b>indexed search system</b> supporting keyword, partial-text,
+                  hadith-number and chapter queries across tens of thousands of narrations, tuned
+                  for instant on-device results.
+                </li>
+                <li>
+                  Built the <b>thematic classification tree</b> (الشجرة الموضوعية) enabling
+                  scholarly navigation by subject rather than book order.
+                </li>
+                <li>
+                  Integrated narrator records, authenticity grading — sahih, hasan, da'if —
+                  attribution type, gharib glossing and takhrij with corroborating chains.
+                </li>
+                <li>
+                  Delivered reading customization, favourites, personal annotations and sharing for
+                  students and researchers.
+                </li>
+              </ul>
+              <p class="project__highlights">
+                9 canonical collections · Tens of thousands of narrations
+              </p>
+              <p class="project__stack">
+                Swift · SQLite · full-text indexing · macOS · Windows · Linux
+              </p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%84%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%AA%D8%B3%D8%B9%D8%A9/id1149785262"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+                <a
+                  class="project__link"
+                  href="https://play.google.com/store/apps/details?id=com.arabiait.sunna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Play</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="gov">
+              <h3 class="project__title">
+                Mushaf Al-Awqaf Al-Libya 2.0
+                <span class="project__title-ar" lang="ar" dir="rtl">مصحف الأوقاف الليبية</span>
+              </h3>
+              <p class="project__meta">Aug – Sep 2023 · Arabia IT Company · Government</p>
+              <p class="project__summary">
+                The official digital Quran of the General Authority of Awqaf and Islamic Affairs,
+                Libya — Qalun 'an Nafi' narration in the Imam Al-Dani script, certified by the
+                Authority's standing Mushaf review committee.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Adapted the Mushaf rendering engine to the
+                  <b>Qalun layout and Al-Dani orthography</b>, a materially different typographic
+                  system from the Hafs / Madinah standard most Quran apps are built on.
+                </li>
+                <li>
+                  Integrated a Libyan reciters' audio library with verse-level selection,
+                  configurable repeat counts and progress tracking.
+                </li>
+                <li>
+                  Built a <b>personalized Khatmah planner</b> computing daily portion and
+                  days-to-completion from a user-set goal.
+                </li>
+                <li>
+                  Added multi-language translations, a tafsir library, verse-level reflections,
+                  daily reminders, and linkage to the Imam Al-Dani distance-learning platform.
+                </li>
+              </ul>
+              <p class="project__highlights">Official state app · Qalun 'an Nafi'</p>
+              <p class="project__stack">Swift · UIKit</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/id6741798282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="edu">
+              <h3 class="project__title">Alfatihah.ind</h3>
+              <p class="project__meta">Oct – Dec 2024 · Arabia IT Company · Education</p>
+              <p class="project__summary">
+                An AI-assisted application teaching and correcting the recitation of Surah
+                Al-Fatihah for Indonesian speakers, combining automated feedback with certified
+                human instruction.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Integrated <b>speech-recognition pronunciation correction</b>, evaluating learner
+                  recitation against correct makhraj and returning targeted feedback.
+                </li>
+                <li>
+                  Built the interactive learning flow pairing audio guides with visual recitation
+                  demonstrations, word-by-word translation and tafsir.
+                </li>
+                <li>
+                  Delivered a <b>certification pathway</b> issuing official certificates of mastery
+                  from accredited institutions.
+                </li>
+                <li>
+                  Localized the full experience for Indonesian learners, tuned to non-native Arabic
+                  phonology throughout.
+                </li>
+              </ul>
+              <p class="project__highlights">Speech recognition · Indonesian market</p>
+              <p class="project__stack">Swift · Speech / ML integration</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/-/id6741386382"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="quran">
+              <h3 class="project__title">
+                Bilal <span class="project__title-ar" lang="ar" dir="rtl">بلال</span>
+              </h3>
+              <p class="project__meta">Nov 2019 – Apr 2020 · Arabia IT Company · Quran & hadith</p>
+              <p class="project__summary">
+                A free, permanently ad-free prayer and azan companion, named for the Prophet's
+                words, “Relieve us with it, O Bilal.”
+              </p>
+              <ul class="project__points">
+                <li>
+                  Implemented <b>worldwide prayer-time computation</b> with city-level accuracy and
+                  Qibla direction from any location.
+                </li>
+                <li>
+                  Built the azan notification system supporting
+                  <b>60+ authentic muezzin recordings</b>, configurable pre-Fajr alerts, and Ramadan
+                  iftar and suhoor reminders.
+                </li>
+                <li>
+                  Developed the Apple Watch app and home-screen widgets for prayer times at a
+                  glance.
+                </li>
+                <li>
+                  Shipped cross-platform from a single Flutter codebase with a native watchOS
+                  extension.
+                </li>
+              </ul>
+              <p class="project__highlights">60+ muezzin voices · No ads, permanently</p>
+              <p class="project__stack">Flutter · Dart · watchOS · WidgetKit</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/-bilal/id1461237208"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+                <a
+                  class="project__link"
+                  href="https://play.google.com/store/apps/details?id=com.arabiait.belal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Play</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="quran">
+              <h3 class="project__title">
+                Great Quran <span class="project__title-ar" lang="ar" dir="rtl">القرآن العظيم</span>
+              </h3>
+              <p class="project__meta">Nov 2022 – Feb 2023 · Arabia IT Company · Quran & hadith</p>
+              <p class="project__summary">
+                A flagship Mushaf certified against the King Fahd Complex and Al-Azhar editions,
+                reviewed verse by verse by a scientific committee licensed in the ten recitations.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Worked inside a codebase with a decade of production history, first released in
+                  2014 — feature development in a mature, heavily used application.
+                </li>
+                <li>
+                  Extended the <b>Quranic search engine</b>: full-corpus search in seconds, tolerant
+                  of common spelling errors, with surah-name and verse-number lookup, result counts
+                  and highlighting.
+                </li>
+                <li>
+                  Expanded the library to more than forty works of tafsir and Quranic sciences, and
+                  thirty audio recitations across multiple qira'at.
+                </li>
+                <li>Built recitation and memorization tracking with daily progress statistics.</li>
+              </ul>
+              <p class="project__highlights">
+                40+ tafsir works · 30+ recitations · Ten-qira'at review board
+              </p>
+              <p class="project__stack">Swift · UIKit · AVFoundation</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/us/app/-/id792049888"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+                <a
+                  class="project__link"
+                  href="https://play.google.com/store/apps/details?id=com.arabiait.quran.v2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Play</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">
+                URPASS <span class="project__title-ar" lang="ar" dir="rtl">يورباس</span>
+              </h3>
+              <p class="project__meta">Apr – Jun 2026 · Freelance · Consumer</p>
+              <p class="project__summary">
+                A cross-platform product delivered end to end as a freelance engagement, shipping to
+                both the App Store and Google Play from a single codebase.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Owned the engagement end to end as sole engineer: architecture, implementation,
+                  store configuration and release.
+                </li>
+                <li>
+                  Shipped <b>iOS and Android in parallel</b> from one codebase, holding feature
+                  parity while respecting each platform's navigation and interaction conventions.
+                </li>
+              </ul>
+              <p class="project__highlights">iOS and Android · Most recent engagement</p>
+              <p class="project__stack">Cross-platform · iOS &amp; Android</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/sa/app/id6720758472"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+                <a
+                  class="project__link"
+                  href="https://play.google.com/store/apps/details?id=com.urpass.plus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Play</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="edu">
+              <h3 class="project__title">Lights of Life</h3>
+              <p class="project__meta">Nov – Dec 2022 · EkadSoft · Education</p>
+              <p class="project__summary">
+                A student assessment and academic task platform bringing formal testing, performance
+                tracking and daily coursework into a single account.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built the <b>assessment module</b>: timed tests, answer submission and scoring
+                  against the course question bank.
+                </li>
+                <li>
+                  Developed <b>performance tracking</b> giving students a running view of results
+                  across subjects and terms rather than isolated scores.
+                </li>
+                <li>
+                  Implemented daily coursework and task assignment, so routine work and formal
+                  examination share one interface and one progress record.
+                </li>
+              </ul>
+              <p class="project__highlights">Assessment and coursework</p>
+              <p class="project__stack">Swift · REST APIs</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/sa/app/lights-of-life/id6444769251"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">HomeMade</h3>
+              <p class="project__meta">May – Sep 2021 · ArabApps Company · Consumer</p>
+              <p class="project__summary">
+                The customer application for a marketplace of home-made goods, handicrafts and
+                micro-businesses, connecting small independent producers to buyers.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built the <b>buyer experience</b>: category browsing, search, seller storefronts
+                  and product detail across a catalogue of independent makers.
+                </li>
+                <li>
+                  Implemented cart, checkout and order tracking against the shared marketplace
+                  backend used by both clients.
+                </li>
+                <li>
+                  Handled <b>full Arabic and RTL layout</b> across catalogue, product and checkout
+                  flows, including mixed-direction pricing and address entry.
+                </li>
+              </ul>
+              <p class="project__highlights">Two-sided marketplace · Customer client</p>
+              <p class="project__stack">Swift · UIKit · REST APIs</p>
+              <p class="project__links">
+                <a
+                  class="project__link"
+                  href="https://apps.apple.com/sa/app/homemade/id6758558656"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App Store</a
+                >
+              </p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">HomeMade Vendor</h3>
+              <p class="project__meta">Jul – Sep 2021 · ArabApps Company · Consumer</p>
+              <p class="project__summary">
+                The seller-side counterpart to HomeMade, giving micro-businesses the tools to run a
+                storefront from a phone.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built <b>listing and inventory management</b>: product creation, imagery, pricing
+                  and availability, with storefront presentation controls.
+                </li>
+                <li>
+                  Developed the <b>order pipeline</b> — incoming orders, status transitions and
+                  fulfilment updates that surface live in the customer app.
+                </li>
+                <li>
+                  Shipped as a separate client sharing the marketplace data model and API layer,
+                  keeping both sides consistent as the schema evolved.
+                </li>
+              </ul>
+              <p class="project__highlights">Seller client · Shared API layer</p>
+              <p class="project__stack">Swift · UIKit · REST APIs</p>
+              <p class="project__links"></p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">Floria</h3>
+              <p class="project__meta">Apr – May 2021 · ArabApps Company · Consumer</p>
+              <p class="project__summary">
+                A florist e-commerce application built around gifting, where the delivery window
+                matters as much as the product.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built the storefront and product catalogue, including arrangement selection and
+                  gifting options at the point of purchase.
+                </li>
+                <li>
+                  Implemented <b>scheduled delivery</b>, carrying date and time-window selection
+                  through checkout into the fulfilment record.
+                </li>
+                <li>
+                  Integrated secure payment processing with order confirmation and post-purchase
+                  tracking.
+                </li>
+              </ul>
+              <p class="project__highlights">Scheduled delivery · Secure payments</p>
+              <p class="project__stack">Swift · UIKit · payment SDK</p>
+              <p class="project__links"></p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">Homy</h3>
+              <p class="project__meta">Apr – May 2021 · ArabApps Company · Consumer</p>
+              <p class="project__summary">
+                An on-demand home services marketplace spanning trades, cleaning, remote tutoring,
+                childcare and nursing — one booking surface over a wide range of provider types.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built <b>provider discovery</b> with ratings, reviews and service-category
+                  filtering across professions with very different booking shapes.
+                </li>
+                <li>
+                  Implemented booking against provider availability, covering both scheduled and
+                  same-day requests.
+                </li>
+                <li>
+                  Developed the full <b>request lifecycle</b> from booking to completion, with push
+                  notification of every status change on both sides.
+                </li>
+              </ul>
+              <p class="project__highlights">On-demand services · Provider ratings</p>
+              <p class="project__stack">Swift · UIKit · Firebase</p>
+              <p class="project__links"></p>
+            </article>
+            <article class="project" data-project data-category="consumer">
+              <h3 class="project__title">YallaDealz</h3>
+              <p class="project__meta">Jul – Aug 2019 · Independent · Consumer</p>
+              <p class="project__summary">
+                A location-based deals aggregator pulling offers across hospitality, dining, retail
+                and entertainment into one feed.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built a <b>location-aware offers feed</b>, surfacing deals by proximity and
+                  category rather than as an undifferentiated list.
+                </li>
+                <li>
+                  Implemented merchant detail pages and the redemption flow, with filtering across
+                  four commercial verticals.
+                </li>
+                <li>
+                  The earliest shipped product in the portfolio, and where the location and REST
+                  patterns reused across later consumer work were established.
+                </li>
+              </ul>
+              <p class="project__highlights">Deals aggregator · Earliest shipped product</p>
+              <p class="project__stack">Swift · Core Location · REST APIs</p>
+              <p class="project__links"></p>
+            </article>
+            <article class="project" data-project data-category="health">
+              <h3 class="project__title">Rubikcare</h3>
+              <p class="project__meta">2022 – 2023 · EkadSoft · Healthcare</p>
+              <p class="project__summary">
+                A four-application healthcare platform connecting patients, doctors, pharmacies and
+                pharmaceutical sales representatives in one coordinated system.
+              </p>
+              <ul class="project__points">
+                <li>
+                  Built the <b>patient application</b>: appointment booking, proximity-based
+                  pharmacy discovery, medicine comparison, and multi-pharmacy ordering with or
+                  without a prescription.
+                </li>
+                <li>
+                  Integrated the <b>Zoom API</b> for remote consultations between patients and
+                  physicians.
+                </li>
+                <li>
+                  Developed digital prescription creation and management in the physician app,
+                  flowing directly into the patient and pharmacy clients.
+                </li>
+                <li>
+                  Delivered the pharmacy order-management app and the sales-representative client
+                  with activity tracking.
+                </li>
+              </ul>
+              <p class="project__highlights">4 interoperating apps · Zoom API telehealth</p>
+              <p class="project__stack">Swift · UIKit · REST APIs · Zoom SDK</p>
+              <p class="project__links"></p>
+            </article>
+            <!-- projects:featured:end -->
+          </div>
+        </div>
+      </section>
 
-              <div class="about-card__socials">
-                <a class="about-card__social" href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
-                  target="_blank" rel="noopener noreferrer">
-                  <span class="about-card__social-name">LinkedIn</span>
-                  <span class="about-card__social-sub">View profile ↗</span>
-                </a>
-                <a class="about-card__social" href="https://github.com/MostafaAbdElFatah" target="_blank"
-                  rel="noopener noreferrer">
-                  <span class="about-card__social-name">GitHub</span>
-                  <span class="about-card__social-sub">MostafaAbdElFatah ↗</span>
-                </a>
+      <!-- ==========================================================================
+         Project Catalogue Section
+         ========================================================================== -->
+      <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
+        <div class="container">
+          <h2 id="catalogue-title">The rest of the catalogue</h2>
+          <ul class="catalogue__list" role="list">
+            <!-- projects:catalogue:start -->
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Dec 2019 – Apr 2020</span>
+              <a
+                class="catalogue__name"
+                href="https://apps.apple.com/app/id1463949765"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Convey</a
+              >
+              <span lang="ar" dir="rtl">بلغوا</span>
+              <span class="catalogue__desc"
+                >Verse-design and sharing tool for preachers and da'wah offices. 300 templates,
+                four-language translations, full customization before export.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jan – Mar 2025</span>
+              <span class="catalogue__name">Rusel</span> <span lang="ar" dir="rtl">رسل</span>
+              <span class="catalogue__desc"
+                >Da'wah sharing platform with 6,000 designs and 4,000 short videos, verified by the
+                Sharia Committee of the Al-Rawdah Da'wah Association.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jun – Aug 2023</span>
+              <span class="catalogue__name">Sheikh Ibn Uthaymeen</span>
+              <span lang="ar" dir="rtl">تطبيق الشيخ ابن عثيمين</span>
+              <span class="catalogue__desc"
+                >Digital library of the scholar's works, lessons and fatwas.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Mar – Apr 2023</span>
+              <span class="catalogue__name">Mushaf Ibn Uthaymeen &amp; Tafsir</span>
+              <span lang="ar" dir="rtl">مصحف ابن عثيمين وتفسيره</span>
+              <span class="catalogue__desc"
+                >Quran reader with integrated Ibn Uthaymeen commentary.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="consumer">
+              <span class="catalogue__year">Sep 2022</span>
+              <span class="catalogue__name">Farra</span> <span lang="ar" dir="rtl">فرة</span>
+              <span class="catalogue__desc"
+                >Location-based guide to nearby entertainment and leisure venues, filtered for
+                families, women and groups.</span
+              >
+              <span class="catalogue__org">Independent</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Feb – Mar 2022</span>
+              <span class="catalogue__name">Awrady</span> <span lang="ar" dir="rtl">أورادي</span>
+              <span class="catalogue__desc">Personal daily adhkar and wird tracking.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jan – Feb 2022</span>
+              <span class="catalogue__name">AlQuran AlMubeen</span>
+              <span lang="ar" dir="rtl">القرآن المبين</span>
+              <span class="catalogue__desc">Quran reader with clarified script rendering.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Nov – Dec 2021</span>
+              <span class="catalogue__name">Mushaf Al-Tadabbur</span>
+              <span lang="ar" dir="rtl">مصحف التدبر</span>
+              <span class="catalogue__desc"
+                >Reflection-oriented Mushaf with contemplation aids.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jul – Sep 2021</span>
+              <span class="catalogue__name">Quran Hakeem</span>
+              <span lang="ar" dir="rtl">القرآن الحكيم</span>
+              <span class="catalogue__desc">Quran reader with integrated recitation library.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jun – Jul 2021</span>
+              <span class="catalogue__name">Lawami' Al-Adhkar</span>
+              <span lang="ar" dir="rtl">لوامع الأذكار</span>
+              <span class="catalogue__desc"
+                >Comprehensive adhkar collection with scheduled reminders.</span
+              >
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jun 2021</span>
+              <span class="catalogue__name">Mushaf AlHilal</span>
+              <span lang="ar" dir="rtl">مصحف الهلال</span>
+              <span class="catalogue__desc">Branded Mushaf edition.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">May 2021</span>
+              <span class="catalogue__name">AlQuran AlHakeem</span>
+              <span lang="ar" dir="rtl">القرآن الحكيم</span>
+              <span class="catalogue__desc">Quran reader build.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Jan – Apr 2021</span>
+              <span class="catalogue__name">Ayat Bayyinat</span>
+              <span lang="ar" dir="rtl">آيات بينات</span>
+              <span class="catalogue__desc">Quran study app with verse-level research tools.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="quran">
+              <span class="catalogue__year">Aug – Nov 2020</span>
+              <span class="catalogue__name">Sakinah</span> <span lang="ar" dir="rtl">سكينة</span>
+              <span class="catalogue__desc">Spiritual wellbeing and remembrance app.</span>
+              <span class="catalogue__org">Arabia IT Company</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="consumer">
+              <span class="catalogue__year">Dec 2019</span>
+              <span class="catalogue__name">KeesApp</span>
+              <span class="catalogue__desc"
+                >Grocery and supermarket delivery with live order tracking and multiple payment
+                options.</span
+              >
+              <span class="catalogue__org">Independent</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="consumer">
+              <span class="catalogue__year">Mar 2019</span>
+              <span class="catalogue__name">ArabicArduino News</span>
+              <span class="catalogue__desc"
+                >Arabic-language Arduino, electronics and IoT news, tutorials and component
+                guides.</span
+              >
+              <span class="catalogue__org">Independent</span>
+            </li>
+            <li class="catalogue__item" data-project data-category="health">
+              <span class="catalogue__year">Jan – Feb 2019</span>
+              <span class="catalogue__name">PharmacyApp</span>
+              <span class="catalogue__desc"
+                >Prescription upload and pharmacy ordering, the early prototype of what later became
+                Rubikcare.</span
+              >
+              <span class="catalogue__org">Independent</span>
+            </li>
+            <!-- projects:catalogue:end -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         Work Experience Section
+         ========================================================================== -->
+      <section class="experience" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <header class="experience__header">
+            <h2 id="experience-title">Experience</h2>
+            <p class="experience__subtitle">My professional journey</p>
+          </header>
+
+          <ol class="experience__timeline" role="list">
+            <li class="experience__item">
+              <span class="experience__badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  <rect width="20" height="14" x="2" y="6" rx="2" />
+                </svg>
+              </span>
+              <div class="experience__body">
+                <h3 class="experience__role">Senior iOS &amp; Flutter Developer</h3>
+                <p class="experience__meta">
+                  <span class="experience__company">Arabia IT Company</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Cairo, Egypt</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Nov 2019 – Present</span>
+                </p>
+                <ul class="experience__points" role="list">
+                  <li class="experience__point">
+                    Architected secure finance and e-commerce apps (Swift, SwiftUI, Flutter) serving
+                    100k+ users, using encryption and Keychain storage.
+                  </li>
+                  <li class="experience__point">
+                    Cut crash rate 35% with Firebase Crashlytics and stability fixes, raising the
+                    App Store rating from 3.9 to 4.6.
+                  </li>
+                  <li class="experience__point">
+                    Led the native iOS-to-Flutter migration to one iOS/Android codebase, reducing
+                    development costs 30%.
+                  </li>
+                  <li class="experience__point">
+                    Aligned releases with business KPIs, contributing to a 12% rise in customer
+                    retention.
+                  </li>
+                  <li class="experience__point">
+                    Mentored 4 junior developers through code reviews, reducing reported bugs 20%.
+                  </li>
+                </ul>
               </div>
+            </li>
 
-              <footer class="about-card__cv">
-                <a class="about-card__cv-btn about-card__cv-btn--preview"
-                  href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" target="_blank" rel="noopener"
-                  aria-haspopup="dialog" data-cv-open>
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                  <span>CV — Preview</span>
-                </a>
-                <a class="about-card__cv-btn about-card__cv-btn--download"
-                  href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" download>
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 15V3" />
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <path d="m7 10 5 5 5-5" />
-                  </svg>
-                  <span>CV — Download PDF</span>
-                </a>
-              </footer>
+            <li class="experience__item">
+              <span class="experience__badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </span>
+              <div class="experience__body">
+                <h3 class="experience__role">iOS Developer (Contract)</h3>
+                <p class="experience__meta">
+                  <span class="experience__company">EkadSoft</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Cairo, Egypt</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Jun 2022 – Apr 2023</span>
+                </p>
+                <ul class="experience__points" role="list">
+                  <li class="experience__point">
+                    Built SwiftUI apps on AWS-hosted RESTful APIs, shipped via automated CI/CD
+                    pipelines.
+                  </li>
+                  <li class="experience__point">
+                    Reached 85% code coverage with XCTest, reducing production defects 20%; raised
+                    sprint velocity 15%.
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="experience__item">
+              <span class="experience__badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                  />
+                  <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                  <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+                </svg>
+              </span>
+              <div class="experience__body">
+                <h3 class="experience__role">iOS Developer (Contract)</h3>
+                <p class="experience__meta">
+                  <span class="experience__company">ArabApps Company</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Cairo, Egypt</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Apr 2021 – Oct 2021</span>
+                </p>
+                <ul class="experience__points" role="list">
+                  <li class="experience__point">
+                    Restructured apps into modular MVVM/Clean Architecture layers, reducing build
+                    times 25%; standardized UI components, lifting engagement 18%.
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="experience__item">
+              <span class="experience__badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </span>
+              <div class="experience__body">
+                <h3 class="experience__role">Freelance Mobile Developer</h3>
+                <p class="experience__meta">
+                  <span class="experience__company">Self-employed</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Remote</span>
+                  <span class="experience__sep" aria-hidden="true">·</span>
+                  <span>Jan 2019 – Nov 2019</span>
+                </p>
+                <ul class="experience__points" role="list">
+                  <li class="experience__point">
+                    Delivered Flutter and native iOS/Android (Swift, Kotlin, Java) apps for SMEs;
+                    CI/CD cut release cycles from 2 weeks to 5 days.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+
+          <!-- ==========================================================================
+             Call to Action (CTA) Section
+             ========================================================================== -->
+          <div class="cta__card">
+            <div class="cta__content">
+              <h2 class="cta__title" id="cta-title">Let's Build Something Great Together</h2>
+              <p class="cta__subtitle">
+                I'm open to exciting opportunities, collaborations and new challenges.
+              </p>
+              <a class="cta__button" href="#contact">
+                <span>Get In Touch</span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div class="cta__visual" aria-hidden="true">
+              <picture>
+                <source srcset="/src/assets/images/cta/mountain.webp" type="image/webp" />
+                <img
+                  src="/src/assets/images/cta/mountain.png"
+                  width="1376"
+                  height="768"
+                  alt=""
+                  class="cta__mountain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================================================
+      <!-- ==========================================================================
+         About Me Section & Contact Section
+         ========================================================================== -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="about__grid">
+            <div class="about__content">
+              <h2 class="about__title" id="about-title">About Me</h2>
+              <p class="about__roles">
+                <span class="about__role">Mobile Developer</span>
+                <span class="about__dot" aria-hidden="true">•</span>
+                <span class="about__role">Tech Lead</span>
+                <span class="about__dot" aria-hidden="true">•</span>
+                <span class="about__role">Problem Solver</span>
+              </p>
+              <p class="about__bio">
+                I'm a passionate Senior iOS Developer with 8+ years of experience building scalable
+                mobile applications. I specialize in Swift, SwiftUI, Flutter, and React Native, with
+                a strong focus on clean architecture, performance, and delivering impactful
+                products.
+              </p>
+
+              <ul class="about__metrics" role="list">
+                <li class="about__metric">
+                  <span class="about__metric-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <polyline points="12 7 12 12 15.5 14" />
+                    </svg>
+                  </span>
+                  <span class="about__metric-value">8+</span>
+                  <span class="about__metric-label">Years of experience</span>
+                </li>
+                <li class="about__metric">
+                  <span class="about__metric-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect width="14" height="20" x="5" y="2" rx="2.5" />
+                      <path d="M9 6h6" />
+                      <path d="M12 18h.01" />
+                    </svg>
+                  </span>
+                  <span class="about__metric-value">20+</span>
+                  <span class="about__metric-label">Production apps</span>
+                </li>
+                <li class="about__metric">
+                  <span class="about__metric-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 8v8" />
+                      <path d="m8.5 12.5 3.5 3.5 3.5-3.5" />
+                    </svg>
+                  </span>
+                  <span class="about__metric-value">10M+</span>
+                  <span class="about__metric-label">Total downloads</span>
+                </li>
+                <li class="about__metric">
+                  <span class="about__metric-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
+                  </span>
+                  <span class="about__metric-value">4.6★</span>
+                  <span class="about__metric-label">App Store rating</span>
+                </li>
+                <li class="about__metric">
+                  <span class="about__metric-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </span>
+                  <span class="about__metric-value">99.9%</span>
+                  <span class="about__metric-label">Crash-free stability</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="about__showcase" id="contact" aria-labelledby="contact-title">
+              <div class="about-card">
+                <div class="about-card__glow" aria-hidden="true"></div>
+                <header class="about-card__header">
+                  <span class="about-card__badge">
+                    <span class="about-card__pulse" aria-hidden="true"></span>
+                    Available for Roles &amp; Freelance
+                  </span>
+                  <span class="about-card__location">Cairo · KSA &amp; Gulf</span>
+                </header>
+
+                <div class="about-card__intro">
+                  <h3 class="about-card__title" id="contact-title">
+                    Open to senior iOS roles and freelance work
+                  </h3>
+                  <p class="about-card__desc">
+                    Arabic-language and Islamic application development, or general iOS product
+                    work. Working with teams in Saudi Arabia and the Gulf since 2019. Email gets the
+                    fastest reply.
+                  </p>
+                </div>
+
+                <ul class="about-card__channels" role="list">
+                  <li>
+                    <a class="about-card__channel" href="mailto:mostafa.abdelfatah.dev@gmail.com">
+                      <span class="about-card__channel-icon" aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <rect width="20" height="16" x="2" y="4" rx="2" />
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                      </span>
+                      <span class="about-card__channel-body">
+                        <span class="about-card__channel-label">Email — Fastest reply</span>
+                        <span class="about-card__channel-value"
+                          >mostafa.abdelfatah.dev@gmail.com</span
+                        >
+                      </span>
+                      <span class="about-card__channel-arrow" aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="about-card__channel" href="tel:+201090979425">
+                      <span class="about-card__channel-icon" aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                          />
+                        </svg>
+                      </span>
+                      <span class="about-card__channel-body">
+                        <span class="about-card__channel-label">Phone</span>
+                        <span class="about-card__channel-value">+20 109 097 9425</span>
+                      </span>
+                      <span class="about-card__channel-arrow" aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="about-card__socials">
+                  <a
+                    class="about-card__social"
+                    href="https://www.linkedin.com/in/mostafa-abdel-fattah-mohamed-a89195131/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="about-card__social-name">LinkedIn</span>
+                    <span class="about-card__social-sub">View profile ↗</span>
+                  </a>
+                  <a
+                    class="about-card__social"
+                    href="https://github.com/MostafaAbdElFatah"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="about-card__social-name">GitHub</span>
+                    <span class="about-card__social-sub">MostafaAbdElFatah ↗</span>
+                  </a>
+                </div>
+
+                <footer class="about-card__cv">
+                  <a
+                    class="about-card__cv-btn about-card__cv-btn--preview"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    aria-haspopup="dialog"
+                    data-cv-open
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <span>CV — Preview</span>
+                  </a>
+                  <a
+                    class="about-card__cv-btn about-card__cv-btn--download"
+                    href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+                    download
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 15V3" />
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <path d="m7 10 5 5 5-5" />
+                    </svg>
+                    <span>CV — Download PDF</span>
+                  </a>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
          Skills Section
          ========================================================================== -->
-    <section class="skills" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <header class="skills__header">
-          <h2 class="skills__title" id="skills-title">My Skills</h2>
-          <p class="skills__intro">
-            Arabic typography and RTL layout are listed on purpose — a scarce engineering
-            competency, not a localisation afterthought.
-          </p>
-        </header>
-
-        <div class="skills__columns">
-          <div class="skills__col">
-            <h3 class="skills__col-title">iOS &amp; Swift</h3>
-            <ul class="skills__list" role="list">
-              <li class="skills__item">Swift</li>
-              <li class="skills__item">SwiftUI</li>
-              <li class="skills__item">UIKit</li>
-              <li class="skills__item">Combine</li>
-              <li class="skills__item">Concurrency</li>
-            </ul>
-          </div>
-
-          <div class="skills__col">
-            <h3 class="skills__col-title">Cross-Platform</h3>
-            <ul class="skills__list" role="list">
-              <li class="skills__item">Flutter</li>
-              <li class="skills__item">Dart</li>
-              <li class="skills__item">React Native</li>
-              <li class="skills__item">State Management</li>
-              <li class="skills__item">Navigation</li>
-            </ul>
-          </div>
-
-          <div class="skills__col">
-            <h3 class="skills__col-title">Architecture</h3>
-            <ul class="skills__list" role="list">
-              <li class="skills__item">Clean Architecture</li>
-              <li class="skills__item">MVVM</li>
-              <li class="skills__item">Modular</li>
-              <li class="skills__item">DI</li>
-              <li class="skills__item">SOLID</li>
-            </ul>
-          </div>
-
-          <div class="skills__col">
-            <h3 class="skills__col-title">DevOps &amp; Tools</h3>
-            <ul class="skills__list" role="list">
-              <li class="skills__item">Git</li>
-              <li class="skills__item">GitHub</li>
-              <li class="skills__item">CI/CD</li>
-              <li class="skills__item">Docker</li>
-              <li class="skills__item">Firebase</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="skills__grid">
-          <div class="skills__group">
-            <h3>Arabic &amp; Quranic systems</h3>
-            <ul class="skills__chips" role="list">
-              <li>RTL layout</li>
-              <li>Quranic script rendering</li>
-              <li>Arabic full-text search</li>
-              <li>AVFoundation</li>
-              <li>Speech recognition</li>
-              <li>Accessibility</li>
-            </ul>
-          </div>
-          <div class="skills__group">
-            <h3>Platform &amp; Delivery</h3>
-            <ul class="skills__chips" role="list">
-              <li>Objective-C</li>
-              <li>watchOS</li>
-              <li>WidgetKit</li>
-              <li>Core Data</li>
-              <li>SQLite / FTS</li>
-              <li>App Store Connect</li>
-              <li>Google Play</li>
-              <li>Fastlane</li>
-              <li>Sharia review cycles</li>
-            </ul>
-          </div>
-          <div class="skills__group skills__group--wip">
-            <h3>Backend &amp; web <span class="skills__tag">In progress</span></h3>
-            <p class="skills__note">
-              Junior level, learned through personal projects. Not yet shipped in production.
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="skills__header">
+            <h2 class="skills__title" id="skills-title">My Skills</h2>
+            <p class="skills__intro">
+              Arabic typography and RTL layout are listed on purpose — a scarce engineering
+              competency, not a localisation afterthought.
             </p>
-            <ul class="skills__chips" role="list">
-              <li>PHP</li>
-              <li>Laravel</li>
-              <li>Livewire</li>
-              <li>Inertia</li>
-              <li>Vue</li>
-              <li>React</li>
-              <li>Alpine.js</li>
-              <li>HTML &amp; CSS</li>
-              <li>Tailwind CSS</li>
-            </ul>
+          </header>
+
+          <div class="skills__columns">
+            <div class="skills__col">
+              <h3 class="skills__col-title">iOS &amp; Swift</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__item">Swift</li>
+                <li class="skills__item">SwiftUI</li>
+                <li class="skills__item">UIKit</li>
+                <li class="skills__item">Combine</li>
+                <li class="skills__item">Concurrency</li>
+              </ul>
+            </div>
+
+            <div class="skills__col">
+              <h3 class="skills__col-title">Cross-Platform</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__item">Flutter</li>
+                <li class="skills__item">Dart</li>
+                <li class="skills__item">React Native</li>
+                <li class="skills__item">State Management</li>
+                <li class="skills__item">Navigation</li>
+              </ul>
+            </div>
+
+            <div class="skills__col">
+              <h3 class="skills__col-title">Architecture</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__item">Clean Architecture</li>
+                <li class="skills__item">MVVM</li>
+                <li class="skills__item">Modular</li>
+                <li class="skills__item">DI</li>
+                <li class="skills__item">SOLID</li>
+              </ul>
+            </div>
+
+            <div class="skills__col">
+              <h3 class="skills__col-title">Design Patterns</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__item">Coordinator</li>
+                <li class="skills__item">Factory</li>
+                <li class="skills__item">Observer</li>
+                <li class="skills__item">Repository</li>
+                <li class="skills__item">Singleton</li>
+              </ul>
+            </div>
+
+            <div class="skills__col">
+              <h3 class="skills__col-title">DevOps &amp; Tools</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__item">Git</li>
+                <li class="skills__item">GitHub</li>
+                <li class="skills__item">CI/CD</li>
+                <li class="skills__item">Docker</li>
+                <li class="skills__item">Firebase</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="skills__grid">
+            <div class="skills__group">
+              <h3>Arabic &amp; Quranic systems</h3>
+              <ul class="skills__chips" role="list">
+                <li>RTL layout</li>
+                <li>Quranic script rendering</li>
+                <li>Arabic full-text search</li>
+                <li>AVFoundation</li>
+                <li>Speech recognition</li>
+                <li>Accessibility</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Platform &amp; Delivery</h3>
+              <ul class="skills__chips" role="list">
+                <li>Objective-C</li>
+                <li>watchOS</li>
+                <li>WidgetKit</li>
+                <li>Core Data</li>
+                <li>SQLite / FTS</li>
+                <li>App Store Connect</li>
+                <li>Google Play</li>
+                <li>Fastlane</li>
+                <li>Sharia review cycles</li>
+              </ul>
+            </div>
+            <div class="skills__group skills__group--wip">
+              <h3>Backend &amp; web <span class="skills__tag">In progress</span></h3>
+              <p class="skills__note">
+                Junior level, learned through personal projects. Not yet shipped in production.
+              </p>
+              <ul class="skills__chips" role="list">
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>Livewire</li>
+                <li>Inertia</li>
+                <li>Vue</li>
+                <li>React</li>
+                <li>Alpine.js</li>
+                <li>HTML &amp; CSS</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        Footer
        ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>Mostafa Abdel Fattah Mohammed — Senior Mobile Engineer, Cairo</p>
-      <p>
-        iOS · SwiftUI · UIKit · Objective-C · watchOS · WidgetKit · Flutter · macOS · Windows ·
-        Linux
-      </p>
-    </div>
-  </footer>
-  <!-- ==========================================================================
+    <footer class="site-footer">
+      <div class="container">
+        <p>Mostafa Abdel Fattah Mohammed — Senior Mobile Engineer, Cairo</p>
+        <p>
+          iOS · SwiftUI · UIKit · Objective-C · watchOS · WidgetKit · Flutter · macOS · Windows ·
+          Linux
+        </p>
+      </div>
+    </footer>
+    <!-- ==========================================================================
        Curriculum Vitae Modal Preview
        ========================================================================== -->
-  <dialog class="cv-dialog" aria-labelledby="cv-dialog-title" data-cv-dialog>
-    <div class="cv-dialog__panel">
-      <header class="cv-dialog__header">
-        <div class="cv-dialog__heading">
-          <h2 class="cv-dialog__title" id="cv-dialog-title">Curriculum vitae</h2>
-          <p class="cv-dialog__meta">Mostafa Abdel Fattah · PDF · 78 KB</p>
+    <dialog class="cv-dialog" aria-labelledby="cv-dialog-title" data-cv-dialog>
+      <div class="cv-dialog__panel">
+        <header class="cv-dialog__header">
+          <div class="cv-dialog__heading">
+            <h2 class="cv-dialog__title" id="cv-dialog-title">Curriculum vitae</h2>
+            <p class="cv-dialog__meta">Mostafa Abdel Fattah · PDF · 78 KB</p>
+          </div>
+          <div class="cv-dialog__actions">
+            <a
+              class="cv-dialog__action"
+              href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              </svg>
+              <span class="cv-dialog__action-label">Open in new tab</span>
+            </a>
+            <a
+              class="cv-dialog__action cv-dialog__action--primary"
+              href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
+              download
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 15V3" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <path d="m7 10 5 5 5-5" />
+              </svg>
+              <span class="cv-dialog__action-label">Download</span>
+            </a>
+            <button
+              class="cv-dialog__close"
+              type="button"
+              aria-label="Close CV preview"
+              data-cv-close
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="cv-dialog__viewer">
+          <iframe
+            class="cv-dialog__frame"
+            title="Mostafa Abdel Fattah — CV (PDF preview)"
+            data-cv-frame
+            data-src="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf#view=FitH"
+          ></iframe>
         </div>
-        <div class="cv-dialog__actions">
-          <a class="cv-dialog__action" href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf" target="_blank"
-            rel="noopener">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M15 3h6v6" />
-              <path d="M10 14 21 3" />
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            </svg>
-            <span class="cv-dialog__action-label">Open in new tab</span>
-          </a>
-          <a class="cv-dialog__action cv-dialog__action--primary" href="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf"
-            download>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 15V3" />
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <path d="m7 10 5 5 5-5" />
-            </svg>
-            <span class="cv-dialog__action-label">Download</span>
-          </a>
-          <button class="cv-dialog__close" type="button" aria-label="Close CV preview" data-cv-close>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </button>
-        </div>
-      </header>
-      <div class="cv-dialog__viewer">
-        <iframe class="cv-dialog__frame" title="Mostafa Abdel Fattah — CV (PDF preview)" data-cv-frame
-          data-src="/src/assets/docs/Mostafa-Abdel-Fattah-CV.pdf#view=FitH"></iframe>
       </div>
-    </div>
-  </dialog>
-</body>
-
+    </dialog>
+  </body>
 </html>
