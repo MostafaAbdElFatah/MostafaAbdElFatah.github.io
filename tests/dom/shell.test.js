@@ -302,18 +302,17 @@ describe('index.html shell', () => {
     expect(about.querySelector('.about-card')).not.toBeNull();
     expect(about.querySelectorAll('img')).toHaveLength(0);
   });
-  it('renders the 5-column My Skills matrix alongside specialized domain groups', () => {
+  it('renders the 4-column My Skills matrix alongside specialized domain groups', () => {
     const skills = $('section.skills#skills');
     expect(skills).not.toBeNull();
     expect(skills.querySelector('#skills-title')?.textContent.trim()).toBe('My Skills');
     expect(
       [...skills.querySelectorAll('.skills__col-title')].map((el) => el.textContent.trim()),
     ).toEqual([
-      'iOS & Swift',
-      'Cross-Platform',
+      'iOS Development',
+      'Cross-Platform Development',
       'Architecture',
-      'Design Patterns',
-      'DevOps & Tools',
+      'DevOps & Engineering Tools',
     ]);
   });
   it('includes section comment headers before every section in index.html', () => {
