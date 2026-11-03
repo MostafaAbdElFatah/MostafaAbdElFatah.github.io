@@ -5,9 +5,12 @@
    ========================================================================== */
 
 .expertise {
-  margin-block-start: 4rem;
-  padding-block: 1.25rem 1.5rem;
-  border-block-start: 1px solid var(--color-border);
+  padding-block-start: clamp(2.5rem, 5vw, 4rem);
+}
+
+.expertise > .container {
+  padding-block-end: clamp(2.5rem, 5vw, 4rem);
+  border-block-end: 1px solid var(--color-border);
 }
 
 .expertise__header {

@@ -43,12 +43,6 @@
   transition: color 180ms ease;
 }
 
-.featured-card__arrow svg {
-  inline-size: 1rem;
-  block-size: 1rem;
-  transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
-}
-
 .projects__view-all svg {
   inline-size: 1rem;
   block-size: 1rem;
@@ -206,34 +200,80 @@
   inset-inline-end: 1.25rem;
   z-index: 3;
   display: inline-flex;
-  flex: 0 0 2.15rem;
-  inline-size: 2.15rem;
-  block-size: 2.15rem;
+  flex: 0 0 2.2rem;
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   border: 1px solid var(--color-border-accent);
   border-radius: 50%;
   background: var(--color-surface);
   color: var(--color-accent);
   pointer-events: none;
   transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease,
-    transform 200ms cubic-bezier(0.2, 0, 0, 1);
+    background-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-card__arrow-svg {
+  display: block;
+  inline-size: 1rem;
+  block-size: 1rem;
+  transform: translateX(0);
+  opacity: 1;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+  will-change: transform, opacity;
 }
 
 .featured-card:hover .featured-card__arrow,
 .featured-card:focus-within .featured-card__arrow {
-  border-color: var(--color-accent);
-  background: var(--gold-alpha-16);
-  box-shadow: 0 0 12px var(--gold-alpha-25);
-  transform: scale(1.05);
+  border-color: var(--color-accent-fill);
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent);
+  box-shadow:
+    0 0 0 3px var(--gold-alpha-16),
+    0 8px 22px var(--gold-alpha-32);
+  transform: scale(1.1) translateX(2px);
 }
 
-.featured-card:hover .featured-card__arrow svg,
-.featured-card:focus-within .featured-card__arrow svg {
-  transform: translateX(4px);
+.featured-card:hover .featured-card__arrow-svg,
+.featured-card:focus-within .featured-card__arrow-svg {
+  animation: featured-arrow-slide 950ms infinite;
+}
+
+@keyframes featured-arrow-slide {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  35% {
+    transform: translateX(140%);
+    opacity: 0;
+  }
+
+  36% {
+    transform: translateX(-140%);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  80%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* ---------- Filter Bar ---------- */
@@ -543,10 +583,12 @@
   .featured-card,
   .featured-card__img,
   .featured-card__arrow,
-  .featured-card__arrow svg,
+  .featured-card__arrow-svg,
   .projects__view-all,
   .projects__view-all svg,
   .projects__filter-chip {
+    animation: none;
     transition-duration: 0.01ms;
+    transition-delay: 0ms;
   }
 }
