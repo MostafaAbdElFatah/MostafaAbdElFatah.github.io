@@ -751,7 +751,7 @@
           <div class="featured-cards" role="list">
             <article class="featured-card" role="listitem">
               <div class="featured-card__visual">
-                <picture>
+                <picture class="featured-card__picture featured-card__picture--light">
                   <source
                     srcset="/src/assets/images/projects/featured-health.webp"
                     type="image/webp"
@@ -759,6 +759,20 @@
                   <img
                     class="featured-card__img"
                     src="/src/assets/images/projects/featured-health.jpg"
+                    width="600"
+                    height="625"
+                    loading="lazy"
+                    alt="Two iPhones displaying a health and wellness dashboard with daily score and progress charts"
+                  />
+                </picture>
+                <picture class="featured-card__picture featured-card__picture--dark">
+                  <source
+                    srcset="/src/assets/images/projects/featured-health-dark.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-health-dark.jpg"
                     width="600"
                     height="625"
                     loading="lazy"
@@ -808,7 +822,7 @@
 
             <article class="featured-card" role="listitem">
               <div class="featured-card__visual">
-                <picture>
+                <picture class="featured-card__picture featured-card__picture--light">
                   <source
                     srcset="/src/assets/images/projects/featured-travel.webp"
                     type="image/webp"
@@ -816,6 +830,20 @@
                   <img
                     class="featured-card__img"
                     src="/src/assets/images/projects/featured-travel.jpg"
+                    width="600"
+                    height="565"
+                    loading="lazy"
+                    alt="Two iPhones showing a travel discovery screen and an interactive route map"
+                  />
+                </picture>
+                <picture class="featured-card__picture featured-card__picture--dark">
+                  <source
+                    srcset="/src/assets/images/projects/featured-travel-dark.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-travel-dark.jpg"
                     width="600"
                     height="565"
                     loading="lazy"
@@ -862,7 +890,7 @@
 
             <article class="featured-card" role="listitem">
               <div class="featured-card__visual">
-                <picture>
+                <picture class="featured-card__picture featured-card__picture--light">
                   <source
                     srcset="/src/assets/images/projects/featured-architecture.webp"
                     type="image/webp"
@@ -870,6 +898,20 @@
                   <img
                     class="featured-card__img"
                     src="/src/assets/images/projects/featured-architecture.jpg"
+                    width="600"
+                    height="390"
+                    loading="lazy"
+                    alt="Layered 3D clean architecture diagram showing Presentation, Domain, Data, and Infrastructure layers"
+                  />
+                </picture>
+                <picture class="featured-card__picture featured-card__picture--dark">
+                  <source
+                    srcset="/src/assets/images/projects/featured-architecture-dark.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="featured-card__img"
+                    src="/src/assets/images/projects/featured-architecture-dark.jpg"
                     width="600"
                     height="390"
                     loading="lazy"
@@ -1899,10 +1941,22 @@
               </a>
             </div>
             <div class="cta__visual" aria-hidden="true">
-              <picture>
+              <picture class="cta__picture cta__picture--light">
                 <source srcset="/src/assets/images/cta/mountain.webp" type="image/webp" />
                 <img
                   src="/src/assets/images/cta/mountain.png"
+                  width="1376"
+                  height="768"
+                  alt=""
+                  class="cta__mountain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture class="cta__picture cta__picture--dark">
+                <source srcset="/src/assets/images/cta/mountain-dark.webp" type="image/webp" />
+                <img
+                  src="/src/assets/images/cta/mountain-dark.png"
                   width="1376"
                   height="768"
                   alt=""

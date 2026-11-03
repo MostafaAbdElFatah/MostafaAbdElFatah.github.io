@@ -257,6 +257,26 @@ describe('index.html shell', () => {
     expect(btn).not.toBeNull();
     expect(btn.textContent).toContain('Get In Touch');
     expect(cta.querySelector('.cta__mountain')).not.toBeNull();
+    expect(cta.querySelector('.cta__picture--light img')?.getAttribute('src')).toBe(
+      '/src/assets/images/cta/mountain.png',
+    );
+    expect(cta.querySelector('.cta__picture--dark img')?.getAttribute('src')).toBe(
+      '/src/assets/images/cta/mountain-dark.png',
+    );
+  });
+  it('renders light and dark featured project visuals from the merged projects directory', () => {
+    const lightImgs = $$('.featured-card__picture--light img').map((el) => el.getAttribute('src'));
+    const darkImgs = $$('.featured-card__picture--dark img').map((el) => el.getAttribute('src'));
+    expect(lightImgs).toEqual([
+      '/src/assets/images/projects/featured-health.jpg',
+      '/src/assets/images/projects/featured-travel.jpg',
+      '/src/assets/images/projects/featured-architecture.jpg',
+    ]);
+    expect(darkImgs).toEqual([
+      '/src/assets/images/projects/featured-health-dark.jpg',
+      '/src/assets/images/projects/featured-travel-dark.jpg',
+      '/src/assets/images/projects/featured-architecture-dark.jpg',
+    ]);
   });
   it('renders the About Me section with milestones and an architectural showcase card (no person image)', () => {
     const about = $('section.about#about');

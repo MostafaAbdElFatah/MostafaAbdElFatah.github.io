@@ -101,6 +101,24 @@
   pointer-events: none;
 }
 
+.featured-card__picture {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.featured-card__picture--dark {
+  display: none;
+}
+
+[data-theme='dark'] .featured-card__picture--light {
+  display: none;
+}
+
+[data-theme='dark'] .featured-card__picture--dark {
+  display: block;
+}
+
 .featured-card__img {
   display: block;
   inline-size: 100%;
