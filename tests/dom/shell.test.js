@@ -160,7 +160,7 @@ describe('index.html shell', () => {
       '/src/assets/icons/theme-sun.svg',
     );
   });
-  it('updates browser theme color from the current page surface', () => {
+  it('updates browser theme color from the current page surface without transition lag', () => {
     const page = new JSDOM(html, { url: 'https://portfolio.test/' });
     const { document } = page.window;
     const meta = document.querySelector('meta[name="theme-color"]');
@@ -173,7 +173,7 @@ describe('index.html shell', () => {
     document.querySelector('[data-theme-toggle]').click();
     expect(meta.content).toBe('rgb(11, 10, 9)');
   });
-  it('restores a saved theme on reload', () => {
+  it('restores a saved theme and its theme-color on reload', () => {
     const page = new JSDOM(html, {
       url: 'https://portfolio.test/',
       runScripts: 'dangerously',
@@ -183,6 +183,7 @@ describe('index.html shell', () => {
     });
 
     expect(page.window.document.documentElement.dataset.theme).toBe('dark');
+    expect(page.window.document.querySelector('meta[name="theme-color"]')?.content).toBe('#0b0a09');
   });
   it('has a meta description', () =>
     expect($('meta[name="description"]')?.content.length).toBeGreaterThan(50));

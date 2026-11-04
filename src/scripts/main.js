@@ -53,18 +53,23 @@ export function bootstrap(root = document, storage = localStorage) {
     const isLight = root.documentElement.dataset.theme === 'light';
     toggle.setAttribute('aria-pressed', String(isLight));
     toggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} theme`);
-    const surfaceColor = root.defaultView
-      .getComputedStyle(root.body)
-      .getPropertyValue('background-color');
-    if (surfaceColor) themeColor.content = surfaceColor;
+    const surfaceColor =
+      root.defaultView.getComputedStyle(root.body).getPropertyValue('background-color') ||
+      (isLight ? '#fcfbf9' : '#0b0a09');
+    themeColor.content = surfaceColor;
   };
 
   syncThemeControl();
   toggle.addEventListener('click', () => {
     const nextTheme = root.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    // Temporarily bypass body background-color transition so getComputedStyle
+    // returns the final target surface color instead of an interpolated frame.
+    const prevTransition = root.body.style.transition;
+    root.body.style.transition = 'none';
     root.documentElement.dataset.theme = nextTheme;
-    storage.setItem('theme', nextTheme);
     syncThemeControl();
+    root.body.style.transition = prevTransition;
+    storage.setItem('theme', nextTheme);
   });
 }
 

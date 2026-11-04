@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#fcfbf9" />
     <script>
       (() => {
         try {
           const s = localStorage.getItem('theme');
-          document.documentElement.dataset.theme = s === 'light' || s === 'dark' ? s : 'light';
+          const t = s === 'light' || s === 'dark' ? s : 'light';
+          document.documentElement.dataset.theme = t;
+          document.querySelector('meta[name="theme-color"]').content =
+            t === 'dark' ? '#0b0a09' : '#fcfbf9';
         } catch {
           document.documentElement.dataset.theme = 'light';
         }
@@ -18,8 +23,6 @@
       name="description"
       content="Senior iOS developer building Swift, SwiftUI and Flutter apps since 2019 — including officially authorized Quran, hadith and government platforms with 10M+ downloads."
     />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#fcfbf9" />
     <link rel="canonical" href="https://mostafaabdelfatah.github.io/" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Mostafa Abdel Fattah — Senior iOS Developer" />
