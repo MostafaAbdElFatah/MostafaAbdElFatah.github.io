@@ -65,6 +65,7 @@
    night-side shade and turn the stars into faint gold dust so the planets
    stay bright instead of reading as dark, smudged discs. */
 [data-theme='light'] {
+  --scrim: color-mix(in srgb, var(--ivory-100) 25%, transparent);
   --planet-surface-dark: var(--ivory-150);
   --planet-night: var(--obsidian-alpha-12);
   --star-far: var(--gold-alpha-25);

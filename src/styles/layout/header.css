@@ -6,7 +6,8 @@
 
 /* ---------- Header Bar ---------- */
 
-/* Translucent surface + blur keeps content legible while scrolling beneath */
+/* Translucent surface + blur sits on ::before so .site-header does not become
+   a backdrop-filter containing block that traps fixed descendants (.mobile-nav) */
 .site-header {
   --header-height: 5rem;
 
@@ -14,8 +15,16 @@
   z-index: 30;
   inset-block-start: 0;
   border-block-end: 1px solid var(--color-border);
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
   backdrop-filter: blur(16px);
+  pointer-events: none;
 }
 
 [data-theme='dark'] .site-header {
@@ -285,11 +294,12 @@
 
 .mobile-nav {
   position: fixed;
-  inset-block: var(--header-height) 0;
+  inset-block-start: var(--header-height);
   inset-inline: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  block-size: calc(100dvh - var(--header-height));
   padding: var(--space-4);
   pointer-events: none;
   opacity: 0;
@@ -310,7 +320,7 @@
   inset: 0;
   z-index: 0;
   background-color: var(--scrim);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);
   cursor: pointer;
 }
 
@@ -325,11 +335,9 @@
   padding: var(--space-5);
   border: 1px solid var(--color-border-accent);
   border-radius: var(--radius-xl);
-  background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
-  backdrop-filter: blur(28px) saturate(180%);
-  box-shadow:
-    0 20px 48px -12px color-mix(in srgb, var(--obsidian-950) 65%, transparent),
-    0 0 0 1px var(--color-border-accent);
+  background-color: color-mix(in srgb, var(--color-surface) 96%, transparent);
+  backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: var(--card-shadow);
   transform: translateY(-12px) scale(0.97);
   transition: transform var(--duration-slow) var(--ease-out-expo);
 }
